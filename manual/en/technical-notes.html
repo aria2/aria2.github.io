@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Technical Notes &mdash; aria2 1.19.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="aria2 1.19.3 documentation" href="index.html"/>
+        <link rel="prev" title="libaria2: C++ library interface to aria2" href="libaria2.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aria2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.19.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">aria2 - The ultra fast download utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libaria2.html">libaria2: C++ library interface to aria2</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Technical Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#control-file-aria2-format">Control File (*.aria2) Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dht-routing-table-file-format">DHT routing table file format</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">aria2</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Technical Notes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="_sources/technical-notes.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="technical-notes">
+<h1>Technical Notes<a class="headerlink" href="#technical-notes" title="Permalink to this headline">¶</a></h1>
+<p>This document describes additional technical information of aria2. The
+expected audience is developers.</p>
+<div class="section" id="control-file-aria2-format">
+<h2>Control File (*.aria2) Format<a class="headerlink" href="#control-file-aria2-format" title="Permalink to this headline">¶</a></h2>
+<p>The control file uses a binary format to store progress information of
+a download. Here is the diagram for each field:</p>
+<div class="highlight-python"><div class="highlight"><pre> 0                   1                   2                   3
+ 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++---+-------+-------+-------------------------------------------+
+|VER|  EXT  |INFO   |INFO HASH ...                              |
+|(2)|  (4)  |HASH   | (INFO HASH LENGTH)                        |
+|   |       |LENGTH |                                           |
+|   |       |  (4)  |                                           |
++---+---+---+-------+---+---------------+-------+---------------+
+|PIECE  |TOTAL LENGTH   |UPLOAD LENGTH  |BIT-   |BITFIELD ...   |
+|LENGTH |     (8)       |     (8)       |FIELD  | (BITFIELD     |
+|  (4)  |               |               |LENGTH |  LENGTH)      |
+|       |               |               |  (4)  |               |
++-------+-------+-------+-------+-------+-------+---------------+
+|NUM    |INDEX  |LENGTH |PIECE  |PIECE BITFIELD ...             |
+|IN-    |  (4)  |  (4)  |BIT-   | (PIECE BITFIELD LENGTH)       |
+|FLIGHT |       |       |FIELD  |                               |
+|PIECE  |       |       |LENGTH |                               |
+|  (4)  |       |       |  (4)  |                               |
++-------+-------+-------+-------+-------------------------------+
+
+        ^                                                       ^
+        |                                                       |
+        +-------------------------------------------------------+
+                Repeated in (NUM IN-FLIGHT) PIECE times
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">VER</span></code> (VERSION): 2 bytes</dt>
+<dd>Should be either version 0(0x0000) or version 1(0x0001).  In
+version 1, all multi-byte integers are saved in network byte
+order(big endian).  In version 0, all multi-byte integers are saved
+in host byte order.  aria2 1.4.1 can read both versions and only
+writes a control file in version 1 format.  version 0 support will
+be disappear in the future version.</dd>
+<dt><code class="docutils literal"><span class="pre">EXT</span></code> (EXTENSION): 4 bytes</dt>
+<dd>If LSB is 1(i.e. <code class="docutils literal"><span class="pre">EXT[3]&amp;1</span> <span class="pre">==</span> <span class="pre">1</span></code>), aria2 checks whether the saved
+!InfoHash and current downloading one are the same. If they are not
+the same, an exception is thrown. This is called &quot;infoHashCheck&quot;
+extension.</dd>
+<dt><code class="docutils literal"><span class="pre">INFO</span> <span class="pre">HASH</span> <span class="pre">LENGTH</span></code>: 4 bytes</dt>
+<dd>The length of InfoHash that is located after this field. If
+&quot;infoHashCheck&quot; extension is enabled, if this value is 0, then an
+exception is thrown. For http/ftp downloads, this value should be
+0.</dd>
+<dt><code class="docutils literal"><span class="pre">INFO</span> <span class="pre">HASH</span></code>: <code class="docutils literal"><span class="pre">(INFO</span> <span class="pre">HASH</span> <span class="pre">LENGTH)</span></code> bytes</dt>
+<dd>BitTorrent InfoHash.</dd>
+<dt><code class="docutils literal"><span class="pre">PIECE</span> <span class="pre">LENGTH</span></code>: 4 bytes</dt>
+<dd>The length of the piece.</dd>
+<dt><code class="docutils literal"><span class="pre">TOTAL</span> <span class="pre">LENGTH</span></code>: 8 bytes</dt>
+<dd>The total length of the download.</dd>
+<dt><code class="docutils literal"><span class="pre">UPLOAD</span> <span class="pre">LENGTH</span></code>: 8 bytes</dt>
+<dd>The uploaded length in this download.</dd>
+<dt><code class="docutils literal"><span class="pre">BITFIELD</span> <span class="pre">LENGTH</span></code>: 4 bytes</dt>
+<dd>The length of bitfield.</dd>
+<dt><code class="docutils literal"><span class="pre">BITFIELD</span></code>: <code class="docutils literal"><span class="pre">(BITFIELD</span> <span class="pre">LENGTH)</span></code> bytes</dt>
+<dd>This is the bitfield which represents current download progress.</dd>
+<dt><code class="docutils literal"><span class="pre">NUM</span> <span class="pre">IN-FLIGHT</span> <span class="pre">PIECE</span></code>: 4 bytes</dt>
+<dd>The number of in-flight pieces. These piece is not marked
+'downloaded' in the bitfield, but it has at least one downloaded
+chunk.</dd>
+</dl>
+<p>The following 4 fields are repeated in <code class="docutils literal"><span class="pre">(NUM</span> <span class="pre">IN-FLIGHT</span> <span class="pre">PIECE)</span></code>
+times.</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">INDEX</span></code>: 4 bytes</dt>
+<dd>The index of the piece.</dd>
+<dt><code class="docutils literal"><span class="pre">LENGTH</span></code>: 4 bytes</dt>
+<dd>The length of the piece.</dd>
+<dt><code class="docutils literal"><span class="pre">PIECE</span> <span class="pre">BITFIELD</span> <span class="pre">LENGTH</span></code>: 4 bytes</dt>
+<dd>The length of bitfield of this piece.</dd>
+<dt><code class="docutils literal"><span class="pre">PIECE</span> <span class="pre">BITFIELD</span></code>: <code class="docutils literal"><span class="pre">(PIECE</span> <span class="pre">BITFIELD</span> <span class="pre">LENGTH)</span></code> bytes</dt>
+<dd>The bitfield of this piece. The each bit represents 16KiB chunk.</dd>
+</dl>
+</div>
+<div class="section" id="dht-routing-table-file-format">
+<h2>DHT routing table file format<a class="headerlink" href="#dht-routing-table-file-format" title="Permalink to this headline">¶</a></h2>
+<p>aria2 saves IPv4 DHT routing table in
+<code class="docutils literal"><span class="pre">${XDG_CACHE_HOME}/aria2/dht.dat</span></code> and IPv6 DHT routing table in
+<code class="docutils literal"><span class="pre">${XDG_CACHE_HOME}/aria2/dht6.dat</span></code> by default unless
+<code class="docutils literal"><span class="pre">${HOME}/.aria2/dht.dat</span></code> and <code class="docutils literal"><span class="pre">${HOME}/.aria2/dht.dat</span></code> are present.</p>
+<p><code class="docutils literal"><span class="pre">dht.dat</span></code> and <code class="docutils literal"><span class="pre">dht6.dat</span></code> files use same binary encoding and have
+following fields. All multi byte integers are in network byte
+order. <code class="docutils literal"><span class="pre">RSV</span></code> (RESERVED) fields are reserved for future use. For now
+they should be all zeros:</p>
+<div class="highlight-python"><div class="highlight"><pre> 0                   1                   2                   3
+ 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++---+-+---+-----+---------------+---------------+---------------+
+|MGC|F|VER| RSV |     MTIME     |     RSV       |LOCAL NODE ID  :
+|(2)|M|(2)| (3) |      (8)      |     (8)       |      (20)     :
+|   |T|   |     |               |               |               :
++---+-+---+-----+-------+-------+-------+-------+---------------+
+:LOCAL NODE ID          |  RSV  |  NUM  |  RSV  |
+:  (continued)          |  (4)  |  NODE |  (4)  |
+:                       |       |  (4)  |       |
++-+-------------+-------+-------+-+-----+-------+---------------+
+|P|     RSV     |COMPACT PEER INFO|            RSV              | &lt;-+
+|L|     (7)     |     (PLEN)      |         (24 - PLEN)         |   |
+|E|             |                 |                             |   |
+|N|             |                 |                             |   |
++-+-------------+-----------------+-----+-------+---------------+   |
+|            NODE ID                    |  RSV  |                   |
+|             (20)                      |  (4)  | &lt;-----------------+
++---------------------------------------+-------+   Repeated in
+                                                     (NUM NODE) times.
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">MGC</span></code> (MAGIC): 2 bytes</dt>
+<dd>It must be <code class="docutils literal"><span class="pre">0xa1</span> <span class="pre">0xa2</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">FMT</span></code> (FORMAT ID): 1 byte</dt>
+<dd>The format ID should be <code class="docutils literal"><span class="pre">0x02</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">VER</span></code> (VERSION): 2 bytes</dt>
+<dd>The version number should be <code class="docutils literal"><span class="pre">0x00</span> <span class="pre">0x03</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">MTIME</span></code>: 8 bytes</dt>
+<dd>This is the time when aria2 saved the file.  The value is the time
+since the Epoch(1970/1/1 00:00:00) in 64 bits integer.</dd>
+<dt><code class="docutils literal"><span class="pre">LOCALNODE</span> <span class="pre">ID</span></code>: 20 bytes</dt>
+<dd>Node ID of the client.</dd>
+<dt><code class="docutils literal"><span class="pre">NUM</span> <span class="pre">NODE</span></code>: 4 bytes</dt>
+<dd>The number of nodes the routing table has. <code class="docutils literal"><span class="pre">NUM</span> <span class="pre">NODE</span></code> node
+information follows.</dd>
+</dl>
+<p>The data of <code class="docutils literal"><span class="pre">NUM</span> <span class="pre">NODE</span></code> node will follow.  The node information are
+stored in the following fields.  They are repeated in <code class="docutils literal"><span class="pre">NUM</span> <span class="pre">NODE</span></code>
+times.</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">PLEN</span></code> (COMPACT PEER INFO LENGTH): 1 byte</dt>
+<dd>The length of compact peer info. For IPv4 DHT, it must be 6. For
+IPv6 DHT, it must be 18.</dd>
+<dt><code class="docutils literal"><span class="pre">COMPACT</span> <span class="pre">PEER</span> <span class="pre">INFO</span></code>: <code class="docutils literal"><span class="pre">(PLEN)</span></code> bytes</dt>
+<dd>The address and port of peer in compact peer format.</dd>
+<dt><code class="docutils literal"><span class="pre">NODE</span> <span class="pre">ID</span></code>: 20 bytes</dt>
+<dd>The node ID of this node.</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="libaria2.html" class="btn btn-neutral" title="libaria2: C++ library interface to aria2" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.19.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

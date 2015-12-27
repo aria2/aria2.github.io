@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta content="Manual Aria2 em português" lang="pt" name="description" />
+<meta content="programa para download gratuito, download android, download bittorrent, download linha de comando, download de músicas, download de ftp, download http, download https, mac OS/X, windows, linux, manual download aria2, torrent, download stream, como compilar programa no android, como executar download no android" name="keywords" />
+<meta content="t-tujikawa_at_users_dot_sourceforge_dot_net english version" name="author" />
+<meta content="gsavix&#64;gmail.com tradução para português do brasil" name="author" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; aria2 1.19.3 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="aria2 1.19.3 documentação" href="index.html"/>
+        <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aria2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.19.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">aria2 - Utilitário para Download Super Ultra Rápido</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#renuncia">Renúncia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introducao">Introdução</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funcionalidades">Funcionalidades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#como-obter-o-codigo-fonte">Como obter o código fonte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencias">Dependências</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#como-fazer-o-build">Como fazer o build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilacao-cross-windows-binario">Compilação Cross Windows binário</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compilacao-cross-android-binario">Compilação Cross Android binário</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#aria2-para-dispositivos-android">aria2 para dispositivos Android</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#instalando-aria2-no-android">Instalando aria2 no Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#como-usar-comandos-do-aria2-no-android">Como usar comandos do aria2 no Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notas-sobre-uso-do-aria2-no-android">Notas sobre uso do aria2 no Android</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problemas-conhecidos-com-o-aria2c-no-android">Problemas Conhecidos com o aria2c no Android</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#para-gerar-a-documentacao">Para Gerar a documentação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#bittorrrent">BitTorrrent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sobre-nome-de-arquivos">Sobre Nome de arquivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dht">DHT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rastreador-udp">Rastreador UDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outras-informacoes-importantes">Outras informações importantes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#metalink">Metalink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#metalink-http">Metalink / HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#netrc">netrc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#websocket">WebSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#referencias">Referências</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">aria2</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>aria2 - Utilitário para Download Super Ultra Rápido</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="_sources/README.txt" rel="nofollow"> View page source</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="readme"></span><div class="section" id="aria2-utilitario-para-download-super-ultra-rapido">
+<h1>aria2 - Utilitário para Download Super Ultra Rápido<a class="headerlink" href="#aria2-utilitario-para-download-super-ultra-rapido" title="Link permanente para este título">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Tatsuhiro Tsujikawa</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Email:</th><td class="field-body">t-tujikawa_at_users_dot_sourceforge_dot_net</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">translator:</th><td class="field-body">pt_BR Portuguese, tradutor: <a class="reference external" href="mailto:gsavix&#37;&#52;&#48;gmail&#46;com">gsavix<span>&#64;</span>gmail<span>&#46;</span>com</a></td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="index-0"></span><div class="section" id="renuncia">
+<span id="index-1"></span><h2>Renúncia<a class="headerlink" href="#renuncia" title="Link permanente para este título">¶</a></h2>
+<p>Este programa não vem com garantias. O uso deste programa é por sua
+conta e risco.</p>
+</div>
+<div class="section" id="introducao">
+<h2>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h2>
+<p>aria2 é um utilitário para download de arquivos. Os protocolos suportados são
+HTTP, HTTPS, FTP, BitTorrent e Metalink. aria2 pode baixar arquivos de
+múltiplas fontes protocolos e tenta utilizar para isso a máxima banda possível.
+Pode funcionar em diversas plataformas de computadores e sistemas operacionais,
+como por exemplo: GNU Linux, OS X, Windows, Android entre outros. Ao mesmo
+tempo pode executar download de HTTP, HTTPS, FTP e BitTorrent enquanto estes
+dados podem ser disponibilizados (uploaded) ao mesmo tempo para o BitTorrent ou
+para você ir assistindo um filme enquanto o download prossegue.  Através da
+verificação (checksum) de partes dos dados dos Metalink's, aria2
+automaticamente valida partes (chunks) do BitTorrent.</p>
+<p>A página do projeto está em <a class="reference external" href="http://aria2.sourceforge.net/">http://aria2.sourceforge.net/</a>.</p>
+<p>Veja <a class="reference external" href="http://aria2.sourceforge.net/manual/pt/html/">aria2 Manual Online</a>
+e <a class="reference external" href="http://sourceforge.net/apps/trac/aria2/wiki/UsageExample">Exemplos de Uso</a>
+para aprender como a usar aria2.</p>
+</div>
+<div class="section" id="funcionalidades">
+<h2>Funcionalidades<a class="headerlink" href="#funcionalidades" title="Link permanente para este título">¶</a></h2>
+<p>Lista de Configurações:</p>
+<ul class="simple">
+<li>Interface de linha de comando</li>
+<li>Download arquivos protocolos HTTP, HTTPS, FTP, BitTorrent</li>
+<li>Download Segmentado</li>
+<li>Metalink versão 4 (RFC 5854) suporte (HTTP, FTP, BitTorrent)</li>
+<li>Metalink versão 3 suporte (HTTP, FTP, BitTorrent)</li>
+<li>Metalink (RFC 6249) suporte (HTTP)</li>
+<li>Implementação HTTP/1.1</li>
+<li>Suporte Proxy HTTP Proxy</li>
+<li>Suporte autenticação HTTP BASIC</li>
+<li>Suporte autenticação HTTP Proxy</li>
+<li>Váriavéis de ambiente (conjunto abrangente) para proxy: http_proxy, https_proxy,
+ftp_proxy, all_proxy e no_proxy</li>
+<li>HTTP com gzip, suporte a codificação de conteúdo (deflate)</li>
+<li>Verificação de peer usando Certificados Acreditados informado em HTTPS</li>
+<li>Processamento de autenticação Cliente usando Certificado Acreditado HTTPS</li>
+<li>Suporte a transferência (Chunked) codificada</li>
+<li>Carga de Cookies a partir de arquivos formato Firefox 3, Chromium/Google Chrome
+e Mozilla / Firefox / IcedWeasel / (1.x/2.x) / Netscape.</li>
+<li>Salvar Cookies em arquivo formato Mozilla 3, Firefox (1.x/2.x), Chromium,
+Netscape.</li>
+<li>Suporte a Cabeçalho HTTP modificado ou personalizado</li>
+<li>Suporte a Conexões Persistentes</li>
+<li>FTP através de Proxy HTTP</li>
+<li>Controle de velocidade Download e Upload (utilização da Banda Rede)</li>
+<li>Extensões BitTorrent: Conexão rápida, DHT, PEX, MSE/PSE, Multi-Tracker</li>
+<li>BitTorrent <a class="reference external" href="http://getright.com/seedtorrent.html">WEB-Seeding</a>. aria2
+faz requisições de mais de uma parte de um (chunk) para reduzir sobreposições
+de requisições. Também permite requisições pipeline com tamanho especificado</li>
+<li>BitTorrent Local Peer Discovery</li>
+<li>Atualização ou Modificação (Rename) de estrutura de diretórios de downloads
+BitTorrent já finalizados</li>
+<li>Interface JSON-RPC (sobre HTTP e WebSocket) / XML-RPC</li>
+<li>Execução em modo daemon</li>
+<li>Download Seletivosem múltiplos arquivos torrent/Metalink</li>
+<li>Validação e checksum de parte (Chunk) em Metalink</li>
+<li>Desabilidar download segmentado em Metalink</li>
+<li>Suporte a Netrc</li>
+<li>Suporte a arquivo de Configuração</li>
+<li>Download de URIs a partir de arquivo texto ou entrada padrão com especificação
+opcional de arquivo de saída</li>
+<li>Suporte a URI parametrizadas (intervalos, etc)</li>
+<li>Suporte a IPv6</li>
+</ul>
+</div>
+<div class="section" id="como-obter-o-codigo-fonte">
+<h2>Como obter o código fonte<a class="headerlink" href="#como-obter-o-codigo-fonte" title="Link permanente para este título">¶</a></h2>
+<p>O código fonte é mantido no Github:
+<a class="reference external" href="https://github.com/tatsuhiro-t/aria2">https://github.com/tatsuhiro-t/aria2</a></p>
+<p>Para obter o último código fonte, execute o seguinte comando:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ git clone git://github.com/tatsuhiro-t/aria2.git
+</pre></div>
+</div>
+<p>Aria2 será criado no diretório corrente do seu computador com os arquivos fonte.</p>
+</div>
+<div class="section" id="dependencias">
+<h2>Dependências<a class="headerlink" href="#dependencias" title="Link permanente para este título">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">funcionalidade</th>
+<th class="head">dependência</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>HTTPS</td>
+<td>GnuTLS ou OpenSSL</td>
+</tr>
+<tr class="row-odd"><td>BitTorrent</td>
+<td>libnettle+libgmp ou libgcrypt ou OpenSSL</td>
+</tr>
+<tr class="row-even"><td>Metalink</td>
+<td>libxml2 ou Expat.</td>
+</tr>
+<tr class="row-odd"><td>Checksum</td>
+<td>libnettle ou libgcrypt ou OpenSSL</td>
+</tr>
+<tr class="row-even"><td>gzip, deflate em HTTP</td>
+<td>zlib</td>
+</tr>
+<tr class="row-odd"><td>Async DNS</td>
+<td>C-Ares</td>
+</tr>
+<tr class="row-even"><td>Firefox3/Chromium cookie</td>
+<td>libsqlite3</td>
+</tr>
+<tr class="row-odd"><td>XML-RPC</td>
+<td>libxml2 ou Expat.</td>
+</tr>
+<tr class="row-even"><td>JSON-RPC sobre WebSocket</td>
+<td>libnettle ou libgcrypt ou OpenSSL</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">libxml2 tem precedência sobre Expat se ambas bibliotecas instaladas.
+Caso prefira Expat, execute o configure com <code class="docutils literal"><span class="pre">--without-libxml2</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">GnuTLS tem precedência sobre OpenSSL se ambas bibliotecas estiverem
+instaladas. Caso prefira OpenSSL, execute configure com
+<code class="docutils literal"><span class="pre">--without-gnutls</span></code> <code class="docutils literal"><span class="pre">--with-openssl</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">libnettle tem precedência sobre libgcrypt se ambas bibliotecas instaladas.
+Caso prefira libgcrypt, execute configure com
+<code class="docutils literal"><span class="pre">--without-libnettle</span> <span class="pre">--with-libgcrypt</span></code>. Se OpenSSL é selecionada em
+detrimento de GnuTLS, nem libnettle nem libgcrypt poderão ser usadas.</p>
+</div>
+<p>São necessárias as seguintes configurações de bibliotecas SSl e crypto:</p>
+<ul class="simple">
+<li>libgcrypt</li>
+<li>libnettle</li>
+<li>OpenSSL</li>
+<li>GnuTLS + libgcrypt</li>
+<li>GnuTLS + libnettle</li>
+</ul>
+<p>BitTorrent e Metalink podem ser desabilitados fornecendo-se as opções
+<code class="docutils literal"><span class="pre">--disable-bittorrent</span></code> e <code class="docutils literal"><span class="pre">--disable-metalink</span></code> ao executar o script
+./configure.</p>
+<p>Para habilitar DNS assíncrono é necessário c-ares.</p>
+<ul class="simple">
+<li>projeto c-ares: <a class="reference external" href="http://daniel.haxx.se/projects/c-ares/">http://daniel.haxx.se/projects/c-ares/</a></li>
+</ul>
+</div>
+<div class="section" id="como-fazer-o-build">
+<h2>Como fazer o build<a class="headerlink" href="#como-fazer-o-build" title="Link permanente para este título">¶</a></h2>
+<p>Para fazer o build do aria2 a partir dos fontes, instalar antes
+pacotes de desenvolvimento ( o nome pode variar nas distribuições):</p>
+<ul class="simple">
+<li>libgnutls-dev    (Requerido para suporte HTTPS, BitTorrent, Checksum)</li>
+<li>nettle-dev       (Requerido para suporte BitTorrent, Checksum)</li>
+<li>libgmp-dev       (Requerido para suporte BitTorrent)</li>
+<li>libc-ares-dev    (Requerido para suporte DNS async DNS )</li>
+<li>libxml2-dev      (Requerido para suporte Metalink)</li>
+<li>zlib1g-dev       (Requerido para suporte em HTTP decodificação gzip e deflate)</li>
+<li>libsqlite3-dev   (Requerido para suporte cookie Firefox3 / Chromium)</li>
+</ul>
+<p>Você pode usar libgcrypt-dev ao invés de nettle-dev e libgmp-dev:</p>
+<ul class="simple">
+<li>libgpg-error-dev (Requerido para suporte BitTorrent, Checksum)</li>
+<li>libgcrypt-dev    (Requerido para suporte BitTorrent, Checksum)</li>
+</ul>
+<p>Pode ser usado libssl-dev ao invés de
+libgnutls-dev, nettle-dev, libgmp-dev, libgpg-error-dev e libgcrypt-dev:</p>
+<ul class="simple">
+<li>libssl-dev       (Requerido para suporte Checksum de HTTPS, BitTorrent )</li>
+</ul>
+<p>Pode ser usado libexpat1-dev ao invés de libxml2-dev:</p>
+<ul class="simple">
+<li>libexpat1-dev    (Requerido for Metalink suporte)</li>
+</ul>
+<p>Pode ser necessário usar pkg-config para detectar as bibliotecas
+acima mencionadas.</p>
+<p>Para a distribuição Fedora são necessários os seguintes pacotes:</p>
+<ul class="simple">
+<li>gcc, gcc-c++, kernel-devel, libgcrypt-devel, libgcrypt-devel,
+libxml2-devel, openssl-devel</li>
+</ul>
+<p>Se foi feito o download do código fonte a partir de um repositório git,
+deverá ser executado o seguinte comando para criar o script de
+configuração (configure) e outros scripts também necessários
+para o build ou compilação do aria2:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ autoreconf -i
+</pre></div>
+</div>
+<p>Para construir a documentação é necessário instalar
+<a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> que constroi página (man), html ou pdf
+contendo a documentação nos idiomas existentes.</p>
+<p>Para construir aria2 para Mac OS X, de uma olhada em build_osx_release.sh,
+o qual cria binários DMG que são padrões para OS X.</p>
+<p>A maneira mais rápida para compilar o aria2 é executar o script:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./configure
+</pre></div>
+</div>
+<p>Para compilar com link-edição estática utilize o opção da linha
+de comando <code class="docutils literal"><span class="pre">ARIA2_STATIC=yes</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./configure ARIA2_STATIC=yes
+</pre></div>
+</div>
+<p>Após a configuração feita, execute <code class="docutils literal"><span class="pre">make</span></code> para compilar o programa:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make
+</pre></div>
+</div>
+<p>Ver <a class="reference internal" href="#compilacao-cross-windows-binario">Compilação Cross Windows binário</a> para Criar Binário para
+Windows.  Ver <a class="reference internal" href="#compilacao-cross-android-binario">Compilação Cross Android binário</a> para criar
+Binário para Android.
+O script configure verifica as bibliotecas
+disponíveis e habilita
+ou desabilita as funcionalidades na maior abrangência possivel, pois
+por padrão todas as funcionalidades são habilitadas.  Desde a versão
+1.1.0, aria2 verifica o certificado do servidor HTTPS como padrão.
+Se a compilação usou OpenSSL ou a recente versão de GnuTLS na qual há
+função <code class="docutils literal"><span class="pre">gnutls_certificate_set_x509_system_trust()</span></code> e a biblioteca
+foi adequadamente configurada para localizar o certificado CA
+armazenado, aria2 carrega automaticamente estes certificados no início.
+Se este não ocorrer, recomenda-se fornecer o caminho para o arquivo que
+contém o certificado. Por Exemplo, no Debian o caminho para o arquivo CA
+é &quot;/etc/ssl/certs/ca-certificates.crt&quot; (no pacote ca-certificates).
+Isto varia de acordo com sua distribuição Linux. Pode ser informada a opção
+<code class="docutils literal"><span class="pre">--with-ca-bundle</span></code> para configurar o script usado pelo make:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
+$ make
+</pre></div>
+</div>
+<p>Sem a opção <code class="docutils literal"><span class="pre">--with-ca-bundle</span></code>, haverá um erro ao acessar servidores
+HTTPS pois o certificado não pode ser verificado sem possuir um pacote CA
+(entidade certificadora). Nesse caso, pode ser especificado um arquivo de
+certificado usando opção aria2's <code class="docutils literal"><span class="pre">--ca-certificate</span></code>.  Caso não haja um
+certificado instalado, então o último recurso é desabilitar a validação
+do certificado usando a opção <code class="docutils literal"><span class="pre">--check-certificate=false</span></code>.</p>
+<p>Por padrão, arquivo chamado (bash_completion) <code class="docutils literal"><span class="pre">aria2c</span></code> é instalado no
+diretório <code class="docutils literal"><span class="pre">$prefix/share/doc/aria2/bash_completion</span></code>.  Para mudar o
+diretório de instalação do arquivo utilize a opção
+<code class="docutils literal"><span class="pre">--with-bashcompletiondir</span></code>.</p>
+<p>O executavel é 'aria2c' no diretório src.</p>
+<p>aria2 usa CppUnit para (test unit) automatizado. Para executar o
+test unit emita o comando:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ make check
+</pre></div>
+</div>
+</div>
+<div class="section" id="compilacao-cross-windows-binario">
+<h2>Compilação Cross Windows binário<a class="headerlink" href="#compilacao-cross-windows-binario" title="Link permanente para este título">¶</a></h2>
+<p>Nessa seção, está descrito como fazer o build do binário para Windows
+usando o compilador cross mingw-w64 no Debian Linux.</p>
+<p>Basicamente, após compilar e instalar as bibliotecas dependentes, que
+são pré-requisitos pode ser feita a compilação cross apenas passando
+através da opção <code class="docutils literal"><span class="pre">--host</span></code> e especificando-se as variáveis
+<code class="docutils literal"><span class="pre">CPPFLAGS</span></code>, <code class="docutils literal"><span class="pre">LDFLAGS</span></code> e <code class="docutils literal"><span class="pre">PKG_CONFIG_LIBDIR</span></code> que serão usadas
+no procedimento (configure). Para maior conveniência e menor custo
+de desenvolvimento, é fornecida uma maneira fácil de configurar as
+características do build / compilação.</p>
+<p>O script <code class="docutils literal"><span class="pre">mingw-config</span></code> é um <code class="docutils literal"><span class="pre">(wrapper)</span></code> para mingw-w64.
+Sua utilização é para gerar uma compilação oficial para Windows.  Esse
+script assume que as seguintes bibliotecas tenham sido compiladas
+e/ou instaladas para a compilação cross:</p>
+<ul class="simple">
+<li>c-ares</li>
+<li>openssl</li>
+<li>expat</li>
+<li>sqlite3</li>
+<li>zlib</li>
+<li>cppunit</li>
+</ul>
+<p>Algumas variáveis de ambiente precisam ser ajustadas para compilar:</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">HOST</span></code></dt>
+<dd>compilação-cross para compilar programas que serão executados em
+um computador <code class="docutils literal"><span class="pre">HOST</span></code>. Padrão para <code class="docutils literal"><span class="pre">i686-w64-mingw32</span></code>.
+Para compilar binário para 64bits, especificar <code class="docutils literal"><span class="pre">x86_64-w64-mingw32</span></code>.</dd>
+<dt><code class="docutils literal"><span class="pre">PREFIX</span></code></dt>
+<dd>Prefixo do diretório onde as bibliotecas dependentes estão instaladas.
+Padrão para <code class="docutils literal"><span class="pre">/usr/local/$HOST</span></code>. <code class="docutils literal"><span class="pre">-I$PREFIX/include</span></code> será adicionado
+às opções <code class="docutils literal"><span class="pre">CPPFLAGS</span></code>. <code class="docutils literal"><span class="pre">-L$PREFIX/lib</span></code> será adicionado em
+<code class="docutils literal"><span class="pre">LDFLAGS</span></code>. <code class="docutils literal"><span class="pre">$PREFIX/lib/pkgconfig</span></code> será configurado para
+<code class="docutils literal"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</dd>
+</dl>
+<p>Por exemplo, para construir um binário para 64bits utilize:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ HOST=x86_64-w64-mingw32 ./mingw-config
+</pre></div>
+</div>
+</div>
+<div class="section" id="compilacao-cross-android-binario">
+<span id="index-2"></span><h2>Compilação Cross Android binário<a class="headerlink" href="#compilacao-cross-android-binario" title="Link permanente para este título">¶</a></h2>
+<p>Nessa seção, descrevemos como construir um binário usando o compilador-cross
+NDD no Linux Debian.</p>
+<p><code class="docutils literal"><span class="pre">android-config</span></code> é um script para configurar compilação para Android, o qual
+assume que as seguintes bibliotecas também foram construídas para
+compilador-cross:</p>
+<ul class="simple">
+<li>c-ares</li>
+<li>openssl</li>
+<li>expat</li>
+</ul>
+<p>Quando compilando as bibliotecas, certifique-se que o compartilhamento (share)
+esteja desabilitado e confirme que somente biblioteca estática está habilitado.
+A compilação será feita somente com bibliotecas estáticas.</p>
+<p>A bibliteca zlib que vem com o Android NDK, portanto não é necessário
+compilar uma zlib nova.</p>
+<p><code class="docutils literal"><span class="pre">android-config</span></code> assume os seguintes pontos:</p>
+<ul class="simple">
+<li>Android NDK está instalado no local definido pela variável de ambiente
+<code class="docutils literal"><span class="pre">$ANDROID_HOME</span></code>.  Consultar seção &quot;3/ Chamando o compilador (jeito fácil):&quot;
+no Android NDK
+<code class="docutils literal"><span class="pre">docs/STANDALONE-TOOLCHAIN.html</span></code> para instalar (toolchain) personalizada.</li>
+<li>Bibliotecas dependentes devem estar instaladas em
+<code class="docutils literal"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</li>
+</ul>
+<p>Antes executar <code class="docutils literal"><span class="pre">android-config</span></code> e <code class="docutils literal"><span class="pre">android-make</span></code>, a variável de ambiente
+<code class="docutils literal"><span class="pre">$ANDOIRD_HOME</span></code> deve apontar para o caminho correto.</p>
+<p>Após <code class="docutils literal"><span class="pre">android-config</span></code>, executar <code class="docutils literal"><span class="pre">android-make</span></code> para compilar os fontes.</p>
+</div>
+</div>
+<div class="section" id="aria2-para-dispositivos-android">
+<span id="index-3"></span><h1>aria2 para dispositivos Android<a class="headerlink" href="#aria2-para-dispositivos-android" title="Link permanente para este título">¶</a></h1>
+<p>aria2 é utilitário para download leve e multi-protocolo bem como
+multi-fontes operado através da linha de comando de um emulador de terminal
+que é executado no android. Há Suporte para downloads do tipo HTTP, HTTPS, FTP,
+BitTorrent e Metalink.</p>
+<div class="section" id="instalando-aria2-no-android">
+<h2>Instalando aria2 no Android<a class="headerlink" href="#instalando-aria2-no-android" title="Link permanente para este título">¶</a></h2>
+<p>aria2 não é uma aplicação Android Java. aria2 é uma aplicação escrita
+em C++ nativo e opera em modo linha de comando.  Não é necessário ter
+acesso ao usuário 'root' para usar aria2.  Como já dito, aria2 é um
+programa de linha de comando e por isso é necessário um emulador
+de terminal, portanto antes instale um emulador de Terminal Android a
+partir do Android Market (ou compile a partir da fonte e instale). Veja
+<a class="reference external" href="https://github.com/jackpal/Android-Terminal-Emulator/">Github jackpal</a>.</p>
+<ol class="arabic">
+<li><p class="first">Copiar o executável do aria2c para <code class="docutils literal"><span class="pre">/mnt/sdcard</span></code> do seu dispositivo.</p>
+</li>
+<li><p class="first">Executar Emulador Terminal Android.</p>
+</li>
+<li><p class="first">Criar diretório <code class="docutils literal"><span class="pre">mkdir</span> <span class="pre">/data/data/jackpal.androidterm/aria2</span></code></p>
+</li>
+<li><p class="first">Anexar aplicação
+<code class="docutils literal"><span class="pre">cat</span> <span class="pre">/mnt/sdcard/aria2c</span> <span class="pre">&gt;</span> <span class="pre">/data/data/jackpal.androidterm/aria2/aria2c</span></code></p>
+</li>
+<li><p class="first">Habilitar modo execução
+<code class="docutils literal"><span class="pre">chmod</span> <span class="pre">744</span> <span class="pre">/data/data/jackpal.androidterm/aria2/aria2c</span></code></p>
+</li>
+<li><p class="first">Adicionar o seguintes comandos ao Emulador de Terminal Android
+Terminal Emulator:</p>
+<div class="highlight-python"><div class="highlight"><pre>export HOME=/data/data/jackpal.androidterm/aria2; cd $HOME
+</pre></div>
+</div>
+</li>
+<li><p class="first">Sair do Emulador de Terminal Android.</p>
+</li>
+<li><p class="first">Executar novamente o Emulador de Terminal Android.</p>
+</li>
+<li><p class="first">Execute aria2c chamando o comando <code class="docutils literal"><span class="pre">./aria2c</span> <span class="pre">-v</span></code></p>
+</li>
+</ol>
+</div>
+<div class="section" id="como-usar-comandos-do-aria2-no-android">
+<h2>Como usar comandos do aria2 no Android<a class="headerlink" href="#como-usar-comandos-do-aria2-no-android" title="Link permanente para este título">¶</a></h2>
+<p>Ver o manual do aria2 online nos seguintes idiomas:
+<a class="reference external" href="http://aria2.sourceforge.net/manual/pt/html/">Tradução em Português</a>.
+<a class="reference external" href="http://aria2.sourceforge.net/manual/en/html/">Original em Inglês</a>.
+<a class="reference external" href="http://aria2.sourceforge.net/manual/ru/html/">Tradução em Russo</a>.</p>
+</div>
+<div class="section" id="notas-sobre-uso-do-aria2-no-android">
+<h2>Notas sobre uso do aria2 no Android<a class="headerlink" href="#notas-sobre-uso-do-aria2-no-android" title="Link permanente para este título">¶</a></h2>
+<p>O executável aria2c foi gerado usando android-ndk-r8d.</p>
+<p>As seguintes bibliotecas foram ligadas estaticamente.</p>
+<blockquote>
+<div><ul class="simple">
+<li>openssl 1.0.1e</li>
+<li>expat 2.1.0</li>
+<li>c-ares 1.9.1</li>
+</ul>
+</div></blockquote>
+<p>Como o Android não possuem <code class="docutils literal"><span class="pre">/etc/resolv.conf</span></code>, c-ares (resolvedor
+assíncrono de DNS) é desabilitado por padrão. Muitas vezes a resolução
+de nomes é lenta, recomenda-se habilitar c-ares. Para desabilitar use
+:option:<code class="docutils literal"><span class="pre">--async-dns</span></code> e especifique os servidores DNS usando
+opção :option:<code class="docutils literal"><span class="pre">--async-dns-server</span></code>, como abaixo:</p>
+<div class="highlight-python"><div class="highlight"><pre>--async-dns --async-dns-server=`getprop meu.dns1`,`getprop meu.dns2`
+</pre></div>
+</div>
+<p id="index-4">Para não se entediar digitando estes parâmetros, toda vez que usar aria2c,
+o seguinte script shell pode ser útil:</p>
+<div class="highlight-python"><div class="highlight"><pre>#!/system/bin/sh
+/data/data/jackpal.androidterm/aria2c \
+  --async-dns \
+  --async-dns-server=`getprop meu.dns1`,`getprop meu.dns2` \
+  &quot;$@&quot;
+</pre></div>
+</div>
+<p>Lembrar de tornar este script executável, através do comando chmod.
+Também substitua meu.dns1 e meu.dns2 pelos DNS reais que você quer.
+Exemplo: (<code class="docutils literal"><span class="pre">chmod</span> <span class="pre">744</span> <span class="pre">/path-para-o/scriptSCRIPT</span></code>)</p>
+</div>
+<div class="section" id="problemas-conhecidos-com-o-aria2c-no-android">
+<h2>Problemas Conhecidos com o aria2c no Android<a class="headerlink" href="#problemas-conhecidos-com-o-aria2c-no-android" title="Link permanente para este título">¶</a></h2>
+<ul class="simple">
+<li>Como Android não tem <code class="docutils literal"><span class="pre">/dev/stdout</span></code>, <code class="docutils literal"><span class="pre">-l-</span></code> não funciona.</li>
+<li>Em alguns casos o Emulador de Terminal Android, para de atualizar a console.
+É como se o aria2c congelasse, mas o aria2c continua executando normalmente.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="para-gerar-a-documentacao">
+<h1>Para Gerar a documentação<a class="headerlink" href="#para-gerar-a-documentacao" title="Link permanente para este título">¶</a></h1>
+<p><a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> é usado para construir a
+documentação. As páginas (man) da documentação também são criadas
+através do comando <code class="docutils literal"><span class="pre">make</span> <span class="pre">man</span></code> caso estas páginas estejam desatualizadas.
+Também podem ser construídas a documentação em diversos formatos como
+html, latexpdf, epub, devhelp, latex, htmlhelp. Exemplo: Para construir
+a documentação aria2 em HTML use o comando <code class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></code>.
+O resultado será criado na subpasta _build dentro da pasta onde baixou
+o fonte do aria2. Ex: se baixou e descompactou o aria2 no local
+/home/usuario/aria2/ então a documentação gerada está em:</p>
+<div class="highlight-python"><div class="highlight"><pre>/home/usuario/aria2/doc/manual-src/pt/_build/
+</pre></div>
+</div>
+<p>A pasta <code class="docutils literal"><span class="pre">pt</span></code> indica o idioma que atualmente pode ser
+(en,pt,ru). Para gerar documento PDF use a opção <code class="docutils literal"><span class="pre">make</span> <span class="pre">latexpdf</span></code>
+certifique-se de que os pré-requisitos de fontes usados pelo latex
+estejam presentes.</p>
+<p>A versão online HTML também está disponível em:
+<a class="reference external" href="http://aria2.sourceforge.net/manual/en/html/">Original em Inglês</a>
+e nas traduções em:
+(<a class="reference external" href="http://aria2.sourceforge.net/manual/pt/html/">Português</a> e
+<a class="reference external" href="http://aria2.sourceforge.net/manual/ru/html/">Russo</a>).</p>
+</div>
+<div class="section" id="bittorrrent">
+<h1>BitTorrrent<a class="headerlink" href="#bittorrrent" title="Link permanente para este título">¶</a></h1>
+<div class="section" id="sobre-nome-de-arquivos">
+<h2>Sobre Nome de arquivos<a class="headerlink" href="#sobre-nome-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<p>O nome do arquivo que será baixado é determinado da seguinte maneira:</p>
+<dl class="docutils">
+<dt>modo arquivo simples</dt>
+<dd>O a chave &quot;name&quot; está presento no arquivo .torrent, o nome do
+arquivo será o valor da chave &quot;name&quot;. De outra maneira o nome
+do arquivo será baseado no arquivo .torrent mais o sufixo
+&quot;.file&quot;. Exemplo: arquivo .torrent é &quot;brasil.torrrent&quot;, então
+o nome do arquivo baixado será: &quot;brasil.torrent.file&quot;.  O
+diretório onde será armazenado o arquivo pode ser especificado
+através da opção -d.</dd>
+<dt>modo arquivos múltiplos</dt>
+<dd>A estrutura completa diretório/arquivo mencionada no arquivo .torrent será
+creada. O diretório base que conterá toda estrutura de diretórios e
+arquivos baixados, pode ser especificado através da opção -d.
+Antes do download iniciar a estrutura completa dos diretórios necessários
+ao download será criada. Por padrão aria2 abre no mínimo 100 arquivos
+mencionados no arquivo .torrent e diretamente executa gravação e leitura
+desses arquivos. O número máximo de arquivos para serem abertos
+simultaneamente pode ser controlado através da opção
+:option:<code class="docutils literal"><span class="pre">--bt-max-open-files</span></code>.</dd>
+</dl>
+</div>
+<div class="section" id="dht">
+<h2>DHT<a class="headerlink" href="#dht" title="Link permanente para este título">¶</a></h2>
+<p>aria2 suporte DHT. Por padrão, a tabela de roteamento
+para IPv4 DHT é salva em <code class="docutils literal"><span class="pre">$HOME/.aria2/dht.dat</span></code> e a tabela de
+roteamento para IPv6 DHT é salva em <code class="docutils literal"><span class="pre">$HOME/.aria2/dht6.dat</span></code>.
+aria2 utiliza o mesmo número de porta para ouvir ambos
+IPv4 e IPv6 DHT.</p>
+</div>
+<div class="section" id="rastreador-udp">
+<h2>Rastreador UDP<a class="headerlink" href="#rastreador-udp" title="Link permanente para este título">¶</a></h2>
+<p>Rastreador UDP é habilitado quando DHT IPv4 é habilitado. O número
+da porta do rastreador UDP é compartilhado com DHT. Usar opção
+:option:<code class="docutils literal"><span class="pre">--dht-listen-port</span></code> para modificar o número da porta.</p>
+</div>
+<div class="section" id="outras-informacoes-importantes">
+<h2>Outras informações importantes<a class="headerlink" href="#outras-informacoes-importantes" title="Link permanente para este título">¶</a></h2>
+<ul class="simple">
+<li>Se a opção -o é usada para mudar o nome do arquivo de saida
+.torrent não o nome do arquivo dentro do arquivo .torrent.
+Para esta finalidade utilizar opção :option:<code class="docutils literal"><span class="pre">--index-out</span></code>.</li>
+<li>Os números de portas padrões que o aria2 utiliza para TCP e UDP
+estão no intervalo de 6881 até 6999 (6881-6999).</li>
+<li>aria2 não configura automaticamente port-forwarding.
+Por favor configurar manualmente seu roteador ou firewall.</li>
+<li>O número máximo de é 55. Este limite pode ser excedido quando
+a taxa de download é muito baixa. Esta taxa de download pode ser
+ajustada com a opção :option:<code class="docutils literal"><span class="pre">--bt-request-peer-speed-limit</span></code>.</li>
+<li>Desde a versão 0.10.0, aria2 parou de enviar mensagem de
+requisição após o download seletivo completar-se.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="metalink">
+<h1>Metalink<a class="headerlink" href="#metalink" title="Link permanente para este título">¶</a></h1>
+<p>A implementação atual suporte HTTP, HTTPS, FTP e BitTorrent.  Outros
+protocolos P2P são ignorados. São suportados documentos das versões
+Metalink4 e Metalink 3.0.</p>
+<p>Para validação de (checksum) são suportados: md5, sha-1, sha-224,
+sha-256, sha-384 e sha-512. Se múltiplos algoritmos de hast
+são fornecidos aria2 utiliza o mais robusto. Se a validação do
+checksum falhar totalmente aria2 não tentará mais fazer download e
+terminará o processamento com código de retorno diferente de zero.</p>
+<p>As preferências de usuário suportadas são versão, idioma, local,
+protocolo e sistema operacional.</p>
+<p>Se verificação (checksum) de (chunk) são fornecidas em um arquivo
+Metalink, aria2 automaticamente valida (chunk) partes dos dados
+durante o download. Esse comportamente pode ser desligado através
+de opção da linha de comando.</p>
+<p>Se uma assinatura (certificado) é incluida em um arquivo Metalink,
+aria2 salva a assinatura como um arquivo após a conclusão do download.
+O nome do arquivo terá o sufixo &quot;.sig&quot;. Caso já exista não será salvo.</p>
+<p>Em torrent de múltiplos arquivos Metalink4, podem aparecer no elemento
+metalink:metaurl.  Uma vez que aria2 não faz download de 2 Torrents
+iguais ao mesmo tempo, aria2 agrupa arquivos em elementos metalink:file
+os quais tem o mesmo metaurl BitTorrent e serão baixados de um
+simples BitTorrent (swarm).
+Isto basicamente ocorre para download de multiplos arquivos Torrent quando
+há seleção de arquivo(s), portanto arquivos adjacentes que não estão
+no documento Metalink mas que compartilham a mesma (peça ou pedaço)
+do arquivo selecionado também serão baixados e criados.</p>
+<p>Se uma URI relativa é especificada em um elemento metalink:url ou
+metalink:metaurl, aria2 usa a URI do arquivo Metalink como URI base
+para resolver a URI relativa. Se a URI relativa encontra-se em um
+arquivo Metalink que é lido do disco local, aria2 usa o valor da
+opção <code class="docutils literal"><span class="pre">--metalink-base-uri</span></code> como URI base.  Se essa opção não é
+especificada a URI relativa será ignorada.</p>
+</div>
+<div class="section" id="metalink-http">
+<h1>Metalink / HTTP<a class="headerlink" href="#metalink-http" title="Link permanente para este título">¶</a></h1>
+<p>Esta versão utiliza links rel=duplicate. aria2 interpreta
+os campos do cabeçalho do Digest e verifica onde o valor do digest
+confere com outras fontes. Se houver diferença, derruba a conexão.
+aria2 também utiliza esse valor do digest para executar verificação do
+checksum após o download terminar. aria2 reconhece valor geo.
+Para sobrepor o valor de sua preferência utilize a opção
+<code class="docutils literal"><span class="pre">--metalink-location</span></code>.</p>
+</div>
+<div class="section" id="netrc">
+<h1>netrc<a class="headerlink" href="#netrc" title="Link permanente para este título">¶</a></h1>
+<p>O suporte netrc é habilitado por padrão para HTTP, HTTPS e FTP.  Para
+desabilitar especificar opção -n na linha de comando.
+Seu arquivo .netrc precisa possuir permissões corretas (600).</p>
+</div>
+<div class="section" id="websocket">
+<h1>WebSocket<a class="headerlink" href="#websocket" title="Link permanente para este título">¶</a></h1>
+<p>O servidor WebSocket intrínseco no aria2 implementa a especificação
+definida na RFC 6455. O protocolo suportado refere-se a versão 13.</p>
+</div>
+<div class="section" id="referencias">
+<h1>Referências<a class="headerlink" href="#referencias" title="Link permanente para este título">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://aria2.sourceforge.net/manual/en/html/">aria2 Manual Inglês</a> original inglês</li>
+<li><a class="reference external" href="http://aria2.sourceforge.net/manual/ru/html/">aria2 Manual Russo</a> versão russo</li>
+<li><a class="reference external" href="http://aria2.sourceforce.net/manual/pt/html/">aria2 Manual Português</a> versão português</li>
+<li><a class="reference external" href="http://aria2.sourceforge.net/">http://aria2.sourceforge.net/</a></li>
+<li><a class="reference external" href="http://sourceforge.net/apps/trac/aria2/wiki">http://sourceforge.net/apps/trac/aria2/wiki</a></li>
+<li><a class="reference external" href="https://github.com/tatsuhiro-t/aria2">https://github.com/tatsuhiro-t/aria2</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc959">RFC 959 FILE TRANSFER PROTOCOL (FTP)</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc1738">RFC 1738 Uniform Resource Locators (URL)</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc2428">RFC 2428 FTP Extensions for IPv6 and NATs</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc3659">RFC 3659 Extensions to FTP</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc3986">RFC 3986 Uniform Resource Identifier (URI): Generic Syntax</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc4038">RFC 4038 Application Aspects of IPv6 Transition</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc5854">RFC 5854 The Metalink Download Description Format</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc6249">RFC 6249 Metalink/HTTP: Mirrors and Hashes</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc6265">RFC 6265 HTTP State Management Mechanism</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc6455">RFC 6455 The WebSocket Protocol</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0003.html">The BitTorrent Protocol Specification</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0005.html">BitTorrent: DHT Protocol</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0006.html">BitTorrent: Fast Extension</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0007.html">BitTorrent: IPv6 Tracker Extension</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0009.html">BitTorrent: Extension for Peers to Send Metadata Files</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0010.html">BitTorrent: Extension Protocol</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0012.html">BitTorrent: Multitracker Metadata Extension</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0019.html">BitTorrent: WebSeed - HTTP/FTP Seeding (GetRight style)</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0027.html">BitTorrent: Private Torrents</a></li>
+<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0032.html">BitTorrent: BitTorrent DHT Extensions for IPv6</a></li>
+<li><a class="reference external" href="http://wiki.vuze.com/w/Message_Stream_Encryption">BitTorrent: Message Stream Encryption</a></li>
+<li><a class="reference external" href="http://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia: A Peer-to-peer Information System Based on the  XOR Metric</a></li>
+</ul>
+<p>versão revisada  em 30.março.2013    por <a class="reference external" href="mailto:gsavix&#37;&#52;&#48;gmail&#46;com">gsavix<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p>Anotação sobre divergência entre Manual e o aria2:</p>
+<p>Esta página de manual pode não necessariamente conter a última informação.
+Caso haja discrepância entre alguma informação do manual e o aria2, por
+favor refira-se a versão em inglês resultante do comando <code class="docutils literal"><span class="pre">man</span> <span class="pre">aria2c</span></code></p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="aria2c.html" class="btn btn-neutral" title="aria2c(1)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.19.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
