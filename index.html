@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>aria2</title>
+  <meta name="author" content="Tatsuhiro Tsujikawa">
+
+  
+  <meta name="description" content="aria2 is a lightweight multi-protocol &amp; multi-source command-line
+download utility. It supports HTTP/HTTPS, FTP, SFTP,
+BitTorrent and Metalink. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aria2.sourceforge.net/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="aria2" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">aria2</a></h1>
+  
+    <h2>The next generation download utility.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="aria2.sourceforge.net">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Top</a></li>
+  <li><a href="/manual/en/html/index.html">Documentation</a></li>
+  <li><a href="/manual/ru/html/index.html">Документация</a></li>
+  <li><a href="/manual/pt/html/index.html">Documentação</a></li>
+  <li><a href="https://github.com/tatsuhiro-t/aria2/issues">Bugs</a></li>
+  <li><a href="https://github.com/tatsuhiro-t/aria2">Source</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <p>aria2 is a <strong>lightweight</strong> multi-protocol &amp; multi-source command-line
+<strong>download utility</strong>. It supports <strong>HTTP/HTTPS</strong>, <strong>FTP</strong>, <strong>SFTP</strong>,
+<strong>BitTorrent</strong> and <strong>Metalink</strong>. aria2 can be manipulated via built-in
+<strong>JSON-RPC</strong> and <strong>XML-RPC</strong> interfaces.</p>
+
+<h2>Download</h2>
+
+<p>Download <a href="https://github.com/tatsuhiro-t/aria2/releases/tag/release-1.19.3">version 1.19.3</a>.
+There you can download source distribution and binaries for OS X, Windows and Android.</p>
+
+<p>The legacy releases earlier than 1.19.1 are available
+<a href="http://sourceforge.net/projects/aria2/files/stable/">here</a>.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li><p><strong>Multi-Connection Download</strong>.
+aria2 can download a file
+from multiple sources/protocols and tries to utilize your
+maximum download bandwidth.  Really speeds up your download
+experience.</p></li>
+<li><p><strong>Lightweight</strong>.
+aria2 doesn&rsquo;t require much memory and CPU time.  When disk cache is
+off, the physical memory usage is typically 4MiB (normal
+HTTP/FTP downloads) to 9MiB (BitTorrent downloads).  CPU usage in
+BitTorrent with download speed of 2.8MiB/sec is around 6%.</p></li>
+<li><p><strong>Fully Featured BitTorrent Client</strong>.
+All features you want in BitTorrent client are available: DHT,
+PEX, Encryption, Magnet URI, Web-Seeding, Selective Downloads,
+Local Peer Discovery and UDP tracker.</p></li>
+<li><p><strong>Metalink Enabled</strong>.
+aria2 supports <a href="http://tools.ietf.org/html/rfc5854">The Metalink Download Description Format</a>
+(aka Metalink v4),
+Metalink version 3 and
+<a href="http://tools.ietf.org/html/rfc6249">Metalink/HTTP</a>.
+Metalink offers the file verification, HTTP/FTP/SFTP/BitTorrent integration
+and the various configurations for language, location, OS, etc.</p></li>
+<li><p><strong>Remote Control</strong>.
+aria2 supports RPC interface to control the aria2 process.
+The supported interfaces are JSON-RPC (over HTTP and WebSocket)
+and XML-RPC.</p></li>
+</ul>
+
+
+<h2>Usage Examples</h2>
+
+<p>Command-line scares you off? No, aria2 is really easy to use!!</p>
+
+<p>Download from WEB:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://example.org/mylinux.iso</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Download from 2 sources:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://a/f.iso ftp://b/f.iso</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Download using 2 connections per host:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c -x2 http://a/f.iso</span></code></pre></td></tr></table></div></figure>
+
+
+<p>BitTorrent:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://example.org/mylinux.torrent</span></code></pre></td></tr></table></div></figure>
+
+
+<p>BitTorrent Magnet URI:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c 'magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Metalink:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://example.org/mylinux.metalink</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Download URIs found in text file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c -i uris.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Related Projects</h2>
+
+<ul>
+<li><a href="https://github.com/tatsuhiro-t/apt-metalink"><strong>apt-metalink</strong></a>: Faster package downloads for Debian/Ubuntu</li>
+<li><a href="http://xyne.archlinux.ca/projects/powerpill/"><strong>powerpill</strong></a>: Pacman wrapper for parallel and segmented downloads.</li>
+<li><a href="http://xyne.archlinux.ca/projects/python3-aria2jsonrpc/"><strong>python3-aria2jsonrpc</strong></a>: A wrapper class around Aria2&rsquo;s JSON RPC interface.</li>
+</ul>
+
+
+<h2>UI Frontends</h2>
+
+<ul>
+<li><a href="https://github.com/ziahamza/webui-aria2"><strong>webui-aria2</strong></a>: Web browser interface for aria2 (2012 GSOC project)</li>
+<li><a href="http://uget.visuex.com/"><strong>uGet</strong></a>: the Linux Download Manager</li>
+</ul>
+
+
+<h2>License</h2>
+
+<p>This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.</p>
+
+  
+    <footer>
+      
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>SF.net</h1>
+  <p><a href="http://sourceforge.net/projects/aria2"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=159897&amp;type=11" width="120" height="30" style="border:none" alt="Get aria2 - CLI Metalink/BitTorrent client at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a></p>
+</section>
+<section>
+  <h1>Stats</h1>
+  <script type="text/javascript" src="http://www.ohloh.net/p/8622/widgets/project_partner_badge.js"></script>
+  <script type="text/javascript" src="http://www.ohloh.net/p/8622/widgets/project_users.js?style=blue"></script>
+</section>
+
+<section>
+  <h1>Translation</h1>
+  <p>Localize aria2 at <a href="https://translations.launchpad.net/aria2/trunk/+pots/aria2">launchpad.net</a>.
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Tatsuhiro Tsujikawa -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[aria2]]></title>
+  <link href="http://aria2.sourceforge.net/atom.xml" rel="self"/>
+  <link href="http://aria2.sourceforge.net/"/>
+  <updated>2015-12-27T16:46:52+09:00</updated>
+  <id>http://aria2.sourceforge.net/</id>
+  <author>
+    <name><![CDATA[Tatsuhiro Tsujikawa]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>

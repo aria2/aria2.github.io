@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>aria2</title>
+  <meta name="author" content="Tatsuhiro Tsujikawa">
+
+  
+  <meta name="description" content="aria2 は 軽量で 複数サーバーから分割ダウンロードが可能なコマンドライン ダウンロード ユーティリティ. HTTP/HTTPS, FTP, SFTP, BitTorrent, Metalink に対応.
+aria2 は JSON-RPC と XML-RPC インターフェースを搭載. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://aria2.sourceforge.net/index-ja.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="aria2" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">aria2</a></h1>
+  
+    <h2>The next generation download utility.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="aria2.sourceforge.net">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Top</a></li>
+  <li><a href="/manual/en/html/index.html">Documentation</a></li>
+  <li><a href="/manual/ru/html/index.html">Документация</a></li>
+  <li><a href="/manual/pt/html/index.html">Documentação</a></li>
+  <li><a href="https://github.com/tatsuhiro-t/aria2/issues">Bugs</a></li>
+  <li><a href="https://github.com/tatsuhiro-t/aria2">Source</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <p>aria2 は <strong>軽量で</strong> 複数サーバーから分割ダウンロードが可能なコマンドライン <strong>ダウンロード</strong> ユーティリティ. <strong>HTTP/HTTPS</strong>, <strong>FTP</strong>, <strong>SFTP</strong>, <strong>BitTorrent</strong>, <strong>Metalink</strong> に対応.
+aria2 は <strong>JSON-RPC</strong> と <strong>XML-RPC</strong> インターフェースを搭載.
+aria2 をリモートコントロールできる.</p>
+
+<h2>ダウンロード</h2>
+
+<p><a href="https://github.com/tatsuhiro-t/aria2/releases/tag/release-1.19.3">version 1.19.3</a> をダウンロードしよう.
+ソースコード, OS X バイナリ, Windows バイナリおよび Android バイナリがダウンロードできる.</p>
+
+<p>1.19.0 以前のリリースは<a href="http://sourceforge.net/projects/aria2/files/stable/">ここ</a>.</p>
+
+<h2>フィーチャー</h2>
+
+<ul>
+<li><p><strong>分割ダウンロード</strong>.
+aria2 は複数のサーバー / プロトコルからファイルをダウンロードできる. 回線速度を有効に使った高速ダウンロードを実現.</p></li>
+<li><p><strong>軽量</strong>.
+aria2 はメモリや CPU 資源を大きく要求しない. ディスクキャッシュがオフの時, HTTP/FTP ダウンロードでのメモリ使用は通常 4MiB, BitTorrent ダウンロードで 9MiB. CPU 使用率は, BitTorrent ダウンロードで 2.8MiB/sec で 6% 前後.</p></li>
+<li><p><strong>BitTorrent</strong>.
+必要な機能がすべてそろった BitTorrent プロトコルを実装: DHT, PEX, Encryption, Magnet URI, Web-Seeding, ファイル選択ダウンロード, Local Peer Discovery, UDP トラッカー.</p></li>
+<li><p><strong>Metalink サポート</strong>.
+aria2 は
+<a href="http://tools.ietf.org/html/rfc5854">The Metalink Download Description Format</a>
+(aka Metalink v4),
+Metalink version 3 および
+<a href="http://tools.ietf.org/html/rfc6249">Metalink/HTTP</a>.
+をサポート. Metalink は ファイル検証, HTTP/FTP/SFTP/BitTorrent から同時ダウンロード, 言語, 場所, OS, etc を指定するコンフィグレーション の機能を提供する.</p></li>
+<li><p><strong>リモートコントロール</strong>.
+aria2 は RPC インターフェースをサポートしていて, aria2 プロセスをコントロールすることができる. サポートしているインターフェースは, JSON-RPC (over HTTP and WebSocket) と XML-RPC.</p></li>
+</ul>
+
+
+<h2>使い方</h2>
+
+<p>コマンドラインだからといって物怖じすることはない. aria2 を使うのはわりと簡単.</p>
+
+<p>WEB からダウンロード:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://example.org/mylinux.iso</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2 サーバーからダウンロード:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://a/f.iso ftp://b/f.iso</span></code></pre></td></tr></table></div></figure>
+
+
+<p>1 サーバー当り 2 接続使ってダウンロード:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c -x2 http://a/f.iso</span></code></pre></td></tr></table></div></figure>
+
+
+<p>BitTorrent:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://example.org/mylinux.torrent</span></code></pre></td></tr></table></div></figure>
+
+
+<p>BitTorrent Magnet URI:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c 'magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Metalink:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c http://example.org/mylinux.metalink</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ファイル中の URI をダウンロード:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ aria2c -i uris.txt</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>関連プロジェクト</h2>
+
+<ul>
+<li><a href="https://github.com/tatsuhiro-t/apt-metalink"><strong>apt-metalink</strong></a>: Faster package downloads for Debian/Ubuntu</li>
+<li><a href="http://xyne.archlinux.ca/projects/powerpill/"><strong>powerpill</strong></a>: Pacman wrapper for parallel and segmented downloads.</li>
+<li><a href="http://xyne.archlinux.ca/projects/python3-aria2jsonrpc/"><strong>python3-aria2jsonrpc</strong></a>: A wrapper class around Aria2&rsquo;s JSON RPC interface.</li>
+</ul>
+
+
+<h2>UI フロントエンド</h2>
+
+<ul>
+<li><a href="https://github.com/ziahamza/webui-aria2"><strong>webui-aria2</strong></a>: Web browser interface for aria2 (2012 GSOC project)</li>
+<li><a href="http://uget.visuex.com/"><strong>uGet</strong></a>: the Linux Download Manager</li>
+</ul>
+
+
+<h2>ライセンス</h2>
+
+<p>This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.</p>
+
+  
+    <footer>
+      
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>SF.net</h1>
+  <p><a href="http://sourceforge.net/projects/aria2"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=159897&amp;type=11" width="120" height="30" style="border:none" alt="Get aria2 - CLI Metalink/BitTorrent client at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a></p>
+</section>
+<section>
+  <h1>Stats</h1>
+  <script type="text/javascript" src="http://www.ohloh.net/p/8622/widgets/project_partner_badge.js"></script>
+  <script type="text/javascript" src="http://www.ohloh.net/p/8622/widgets/project_users.js?style=blue"></script>
+</section>
+
+<section>
+  <h1>Translation</h1>
+  <p>Localize aria2 at <a href="https://translations.launchpad.net/aria2/trunk/+pots/aria2">launchpad.net</a>.
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Tatsuhiro Tsujikawa -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
