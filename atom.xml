@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[aria2]]></title>
-  <link href="http://aria2.sourceforge.net/atom.xml" rel="self"/>
-  <link href="http://aria2.sourceforge.net/"/>
-  <updated>2015-12-27T16:46:52+09:00</updated>
-  <id>http://aria2.sourceforge.net/</id>
+  <link href="https://aria2.github.io/atom.xml" rel="self"/>
+  <link href="https://aria2.github.io/"/>
+  <updated>2015-12-27T17:19:03+09:00</updated>
+  <id>https://aria2.github.io/</id>
   <author>
     <name><![CDATA[Tatsuhiro Tsujikawa]]></name>
     
