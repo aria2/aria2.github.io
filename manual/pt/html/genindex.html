@@ -1,0 +1,3954 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Índice &mdash; aria2 1.19.3 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="aria2 1.19.3 documentação" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aria2
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.19.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html">aria2 - Utilitário para Download Super Ultra Rápido</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#aria2-para-dispositivos-android">aria2 para dispositivos Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#para-gerar-a-documentacao">Para Gerar a documentação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#bittorrrent">BitTorrrent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#metalink">Metalink</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#metalink-http">Metalink / HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#netrc">netrc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#websocket">WebSocket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="README.html#referencias">Referências</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">aria2</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li></li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+
+<h1 id="index">Índice</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#Símbolos"><strong>Símbolos</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#X"><strong>X</strong></a>
+ 
+</div>
+<h2 id="Símbolos">Símbolos</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    --all-proxy-passwd=&lt;SENHA&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--all-proxy-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --all-proxy-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--all-proxy-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --all-proxy=&lt;PROXY&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--all-proxy">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --allow-overwrite[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--allow-overwrite">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --allow-piece-length-change[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--allow-piece-length-change">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --always-resume[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--always-resume">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --async-dns-server=&lt;ENDEREÇO-IP&gt;[,...]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--async-dns-server">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --async-dns[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--async-dns">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --auto-file-renaming[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--auto-file-renaming">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --auto-save-interval=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--auto-save-interval">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-enable-lpd[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-enable-lpd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-exclude-tracker=&lt;URI&gt;[,...]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-exclude-tracker">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-external-ip=&lt;ENDEREÇO-IP&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-external-ip">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-hash-check-seed[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-hash-check-seed">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-lpd-interface=&lt;INTERFACE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-lpd-interface">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-max-open-files=&lt;NÚMERO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-max-open-files">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-max-peers=&lt;NÚMERO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-max-peers">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-metadata-only[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-metadata-only">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-min-crypto-level=plain|arc4
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-min-crypto-level">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-prioritize-piece=head[=&lt;TAMANHO&gt;],tail[=&lt;TAMANHO&gt;]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-prioritize-piece">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-remove-unselected-file[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-remove-unselected-file">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-request-peer-speed-limit=&lt;VELOCIDADE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-request-peer-speed-limit">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-require-crypto[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-require-crypto">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-save-metadata[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-save-metadata">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-seed-unverified[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-seed-unverified">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-stop-timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-stop-timeout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-tracker-connect-timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker-connect-timeout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-tracker-interval=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker-interval">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-tracker-timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker-timeout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --bt-tracker=&lt;URI&gt;[,...]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ca-certificate=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ca-certificate">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --certificate=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--certificate">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --check-certificate[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--check-certificate">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --checksum=&lt;TIPO&gt;=&lt;ALGORITMO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--checksum">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --conditional-get[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--conditional-get">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --conf-path=&lt;PATH&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--conf-path">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --connect-timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--connect-timeout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --console-log-level=&lt;LEVEL&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--console-log-level">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --deferred-input[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--deferred-input">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-entry-point6=&lt;SERVIDOR&gt;:&lt;PORTA&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-entry-point6">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-entry-point=&lt;SERVIDOR&gt;:&lt;PORTA&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-entry-point">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-file-path6=&lt;PATH&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-file-path6">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-file-path=&lt;CAMINHO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-file-path">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-listen-addr6=&lt;ADDR&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-listen-addr6">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-listen-port=&lt;PORT&gt;...
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-listen-port">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dht-message-timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dht-message-timeout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --disable-ipv6[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--disable-ipv6">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --disk-cache=&lt;SIZE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--disk-cache">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --download-result=&lt;OPT&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--download-result">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --dry-run[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--dry-run">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-async-dns6[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-async-dns6">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-dht6[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-dht6">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-dht[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-dht">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-http-keep-alive[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-http-keep-alive">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-http-pipelining[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-http-pipelining">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-mmap[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-mmap">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-peer-exchange[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-peer-exchange">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --enable-rpc[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--enable-rpc">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --event-poll=&lt;POLL&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--event-poll">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --file-allocation=&lt;METHOD&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--file-allocation">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --follow-metalink=true|false|mem
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--follow-metalink">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --follow-torrent=true|false|mem
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--follow-torrent">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --force-save[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--force-save">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-passwd=&lt;SENHA_FTP&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-proxy-passwd=&lt;PASSWD&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-proxy-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-proxy-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-proxy-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-proxy=&lt;PROXY&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-proxy">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-reuse-connection[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-reuse-connection">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-type=&lt;TYPE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-type">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --ftp-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --gid=&lt;GID&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--gid">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --hash-check-only[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--hash-check-only">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --header=&lt;HEADER&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--header">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-accept-gzip[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-accept-gzip">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-auth-challenge[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-auth-challenge">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-no-cache[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-no-cache">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-passwd=&lt;PASSWD&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-proxy-passwd=&lt;SENHA&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-proxy-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-proxy-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-proxy-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-proxy=&lt;PROXY&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-proxy">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --http-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--http-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --https-proxy-passwd=&lt;SENHA&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--https-proxy-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --https-proxy-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--https-proxy-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --https-proxy=&lt;PROXY&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--https-proxy">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --human-readable[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--human-readable">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --interface=&lt;INTERFACE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--interface">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --listen-port=&lt;PORT&gt;...
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--listen-port">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --load-cookies=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--load-cookies">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    --log-level=&lt;LEVEL&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--log-level">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --lowest-speed-limit=&lt;VELOCIDADE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--lowest-speed-limit">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --max-download-limit=&lt;VELOCIDADE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--max-download-limit">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --max-download-result=&lt;NÚMERO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--max-download-result">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --max-file-not-found=&lt;NÚMERO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--max-file-not-found">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --max-overall-download-limit=&lt;VELOCIDADE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--max-overall-download-limit">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --max-overall-upload-limit=&lt;VELOCIDADE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--max-overall-upload-limit">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --max-resume-failure-tries=&lt;N&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--max-resume-failure-tries">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-base-uri=&lt;URI&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-base-uri">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-enable-unique-protocol[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-enable-unique-protocol">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-language=&lt;LANGUAGE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-language">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-location=&lt;LOCATION&gt;[,...]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-location">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-os=&lt;OS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-os">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-preferred-protocol=&lt;PROTO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-preferred-protocol">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --metalink-version=&lt;VERSION&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-version">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --no-conf[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--no-conf">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --no-file-allocation-limit=&lt;TAMANHO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--no-file-allocation-limit">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --no-proxy=&lt;DOMÍNIOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--no-proxy">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --on-bt-download-complete=&lt;COMMAND&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--on-bt-download-complete">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --on-download-complete=&lt;COMMAND&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-complete">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --on-download-error=&lt;COMMAND&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-error">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --on-download-pause=&lt;COMMAND&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-pause">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --on-download-start=&lt;COMMAND&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-start">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --on-download-stop=&lt;COMMAND&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-stop">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --pause[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--pause">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --peer-id-prefix=&lt;PEER_ID_PREFIX&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--peer-id-prefix">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --piece-length=&lt;LENGTH&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--piece-length">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --private-key=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--private-key">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --proxy-method=&lt;MÉTODO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--proxy-method">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --realtime-chunk-checksum[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--realtime-chunk-checksum">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --referer=&lt;REFERER&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--referer">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --remove-control-file[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--remove-control-file">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --retry-wait=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--retry-wait">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --reuse-uri[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--reuse-uri">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-allow-origin-all[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-allow-origin-all">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-certificate=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-certificate">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-listen-all[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-listen-all">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-listen-port=&lt;PORT&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-listen-port">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-max-request-size=&lt;TAMANHO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-max-request-size">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-passwd=&lt;PASSWD&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-passwd">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-private-key=&lt;FILE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-private-key">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-save-upload-metadata[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-save-upload-metadata">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-secure[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-secure">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --rpc-user=&lt;USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-user">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --save-cookies=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--save-cookies">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --save-session-interval=&lt;SEC&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--save-session-interval">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --save-session=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--save-session">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --seed-ratio=&lt;RATIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--seed-ratio">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --seed-time=&lt;MINUTES&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--seed-time">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --select-file=&lt;INDEX&gt;...
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--select-file">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --server-stat-if=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--server-stat-if">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --server-stat-of=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--server-stat-of">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --server-stat-timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--server-stat-timeout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --show-console-readout[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--show-console-readout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --stop-with-process=&lt;PID&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--stop-with-process">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --stop=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--stop">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --stream-piece-selector=&lt;SELECTOR&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--stream-piece-selector">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --summary-interval=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--summary-interval">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --truncate-console-readout[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--truncate-console-readout">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --uri-selector=&lt;SELECTOR&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--uri-selector">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    --use-head[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--use-head">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -c, --continue[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-c">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -D, --daemon[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-D">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -d, --dir=&lt;DIR&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-d">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -h, --help[=&lt;TÓPICO&gt;|&lt;PALAVRA-CHAVE&gt;]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-h">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -i, --input-file=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-i">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -j, --max-concurrent-downloads=&lt;N&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-j">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -k, --min-split-size=&lt;TAMANHO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-k">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -l, --log=&lt;LOG&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-l">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -m, --max-tries=&lt;NÚMERO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-m">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -M, --metalink-file=&lt;METALINK_FILE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-M">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -n, --no-netrc[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-n">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -O, --index-out=&lt;INDEX&gt;=&lt;PATH&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-O">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -o, --out=&lt;ARQUIVO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-o">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -p, --ftp-pasv[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-p">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -P, --parameterized-uri[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-P">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -q, --quiet[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-q">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -R, --remote-time[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-R">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -S, --show-files[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-S">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -s, --split=&lt;N&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-s">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -t, --timeout=&lt;SEGUNDOS&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-t">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -T, --torrent-file=&lt;TORRENT_FILE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-T">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -u, --max-upload-limit=&lt;VELOCIDADE&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-u">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -U, --user-agent=&lt;AGENTE_USUÁRIO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-U">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -V, --check-integrity[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-V">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -v, --version
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-v">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -x, --max-connection-per-server=&lt;NÚMERO&gt;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-x">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    -Z, --force-sequential[=true|false]
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption-Z">opção de linha de comando</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Ambiente
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-4">Variáveis</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    android
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-2">aria2c;, compilação cross</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    android;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">aria2 emulador terminal</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">execução aria2</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">instalação aria2</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">jackpal emulador terminal</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">script execução aria2</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    aria2
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">android;, execução</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">android;, instalação</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-8">arquivo controle</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-9">arquivo entrada</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">emulador terminal android;</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="aria2c.html#aria2.addMetalink">aria2.addMetalink() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.addTorrent">aria2.addTorrent() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.addUri">aria2.addUri() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.changeGlobalOption">aria2.changeGlobalOption() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.changeOption">aria2.changeOption() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.changePosition">aria2.changePosition() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.changeUri">aria2.changeUri() (função interna)</a>
+  </dt>
+
+      
+  <dt>
+    aria2.conf
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-5">arquivo configuração</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="aria2c.html#aria2.forcePause">aria2.forcePause() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.forcePauseAll">aria2.forcePauseAll() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.forceRemove">aria2.forceRemove() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.forceShutdown">aria2.forceShutdown() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getFiles">aria2.getFiles() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getGlobalOption">aria2.getGlobalOption() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getGlobalStat">aria2.getGlobalStat() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getOption">aria2.getOption() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getPeers">aria2.getPeers() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getServers">aria2.getServers() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getSessionInfo">aria2.getSessionInfo() (função interna)</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="aria2c.html#aria2.getUris">aria2.getUris() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.getVersion">aria2.getVersion() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.onBtDownloadComplete">aria2.onBtDownloadComplete() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.onDownloadComplete">aria2.onDownloadComplete() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.onDownloadError">aria2.onDownloadError() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.onDownloadPause">aria2.onDownloadPause() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.onDownloadStart">aria2.onDownloadStart() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.onDownloadStop">aria2.onDownloadStop() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.pause">aria2.pause() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.pauseAll">aria2.pauseAll() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.purgeDownloadResult">aria2.purgeDownloadResult() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.remove">aria2.remove() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.removeDownloadResult">aria2.removeDownloadResult() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.shutdown">aria2.shutdown() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.tellActive">aria2.tellActive() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.tellStatus">aria2.tellStatus() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.tellStopped">aria2.tellStopped() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.tellWaiting">aria2.tellWaiting() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.unpause">aria2.unpause() (função interna)</a>
+  </dt>
+
+      
+  <dt><a href="aria2c.html#aria2.unpauseAll">aria2.unpauseAll() (função interna)</a>
+  </dt>
+
+      
+  <dt>
+    aria2c;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-2">compilação cross android</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    arquivo
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-5">configuração, aria2.conf</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-6">configuração, dht.dat</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-7">configuração, netrc</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-8">controle, aria2</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-9">entrada, aria2</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    author
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-0">t-tujikawa_at_users_dot_sourceforge_dot_net</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Básicas;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-1">Opções</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Cabeçalho
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="index.html#index-0">Manual, Início</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    compilação android
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-2">configuração</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    compilação cross
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-2">android aria2c;</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    configuração
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-5">aria2.conf arquivo</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-2">compilação android</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-6">dht.dat arquivo</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-7">netrc arquivo</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    console;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-18">mensagens</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    controle
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-8">aria2 arquivo</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    cookies
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-3">load save;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Descrição
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">Sumário</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    dht.dat
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-6">arquivo configuração</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    double
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-4">servidor dns; android;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    emulador terminal
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">android;, aria2</a>
+  </dt>
+
+        
+  <dt><a href="README.html#index-3">android;, jackpal</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    entrada
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-9">aria2 arquivo</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    execução
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">aria2 android;</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    execução aria2
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">android;, script</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Executivo
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">Resumo</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    exemplo
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-14">json-rpc xml-rpc;</a>, <a href="aria2c.html#index-15">[1]</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    exemplos
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-13">métodos</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    gsavix@gmail.com;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-1">tradutor tradução</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Início
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="index.html#index-0">Cabeçalho Manual</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    instalação
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">aria2 android;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    interface
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-11">rpc;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    jackpal
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">emulador terminal android;</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    json
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-16">websocket;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    json-rpc
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-14">xml-rpc;, exemplo</a>, <a href="aria2c.html#index-15">[1]</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    load
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-3">save;, cookies</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Manual
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="index.html#index-0">Início Cabeçalho</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    mensagens
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-18">console;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    métodos
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-13">exemplos</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    netrc
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-7">arquivo configuração</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    O que
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">Por que Porque</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    opção de linha de comando
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#cmdoption--all-proxy-passwd">--all-proxy-passwd=&lt;SENHA&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--all-proxy-user">--all-proxy-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--all-proxy">--all-proxy=&lt;PROXY&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--allow-overwrite">--allow-overwrite[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--allow-piece-length-change">--allow-piece-length-change[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--always-resume">--always-resume[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--async-dns-server">--async-dns-server=&lt;ENDEREÇO-IP&gt;[,...]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--async-dns">--async-dns[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--auto-file-renaming">--auto-file-renaming[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--auto-save-interval">--auto-save-interval=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-enable-lpd">--bt-enable-lpd[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-exclude-tracker">--bt-exclude-tracker=&lt;URI&gt;[,...]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-external-ip">--bt-external-ip=&lt;ENDEREÇO-IP&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-hash-check-seed">--bt-hash-check-seed[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-lpd-interface">--bt-lpd-interface=&lt;INTERFACE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-max-open-files">--bt-max-open-files=&lt;NÚMERO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-max-peers">--bt-max-peers=&lt;NÚMERO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-metadata-only">--bt-metadata-only[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-min-crypto-level">--bt-min-crypto-level=plain|arc4</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-prioritize-piece">--bt-prioritize-piece=head[=&lt;TAMANHO&gt;],tail[=&lt;TAMANHO&gt;]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-remove-unselected-file">--bt-remove-unselected-file[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-request-peer-speed-limit">--bt-request-peer-speed-limit=&lt;VELOCIDADE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-require-crypto">--bt-require-crypto[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-save-metadata">--bt-save-metadata[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-seed-unverified">--bt-seed-unverified[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-stop-timeout">--bt-stop-timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker-connect-timeout">--bt-tracker-connect-timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker-interval">--bt-tracker-interval=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker-timeout">--bt-tracker-timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--bt-tracker">--bt-tracker=&lt;URI&gt;[,...]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ca-certificate">--ca-certificate=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--certificate">--certificate=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--check-certificate">--check-certificate[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--checksum">--checksum=&lt;TIPO&gt;=&lt;ALGORITMO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--conditional-get">--conditional-get[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--conf-path">--conf-path=&lt;PATH&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--connect-timeout">--connect-timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--console-log-level">--console-log-level=&lt;LEVEL&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--deferred-input">--deferred-input[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-entry-point6">--dht-entry-point6=&lt;SERVIDOR&gt;:&lt;PORTA&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-entry-point">--dht-entry-point=&lt;SERVIDOR&gt;:&lt;PORTA&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-file-path6">--dht-file-path6=&lt;PATH&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-file-path">--dht-file-path=&lt;CAMINHO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-listen-addr6">--dht-listen-addr6=&lt;ADDR&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-listen-port">--dht-listen-port=&lt;PORT&gt;...</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dht-message-timeout">--dht-message-timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--disable-ipv6">--disable-ipv6[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--disk-cache">--disk-cache=&lt;SIZE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--download-result">--download-result=&lt;OPT&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--dry-run">--dry-run[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-async-dns6">--enable-async-dns6[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-dht6">--enable-dht6[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-dht">--enable-dht[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-http-keep-alive">--enable-http-keep-alive[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-http-pipelining">--enable-http-pipelining[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-mmap">--enable-mmap[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-peer-exchange">--enable-peer-exchange[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--enable-rpc">--enable-rpc[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--event-poll">--event-poll=&lt;POLL&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--file-allocation">--file-allocation=&lt;METHOD&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--follow-metalink">--follow-metalink=true|false|mem</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--follow-torrent">--follow-torrent=true|false|mem</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--force-save">--force-save[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-passwd">--ftp-passwd=&lt;SENHA_FTP&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-proxy-passwd">--ftp-proxy-passwd=&lt;PASSWD&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-proxy-user">--ftp-proxy-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-proxy">--ftp-proxy=&lt;PROXY&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-reuse-connection">--ftp-reuse-connection[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-type">--ftp-type=&lt;TYPE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--ftp-user">--ftp-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--gid">--gid=&lt;GID&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--hash-check-only">--hash-check-only[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--header">--header=&lt;HEADER&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-accept-gzip">--http-accept-gzip[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-auth-challenge">--http-auth-challenge[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-no-cache">--http-no-cache[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-passwd">--http-passwd=&lt;PASSWD&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-proxy-passwd">--http-proxy-passwd=&lt;SENHA&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-proxy-user">--http-proxy-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-proxy">--http-proxy=&lt;PROXY&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--http-user">--http-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--https-proxy-passwd">--https-proxy-passwd=&lt;SENHA&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--https-proxy-user">--https-proxy-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--https-proxy">--https-proxy=&lt;PROXY&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--human-readable">--human-readable[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--interface">--interface=&lt;INTERFACE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--listen-port">--listen-port=&lt;PORT&gt;...</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--load-cookies">--load-cookies=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--log-level">--log-level=&lt;LEVEL&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--lowest-speed-limit">--lowest-speed-limit=&lt;VELOCIDADE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--max-download-limit">--max-download-limit=&lt;VELOCIDADE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--max-download-result">--max-download-result=&lt;NÚMERO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--max-file-not-found">--max-file-not-found=&lt;NÚMERO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--max-overall-download-limit">--max-overall-download-limit=&lt;VELOCIDADE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--max-overall-upload-limit">--max-overall-upload-limit=&lt;VELOCIDADE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--max-resume-failure-tries">--max-resume-failure-tries=&lt;N&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-base-uri">--metalink-base-uri=&lt;URI&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-enable-unique-protocol">--metalink-enable-unique-protocol[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-language">--metalink-language=&lt;LANGUAGE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-location">--metalink-location=&lt;LOCATION&gt;[,...]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-os">--metalink-os=&lt;OS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-preferred-protocol">--metalink-preferred-protocol=&lt;PROTO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--metalink-version">--metalink-version=&lt;VERSION&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--no-conf">--no-conf[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--no-file-allocation-limit">--no-file-allocation-limit=&lt;TAMANHO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--no-proxy">--no-proxy=&lt;DOMÍNIOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--on-bt-download-complete">--on-bt-download-complete=&lt;COMMAND&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-complete">--on-download-complete=&lt;COMMAND&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-error">--on-download-error=&lt;COMMAND&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-pause">--on-download-pause=&lt;COMMAND&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-start">--on-download-start=&lt;COMMAND&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--on-download-stop">--on-download-stop=&lt;COMMAND&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--pause">--pause[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--peer-id-prefix">--peer-id-prefix=&lt;PEER_ID_PREFIX&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--piece-length">--piece-length=&lt;LENGTH&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--private-key">--private-key=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--proxy-method">--proxy-method=&lt;MÉTODO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--realtime-chunk-checksum">--realtime-chunk-checksum[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--referer">--referer=&lt;REFERER&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--remove-control-file">--remove-control-file[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--retry-wait">--retry-wait=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--reuse-uri">--reuse-uri[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-allow-origin-all">--rpc-allow-origin-all[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-certificate">--rpc-certificate=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-listen-all">--rpc-listen-all[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-listen-port">--rpc-listen-port=&lt;PORT&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-max-request-size">--rpc-max-request-size=&lt;TAMANHO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-passwd">--rpc-passwd=&lt;PASSWD&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-private-key">--rpc-private-key=&lt;FILE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-save-upload-metadata">--rpc-save-upload-metadata[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-secure">--rpc-secure[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--rpc-user">--rpc-user=&lt;USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--save-cookies">--save-cookies=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--save-session-interval">--save-session-interval=&lt;SEC&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--save-session">--save-session=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--seed-ratio">--seed-ratio=&lt;RATIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--seed-time">--seed-time=&lt;MINUTES&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--select-file">--select-file=&lt;INDEX&gt;...</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--server-stat-if">--server-stat-if=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--server-stat-of">--server-stat-of=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--server-stat-timeout">--server-stat-timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--show-console-readout">--show-console-readout[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--stop-with-process">--stop-with-process=&lt;PID&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--stop">--stop=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--stream-piece-selector">--stream-piece-selector=&lt;SELECTOR&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--summary-interval">--summary-interval=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--truncate-console-readout">--truncate-console-readout[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--uri-selector">--uri-selector=&lt;SELECTOR&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption--use-head">--use-head[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-D">-D, --daemon[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-M">-M, --metalink-file=&lt;METALINK_FILE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-O">-O, --index-out=&lt;INDEX&gt;=&lt;PATH&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-P">-P, --parameterized-uri[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-R">-R, --remote-time[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-S">-S, --show-files[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-T">-T, --torrent-file=&lt;TORRENT_FILE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-U">-U, --user-agent=&lt;AGENTE_USUÁRIO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-V">-V, --check-integrity[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-Z">-Z, --force-sequential[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-c">-c, --continue[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-d">-d, --dir=&lt;DIR&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-h">-h, --help[=&lt;TÓPICO&gt;|&lt;PALAVRA-CHAVE&gt;]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-i">-i, --input-file=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-j">-j, --max-concurrent-downloads=&lt;N&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-k">-k, --min-split-size=&lt;TAMANHO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-l">-l, --log=&lt;LOG&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-m">-m, --max-tries=&lt;NÚMERO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-n">-n, --no-netrc[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-o">-o, --out=&lt;ARQUIVO&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-p">-p, --ftp-pasv[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-q">-q, --quiet[=true|false]</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-s">-s, --split=&lt;N&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-t">-t, --timeout=&lt;SEGUNDOS&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-u">-u, --max-upload-limit=&lt;VELOCIDADE&gt;</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-v">-v, --version</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#cmdoption-x">-x, --max-connection-per-server=&lt;NÚMERO&gt;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Opções
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-1">Básicas;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Perfil;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-10">Servidor performance</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    performance
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-10">Perfil;, Servidor</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    Por que
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">Porque, O que</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    Porque
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">O que Por que</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    proxy
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-2">servidor;</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    proxy-server;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-15">python</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    proxy;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-2">usuário senha</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    python
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-15">proxy-server;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Resumo
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">Executivo</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    RFC
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-19">RFC 5854</a>
+  </dt>
+
+        
+  <dt><a href="aria2c.html#index-17">RFC 6455</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    rpc;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-11">interface</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    save;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-3">cookies load</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    script
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-3">execução aria2 android;</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    senha
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-2">proxy;, usuário</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    Servidor
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-10">performance Perfil;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    servidor;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-2">proxy</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    Sumário
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-0">Descrição</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="aria2c.html#system.multicall">system.multicall() (função interna)</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    t-tujikawa_at_users_dot_sourceforge_dot_net
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-0">author</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="aria2c.html#index-12">terminologia</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    tradução
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-1">gsavix@gmail.com;, tradutor</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt>
+    tradutor
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="README.html#index-1">tradução gsavix@gmail.com;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    usuário
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-2">senha proxy;</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    Variáveis
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-4">Ambiente</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    websocket;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-16">json</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+<h2 id="X">X</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    xml-rpc;
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="aria2c.html#index-14">exemplo json-rpc</a>, <a href="aria2c.html#index-15">[1]</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+</tr></table>
+
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.19.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
