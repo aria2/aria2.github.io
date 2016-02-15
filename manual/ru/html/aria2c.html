@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.19.3</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.20.0</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.19.3" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.20.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                1.19.3
+                1.20.0
               </div>
             
           
@@ -294,7 +294,7 @@ stdin (стандартный поток ввода).
 Входной файл может использовать gzip-сжатие.
 Смотрите подраздел <a class="reference internal" href="#id14">Входной файл</a> для детальных пояснений.
 Также смотрите параметр <a class="reference internal" href="#cmdoption--deferred-input"><code class="xref std std-option docutils literal"><span class="pre">--deferred-input</span></code></a>.
-Также смотрите параметр <code class="xref std std-option docutils literal"><span class="pre">--save-session-file</span></code>.</p>
+Также смотрите параметр <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -457,8 +457,10 @@ BitTorrent-загрузки.
 удаленных HTTP/FTP-серверов NUM раз без получения, хотя бы одного байта,
 тогда принудительно отказывается от загрузки. Укажите <code class="docutils literal"><span class="pre">0</span></code>, чтобы
 отключить этот параметр. Этот параметр действенен только, когда
-используются HTTP/FTP-серверы.
-По умолчанию: <code class="docutils literal"><span class="pre">0</span></code></p>
+используются HTTP/FTP-серверы. Количество повторных попыток засчитывается в
+<a class="reference internal" href="#cmdoption--max-tries"><code class="xref std std-option docutils literal"><span class="pre">--max-tries</span></code></a>, таким образом, этот параметр также должен быть
+сконфигурирован.</p>
+<p>По умолчанию: <code class="docutils literal"><span class="pre">0</span></code></p>
 </dd></dl>
 
 <dl class="option">
@@ -2018,6 +2020,17 @@ aria2, пока не закончится резервирование мест�
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption--max-mmap-limit">
+<code class="descname">--max-mmap-limit</code><code class="descclassname">=&lt;SIZE&gt;</code><a class="headerlink" href="#cmdoption--max-mmap-limit" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Задать максимальный размер файла для включения mmap (см. параметр
+<a class="reference internal" href="#cmdoption--enable-mmap"><code class="xref std std-option docutils literal"><span class="pre">--enable-mmap</span></code></a>). Размер файла определяется по сумме всех файлов,
+содержащихся в одной загрузке. Например, если загрузка содержит 5 файлов, то
+размер файла - это суммарный размер этих файлов. Если размер файла строго больше
+чем размер, указанный в этом параметре, то mmap будет отключён.
+По умолчанию: <code class="docutils literal"><span class="pre">9223372036854775807</span></code></p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption--max-resume-failure-tries">
 <code class="descname">--max-resume-failure-tries</code><code class="descclassname">=&lt;N&gt;</code><a class="headerlink" href="#cmdoption--max-resume-failure-tries" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Если параметр <a class="reference internal" href="#cmdoption--always-resume"><code class="xref std std-option docutils literal"><span class="pre">--always-resume=false,</span></code></a> aria2
@@ -2701,10 +2714,11 @@ URI. Эти дополнительные строки должны начина�
 <li><a class="reference internal" href="#cmdoption-x"><code class="xref std std-option docutils literal"><span class="pre">max-connection-per-server</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-download-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-file-not-found"><code class="xref std std-option docutils literal"><span class="pre">max-file-not-found</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--max-mmap-limit"><code class="xref std std-option docutils literal"><span class="pre">max-mmap-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-resume-failure-tries"><code class="xref std std-option docutils literal"><span class="pre">max-resume-failure-tries</span></code></a></li>
-<li><a class="reference internal" href="#cmdoption-m"><code class="xref std std-option docutils literal"><span class="pre">max-tries</span></code></a></li>
 </ul>
 </td><td><ul class="simple">
+<li><a class="reference internal" href="#cmdoption-m"><code class="xref std std-option docutils literal"><span class="pre">max-tries</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-u"><code class="xref std std-option docutils literal"><span class="pre">max-upload-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--metalink-enable-unique-protocol"><code class="xref std std-option docutils literal"><span class="pre">metalink-enable-unique-protocol</span></code></a></li>
@@ -2861,10 +2875,13 @@ RPC-метода <cite>aria2.addUri</cite> будет выглядеть сле�
 параметра, как описано выше.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
-<p class="last">Проверка секретного маркера в aria2 разработана, чтобы противостоять хотя бы
+<p>Проверка секретного маркера в aria2 разработана, чтобы противостоять хотя бы
 определенное количество времени, ослаблять атаки методом грубой силы/по словарю
 против RPC-интерфейса. Поэтому рекомендуется отдавать предпочтение пакетным
 или <cite>system.multicall</cite> запросам, когда это необходимо.</p>
+<p class="last"><cite>system.listMethods</cite> может выполняться без секретного маркера. Так он
+просто возвращает все доступные методы, и ничего не изменяет, это
+безопасно без секретного маркера.</p>
 </div>
 </div>
 <div class="section" id="id19">
@@ -3136,6 +3153,9 @@ URI для каждого файла, будут добавлены имя и п
 <dd>Информация о хэше (InfoHash). Только для BitTorrent.</dd>
 <dt><code class="docutils literal"><span class="pre">numSeeders</span></code></dt>
 <dd>Количество сидов, к которым подключена aria2. Только для BitTorrent.</dd>
+<dt><code class="docutils literal"><span class="pre">seeder</span></code></dt>
+<dd><code class="docutils literal"><span class="pre">true</span></code> - если локальная конечная точка является сидом. Иначе <code class="docutils literal"><span class="pre">false</span></code>.
+Только для BitTorrent.</dd>
 <dt><code class="docutils literal"><span class="pre">pieceLength</span></code></dt>
 <dd>Размер блока в байтах.</dd>
 <dt><code class="docutils literal"><span class="pre">numPieces</span></code></dt>
@@ -3318,7 +3338,7 @@ URI для каждого файла, будут добавлены имя и п
 <dt id="aria2.getFiles">
 <code class="descclassname">aria2.</code><code class="descname">getFiles</code><span class="sig-paren">(</span><span class="optional">[</span><em>secret</em>, <span class="optional">]</span><em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#aria2.getFiles" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Этот метод возвращает список файлов загрузки, которая обозначена <em>gid</em> (строка).
-Ответ - это массив и содержит следующие ключи.
+Ответ - это массив структур, которые содержат следующие ключи.
 Значения являются строками.</p>
 <dl class="docutils">
 <dt><code class="docutils literal"><span class="pre">index</span></code></dt>
@@ -4020,6 +4040,36 @@ URI. <em>position</em> начинается с 0. Когда <em>position</em> �
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">mc</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">(&#39;2089b05ecca3d829&#39;, &#39;d2703803b52216d1&#39;)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="system.listMethods">
+<code class="descclassname">system.</code><code class="descname">listMethods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#system.listMethods" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Этот метод возвращает все доступные RPC-методы в массиве строк.
+В отличие от других методов, этот метод не требует секретный маркер.
+Это безопасно, потому что этот метод просто возвращает названия доступных
+методов.</p>
+<p><strong>Пример JSON-RPC</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;system.listMethods&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
+<span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
+<span class="go"> u&#39;result&#39;: [u&#39;aria2.addUri&#39;,</span>
+<span class="go">             u&#39;aria2.addTorrent&#39;,</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p><strong>Пример XML-RPC</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">listMethods</span><span class="p">()</span>
+<span class="go">[&#39;aria2.addUri&#39;, &#39;aria2.addTorrent&#39;, ...</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -4799,7 +4849,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.19.3',
+            VERSION:'1.20.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

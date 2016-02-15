@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.19.3 documentation</title>
+  <title>aria2c(1) &mdash; aria2 1.20.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.19.3 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.20.0 documentation" href="index.html"/>
         <link rel="next" title="aria2 - The ultra fast download utility" href="README.html"/>
         <link rel="prev" title="Aria2 Manual" href="index.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.19.3
+                1.20.0
               </div>
             
           
@@ -295,7 +295,7 @@ Input files can use gzip compression.
 When <code class="docutils literal"><span class="pre">FILE</span></code> is specified as <code class="docutils literal"><span class="pre">-</span></code>, aria2 will read the input from <code class="docutils literal"><span class="pre">stdin</span></code>.
 See the <a class="reference internal" href="#id2">Input File</a> subsection for details.
 See also the <a class="reference internal" href="#cmdoption--deferred-input"><code class="xref std std-option docutils literal"><span class="pre">--deferred-input</span></code></a> option.
-See also the <code class="xref std std-option docutils literal"><span class="pre">--save-session-file</span></code> option.</p>
+See also the <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a> option.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1937,6 +1937,18 @@ downloads. Specifying 0 means no download result is kept. Default:
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption--max-mmap-limit">
+<code class="descname">--max-mmap-limit</code><code class="descclassname">=&lt;SIZE&gt;</code><a class="headerlink" href="#cmdoption--max-mmap-limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the maximum file size to enable mmap (see
+<a class="reference internal" href="#cmdoption--enable-mmap"><code class="xref std std-option docutils literal"><span class="pre">--enable-mmap</span></code></a> option). The file size is determined by the
+sum of all files contained in one download. For example, if a
+download contains 5 files, then file size is the total size of those
+files. If file size is strictly greater than the size specified in
+this option, mmap will be disabled.
+Default: <code class="docutils literal"><span class="pre">9223372036854775807</span></code></p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption--max-resume-failure-tries">
 <code class="descname">--max-resume-failure-tries</code><code class="descclassname">=&lt;N&gt;</code><a class="headerlink" href="#cmdoption--max-resume-failure-tries" title="Permalink to this definition">¶</a></dt>
 <dd><p>When used with <a class="reference internal" href="#cmdoption--always-resume"><code class="xref std std-option docutils literal"><span class="pre">--always-resume=false,</span></code></a> aria2 downloads file from
@@ -2596,10 +2608,11 @@ of URIs. These optional lines must start with white space(s).</p>
 <li><a class="reference internal" href="#cmdoption-x"><code class="xref std std-option docutils literal"><span class="pre">max-connection-per-server</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-download-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-file-not-found"><code class="xref std std-option docutils literal"><span class="pre">max-file-not-found</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--max-mmap-limit"><code class="xref std std-option docutils literal"><span class="pre">max-mmap-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-resume-failure-tries"><code class="xref std std-option docutils literal"><span class="pre">max-resume-failure-tries</span></code></a></li>
-<li><a class="reference internal" href="#cmdoption-m"><code class="xref std std-option docutils literal"><span class="pre">max-tries</span></code></a></li>
 </ul>
 </td><td><ul class="simple">
+<li><a class="reference internal" href="#cmdoption-m"><code class="xref std std-option docutils literal"><span class="pre">max-tries</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-u"><code class="xref std std-option docutils literal"><span class="pre">max-upload-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--metalink-enable-unique-protocol"><code class="xref std std-option docutils literal"><span class="pre">metalink-enable-unique-protocol</span></code></a></li>
@@ -3033,6 +3046,9 @@ this key will not be included in the response.</dd>
 <dd>InfoHash. BitTorrent only.</dd>
 <dt><code class="docutils literal"><span class="pre">numSeeders</span></code></dt>
 <dd>The number of seeders aria2 has connected to. BitTorrent only.</dd>
+<dt><code class="docutils literal"><span class="pre">seeder</span></code></dt>
+<dd><code class="docutils literal"><span class="pre">true</span></code> if the local endpoint is a seeder. Otherwise <code class="docutils literal"><span class="pre">false</span></code>.
+BitTorrent only.</dd>
 <dt><code class="docutils literal"><span class="pre">pieceLength</span></code></dt>
 <dd>Piece length in bytes.</dd>
 <dt><code class="docutils literal"><span class="pre">numPieces</span></code></dt>
@@ -3307,7 +3323,7 @@ spare bits at the end are set to zero.</dd>
 <dt><code class="docutils literal"><span class="pre">uploadSpeed</span></code></dt>
 <dd>Upload speed(byte/sec) that this client uploads to the peer.</dd>
 <dt><code class="docutils literal"><span class="pre">seeder</span></code></dt>
-<dd><code class="docutils literal"><span class="pre">true</span></code> is this peer is a seeder. Otherwise <code class="docutils literal"><span class="pre">false</span></code>.</dd>
+<dd><code class="docutils literal"><span class="pre">true</span></code> if this peer is a seeder. Otherwise <code class="docutils literal"><span class="pre">false</span></code>.</dd>
 </dl>
 <p><strong>JSON-RPC Example</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
@@ -4713,7 +4729,7 @@ files in the program, then also delete it here.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.19.3',
+            VERSION:'1.20.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
