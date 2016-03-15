@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.20.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.21.0</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.20.0" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.21.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                1.20.0
+                1.21.0
               </div>
             
           
@@ -3176,6 +3176,9 @@ URI для каждого файла, будут добавлены имя и п
 <a class="reference internal" href="#cmdoption--follow-metalink"><code class="xref std std-option docutils literal"><span class="pre">--follow-metalink</span></code></a>). Это значение полезно для отслеживания автоматически
 сгенерированных загрузок. Если таких загрузок нет, то ключ не будет
 включён в ответ.</dd>
+<dt><code class="docutils literal"><span class="pre">following</span></code></dt>
+<dd>Обратная ссылка для <code class="docutils literal"><span class="pre">followedBy</span></code>. У загрузки, включённой в
+<code class="docutils literal"><span class="pre">followedBy</span></code>, есть GID этого объекта в этом значении <code class="docutils literal"><span class="pre">following</span></code>.</dd>
 <dt><code class="docutils literal"><span class="pre">belongsTo</span></code></dt>
 <dd>GID родительской загрузки. Некоторые загрузки являются частью другой
 загрузки. Например, если файл в Metalink содержит BitTorrent ресурсы,
@@ -4849,7 +4852,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.20.0',
+            VERSION:'1.21.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
