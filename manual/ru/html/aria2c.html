@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.21.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.22.0</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.21.0" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.22.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -40,6 +40,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -59,7 +60,7 @@
             
             
               <div class="version">
-                1.21.0
+                1.22.0
               </div>
             
           
@@ -640,13 +641,13 @@ aria2 может разбить файл на части в 2-ух диапаз�
 подключения очень затратная операция. Если задано <code class="docutils literal"><span class="pre">inorder</span></code>, то aria2
 выберет блок, который имеет минимальный индекс. Index=0 означает первый
 из файла. Это будет полезно при просмотре фильма, в то время как он
-загружается.  Параметр
-<a class="reference internal" href="#cmdoption--enable-http-pipelining"><code class="xref std std-option docutils literal"><span class="pre">--enable-http-pipelining</span></code></a> может
+загружается. Параметр <a class="reference internal" href="#cmdoption--enable-http-pipelining"><code class="xref std std-option docutils literal"><span class="pre">--enable-http-pipelining</span></code></a> может
 быть полезен для снижения накладных расходов при повторном подключении.
 Обратите внимание, что aria2 принимает на обработку параметр
-<a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>, так что необходимо
-будет указать разумное значение параметра
-<a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>.
+<a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>, так что необходимо будет указать
+разумное значение параметра <a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>.
+Если задано <code class="docutils literal"><span class="pre">random</span></code>, то aria2 выбирает блоки случайно. Как и при
+<code class="docutils literal"><span class="pre">inorder</span></code> учитывается параметр <a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>.
 Если задано <code class="docutils literal"><span class="pre">geom</span></code>, то aria2 вначале выберет блок с минимальным
 индексом, как при <code class="docutils literal"><span class="pre">inorder</span></code>, однако она сохранит
 экспоненциально большую область от ранее выбранного блока.
@@ -1945,6 +1946,14 @@ aria2, пока не закончится резервирование мест�
 длины.</p>
 <p>Возможные значения: <code class="docutils literal"><span class="pre">none</span></code>, <code class="docutils literal"><span class="pre">prealloc</span></code>, <code class="docutils literal"><span class="pre">trunc</span></code>, <code class="docutils literal"><span class="pre">falloc</span></code>
 По умолчанию: <code class="docutils literal"><span class="pre">prealloc</span></code></p>
+<div class="admonition warning">
+<p class="first admonition-title">Предупреждение</p>
+<p class="last">Использование <code class="docutils literal"><span class="pre">trunc</span></code>, на вид, выделяет дисковое пространство
+очень быстро, но на самом деле устанавливается длина файла в
+метаданных файловой системы, а дисковое пространство вообще не
+выделяется. Это означает, что это не помогает избежать
+фрагментации.</p>
+</div>
 </dd></dl>
 
 <dl class="option">
@@ -2128,6 +2137,22 @@ IP-адрес (например, 192.168.0.12) и имя хоста (напри�
 будет выполнятся. Смотрите раздел <a class="reference internal" href="#id9">Перехват сообщения</a>
 для более подробной информации о COMMAND. Возможные
 значения: <code class="docutils literal"><span class="pre">/путь/к/команде</span></code></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption--optimize-concurrent-downloads">
+<code class="descname">--optimize-concurrent-downloads</code><code class="descclassname">[=true|false|&lt;A&gt;:&lt;B&gt;]</code><a class="headerlink" href="#cmdoption--optimize-concurrent-downloads" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Оптимизирует количество одновременных загрузок в соответствии с
+доступной полосой пропускания. aria2 использует скорость загрузки,
+наблюдаемую в предыдущих загрузках, чтобы адаптировать количество
+загрузок, запущенных параллельно согласно правилу N = A + B Log10
+(скорость в Мбит/c). Коэффициенты А и В могут быть настроены в
+аргументах А и В, разделённых двоеточием. Значения по умолчанию
+(A=5, B=25) приводят к использованию обычно 5 параллельных загрузок
+в сетях с 1Мбит/с и более 50 в сетях с 100 Мбит/с. Число параллельных
+загрузок остаётся ограниченно максимумом, определяемом в параметре
+<a class="reference internal" href="#cmdoption--max-concurrent-downloads"><code class="xref std std-option docutils literal"><span class="pre">--max-concurrent-downloads</span></code></a>.
+По умолчанию: <code class="docutils literal"><span class="pre">false</span></code></p>
 </dd></dl>
 
 <dl class="option">
@@ -3786,6 +3811,7 @@ URI. <em>position</em> начинается с 0. Когда <em>position</em> �
 <li><a class="reference internal" href="#cmdoption--max-download-result"><code class="xref std std-option docutils literal"><span class="pre">max-download-result</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-overall-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-overall-download-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--max-overall-upload-limit"><code class="xref std std-option docutils literal"><span class="pre">max-overall-upload-limit</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--optimize-concurrent-downloads"><code class="xref std std-option docutils literal"><span class="pre">optimize-concurrent-downloads</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--save-cookies"><code class="xref std std-option docutils literal"><span class="pre">save-cookies</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">save-session</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--server-stat-of"><code class="xref std std-option docutils literal"><span class="pre">server-stat-of</span></code></a></li>
@@ -4852,7 +4878,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.21.0',
+            VERSION:'1.22.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
