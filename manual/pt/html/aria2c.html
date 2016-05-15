@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.22.0 documentação</title>
+  <title>aria2c(1) &mdash; aria2 1.23.0 documentação</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.22.0 documentação" href="index.html"/>
+    <link rel="top" title="aria2 1.23.0 documentação" href="index.html"/>
         <link rel="next" title="aria2 - Utilitário para Download Super Ultra Rápido" href="README.html"/>
         <link rel="prev" title="Manual Aria2" href="index.html"/> 
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.22.0
+                1.23.0
               </div>
             
           
@@ -225,7 +225,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -2556,10 +2556,10 @@ GID of registered download.</p>
 <p><strong>JSON-RPC EXEMPLO M010</strong></p>
 <p>The following example adds <code class="docutils literal"><span class="pre">http://example.org/file</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addUri&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[[</span><span class="s">&#39;http://example.org/file&#39;</span><span class="p">]]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addUri&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[[</span><span class="s1">&#39;http://example.org/file&#39;</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;{&quot;id&quot;:&quot;qwer&quot;,&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;2089b05ecca3d829&quot;}&#39;</span>
 </pre></div>
@@ -2567,20 +2567,20 @@ GID of registered download.</p>
 <p><strong>XML-RPC EXEMPLO M020</strong></p>
 <p>The following example adds <code class="docutils literal"><span class="pre">http://example.org/file</span></code>:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s">&#39;http://example.org/file&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s1">&#39;http://example.org/file&#39;</span><span class="p">])</span>
 <span class="go">&#39;2089b05ecca3d829&#39;</span>
 </pre></div>
 </div>
 <p>The following example adds 2 sources and some options:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s">&#39;http://example.org/file&#39;</span><span class="p">,</span> <span class="s">&#39;http://mirror/file&#39;</span><span class="p">],</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s1">&#39;http://example.org/file&#39;</span><span class="p">,</span> <span class="s1">&#39;http://mirror/file&#39;</span><span class="p">],</span>
 <span class="go">                    dict(dir=&quot;/tmp&quot;))</span>
 <span class="go">&#39;d2703803b52216d1&#39;</span>
 </pre></div>
 </div>
 <p>The following example adds a download and insert it to the front of
 waiting downloads:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s">&#39;http://example.org/file&#39;</span><span class="p">],</span> <span class="p">{},</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s1">&#39;http://example.org/file&#39;</span><span class="p">],</span> <span class="p">{},</span> <span class="mi">0</span><span class="p">)</span>
 <span class="go">&#39;ca3d829cee549a4d&#39;</span>
 </pre></div>
 </div>
@@ -2615,18 +2615,18 @@ the downloads added by this method are not saved by
 <p>The following examples add local file <code class="docutils literal"><span class="pre">file.torrent</span></code>.</p>
 <p><strong>JSON-RPC EXEMPLO M030</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">base64</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">torrent</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;asdf&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addTorrent&#39;</span><span class="p">,</span> <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="n">torrent</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">torrent</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;asdf&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addTorrent&#39;</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="n">torrent</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;{&quot;id&quot;:&quot;asdf&quot;,&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;2089b05ecca3d829&quot;}&#39;</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M040</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addTorrent</span><span class="p">(</span><span class="n">xmlrpclib</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addTorrent</span><span class="p">(</span><span class="n">xmlrpclib</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">&#39;2089b05ecca3d829&#39;</span>
 </pre></div>
 </div>
@@ -2656,19 +2656,19 @@ the downloads added by this method are not saved by
 <p>The following examples add local file file.meta4.</p>
 <p><strong>JSON-RPC EXEMPLO M050</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">base64</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">metalink</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.meta4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addMetalink&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="n">metalink</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">metalink</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.meta4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addMetalink&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="n">metalink</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;{&quot;id&quot;:&quot;qwer&quot;,&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:[&quot;2089b05ecca3d829&quot;]}&#39;</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M060</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addMetalink</span><span class="p">(</span><span class="n">xmlrpclib</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.meta4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addMetalink</span><span class="p">(</span><span class="n">xmlrpclib</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.meta4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">[&#39;2089b05ecca3d829&#39;]</span>
 </pre></div>
 </div>
@@ -2684,18 +2684,18 @@ returns GID of removed download.</p>
 <p>The following examples remove download GID#2089b05ecca3d829.</p>
 <p><strong>JSON-RPC EXEMPLO M070</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.remove&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.remove&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="go">&#39;{&quot;id&quot;:&quot;qwer&quot;,&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:&quot;2089b05ecca3d829&quot;}&#39;</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M080</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="go">&#39;2089b05ecca3d829&#39;</span>
 </pre></div>
 </div>
@@ -2859,10 +2859,10 @@ following keys.</p>
 <p>The following example gets information about download GID#2089b05ecca3d829:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.tellStatus&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.tellStatus&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -2889,13 +2889,13 @@ following keys.</p>
 </div>
 <p>The following example gets information specifying keys you are
 interested in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.tellStatus&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                                <span class="p">[</span><span class="s">&#39;gid&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                                 <span class="s">&#39;totalLength&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                                 <span class="s">&#39;completedLength&#39;</span><span class="p">]]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.tellStatus&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                <span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                 <span class="s1">&#39;totalLength&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                 <span class="s1">&#39;completedLength&#39;</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -2908,8 +2908,8 @@ interested in:</p>
 <p>The following example gets information about download GID#2089b05ecca3d829:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">tellStatus</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">tellStatus</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">{&#39;bitfield&#39;: &#39;ffff80&#39;,</span>
 <span class="go"> &#39;completedLength&#39;: &#39;34896138&#39;,</span>
@@ -2935,7 +2935,7 @@ interested in:</p>
 </div>
 <p>The following example gets information specifying keys you are
 interested in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">tellStatus</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;gid&#39;</span><span class="p">,</span> <span class="s">&#39;totalLength&#39;</span><span class="p">,</span> <span class="s">&#39;completedLength&#39;</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">tellStatus</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;gid&#39;</span><span class="p">,</span> <span class="s1">&#39;totalLength&#39;</span><span class="p">,</span> <span class="s1">&#39;completedLength&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">{&#39;completedLength&#39;: &#39;34896138&#39;, &#39;gid&#39;: &#39;2089b05ecca3d829&#39;, &#39;totalLength&#39;: &#39;34896138&#39;}</span>
 </pre></div>
@@ -2958,10 +2958,10 @@ in the queue.</dd>
 <p><strong>JSON-RPC EXEMPLO M110</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getUris&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getUris&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -2972,8 +2972,8 @@ in the queue.</dd>
 <p><strong>XML-RPC EXEMPLO M120</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getUris</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getUris</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">[{&#39;status&#39;: &#39;used&#39;, &#39;uri&#39;: &#39;http://example.org/file&#39;}]</span>
 </pre></div>
@@ -3015,10 +3015,10 @@ same struct used in <a class="reference internal" href="#aria2.getUris" title="a
 <p><strong>JSON-RPC EXEMPLO M130</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getFiles&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getFiles&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3034,8 +3034,8 @@ same struct used in <a class="reference internal" href="#aria2.getUris" title="a
 <p><strong>XML-RPC EXEMPLO M140</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getFiles</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getFiles</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">[{&#39;index&#39;: &#39;1&#39;,</span>
 <span class="go">  &#39;length&#39;: &#39;34896138&#39;,</span>
@@ -3081,10 +3081,10 @@ spare bits at the end are set to zero.</dd>
 <p><strong>JSON-RPC EXEMPLO M150</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getPeers&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getPeers&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3111,8 +3111,8 @@ spare bits at the end are set to zero.</dd>
 <p><strong>XML-RPC EXEMPLO M160</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getPeers</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getPeers</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">[{&#39;amChoking&#39;: &#39;true&#39;,</span>
 <span class="go">  &#39;bitfield&#39;: &#39;ffffffffffffffffffffffffffffffffffffffff&#39;,</span>
@@ -3163,10 +3163,10 @@ involved, currentUri and uri may differ.</dd>
 <p><strong>JSON-RPC EXEMPLO M170</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getServers&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getServers&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3179,8 +3179,8 @@ involved, currentUri and uri may differ.</dd>
 <p><strong>XML-RPC EXEMPLO M180</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getServers</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getServers</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">[{&#39;index&#39;: &#39;1&#39;,</span>
 <span class="go">  &#39;servers&#39;: [{&#39;currentUri&#39;: &#39;http://example.org/dl/file&#39;,</span>
@@ -3257,18 +3257,18 @@ front of the waiting queue.</p>
 <p><strong>JSON-RPC EXEMPLO M190</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.changePosition&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;POS_SET&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.changePosition&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;POS_SET&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: 0}</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M200</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">changePosition</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s">&#39;POS_SET&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">changePosition</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;POS_SET&#39;</span><span class="p">)</span>
 <span class="go">0</span>
 </pre></div>
 </div>
@@ -3300,19 +3300,19 @@ GID#2089b05ecca3d829.</p>
 <p><strong>JSON-RPC EXEMPLO M210</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.changeUri&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.changeUri&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[],</span>
 <span class="go">                                    [&#39;http://example.org/file&#39;]]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: [0, 1]}</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M220</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">changeUri</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">changeUri</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[],</span>
 <span class="go">                      [&#39;http://example.org/file&#39;])</span>
 <span class="go">[0, 1]</span>
 </pre></div>
@@ -3332,10 +3332,10 @@ GID#2089b05ecca3d829.</p>
 <p><strong>JSON-RPC EXEMPLO M230</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getOption&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getOption&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3349,8 +3349,8 @@ GID#2089b05ecca3d829.</p>
 <p><strong>XML-RPC EXEMPLO M240</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getOption</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getOption</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">{&#39;allow-overwrite&#39;: &#39;false&#39;,</span>
 <span class="go"> &#39;allow-piece-length-change&#39;: &#39;false&#39;,</span>
@@ -3390,19 +3390,19 @@ GID#2089b05ecca3d829.</p>
 <p><strong>JSON-RPC EXEMPLO M250</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.changeOption&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                                <span class="p">{</span><span class="s">&#39;max-download-limit&#39;</span><span class="p">:</span><span class="s">&#39;10K&#39;</span><span class="p">}]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.changeOption&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                <span class="p">{</span><span class="s1">&#39;max-download-limit&#39;</span><span class="p">:</span><span class="s1">&#39;10K&#39;</span><span class="p">}]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: u&#39;OK&#39;}</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M260</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">changeOption</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;max-download-limit&#39;</span><span class="p">:</span><span class="s">&#39;20K&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">changeOption</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;max-download-limit&#39;</span><span class="p">:</span><span class="s1">&#39;20K&#39;</span><span class="p">})</span>
 <span class="go">&#39;OK&#39;</span>
 </pre></div>
 </div>
@@ -3472,9 +3472,9 @@ keys. The value type is string.</p>
 <p><strong>JSON-RPC EXEMPLO M270</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getGlobalStat&#39;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getGlobalStat&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3488,7 +3488,7 @@ keys. The value type is string.</p>
 <p><strong>XML-RPC EXEMPLO M280</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getGlobalStat</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">{&#39;downloadSpeed&#39;: &#39;23136&#39;,</span>
@@ -3517,18 +3517,18 @@ GID#2089b05ecca3d829.</p>
 <p><strong>JSON-RPC EXEMPLO M290</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.removeDownloadResult&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.removeDownloadResult&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: u&#39;OK&#39;}</span>
 </pre></div>
 </div>
 <p><strong>XML-RPC EXEMPLO M300</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">removeDownloadResult</span><span class="p">(</span><span class="s">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">removeDownloadResult</span><span class="p">(</span><span class="s1">&#39;2089b05ecca3d829&#39;</span><span class="p">)</span>
 <span class="go">&#39;OK&#39;</span>
 </pre></div>
 </div>
@@ -3548,9 +3548,9 @@ features. The response is of type struct and contains following keys.</p>
 <p><strong>JSON-RPC EXEMPLO M310</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getVersion&#39;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getVersion&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3568,7 +3568,7 @@ features. The response is of type struct and contains following keys.</p>
 <p><strong>XML-RPC EXEMPLO M320</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getVersion</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">{&#39;enabledFeatures&#39;: [&#39;Async DNS&#39;,</span>
@@ -3596,9 +3596,9 @@ The response is of type struct and contains following key.</p>
 <p><strong>JSON-RPC EXEMPLO M330</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getSessionInfo&#39;</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getSessionInfo&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;,</span>
 <span class="go"> u&#39;jsonrpc&#39;: u&#39;2.0&#39;,</span>
@@ -3607,7 +3607,7 @@ The response is of type struct and contains following key.</p>
 </div>
 <p><strong>XML-RPC EXEMPLO M340</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">getSessionInfo</span><span class="p">()</span>
 <span class="go">{&#39;sessionId&#39;: &#39;cd6a3bc6a1de28eb5bfa181e5f6b916d44af31a9&#39;}</span>
 </pre></div>
@@ -3644,25 +3644,25 @@ fails.</p>
 <p><strong>JSON-RPC EXEMPLO M350</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">base64</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;system.multicall&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                      <span class="s">&#39;params&#39;</span><span class="p">:[[{</span><span class="s">&#39;methodName&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addUri&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                                  <span class="s">&#39;params&#39;</span><span class="p">:[[</span><span class="s">&#39;http://example.org&#39;</span><span class="p">]]},</span>
-<span class="gp">... </span>                                 <span class="p">{</span><span class="s">&#39;methodName&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addTorrent&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                                  <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())]}]]})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;system.multicall&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                      <span class="s1">&#39;params&#39;</span><span class="p">:[[{</span><span class="s1">&#39;methodName&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addUri&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="s1">&#39;params&#39;</span><span class="p">:[[</span><span class="s1">&#39;http://example.org&#39;</span><span class="p">]]},</span>
+<span class="gp">... </span>                                 <span class="p">{</span><span class="s1">&#39;methodName&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addTorrent&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                  <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())]}]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">{u&#39;id&#39;: u&#39;qwer&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: [[u&#39;2089b05ecca3d829&#39;], [u&#39;d2703803b52216d1&#39;]]}</span>
 </pre></div>
 </div>
 <p>JSON-RPC also supports Batch request described in JSON-RPC 2.0 Specification:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([{</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addUri&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="s">&#39;params&#39;</span><span class="p">:[[</span><span class="s">&#39;http://example.org&#39;</span><span class="p">]]},</span>
-<span class="gp">... </span>                      <span class="p">{</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;asdf&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.addTorrent&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                       <span class="s">&#39;params&#39;</span><span class="p">:[</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())]}])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">jsonreq</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([{</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addUri&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;params&#39;</span><span class="p">:[[</span><span class="s1">&#39;http://example.org&#39;</span><span class="p">]]},</span>
+<span class="gp">... </span>                      <span class="p">{</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;asdf&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.addTorrent&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                       <span class="s1">&#39;params&#39;</span><span class="p">:[</span><span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())]}])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/jsonrpc&#39;</span><span class="p">,</span> <span class="n">jsonreq</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pprint</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="go">[{u&#39;id&#39;: u&#39;qwer&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: u&#39;2089b05ecca3d829&#39;},</span>
 <span class="go"> {u&#39;id&#39;: u&#39;asdf&#39;, u&#39;jsonrpc&#39;: u&#39;2.0&#39;, u&#39;result&#39;: u&#39;d2703803b52216d1&#39;}]</span>
@@ -3670,10 +3670,10 @@ fails.</p>
 </div>
 <p><strong>XML-RPC EXEMPLO M360</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">MultiCall</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s">&#39;http://example.org/file&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addTorrent</span><span class="p">(</span><span class="n">xmlrpclib</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s1">&#39;http://example.org/file&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addTorrent</span><span class="p">(</span><span class="n">xmlrpclib</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.torrent&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">mc</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 <span class="go">(&#39;2089b05ecca3d829&#39;, &#39;d2703803b52216d1&#39;)</span>
@@ -3697,7 +3697,7 @@ Ver subseção <a class="reference internal" href="#arquivo-de-entrada">Arquivo 
 <code class="docutils literal"><span class="pre">--</span></code>) and value element is argument as string.</p>
 <div class="section" id="exemplo-json-rpc-m370">
 <h4>EXEMPLO JSON-RPC M370<a class="headerlink" href="#exemplo-json-rpc-m370" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;split&#39;</span><span class="p">:</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="s">&#39;http-proxy&#39;</span><span class="p">:</span><span class="s">&#39;http://proxy/&#39;</span><span class="p">}</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s1">&#39;split&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;http-proxy&#39;</span><span class="p">:</span><span class="s1">&#39;http://proxy/&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -3724,7 +3724,7 @@ as well as string.</p>
 </div>
 <div class="section" id="exemplo-json-rpc-m390">
 <h4>EXEMPLO JSON-RPC M390<a class="headerlink" href="#exemplo-json-rpc-m390" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&#39;header&#39;</span><span class="p">:[</span><span class="s">&#39;Accept-Language: ja&#39;</span><span class="p">,</span> <span class="s">&#39;Accept-Charset: utf-8&#39;</span><span class="p">]}</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s1">&#39;header&#39;</span><span class="p">:[</span><span class="s1">&#39;Accept-Language: ja&#39;</span><span class="p">,</span> <span class="s1">&#39;Accept-Charset: utf-8&#39;</span><span class="p">]}</span>
 </pre></div>
 </div>
 </div>
@@ -3748,11 +3748,11 @@ as well as string.</p>
 <p>Following example adds a download with 2 options: dir and header.
 header option has 2 values, so it uses a list:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">xmlrpclib</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="s">&#39;/tmp&#39;</span><span class="p">,</span>
-<span class="gp">... </span>            <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Accept-Language: ja&#39;</span><span class="p">,</span>
-<span class="gp">... </span>                    <span class="s">&#39;Accept-Charset: utf-8&#39;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s">&#39;http://example.org/file&#39;</span><span class="p">],</span> <span class="n">opts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s1">&#39;http://localhost:6800/rpc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">opts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="s1">&#39;/tmp&#39;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Accept-Language: ja&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                    <span class="s1">&#39;Accept-Charset: utf-8&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s1">&#39;http://example.org/file&#39;</span><span class="p">],</span> <span class="n">opts</span><span class="p">)</span>
 <span class="go">&#39;1&#39;</span>
 </pre></div>
 </div>
@@ -3789,8 +3789,8 @@ function in <code class="docutils literal"><span class="pre">jsoncallback</span>
 <p>For Batch request, <code class="docutils literal"><span class="pre">method</span></code> and <code class="docutils literal"><span class="pre">id</span></code> parameter must not be specified.
 Whole request must be specified in <code class="docutils literal"><span class="pre">params</span></code> parameter. For example,
 Batch request:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[{</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;qwer&#39;</span><span class="p">,</span> <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.getVersion&#39;</span><span class="p">},</span>
- <span class="p">{</span><span class="s">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="s">&#39;id&#39;</span><span class="p">:</span><span class="s">&#39;asdf&#39;</span><span class="p">,</span> <span class="s">&#39;method&#39;</span><span class="p">:</span><span class="s">&#39;aria2.tellActive&#39;</span><span class="p">}]</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[{</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;qwer&#39;</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.getVersion&#39;</span><span class="p">},</span>
+ <span class="p">{</span><span class="s1">&#39;jsonrpc&#39;</span><span class="p">:</span><span class="s1">&#39;2.0&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;asdf&#39;</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">:</span><span class="s1">&#39;aria2.tellActive&#39;</span><span class="p">}]</span>
 </pre></div>
 </div>
 <p>will be encoded like this:</p>
@@ -3873,7 +3873,7 @@ mesma estrutura do <em>event</em> do método da função <a class="reference int
 <p>O seguinte script Ruby script adiciona <code class="docutils literal"><span class="pre">http://localhost/aria2.tar.bz2</span></code> em
 aria2c no servidor em localhost com a opção <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir=/downloads</span></code></a> e
 imprime a resposta do processamento:</p>
-<div class="highlight-ruby"><div class="highlight"><pre><span class="c1">#!/usr/bin/env ruby</span>
+<div class="highlight-ruby"><div class="highlight"><pre><span class="ch">#!/usr/bin/env ruby</span>
 
 <span class="nb">require</span> <span class="s1">&#39;xmlrpc/client&#39;</span>
 <span class="nb">require</span> <span class="s1">&#39;pp&#39;</span>
@@ -3891,8 +3891,8 @@ interagir com aria2:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">xmlrpclib</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 
-<span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s">&quot;http://localhost:6800/rpc&quot;</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s">&quot;http://localhost/aria2.tar.bz2&quot;</span><span class="p">],</span> <span class="p">{</span><span class="s">&quot;dir&quot;</span><span class="p">:</span><span class="s">&quot;/downloads&quot;</span><span class="p">})</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">xmlrpclib</span><span class="o">.</span><span class="n">ServerProxy</span><span class="p">(</span><span class="s2">&quot;http://localhost:6800/rpc&quot;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">aria2</span><span class="o">.</span><span class="n">addUri</span><span class="p">([</span><span class="s2">&quot;http://localhost/aria2.tar.bz2&quot;</span><span class="p">],</span> <span class="p">{</span><span class="s2">&quot;dir&quot;</span><span class="p">:</span><span class="s2">&quot;/downloads&quot;</span><span class="p">})</span>
 <span class="n">pprint</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -4310,7 +4310,7 @@ como declarado no código acima.</p>
 <div class="section" id="bittorrent-criptografado">
 <h4>BitTorrent Criptografado<a class="headerlink" href="#bittorrent-criptografado" title="Link permanente para este título">¶</a></h4>
 <p>Criptografar todo conjunto usando ARC4:</p>
-<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> aria2c --bt-min-crypto-level<span class="o">=</span>arc4 --bt-require-crypto<span class="o">=</span><span class="nb">true </span>arquivo.torrent
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> aria2c --bt-min-crypto-level<span class="o">=</span>arc4 --bt-require-crypto<span class="o">=</span><span class="nb">true</span> arquivo.torrent
 </pre></div>
 </div>
 </div>
@@ -4396,7 +4396,7 @@ favor refira-se a versão em inglês resultante do comando man aria2c</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.22.0',
+            VERSION:'1.23.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
