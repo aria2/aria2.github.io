@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.23.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.24.0</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.23.0" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.24.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.23.0
+                1.24.0
               </div>
             
           
@@ -1081,10 +1081,12 @@ DIGEST - шестнадцатеричное значение хэша.
 <dl class="option">
 <dt id="cmdoption--bt-external-ip">
 <code class="descname">--bt-external-ip</code><code class="descclassname">=&lt;IPADDRESS&gt;</code><a class="headerlink" href="#cmdoption--bt-external-ip" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Указать внешний IP-адрес BitTorrent-трекера для отчета.
+<dd><p>Указать внешний IP-адрес для использования в BitTorrent-загрузке и DHT.
+Он может быть отправлен BitTorrent-трекеру. Для DHT, этот параметр должен
+быть задан, чтобы сообщить, что локальный узел загружает конкретный
+торрент. Это критически важно, чтобы использовать DHT в частной сети.
 Несмотря на то, что эта функция названа <code class="docutils literal"><span class="pre">external</span></code> (<code class="docutils literal"><span class="pre">внешний</span></code>),
-она может принимать любой IP-адрес. IPADDRESS должен быть числовым
-IP-адресом.</p>
+она может принимать любой IP-адрес.</p>
 </dd></dl>
 
 <dl class="option">
@@ -3758,7 +3760,19 @@ URI. <em>position</em> начинается с 0. Когда <em>position</em> �
 <code class="descclassname">aria2.</code><code class="descname">changeOption</code><span class="sig-paren">(</span><span class="optional">[</span><em>secret</em>, <span class="optional">]</span><em>gid</em>, <em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#aria2.changeOption" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Этот метод изменяет динамически параметры загрузки, которая обозначена
 <em>gid</em> (строка). <em>options</em> является структурой.
-Доступны следующие параметры для активных загрузок:</p>
+Доступные параметры перечисленны в подразделе <a class="reference internal" href="#id14">Входной файл</a>,
+<strong>исключая</strong> следующие:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#cmdoption--dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption-P"><code class="xref std std-option docutils literal"><span class="pre">parameterized-uri</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--piece-length"><code class="xref std std-option docutils literal"><span class="pre">piece-length</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">rpc-save-upload-metadata</span></code></a></li>
+</ul>
+<p>За исключением следующих параметров, изменение других параметров
+активной загрузки заставляет их перезапуститься (самим перезапуском
+управляет aria2, и никакого вмешательства пользователя не требуется):</p>
 <ul class="simple">
 <li><a class="reference internal" href="#cmdoption--bt-max-peers"><code class="xref std std-option docutils literal"><span class="pre">bt-max-peers</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--bt-request-peer-speed-limit"><code class="xref std std-option docutils literal"><span class="pre">bt-request-peer-speed-limit</span></code></a></li>
@@ -3767,16 +3781,7 @@ URI. <em>position</em> начинается с 0. Когда <em>position</em> �
 <li><a class="reference internal" href="#cmdoption--max-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-download-limit</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-u"><code class="xref std std-option docutils literal"><span class="pre">max-upload-limit</span></code></a></li>
 </ul>
-<p>Для ожидающих или приостановленных загрузок, в дополнение к выше
-перечисленным параметрам, доступны параметры, перечисленные в подразделе
-<a class="reference internal" href="#id14">Входной файл</a>, <strong>исключая</strong> следующие параметры:
-<a class="reference internal" href="#cmdoption--dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a>,
-<a class="reference internal" href="#cmdoption--metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a>,
-<a class="reference internal" href="#cmdoption-P"><code class="xref std std-option docutils literal"><span class="pre">parameterized-uri</span></code></a>,
-<a class="reference internal" href="#cmdoption--pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a>,
-<a class="reference internal" href="#cmdoption--piece-length"><code class="xref std std-option docutils literal"><span class="pre">piece-length</span></code></a>,
-<a class="reference internal" href="#cmdoption--rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">rpc-save-upload-metadata</span></code></a>.
-Этот метод возвращает <code class="docutils literal"><span class="pre">OK</span></code>, в случае успеха.</p>
+<p>Этот метод возвращает <code class="docutils literal"><span class="pre">OK</span></code>, в случае успеха.</p>
 <p>Следующие примеры устанавливают параметр
 <a class="reference internal" href="#cmdoption--max-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-download-limit</span></code></a>
 в <code class="docutils literal"><span class="pre">20K</span></code> для загрузки GID#2089b05ecca3d829.</p>
@@ -4924,7 +4929,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.23.0',
+            VERSION:'1.24.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
