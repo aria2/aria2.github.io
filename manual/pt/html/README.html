@@ -12,7 +12,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; aria2 1.24.0 documentação</title>
+  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; aria2 1.25.0 documentação</title>
   
 
   
@@ -34,7 +34,7 @@
   
 
   
-    <link rel="top" title="aria2 1.24.0 documentação" href="index.html"/>
+    <link rel="top" title="aria2 1.25.0 documentação" href="index.html"/>
         <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.24.0
+                1.25.0
               </div>
             
           
@@ -87,7 +87,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">aria2 - Utilitário para Download Super Ultra Rápido</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aria2 - Utilitário para Download Super Ultra Rápido</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#renuncia">Renúncia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#introducao">Introdução</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#funcionalidades">Funcionalidades</a></li>
@@ -250,7 +250,7 @@ opcional de arquivo de saída</li>
 <p>O código fonte é mantido no Github:
 <a class="reference external" href="https://github.com/aria2/aria2">https://github.com/aria2/aria2</a></p>
 <p>Para obter o último código fonte, execute o seguinte comando:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git clone git://github.com/aria2/aria2.git
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone git://github.com/aria2/aria2.git
 </pre></div>
 </div>
 <p>Aria2 será criado no diretório corrente do seu computador com os arquivos fonte.</p>
@@ -369,7 +369,7 @@ libxml2-devel, openssl-devel</li>
 deverá ser executado o seguinte comando para criar o script de
 configuração (configure) e outros scripts também necessários
 para o build ou compilação do aria2:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ autoreconf -i
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ autoreconf -i
 </pre></div>
 </div>
 <p>Para construir a documentação é necessário instalar
@@ -378,16 +378,16 @@ contendo a documentação nos idiomas existentes.</p>
 <p>Para construir aria2 para Mac OS X, de uma olhada em build_osx_release.sh,
 o qual cria binários DMG que são padrões para OS X.</p>
 <p>A maneira mais rápida para compilar o aria2 é executar o script:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./configure
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure
 </pre></div>
 </div>
 <p>Para compilar com link-edição estática utilize o opção da linha
 de comando <code class="docutils literal"><span class="pre">ARIA2_STATIC=yes</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./configure ARIA2_STATIC=yes
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure ARIA2_STATIC=yes
 </pre></div>
 </div>
 <p>Após a configuração feita, execute <code class="docutils literal"><span class="pre">make</span></code> para compilar o programa:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ make
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ make
 </pre></div>
 </div>
 <p>Ver <a class="reference internal" href="#compilacao-cross-windows-binario">Compilação Cross Windows binário</a> para Criar Binário para
@@ -407,7 +407,7 @@ contém o certificado. Por Exemplo, no Debian o caminho para o arquivo CA
 é &quot;/etc/ssl/certs/ca-certificates.crt&quot; (no pacote ca-certificates).
 Isto varia de acordo com sua distribuição Linux. Pode ser informada a opção
 <code class="docutils literal"><span class="pre">--with-ca-bundle</span></code> para configurar o script usado pelo make:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
 $ make
 </pre></div>
 </div>
@@ -424,7 +424,7 @@ diretório de instalação do arquivo utilize a opção
 <p>O executavel é 'aria2c' no diretório src.</p>
 <p>aria2 usa CppUnit para (test unit) automatizado. Para executar o
 test unit emita o comando:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ make check
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ make check
 </pre></div>
 </div>
 </div>
@@ -465,7 +465,7 @@ Padrão para <code class="docutils literal"><span class="pre">/usr/local/$HOST</
 <code class="docutils literal"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</dd>
 </dl>
 <p>Por exemplo, para construir um binário para 64bits utilize:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ HOST=x86_64-w64-mingw32 ./mingw-config
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
 </pre></div>
 </div>
 </div>
@@ -530,7 +530,7 @@ partir do Android Market (ou compile a partir da fonte e instale). Veja
 </li>
 <li><p class="first">Adicionar o seguintes comandos ao Emulador de Terminal Android
 Terminal Emulator:</p>
-<div class="highlight-python"><div class="highlight"><pre>export HOME=/data/data/jackpal.androidterm/aria2; cd $HOME
+<div class="highlight-default"><div class="highlight"><pre><span></span>export HOME=/data/data/jackpal.androidterm/aria2; cd $HOME
 </pre></div>
 </div>
 </li>
@@ -565,12 +565,12 @@ assíncrono de DNS) é desabilitado por padrão. Muitas vezes a resolução
 de nomes é lenta, recomenda-se habilitar c-ares. Para desabilitar use
 :option:<code class="docutils literal"><span class="pre">--async-dns</span></code> e especifique os servidores DNS usando
 opção :option:<code class="docutils literal"><span class="pre">--async-dns-server</span></code>, como abaixo:</p>
-<div class="highlight-python"><div class="highlight"><pre>--async-dns --async-dns-server=`getprop meu.dns1`,`getprop meu.dns2`
+<div class="highlight-default"><div class="highlight"><pre><span></span>--async-dns --async-dns-server=`getprop meu.dns1`,`getprop meu.dns2`
 </pre></div>
 </div>
 <p id="index-4">Para não se entediar digitando estes parâmetros, toda vez que usar aria2c,
 o seguinte script shell pode ser útil:</p>
-<div class="highlight-python"><div class="highlight"><pre>#!/system/bin/sh
+<div class="highlight-default"><div class="highlight"><pre><span></span>#!/system/bin/sh
 /data/data/jackpal.androidterm/aria2c \
   --async-dns \
   --async-dns-server=`getprop meu.dns1`,`getprop meu.dns2` \
@@ -601,7 +601,7 @@ a documentação aria2 em HTML use o comando <code class="docutils literal"><spa
 O resultado será criado na subpasta _build dentro da pasta onde baixou
 o fonte do aria2. Ex: se baixou e descompactou o aria2 no local
 /home/usuario/aria2/ então a documentação gerada está em:</p>
-<div class="highlight-python"><div class="highlight"><pre>/home/usuario/aria2/doc/manual-src/pt/_build/
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">usuario</span><span class="o">/</span><span class="n">aria2</span><span class="o">/</span><span class="n">doc</span><span class="o">/</span><span class="n">manual</span><span class="o">-</span><span class="n">src</span><span class="o">/</span><span class="n">pt</span><span class="o">/</span><span class="n">_build</span><span class="o">/</span>
 </pre></div>
 </div>
 <p>A pasta <code class="docutils literal"><span class="pre">pt</span></code> indica o idioma que atualmente pode ser
@@ -804,7 +804,7 @@ favor refira-se a versão em inglês resultante do comando <code class="docutils
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.24.0',
+            VERSION:'1.25.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2 - The ultra fast download utility &mdash; aria2 1.24.0 documentation</title>
+  <title>aria2 - The ultra fast download utility &mdash; aria2 1.25.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.24.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.25.0 documentation" href="index.html"/>
         <link rel="next" title="libaria2: C++ library interface to aria2" href="libaria2.html"/>
         <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.24.0
+                1.25.0
               </div>
             
           
@@ -84,7 +84,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">aria2 - The ultra fast download utility</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aria2 - The ultra fast download utility</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#disclaimer">Disclaimer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
@@ -255,7 +255,7 @@ security issues.</p>
 <p>We maintain the source code at Github:
 <a class="reference external" href="https://github.com/aria2/aria2">https://github.com/aria2/aria2</a></p>
 <p>To get the latest source code, run following command:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/aria2/aria2.git
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/aria2/aria2.git
 </pre></div>
 </div>
 <p>This will create aria2 directory in your current directory and source
@@ -409,23 +409,23 @@ following packages to get autoconf macros:</p>
 </ul>
 <p>And run following command to generate configure script and other files
 necessary to build the program:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ autoreconf -i
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ autoreconf -i
 </pre></div>
 </div>
 <p>Also you need <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> to build man page.</p>
 <p>If you are building aria2 for Mac OS X, take a look at
 the make-release-os.mk GNU Make makefile.</p>
 <p>The quickest way to build aria2 is first run configure script:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./configure
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure
 </pre></div>
 </div>
 <p>To build statically linked aria2, use <code class="docutils literal"><span class="pre">ARIA2_STATIC=yes</span></code>
 command-line option:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./configure ARIA2_STATIC=yes
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure ARIA2_STATIC=yes
 </pre></div>
 </div>
 <p>After configuration is done, run <code class="docutils literal"><span class="pre">make</span></code> to compile the program:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ make
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ make
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="#cross-compiling-windows-binary">Cross-compiling Windows binary</a> to create a Windows binary.
@@ -443,7 +443,7 @@ to the CA bundle file. For example, in Debian the path to CA bundle
 file is '/etc/ssl/certs/ca-certificates.crt' (in ca-certificates
 package). This may vary depending on your distribution. You can give
 it to configure script using <code class="docutils literal"><span class="pre">--with-ca-bundle</span> <span class="pre">option</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
 $ make
 </pre></div>
 </div>
@@ -463,7 +463,7 @@ the install directory of the file, use <code class="docutils literal"><span clas
 option.</p>
 <p>After a <code class="docutils literal"><span class="pre">make</span></code> the executable is located at <code class="docutils literal"><span class="pre">src/aria2c</span></code>.</p>
 <p>aria2 uses CppUnit for automated unit testing. To run the unit test:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ make check
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ make check
 </pre></div>
 </div>
 </div>
@@ -507,7 +507,7 @@ added to <code class="docutils literal"><span class="pre">CPPFLAGS</span></code>
 <code class="docutils literal"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</dd>
 </dl>
 <p>For example, to build 64bit binary do this:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ HOST=x86_64-w64-mingw32 ./mingw-config
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
 </pre></div>
 </div>
 <p>If you want libaria2 dll with <code class="docutils literal"><span class="pre">--enable-libaria2</span></code>, then don't use
@@ -544,7 +544,7 @@ environment variable which must fulfill the following conditions:</p>
 <code class="docutils literal"><span class="pre">docs/STANDALONE-TOOLCHAIN.html</span></code> to install custom toolchain.</p>
 <p>For example, to install toolchain under <code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>,
 do this:</p>
-<div class="highlight-python"><div class="highlight"><pre>$NDK/build/tools/make-standalone-toolchain.sh \
+<div class="highlight-default"><div class="highlight"><pre><span></span>$NDK/build/tools/make-standalone-toolchain.sh \
   --install-dir=$ANDROID_HOME/toolchain \
   --toolchain=arm-linux-androideabi-4.9 \
   --platform=android-16
@@ -766,7 +766,7 @@ and <a class="reference external" href="http://www.rasterbar.com/products/libtor
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.24.0',
+            VERSION:'1.25.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

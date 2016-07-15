@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Technical Notes &mdash; aria2 1.24.0 documentation</title>
+  <title>Technical Notes &mdash; aria2 1.25.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.24.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.25.0 documentation" href="index.html"/>
         <link rel="prev" title="libaria2: C++ library interface to aria2" href="libaria2.html"/> 
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.24.0
+                1.25.0
               </div>
             
           
@@ -85,7 +85,7 @@
 <li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html">aria2 - The ultra fast download utility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="libaria2.html">libaria2: C++ library interface to aria2</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Technical Notes</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#control-file-aria2-format">Control File (*.aria2) Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dht-routing-table-file-format">DHT routing table file format</a></li>
 </ul>
@@ -142,30 +142,30 @@ expected audience is developers.</p>
 <h2>Control File (*.aria2) Format<a class="headerlink" href="#control-file-aria2-format" title="Permalink to this headline">¶</a></h2>
 <p>The control file uses a binary format to store progress information of
 a download. Here is the diagram for each field:</p>
-<div class="highlight-python"><div class="highlight"><pre> 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+---+-------+-------+-------------------------------------------+
-|VER|  EXT  |INFO   |INFO HASH ...                              |
-|(2)|  (4)  |HASH   | (INFO HASH LENGTH)                        |
-|   |       |LENGTH |                                           |
-|   |       |  (4)  |                                           |
-+---+---+---+-------+---+---------------+-------+---------------+
-|PIECE  |TOTAL LENGTH   |UPLOAD LENGTH  |BIT-   |BITFIELD ...   |
-|LENGTH |     (8)       |     (8)       |FIELD  | (BITFIELD     |
-|  (4)  |               |               |LENGTH |  LENGTH)      |
-|       |               |               |  (4)  |               |
-+-------+-------+-------+-------+-------+-------+---------------+
-|NUM    |INDEX  |LENGTH |PIECE  |PIECE BITFIELD ...             |
-|IN-    |  (4)  |  (4)  |BIT-   | (PIECE BITFIELD LENGTH)       |
-|FLIGHT |       |       |FIELD  |                               |
-|PIECE  |       |       |LENGTH |                               |
-|  (4)  |       |       |  (4)  |                               |
-+-------+-------+-------+-------+-------------------------------+
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="mi">0</span>                   <span class="mi">1</span>                   <span class="mi">2</span>                   <span class="mi">3</span>
+ <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="o">+---+-------+-------+-------------------------------------------+</span>
+<span class="o">|</span><span class="n">VER</span><span class="o">|</span>  <span class="n">EXT</span>  <span class="o">|</span><span class="n">INFO</span>   <span class="o">|</span><span class="n">INFO</span> <span class="n">HASH</span> <span class="o">...</span>                              <span class="o">|</span>
+<span class="o">|</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span><span class="n">HASH</span>   <span class="o">|</span> <span class="p">(</span><span class="n">INFO</span> <span class="n">HASH</span> <span class="n">LENGTH</span><span class="p">)</span>                        <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="o">|</span><span class="n">LENGTH</span> <span class="o">|</span>                                           <span class="o">|</span>
+<span class="o">|</span>   <span class="o">|</span>       <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>                                           <span class="o">|</span>
+<span class="o">+---+---+---+-------+---+---------------+-------+---------------+</span>
+<span class="o">|</span><span class="n">PIECE</span>  <span class="o">|</span><span class="n">TOTAL</span> <span class="n">LENGTH</span>   <span class="o">|</span><span class="n">UPLOAD</span> <span class="n">LENGTH</span>  <span class="o">|</span><span class="n">BIT</span><span class="o">-</span>   <span class="o">|</span><span class="n">BITFIELD</span> <span class="o">...</span>   <span class="o">|</span>
+<span class="o">|</span><span class="n">LENGTH</span> <span class="o">|</span>     <span class="p">(</span><span class="mi">8</span><span class="p">)</span>       <span class="o">|</span>     <span class="p">(</span><span class="mi">8</span><span class="p">)</span>       <span class="o">|</span><span class="n">FIELD</span>  <span class="o">|</span> <span class="p">(</span><span class="n">BITFIELD</span>     <span class="o">|</span>
+<span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span><span class="n">LENGTH</span> <span class="o">|</span>  <span class="n">LENGTH</span><span class="p">)</span>      <span class="o">|</span>
+<span class="o">|</span>       <span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>               <span class="o">|</span>
+<span class="o">+-------+-------+-------+-------+-------+-------+---------------+</span>
+<span class="o">|</span><span class="n">NUM</span>    <span class="o">|</span><span class="n">INDEX</span>  <span class="o">|</span><span class="n">LENGTH</span> <span class="o">|</span><span class="n">PIECE</span>  <span class="o">|</span><span class="n">PIECE</span> <span class="n">BITFIELD</span> <span class="o">...</span>             <span class="o">|</span>
+<span class="o">|</span><span class="n">IN</span><span class="o">-</span>    <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span><span class="n">BIT</span><span class="o">-</span>   <span class="o">|</span> <span class="p">(</span><span class="n">PIECE</span> <span class="n">BITFIELD</span> <span class="n">LENGTH</span><span class="p">)</span>       <span class="o">|</span>
+<span class="o">|</span><span class="n">FLIGHT</span> <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span><span class="n">FIELD</span>  <span class="o">|</span>                               <span class="o">|</span>
+<span class="o">|</span><span class="n">PIECE</span>  <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span><span class="n">LENGTH</span> <span class="o">|</span>                               <span class="o">|</span>
+<span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>       <span class="o">|</span>       <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>                               <span class="o">|</span>
+<span class="o">+-------+-------+-------+-------+-------------------------------+</span>
 
-        ^                                                       ^
-        |                                                       |
-        +-------------------------------------------------------+
-                Repeated in (NUM IN-FLIGHT) PIECE times
+        <span class="o">^</span>                                                       <span class="o">^</span>
+        <span class="o">|</span>                                                       <span class="o">|</span>
+        <span class="o">+-------------------------------------------------------+</span>
+                <span class="n">Repeated</span> <span class="ow">in</span> <span class="p">(</span><span class="n">NUM</span> <span class="n">IN</span><span class="o">-</span><span class="n">FLIGHT</span><span class="p">)</span> <span class="n">PIECE</span> <span class="n">times</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -226,26 +226,26 @@ times.</p>
 following fields. All multi byte integers are in network byte
 order. <code class="docutils literal"><span class="pre">RSV</span></code> (RESERVED) fields are reserved for future use. For now
 they should be all zeros:</p>
-<div class="highlight-python"><div class="highlight"><pre> 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+---+-+---+-----+---------------+---------------+---------------+
-|MGC|F|VER| RSV |     MTIME     |     RSV       |LOCAL NODE ID  :
-|(2)|M|(2)| (3) |      (8)      |     (8)       |      (20)     :
-|   |T|   |     |               |               |               :
-+---+-+---+-----+-------+-------+-------+-------+---------------+
-:LOCAL NODE ID          |  RSV  |  NUM  |  RSV  |
-:  (continued)          |  (4)  |  NODE |  (4)  |
-:                       |       |  (4)  |       |
-+-+-------------+-------+-------+-+-----+-------+---------------+
-|P|     RSV     |COMPACT PEER INFO|            RSV              | &lt;-+
-|L|     (7)     |     (PLEN)      |         (24 - PLEN)         |   |
-|E|             |                 |                             |   |
-|N|             |                 |                             |   |
-+-+-------------+-----------------+-----+-------+---------------+   |
-|            NODE ID                    |  RSV  |                   |
-|             (20)                      |  (4)  | &lt;-----------------+
-+---------------------------------------+-------+   Repeated in
-                                                     (NUM NODE) times.
+<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="mi">0</span>                   <span class="mi">1</span>                   <span class="mi">2</span>                   <span class="mi">3</span>
+ <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">8</span> <span class="mi">9</span> <span class="mi">0</span> <span class="mi">1</span>
+<span class="o">+---+-+---+-----+---------------+---------------+---------------+</span>
+<span class="o">|</span><span class="n">MGC</span><span class="o">|</span><span class="n">F</span><span class="o">|</span><span class="n">VER</span><span class="o">|</span> <span class="n">RSV</span> <span class="o">|</span>     <span class="n">MTIME</span>     <span class="o">|</span>     <span class="n">RSV</span>       <span class="o">|</span><span class="n">LOCAL</span> <span class="n">NODE</span> <span class="n">ID</span>  <span class="p">:</span>
+<span class="o">|</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">|</span><span class="n">M</span><span class="o">|</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">|</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">|</span>      <span class="p">(</span><span class="mi">8</span><span class="p">)</span>      <span class="o">|</span>     <span class="p">(</span><span class="mi">8</span><span class="p">)</span>       <span class="o">|</span>      <span class="p">(</span><span class="mi">20</span><span class="p">)</span>     <span class="p">:</span>
+<span class="o">|</span>   <span class="o">|</span><span class="n">T</span><span class="o">|</span>   <span class="o">|</span>     <span class="o">|</span>               <span class="o">|</span>               <span class="o">|</span>               <span class="p">:</span>
+<span class="o">+---+-+---+-----+-------+-------+-------+-------+---------------+</span>
+<span class="p">:</span><span class="n">LOCAL</span> <span class="n">NODE</span> <span class="n">ID</span>          <span class="o">|</span>  <span class="n">RSV</span>  <span class="o">|</span>  <span class="n">NUM</span>  <span class="o">|</span>  <span class="n">RSV</span>  <span class="o">|</span>
+<span class="p">:</span>  <span class="p">(</span><span class="n">continued</span><span class="p">)</span>          <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>  <span class="n">NODE</span> <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>
+<span class="p">:</span>                       <span class="o">|</span>       <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="o">+-+-------------+-------+-------+-+-----+-------+---------------+</span>
+<span class="o">|</span><span class="n">P</span><span class="o">|</span>     <span class="n">RSV</span>     <span class="o">|</span><span class="n">COMPACT</span> <span class="n">PEER</span> <span class="n">INFO</span><span class="o">|</span>            <span class="n">RSV</span>              <span class="o">|</span> <span class="o">&lt;-+</span>
+<span class="o">|</span><span class="n">L</span><span class="o">|</span>     <span class="p">(</span><span class="mi">7</span><span class="p">)</span>     <span class="o">|</span>     <span class="p">(</span><span class="n">PLEN</span><span class="p">)</span>      <span class="o">|</span>         <span class="p">(</span><span class="mi">24</span> <span class="o">-</span> <span class="n">PLEN</span><span class="p">)</span>         <span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span><span class="n">E</span><span class="o">|</span>             <span class="o">|</span>                 <span class="o">|</span>                             <span class="o">|</span>   <span class="o">|</span>
+<span class="o">|</span><span class="n">N</span><span class="o">|</span>             <span class="o">|</span>                 <span class="o">|</span>                             <span class="o">|</span>   <span class="o">|</span>
+<span class="o">+-+-------------+-----------------+-----+-------+---------------+</span>   <span class="o">|</span>
+<span class="o">|</span>            <span class="n">NODE</span> <span class="n">ID</span>                    <span class="o">|</span>  <span class="n">RSV</span>  <span class="o">|</span>                   <span class="o">|</span>
+<span class="o">|</span>             <span class="p">(</span><span class="mi">20</span><span class="p">)</span>                      <span class="o">|</span>  <span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="o">|</span> <span class="o">&lt;-----------------+</span>
+<span class="o">+---------------------------------------+-------+</span>   <span class="n">Repeated</span> <span class="ow">in</span>
+                                                     <span class="p">(</span><span class="n">NUM</span> <span class="n">NODE</span><span class="p">)</span> <span class="n">times</span><span class="o">.</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -317,7 +317,7 @@ IPv6 DHT, it must be 18.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.24.0',
+            VERSION:'1.25.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

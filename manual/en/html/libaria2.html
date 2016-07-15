@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>libaria2: C++ library interface to aria2 &mdash; aria2 1.24.0 documentation</title>
+  <title>libaria2: C++ library interface to aria2 &mdash; aria2 1.25.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.24.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.25.0 documentation" href="index.html"/>
         <link rel="next" title="Technical Notes" href="technical-notes.html"/>
         <link rel="prev" title="aria2 - The ultra fast download utility" href="README.html"/> 
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.24.0
+                1.25.0
               </div>
             
           
@@ -85,7 +85,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="README.html">aria2 - The ultra fast download utility</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">libaria2: C++ library interface to aria2</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">libaria2: C++ library interface to aria2</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tutorial">Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#api-reference">API Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#enums">Enums</a></li>
@@ -156,7 +156,7 @@ files using libaria2. The complete source is located at
 <em>libaria2ex.cc</em> in <em>examples</em> directory.</p>
 <p>The <em>libaria2ex</em> program takes one or more URIs and downloads each of
 them in parallel. The usage is:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="nl">Usage</span><span class="p">:</span> <span class="n">libaria2ex</span> <span class="n">URI</span> <span class="p">[</span><span class="n">URI</span><span class="p">...]</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="nl">Usage</span><span class="p">:</span> <span class="n">libaria2ex</span> <span class="n">URI</span> <span class="p">[</span><span class="n">URI</span><span class="p">...]</span>
 
   <span class="n">Download</span> <span class="n">given</span> <span class="n">URIs</span> <span class="n">in</span> <span class="n">parallel</span> <span class="n">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">directory</span><span class="p">.</span>
 </pre></div>
@@ -165,16 +165,16 @@ them in parallel. The usage is:</p>
 required. GCC 4.7 works well here.</p>
 <p>OK, let's look into the source code. First, include aria2.h header
 file:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;aria2/aria2.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;aria2/aria2.h&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>Skip to the <code class="docutils literal"><span class="pre">main()</span></code> function. After checking command-line
 arguments, we initialize libaria2:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="n">aria2</span><span class="o">::</span><span class="n">libraryInit</span><span class="p">();</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">aria2</span><span class="o">::</span><span class="n">libraryInit</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>And create aria2 session object:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="n">aria2</span><span class="o">::</span><span class="n">Session</span><span class="o">*</span> <span class="n">session</span><span class="p">;</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">aria2</span><span class="o">::</span><span class="n">Session</span><span class="o">*</span> <span class="n">session</span><span class="p">;</span>
 <span class="c1">// Create default configuration. The libaria2 takes care of signal</span>
 <span class="c1">// handling.</span>
 <span class="n">aria2</span><span class="o">::</span><span class="n">SessionConfig</span> <span class="n">config</span><span class="p">;</span>
@@ -200,7 +200,7 @@ occurred such as download is started, completed, etc. In this example
 program, we handle 2 events: download completion and error. For each
 event, we print the GID of the download and several other
 information:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">downloadEventCallback</span><span class="p">(</span><span class="n">aria2</span><span class="o">::</span><span class="n">Session</span><span class="o">*</span> <span class="n">session</span><span class="p">,</span> <span class="n">aria2</span><span class="o">::</span><span class="n">DownloadEvent</span> <span class="n">event</span><span class="p">,</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">downloadEventCallback</span><span class="p">(</span><span class="n">aria2</span><span class="o">::</span><span class="n">Session</span><span class="o">*</span> <span class="n">session</span><span class="p">,</span> <span class="n">aria2</span><span class="o">::</span><span class="n">DownloadEvent</span> <span class="n">event</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">aria2</span><span class="o">::</span><span class="n">A2Gid</span><span class="o">&amp;</span> <span class="n">gid</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">userData</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">switch</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="p">{</span>
@@ -225,7 +225,7 @@ it, so it is <code class="docutils literal"><span class="pre">nullptr</span></co
 This type is used in API to specify vector of key/value pairs, mostly
 representing aria2 options. For example, specify an option
 <code class="docutils literal"><span class="pre">file-allocation</span></code> to <code class="docutils literal"><span class="pre">none</span></code>:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="n">aria2</span><span class="o">::</span><span class="n">KeyVals</span> <span class="n">options</span><span class="p">;</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">aria2</span><span class="o">::</span><span class="n">KeyVals</span> <span class="n">options</span><span class="p">;</span>
 <span class="n">options</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">aria2</span><span class="o">::</span><span class="n">KeyVals</span><span class="p">(</span><span class="s">&quot;file-allocation&quot;</span><span class="p">,</span> <span class="s">&quot;none&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -234,7 +234,7 @@ command-line argument to aria2c program. In the example program, we
 provide no options, so just pass empty vector.</p>
 <p>After the creation of session object, let's add downloads given in the
 command-line:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="c1">// Add download item to session</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Add download item to session</span>
 <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">uris</span> <span class="o">=</span> <span class="p">{</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]};</span>
   <span class="n">aria2</span><span class="o">::</span><span class="n">KeyVals</span> <span class="n">options</span><span class="p">;</span>
@@ -257,7 +257,7 @@ this example code, we have no interest for it, so just pass
 <p>We have set up everything at this stage. So let's start download.  To
 perform the download, call <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> repeatedly until it returns
 the value other than <code class="docutils literal"><span class="pre">1</span></code>:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="k">for</span><span class="p">(;;)</span> <span class="p">{</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(;;)</span> <span class="p">{</span>
   <span class="n">rv</span> <span class="o">=</span> <span class="n">aria2</span><span class="o">::</span><span class="n">run</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">aria2</span><span class="o">::</span><span class="n">RUN_ONCE</span><span class="p">);</span>
   <span class="k">if</span><span class="p">(</span><span class="n">rv</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">break</span><span class="p">;</span>
@@ -276,7 +276,7 @@ If the function catches error, it returns <code class="docutils literal"><span c
 using <a class="reference internal" href="#c.RUN_ONCE" title="RUN_ONCE"><code class="xref c c-macro docutils literal"><span class="pre">RUN_ONCE</span></code></a> is that the application can use libaria2 API
 when <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> returns. In the example program, we print the
 progress of the download in every no less than 500 millisecond:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="c1">// Print progress information once per 500ms</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Print progress information once per 500ms</span>
 <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">start</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
   <span class="n">aria2</span><span class="o">::</span><span class="n">GlobalStat</span> <span class="n">gstat</span> <span class="o">=</span> <span class="n">aria2</span><span class="o">::</span><span class="n">getGlobalStat</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
@@ -316,7 +316,7 @@ time of <a class="reference internal" href="#_CPPv214DownloadHandle" title="Down
 <p>After the loop, finalize download calling <a class="reference internal" href="#_CPPv212sessionFinalP7Session" title="sessionFinal"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionFinal()</span></code></a>
 function and call <a class="reference internal" href="#_CPPv213libraryDeinitv" title="libraryDeinit"><code class="xref cpp cpp-func docutils literal"><span class="pre">libraryDeinit()</span></code></a> to release resources for the
 library:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="n">rv</span> <span class="o">=</span> <span class="n">aria2</span><span class="o">::</span><span class="n">sessionFinal</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">rv</span> <span class="o">=</span> <span class="n">aria2</span><span class="o">::</span><span class="n">sessionFinal</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
 <span class="n">aria2</span><span class="o">::</span><span class="n">libraryDeinit</span><span class="p">();</span>
 <span class="k">return</span> <span class="n">rv</span><span class="p">;</span>
 </pre></div>
@@ -325,7 +325,7 @@ library:</p>
 post-download action, including saving sessions and destroys session
 object. So failing to call this function will lead to lose the
 download progress and memory leak. The <a class="reference internal" href="#_CPPv212sessionFinalP7Session" title="sessionFinal"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionFinal()</span></code></a> returns
-the code defined in <a class="reference internal" href="aria2c.html#exit-status"><span>EXIT STATUS</span></a>. aria2c program also returns
+the code defined in <a class="reference internal" href="aria2c.html#exit-status"><span class="std std-ref">EXIT STATUS</span></a>. aria2c program also returns
 the same value as exist status, so do the same in this tiny example
 program.</p>
 <p>See also <em>libaria2wx.cc</em> which uses wx GUI component as UI and use
@@ -334,7 +334,7 @@ background thread to run download.</p>
 <div class="section" id="api-reference">
 <h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
 <p>To use the API function, include <code class="docutils literal"><span class="pre">aria2/aria2.h</span></code>:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;aria2/aria2.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;aria2/aria2.h&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>All enums, types and functions are under <code class="docutils literal"><span class="pre">aria2</span></code> namespace. To link
@@ -835,7 +835,7 @@ involved. Otherwise the empty string is returned.</p>
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle12getErrorCodeEv">
 <span id="DownloadHandle::DownloadHandle::getErrorCode"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getErrorCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getErrorCodeEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the last error code occurred in this download. The error
-codes are defined in <a class="reference internal" href="aria2c.html#exit-status"><span>EXIT STATUS</span></a> section of
+codes are defined in <a class="reference internal" href="aria2c.html#exit-status"><span class="std std-ref">EXIT STATUS</span></a> section of
 <em class="manpage">aria2c(1)</em>. This value has its meaning only for
 stopped/completed downloads.</p>
 </dd></dl>
@@ -856,7 +856,7 @@ downloads, this function returns empty array.</p>
 <span id="DownloadHandle::DownloadHandle::getFollowing"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getFollowing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getFollowingEv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the GID of the download which generated this download.
 This is a reverse link of
-<a class="reference internal" href="#_CPPv2N14DownloadHandle14DownloadHandle13getFollowedByEv" title="DownloadHandle::DownloadHandle::getFollowedBy"><code class="xref cpp cpp-func docutils literal"><span class="pre">DownloadHandle::getFollowedBy()</span></code></a>.</p>
+<code class="xref cpp cpp-func docutils literal"><span class="pre">DownloadHandle::getFollowedBy()</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -964,7 +964,7 @@ process.</p>
 <dd><p>Performs post-download action, including saving sessions etc and
 destroys the <em>session</em> object, releasing the allocated resources
 for it. This function returns the last error code and it is the
-equivalent to the <a class="reference internal" href="aria2c.html#exit-status"><span>EXIT STATUS</span></a> of <em class="manpage">aria2c(1)</em>.</p>
+equivalent to the <a class="reference internal" href="aria2c.html#exit-status"><span class="std std-ref">EXIT STATUS</span></a> of <em class="manpage">aria2c(1)</em>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1123,7 +1123,7 @@ dynamically. The following options can be changed for downloads in
 </ul>
 <p>For downloads in <a class="reference internal" href="#c.DOWNLOAD_WAITING" title="DOWNLOAD_WAITING"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_WAITING</span></code></a> or
 <a class="reference internal" href="#c.DOWNLOAD_PAUSED" title="DOWNLOAD_PAUSED"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_PAUSED</span></code></a> status, in addition to the above
-options, options listed in <a class="reference internal" href="aria2c.html#input-file"><span>Input File</span></a> subsection are available,
+options, options listed in <a class="reference internal" href="aria2c.html#input-file"><span class="std std-ref">Input File</span></a> subsection are available,
 except for following options:
 <a class="reference internal" href="aria2c.html#cmdoption--dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a>,
 <a class="reference internal" href="aria2c.html#cmdoption--metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a>,
@@ -1168,7 +1168,7 @@ options are available:</p>
 <li><a class="reference internal" href="aria2c.html#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">save-session</span></code></a></li>
 <li><a class="reference internal" href="aria2c.html#cmdoption--server-stat-of"><code class="xref std std-option docutils literal"><span class="pre">server-stat-of</span></code></a></li>
 </ul>
-<p>In addition to them, options listed in <a class="reference internal" href="aria2c.html#input-file"><span>Input File</span></a> subsection
+<p>In addition to them, options listed in <a class="reference internal" href="aria2c.html#input-file"><span class="std std-ref">Input File</span></a> subsection
 are available, except for following options:
 <a class="reference internal" href="aria2c.html#cmdoption--checksum"><code class="xref std std-option docutils literal"><span class="pre">checksum</span></code></a>,
 <a class="reference internal" href="aria2c.html#cmdoption-O"><code class="xref std std-option docutils literal"><span class="pre">index-out</span></code></a>,
@@ -1283,7 +1283,7 @@ to delete handle object.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.24.0',
+            VERSION:'1.25.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
