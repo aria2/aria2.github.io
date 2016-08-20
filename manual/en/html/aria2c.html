@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.25.0 documentation</title>
+  <title>aria2c(1) &mdash; aria2 1.26.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.25.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.26.0 documentation" href="index.html"/>
         <link rel="next" title="aria2 - The ultra fast download utility" href="README.html"/>
         <link rel="prev" title="Aria2 Manual" href="index.html"/> 
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.25.0
+                1.26.0
               </div>
             
           
@@ -1398,7 +1398,8 @@ Default: <code class="docutils literal"><span class="pre">1.0</span></code></p>
 <dl class="option">
 <dt id="cmdoption--seed-time">
 <code class="descname">--seed-time</code><code class="descclassname">=&lt;MINUTES&gt;</code><a class="headerlink" href="#cmdoption--seed-time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Specify seeding time in minutes. Also see the <a class="reference internal" href="#cmdoption--seed-ratio"><code class="xref std std-option docutils literal"><span class="pre">--seed-ratio</span></code></a> option.</p>
+<dd><p>Specify seeding time in (fractional) minutes. Also see the
+<a class="reference internal" href="#cmdoption--seed-ratio"><code class="xref std std-option docutils literal"><span class="pre">--seed-ratio</span></code></a> option.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Specifying <a class="reference internal" href="#cmdoption--seed-time"><code class="xref std std-option docutils literal"><span class="pre">--seed-time=0</span></code></a> disables seeding after download completed.</p>
@@ -1695,7 +1696,8 @@ user does not have the permission to create it.</p>
 <code class="descname">--auto-file-renaming</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--auto-file-renaming" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename file name if the same file already exists.
 This option works only in HTTP(S)/FTP download.
-The new file name has a dot and a number(1..9999) appended.
+The new file name has a dot and a number(1..9999) appended after the
+name, but before the file extension, if any.
 Default: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
@@ -1881,6 +1883,11 @@ Default: <code class="docutils literal"><span class="pre">prealloc</span></code>
 what it actually does is that it sets file length metadata in
 file system, and does not allocate disk space at all.  This means
 that it does not help avoiding fragmentation.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In multi file torrent downloads, the files adjacent forward to the specified files
+are also allocated if they share the same piece.</p>
 </div>
 </dd></dl>
 
@@ -2108,11 +2115,6 @@ stdout to stderr.  Default: <code class="docutils literal"><span class="pre">fal
 <dd><p>Set interval in seconds to output download progress summary.
 Setting <code class="docutils literal"><span class="pre">0</span></code> suppresses the output.
 Default: <code class="docutils literal"><span class="pre">60</span></code></p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In multi file torrent downloads, the files adjacent forward to the specified files
-are also allocated if they share the same piece.</p>
-</div>
 </dd></dl>
 
 <dl class="option">
@@ -4811,7 +4813,7 @@ files in the program, then also delete it here.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.25.0',
+            VERSION:'1.26.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

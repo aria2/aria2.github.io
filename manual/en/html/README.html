@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2 - The ultra fast download utility &mdash; aria2 1.25.0 documentation</title>
+  <title>aria2 - The ultra fast download utility &mdash; aria2 1.26.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.25.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.26.0 documentation" href="index.html"/>
         <link rel="next" title="libaria2: C++ library interface to aria2" href="libaria2.html"/>
         <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.25.0
+                1.26.0
               </div>
             
           
@@ -158,16 +158,6 @@
             
   <div class="section" id="aria2-the-ultra-fast-download-utility">
 <h1>aria2 - The ultra fast download utility<a class="headerlink" href="#aria2-the-ultra-fast-download-utility" title="Permalink to this headline">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Tatsuhiro Tsujikawa</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Email:</th><td class="field-body">tatsuhiro.t_at_gmail_dot_com</td>
-</tr>
-</tbody>
-</table>
 <div class="section" id="disclaimer">
 <h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
 <p>This program comes with no warranty.
@@ -412,7 +402,7 @@ necessary to build the program:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ autoreconf -i
 </pre></div>
 </div>
-<p>Also you need <a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> to build man page.</p>
+<p>Also you need <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> to build man page.</p>
 <p>If you are building aria2 for Mac OS X, take a look at
 the make-release-os.mk GNU Make makefile.</p>
 <p>The quickest way to build aria2 is first run configure script:</p>
@@ -518,7 +508,7 @@ libraries.</p>
 <h2>Cross-compiling Android binary<a class="headerlink" href="#cross-compiling-android-binary" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we describe how to build Android binary using Android
 NDK cross-compiler on Debian Linux.</p>
-<p>At the time of this writing, android-ndk-r9 should compile aria2
+<p>At the time of this writing, android-ndk-r12b should compile aria2
 without errors.</p>
 <p><code class="docutils literal"><span class="pre">android-config</span></code> script is a configure script wrapper for Android
 build.  We use it to create official Android build.  This script
@@ -539,19 +529,14 @@ by ourselves.</p>
 environment variable which must fulfill the following conditions:</p>
 <ul>
 <li><p class="first">Android NDK toolchain is installed under
-<code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>.  Refer to &quot;4/ Invoking the compiler
-(the easy way):&quot; section in Android NDK
-<code class="docutils literal"><span class="pre">docs/STANDALONE-TOOLCHAIN.html</span></code> to install custom toolchain.</p>
-<p>For example, to install toolchain under <code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>,
-do this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$NDK/build/tools/make-standalone-toolchain.sh \
-  --install-dir=$ANDROID_HOME/toolchain \
-  --toolchain=arm-linux-androideabi-4.9 \
-  --platform=android-16
+<code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>.  Refer to <a class="reference external" href="https://developer.android.com/ndk/guides/standalone_toolchain.html">Standalone Toolchain</a>
+for more details, but it is a bit out of date.</p>
+<p>To install toolchain under <code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>, do this:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>$NDK/build/tools/make_standalone_toolchain.py \
+   --arch arm --api 16 --stl=gnustl \
+   --install-dir $ANDROID_HOME/toolchain
 </pre></div>
 </div>
-<p>You may need to add <code class="docutils literal"><span class="pre">--system=linux-x86_64</span></code> to the above
-command-line for x86_64 Linux host.</p>
 </li>
 <li><p class="first">The dependent libraries must be installed under
 <code class="docutils literal"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</p>
@@ -564,13 +549,13 @@ correct path.</p>
 </div>
 <div class="section" id="building-documentation">
 <h2>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://sphinx.pocoo.org/">Sphinx</a> is used to build the
+<p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> is used to build the
 documentation. aria2 man pages will be build when you run <code class="docutils literal"><span class="pre">make</span></code> if
 they are not up-to-date.  You can also build HTML version of aria2 man
 page by <code class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></code>. The HTML version manual is also available at
 <a class="reference external" href="https://aria2.github.io/manual/en/html/">online</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian
-translation</a>,
-<a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese translation</a>).</p>
+translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
+translation</a>).</p>
 </div>
 <div class="section" id="bittorrent">
 <h2>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this headline">¶</a></h2>
@@ -766,7 +751,7 @@ and <a class="reference external" href="http://www.rasterbar.com/products/libtor
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.25.0',
+            VERSION:'1.26.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

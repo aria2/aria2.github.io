@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.25.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.26.0</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.25.0" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.26.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.25.0
+                1.26.0
               </div>
             
           
@@ -1451,7 +1451,7 @@ aria2 анализирует как torrent-файл и загружает фа�
 <dl class="option">
 <dt id="cmdoption--seed-time">
 <code class="descname">--seed-time</code><code class="descclassname">=&lt;MINUTES&gt;</code><a class="headerlink" href="#cmdoption--seed-time" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Указать время сидирования (раздачи) в минутах.
+<dd><p>Указать время сидирования [раздачи] в (дробных) минутах.
 Смотрите также параметр <a class="reference internal" href="#cmdoption--seed-ratio"><code class="xref std std-option docutils literal"><span class="pre">--seed-ratio</span></code></a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
@@ -1760,7 +1760,8 @@ metalink:url и metalink:metaurl в metalink-файле, сохраненном 
 <code class="descname">--auto-file-renaming</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--auto-file-renaming" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Переименовать файл, если такой уже существует.
 Этот параметр работает только для HTTP(S)/FTP-загрузок.
-К имени файла будет добавлена точка и число от 1 до 9999.
+К имени файла, но перед расширением (если оно есть), будет
+добавлена точка и число от 1 до 9999.
 По умолчанию: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
@@ -4930,7 +4931,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.25.0',
+            VERSION:'1.26.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

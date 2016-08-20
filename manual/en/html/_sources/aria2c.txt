@@ -939,7 +939,8 @@ BitTorrent Specific Options
 
 .. option:: --seed-time=<MINUTES>
 
-  Specify seeding time in minutes. Also see the :option:`--seed-ratio` option.
+  Specify seeding time in (fractional) minutes. Also see the
+  :option:`--seed-ratio` option.
 
   .. note::
 
@@ -1174,7 +1175,8 @@ Advanced Options
 
   Rename file name if the same file already exists.
   This option works only in HTTP(S)/FTP download.
-  The new file name has a dot and a number(1..9999) appended.
+  The new file name has a dot and a number(1..9999) appended after the
+  name, but before the file extension, if any.
   Default: ``true``
 
 .. option:: --auto-save-interval=<SEC>
@@ -1332,6 +1334,11 @@ Advanced Options
      what it actually does is that it sets file length metadata in
      file system, and does not allocate disk space at all.  This means
      that it does not help avoiding fragmentation.
+
+  .. note::
+
+    In multi file torrent downloads, the files adjacent forward to the specified files
+    are also allocated if they share the same piece.
 
 .. option:: --force-save[=true|false]
 
@@ -1516,11 +1523,6 @@ Advanced Options
   Set interval in seconds to output download progress summary.
   Setting ``0`` suppresses the output.
   Default: ``60``
-
-  .. note::
-
-    In multi file torrent downloads, the files adjacent forward to the specified files
-    are also allocated if they share the same piece.
 
 .. option:: -Z, --force-sequential[=true|false]
 
