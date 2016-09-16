@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.26.1 documentation</title>
+  <title>aria2c(1) &mdash; aria2 1.27.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="aria2 1.26.1 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.27.0 documentation" href="index.html"/>
         <link rel="next" title="aria2 - The ultra fast download utility" href="README.html"/>
         <link rel="prev" title="Aria2 Manual" href="index.html"/> 
 
@@ -61,7 +61,7 @@
             
             
               <div class="version">
-                1.26.1
+                1.27.0
               </div>
             
           
@@ -1902,6 +1902,15 @@ Default: <code class="docutils literal"><span class="pre">false</span></code></p
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption--save-not-found">
+<code class="descname">--save-not-found</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--save-not-found" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save download with <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a> option
+even if the file was not found on the server. This option also saves
+control file in that situations.
+Default: <code class="docutils literal"><span class="pre">true</span></code></p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption--gid">
 <code class="descname">--gid</code><code class="descclassname">=&lt;GID&gt;</code><a class="headerlink" href="#cmdoption--gid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set GID manually. aria2 identifies each download by the ID called
@@ -2238,7 +2247,7 @@ given, file will be saved only when aria2 exits. Default: <code class="docutils 
 <dl class="option">
 <dt id="cmdoption--socket-recv-buffer-size">
 <code class="descname">--socket-recv-buffer-size</code><code class="descclassname">=&lt;SIZE&gt;</code><a class="headerlink" href="#cmdoption--socket-recv-buffer-size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set the maximum socket receive buffer in bytes.  Specifing <code class="docutils literal"><span class="pre">0</span></code>
+<dd><p>Set the maximum socket receive buffer in bytes.  Specifying <code class="docutils literal"><span class="pre">0</span></code>
 will disable this option. This value will be set to socket file
 descriptor using <code class="docutils literal"><span class="pre">SO_RCVBUF</span></code> socket option with <code class="docutils literal"><span class="pre">setsockopt()</span></code>
 call.  Default: <code class="docutils literal"><span class="pre">0</span></code></p>
@@ -4813,7 +4822,7 @@ files in the program, then also delete it here.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.26.1',
+            VERSION:'1.27.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

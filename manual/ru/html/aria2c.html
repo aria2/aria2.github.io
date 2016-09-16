@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.26.1</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.27.0</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.26.1" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.27.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                1.26.1
+                1.27.0
               </div>
             
           
@@ -1959,6 +1959,11 @@ aria2, пока не закончится резервирование мест�
 выделяется. Это означает, что это не помогает избежать
 фрагментации.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">В загрузках многофайлового торрента, по определенным смежным файлам также,
+которые размещены в части одного блока.</p>
+</div>
 </dd></dl>
 
 <dl class="option">
@@ -1970,6 +1975,15 @@ aria2, пока не закончится резервирование мест�
 чтобы сохранить BitTorrent-сидирование, у которого будет распознано
 состояние как завершенное.
 По умолчанию: <code class="docutils literal"><span class="pre">false</span></code></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption--save-not-found">
+<code class="descname">--save-not-found</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--save-not-found" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Сохранить загрузку с параметром <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a>,
+даже если файл не был найден на сервере. В этой ситуации параметр
+также сохраняет контрольный файл.
+По умолчанию: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
 <dl class="option">
@@ -2198,11 +2212,6 @@ HTTP-запросе. Для включения конвейерной обраб
 <dd><p>Задать интервал в секундах до вывода сообщения о прогрессе
 загрузки. Установка <code class="docutils literal"><span class="pre">0</span></code> запрещает вывод.
 По умолчанию: <code class="docutils literal"><span class="pre">60</span></code></p>
-<div class="admonition note">
-<p class="first admonition-title">Примечание</p>
-<p class="last">В загрузках многофайлового торрента, по определенным смежным файлам также,
-которые размещены в части одного блока.</p>
-</div>
 </dd></dl>
 
 <dl class="option">
@@ -4931,7 +4940,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.26.1',
+            VERSION:'1.27.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
