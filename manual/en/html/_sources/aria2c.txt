@@ -1391,6 +1391,15 @@ Advanced Options
     system doesn't have :manpage:`getifaddrs(3)`, this option doesn't accept interface
     name.
 
+.. option:: --keep-unfinished-download-result[=true|false]
+
+  Keep unfinished download results even if doing so exceeds
+  :option:`--max-download-result`.  This is useful if all unfinished
+  downloads must be saved in session file (see
+  :option:`--save-session` option).  Please keep in mind that there is
+  no upper bound to the number of unfinished download result to keep.
+  If that is undesirable, turn this option off.  Default: ``true``
+
 .. option:: --max-download-result=<NUM>
 
   Set maximum number of download result kept in memory. The download
@@ -1400,8 +1409,10 @@ Advanced Options
   oldest download result is removed from the front of the queue and
   new one is pushed to the back. Setting big number in this option may
   result high memory consumption after thousands of
-  downloads. Specifying 0 means no download result is kept. Default:
-  ``1000``
+  downloads. Specifying 0 means no download result is kept.  Note that
+  unfinished downloads are kept in memory regardless of this option
+  value. See :option:`--keep-unfinished-download-result` option.
+  Default: ``1000``
 
 .. option:: --max-mmap-limit=<SIZE>
 
@@ -3240,6 +3251,7 @@ For information on the *secret* parameter, see :ref:`rpc_auth`.
 
   * :option:`bt-max-open-files <--bt-max-open-files>`
   * :option:`download-result <--download-result>`
+  * :option:`keep-unfinished-download-result <--keep-unfinished-download-result>`
   * :option:`log <-l>`
   * :option:`log-level <--log-level>`
   * :option:`max-concurrent-downloads <-j>`
