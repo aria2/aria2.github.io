@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.29.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.30.0</title>
   
 
   
@@ -30,7 +30,10 @@
   
 
   
-    <link rel="top" title="Документация aria2 1.29.0" href="index.html"/>
+        <link rel="index" title="Алфавитный указатель"
+              href="genindex.html"/>
+        <link rel="search" title="Поиск" href="search.html"/>
+    <link rel="top" title="Документация aria2 1.30.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                1.29.0
+                1.30.0
               </div>
             
           
@@ -1074,8 +1077,8 @@ DIGEST - шестнадцатеричное значение хэша.
 <dd><p>Разделенный запятыми список URI анонса BitTorrent-трекера,
 которые будут исключены. Вы можете использовать специальное
 значение <code class="docutils literal"><span class="pre">*</span></code>, которое соответствует всем URI, таким образом,
-исключаются все URI анонса. При указании <code class="docutils literal"><span class="pre">*</span></code> в оболочке
-командной строке, не забывайте, экранировать или брать в кавычки.
+исключаются все URI анонса. При указании <code class="docutils literal"><span class="pre">*</span></code> в командной
+оболочке, не забывайте, экранировать или брать в кавычки.
 Смотрите также параметр <a class="reference internal" href="#cmdoption--bt-tracker"><code class="xref std std-option docutils literal"><span class="pre">--bt-tracker</span></code></a>.</p>
 </dd></dl>
 
@@ -2038,7 +2041,7 @@ aria2, пока не закончится резервирование мест�
 <code class="descname">--keep-unfinished-download-result</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--keep-unfinished-download-result" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Сохранять результаты незавершённых загрузок, даже если превышено значение
 <a class="reference internal" href="#cmdoption--max-download-result"><code class="xref std std-option docutils literal"><span class="pre">--max-download-result</span></code></a>. Это полезно, если незавершённые загрузки
-должны сохраняться в файле сессии (см. параметр <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a> option).
+должны сохраняться в файле сессии (см. параметр <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a>).
 Пожалуйста, имейте в виду, что для сохранения не существует верхней границы
 для количества результатов незавершённых загрузок. Если это нежелательно,
 отключите эту опцию.
@@ -2643,6 +2646,44 @@ https-proxy в конфигурационном файле. Параметр
 к конфигурационному файлу (например, <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">600</span> <span class="pre">aria2.conf</span></code>), так
 другие пользователи не смогут увидеть содержимое файла.</p>
 </div>
+<p>Значения перемененных окружения, таких как <code class="docutils literal"><span class="pre">${HOME}</span></code>, подставляются
+командной оболочкой. Это означает, что эти переменные, используемые в файле
+конфигурации, не подставляются. Тем не менее, полезно для обозначения
+домашнего каталога пользователя в конфигурационном файле использовать
+<code class="docutils literal"><span class="pre">${HOME}</span></code>, чтобы указать путь к файлам. Таким образом, aria2 подставляет
+путь к домашней директории пользователя при найденной переменной
+<code class="docutils literal"><span class="pre">${HOME}</span></code>, в следующих значениях параметров:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#cmdoption--ca-certificate"><code class="xref std std-option docutils literal"><span class="pre">ca-certificate</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--certificate"><code class="xref std std-option docutils literal"><span class="pre">certificate</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--dht-file-path"><code class="xref std std-option docutils literal"><span class="pre">dht-file-path</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--dht-file-path6"><code class="xref std std-option docutils literal"><span class="pre">dht-file-path6</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--dir"><code class="xref std std-option docutils literal"><span class="pre">dir</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--input-file"><code class="xref std std-option docutils literal"><span class="pre">input-file</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--load-cookies"><code class="xref std std-option docutils literal"><span class="pre">load-cookies</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--log"><code class="xref std std-option docutils literal"><span class="pre">log</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--metalink-file"><code class="xref std std-option docutils literal"><span class="pre">metalink-file</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--netrc-path"><code class="xref std std-option docutils literal"><span class="pre">netrc-path</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-bt-download-complete"><code class="xref std std-option docutils literal"><span class="pre">on-bt-download-complete</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-complete"><code class="xref std std-option docutils literal"><span class="pre">on-download-complete</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-error"><code class="xref std std-option docutils literal"><span class="pre">on-download-error</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-start"><code class="xref std std-option docutils literal"><span class="pre">on-download-start</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-stop"><code class="xref std std-option docutils literal"><span class="pre">on-download-stop</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-pause"><code class="xref std std-option docutils literal"><span class="pre">on-download-pause</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--out"><code class="xref std std-option docutils literal"><span class="pre">out</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--private-key"><code class="xref std std-option docutils literal"><span class="pre">private-key</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--rpc-certificate"><code class="xref std std-option docutils literal"><span class="pre">rpc-certificate</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--rpc-private-key"><code class="xref std std-option docutils literal"><span class="pre">rpc-private-key</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--save-cookies"><code class="xref std std-option docutils literal"><span class="pre">save-cookies</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">save-session</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--server-stat-if"><code class="xref std std-option docutils literal"><span class="pre">server-stat-if</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--server-stat-of"><code class="xref std std-option docutils literal"><span class="pre">server-stat-of</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--torrent-file"><code class="xref std std-option docutils literal"><span class="pre">torrent-file</span></code></a></li>
+</ul>
+<p>Обратите внимание, что подстановка происходит даже в том случае, если
+вышеуказанные параметры используются в командной строке. Это означает, что
+подстановка может происходить 2 раза: сначала командной оболочкой, а затем
+aria2c.</p>
 </div>
 <div class="section" id="dht-dat">
 <h3>dht.dat<a class="headerlink" href="#dht-dat" title="Ссылка на этот заголовок">¶</a></h3>
@@ -4802,9 +4843,6 @@ WinTLS и AppleTLS всегда будет использовать хранил
 <h3>И ещё больше расширенных возможностей<a class="headerlink" href="#id56" title="Ссылка на этот заголовок">¶</a></h3>
 <div class="section" id="id57">
 <h4>Регулировка скорости загрузки<a class="headerlink" href="#id57" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <p>Одной загрузки:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --max-download-limit<span class="o">=</span>100K file.metalink
 </pre></div>
@@ -4956,7 +4994,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.29.0',
+            VERSION:'1.30.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

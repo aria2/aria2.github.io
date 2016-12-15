@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.29.0 documentation</title>
+  <title>aria2c(1) &mdash; aria2 1.30.0 documentation</title>
   
 
   
@@ -30,7 +30,10 @@
   
 
   
-    <link rel="top" title="aria2 1.29.0 documentation" href="index.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="aria2 1.30.0 documentation" href="index.html"/>
         <link rel="next" title="aria2 - The ultra fast download utility" href="README.html"/>
         <link rel="prev" title="Aria2 Manual" href="index.html"/> 
 
@@ -61,7 +64,7 @@
             
             
               <div class="version">
-                1.29.0
+                1.30.0
               </div>
             
           
@@ -1608,7 +1611,7 @@ hash hex string of meta data plus extension. For torrent, the
 extension is '.torrent'. For metalink, it is '.meta4'.  If false is
 given to this option, the downloads added by
 <a class="reference internal" href="#aria2.addTorrent" title="aria2.addTorrent"><code class="xref py py-func docutils literal"><span class="pre">aria2.addTorrent()</span></code></a> or <a class="reference internal" href="#aria2.addMetalink" title="aria2.addMetalink"><code class="xref py py-func docutils literal"><span class="pre">aria2.addMetalink()</span></code></a> will not be
-saved by <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a> option. Default: <code class="docutils literal"><span class="pre">false</span></code></p>
+saved by <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a> option. Default: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
 <dl class="option">
@@ -2539,6 +2542,42 @@ in the configuration file. It is recommended to change file mode
 bits of the configuration file (e.g., <code class="docutils literal"><span class="pre">chmod</span> <span class="pre">600</span> <span class="pre">aria2.conf</span></code>), so
 that other user cannot see the contents of the file.</p>
 </div>
+<p>The environment variables, such as <code class="docutils literal"><span class="pre">${HOME}</span></code>, are expanded by shell.
+This means that those variables used in configuration file are not
+expanded.  However, it is useful to <code class="docutils literal"><span class="pre">${HOME}</span></code> to refer user's home
+directory in configuration file to specify file paths.  Therefore,
+aria2 expands <code class="docutils literal"><span class="pre">${HOME}</span></code> found in the following option values to
+user's home directory:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#cmdoption--ca-certificate"><code class="xref std std-option docutils literal"><span class="pre">ca-certificate</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--certificate"><code class="xref std std-option docutils literal"><span class="pre">certificate</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--dht-file-path"><code class="xref std std-option docutils literal"><span class="pre">dht-file-path</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--dht-file-path6"><code class="xref std std-option docutils literal"><span class="pre">dht-file-path6</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--dir"><code class="xref std std-option docutils literal"><span class="pre">dir</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--input-file"><code class="xref std std-option docutils literal"><span class="pre">input-file</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--load-cookies"><code class="xref std std-option docutils literal"><span class="pre">load-cookies</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--log"><code class="xref std std-option docutils literal"><span class="pre">log</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--metalink-file"><code class="xref std std-option docutils literal"><span class="pre">metalink-file</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--netrc-path"><code class="xref std std-option docutils literal"><span class="pre">netrc-path</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-bt-download-complete"><code class="xref std std-option docutils literal"><span class="pre">on-bt-download-complete</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-complete"><code class="xref std std-option docutils literal"><span class="pre">on-download-complete</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-error"><code class="xref std std-option docutils literal"><span class="pre">on-download-error</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-start"><code class="xref std std-option docutils literal"><span class="pre">on-download-start</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-stop"><code class="xref std std-option docutils literal"><span class="pre">on-download-stop</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--on-download-pause"><code class="xref std std-option docutils literal"><span class="pre">on-download-pause</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--out"><code class="xref std std-option docutils literal"><span class="pre">out</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--private-key"><code class="xref std std-option docutils literal"><span class="pre">private-key</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--rpc-certificate"><code class="xref std std-option docutils literal"><span class="pre">rpc-certificate</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--rpc-private-key"><code class="xref std std-option docutils literal"><span class="pre">rpc-private-key</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--save-cookies"><code class="xref std std-option docutils literal"><span class="pre">save-cookies</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">save-session</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--server-stat-if"><code class="xref std std-option docutils literal"><span class="pre">server-stat-if</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--server-stat-of"><code class="xref std std-option docutils literal"><span class="pre">server-stat-of</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--torrent-file"><code class="xref std std-option docutils literal"><span class="pre">torrent-file</span></code></a></li>
+</ul>
+<p>Note that this expansion occurs even if the above options are used in
+the command-line.  This means that expansion may occur 2 times: first,
+shell and then aria2c.</p>
 </div>
 <div class="section" id="dht-dat">
 <h3>dht.dat<a class="headerlink" href="#dht-dat" title="Permalink to this headline">¶</a></h3>
@@ -4836,7 +4875,7 @@ files in the program, then also delete it here.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.29.0',
+            VERSION:'1.30.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
