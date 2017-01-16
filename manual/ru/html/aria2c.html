@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.30.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.31.0</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Алфавитный указатель"
               href="genindex.html"/>
         <link rel="search" title="Поиск" href="search.html"/>
-    <link rel="top" title="Документация aria2 1.30.0" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.31.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                1.30.0
+                1.31.0
               </div>
             
           
@@ -1671,7 +1671,7 @@ metalink:url и metalink:metaurl в metalink-файле, сохраненном 
 Если параметр задан как false, то загрузки, добавленные с помощью
 <a class="reference internal" href="#aria2.addTorrent" title="aria2.addTorrent"><code class="xref py py-func docutils literal"><span class="pre">aria2.addTorrent()</span></code></a> или <a class="reference internal" href="#aria2.addMetalink" title="aria2.addMetalink"><code class="xref py py-func docutils literal"><span class="pre">aria2.addMetalink()</span></code></a>, не будут
 сохраняться при помощи параметра <a class="reference internal" href="#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a>.
-По умолчанию: <code class="docutils literal"><span class="pre">false</span></code></p>
+По умолчанию: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
 <dl class="option">
@@ -1811,6 +1811,14 @@ URI, если <a class="reference internal" href="#cmdoption-o"><code class="xre
 <dd><p>Задать уровень вывода событий на консоль. LEVEL может
 быть: <code class="docutils literal"><span class="pre">debug</span></code>, <code class="docutils literal"><span class="pre">info</span></code>, <code class="docutils literal"><span class="pre">notice</span></code>, <code class="docutils literal"><span class="pre">warn</span></code> или <code class="docutils literal"><span class="pre">error</span></code>.
 По умолчанию: <code class="docutils literal"><span class="pre">notice</span></code></p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption--content-disposition-default-utf8">
+<code class="descname">--content-disposition-default-utf8</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--content-disposition-default-utf8" title="Ссылка на это определение">¶</a></dt>
+<dd><p>Обрабатывать строку в кавычках в заголовке Content-Disposition как
+UTF-8 вместо ISO-8859-1, например, параметр filename,
+но не расширенную версию filename*. По умолчанию: <code class="docutils literal"><span class="pre">false</span></code></p>
 </dd></dl>
 
 <dl class="option">
@@ -2777,6 +2785,7 @@ URI. Эти дополнительные строки должны начина�
 <li><a class="reference internal" href="#cmdoption--checksum"><code class="xref std std-option docutils literal"><span class="pre">checksum</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--conditional-get"><code class="xref std std-option docutils literal"><span class="pre">conditional-get</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--connect-timeout"><code class="xref std std-option docutils literal"><span class="pre">connect-timeout</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--content-disposition-default-utf8"><code class="xref std std-option docutils literal"><span class="pre">content-disposition-default-utf8</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-c"><code class="xref std std-option docutils literal"><span class="pre">continue</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">dir</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a></li>
@@ -4994,7 +5003,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.30.0',
+            VERSION:'1.31.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

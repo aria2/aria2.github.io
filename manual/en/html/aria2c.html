@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.30.0 documentation</title>
+  <title>aria2c(1) &mdash; aria2 1.31.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="aria2 1.30.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.31.0 documentation" href="index.html"/>
         <link rel="next" title="aria2 - The ultra fast download utility" href="README.html"/>
         <link rel="prev" title="Aria2 Manual" href="index.html"/> 
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.30.0
+                1.31.0
               </div>
             
           
@@ -1745,6 +1745,14 @@ Default: <code class="docutils literal"><span class="pre">$HOME/.aria2/aria2.con
 </dd></dl>
 
 <dl class="option">
+<dt id="cmdoption--content-disposition-default-utf8">
+<code class="descname">--content-disposition-default-utf8</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption--content-disposition-default-utf8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle quoted string in Content-Disposition header as UTF-8 instead
+of ISO-8859-1, for example, the filename parameter, but not the
+extended version filename*.  Default: <code class="docutils literal"><span class="pre">false</span></code></p>
+</dd></dl>
+
+<dl class="option">
 <dt id="cmdoption-D">
 <span id="cmdoption--daemon"></span><code class="descname">-D</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--daemon</code><code class="descclassname">[=true|false]</code><a class="headerlink" href="#cmdoption-D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run as daemon. The current working directory will be changed to <code class="docutils literal"><span class="pre">/</span></code>
@@ -2670,6 +2678,7 @@ of URIs. These optional lines must start with white space(s).</p>
 <li><a class="reference internal" href="#cmdoption--checksum"><code class="xref std std-option docutils literal"><span class="pre">checksum</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--conditional-get"><code class="xref std std-option docutils literal"><span class="pre">conditional-get</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--connect-timeout"><code class="xref std std-option docutils literal"><span class="pre">connect-timeout</span></code></a></li>
+<li><a class="reference internal" href="#cmdoption--content-disposition-default-utf8"><code class="xref std std-option docutils literal"><span class="pre">content-disposition-default-utf8</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-c"><code class="xref std std-option docutils literal"><span class="pre">continue</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">dir</span></code></a></li>
 <li><a class="reference internal" href="#cmdoption--dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a></li>
@@ -4875,7 +4884,7 @@ files in the program, then also delete it here.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.30.0',
+            VERSION:'1.31.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
