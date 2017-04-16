@@ -4603,7 +4603,7 @@ URI, если они указывают на тот же самый файл.</p
 </div>
 <div class="section" id="id40">
 <h4>Загрузка только выбранных файлов<a class="headerlink" href="#id40" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span>1-4,8 file.metalink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 file.metalink
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4613,7 +4613,7 @@ URI, если они указывают на тот же самый файл.</p
 </div>
 <div class="section" id="id41">
 <h4>Загрузка файла, используя локальный metalink-файл с пользовательскими настройками<a class="headerlink" href="#id41" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --metalink-location<span class="o">=</span>jp,us --metalink-version<span class="o">=</span>1.1 --metalink-language<span class="o">=</span>en-US file.metalink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --metalink-location<span class="o">=</span>jp,us --metalink-version<span class="o">=</span><span class="m">1</span>.1 --metalink-language<span class="o">=</span>en-US file.metalink
 </pre></div>
 </div>
 </div>
@@ -4670,7 +4670,7 @@ URI, если они указывают на тот же самый файл.</p
 </div>
 <div class="section" id="id46">
 <h4>Загрузка только определённых файлов (обычно называют &quot;выборочная загрузка&quot;)<a class="headerlink" href="#id46" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span>1-4,8 file.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 file.torrent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4708,7 +4708,7 @@ URI, если они указывают на тот же самый файл.</p
 </div>
 <div class="section" id="id49">
 <h4>Изменение прослушиваемого порта для входящих соединений пиров<a class="headerlink" href="#id49" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --listen-port<span class="o">=</span>7000-7001,8000 file.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --listen-port<span class="o">=</span><span class="m">7000</span>-7001,8000 file.torrent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4719,7 +4719,7 @@ URI, если они указывают на тот же самый файл.</p
 </div>
 <div class="section" id="id50">
 <h4>Указать условие остановки сидирования после завершения загрузки торрента<a class="headerlink" href="#id50" title="Ссылка на этот заголовок">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --seed-time<span class="o">=</span><span class="m">120</span> --seed-ratio<span class="o">=</span>1.0 file.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --seed-time<span class="o">=</span><span class="m">120</span> --seed-ratio<span class="o">=</span><span class="m">1</span>.0 file.torrent
 </pre></div>
 </div>
 <div class="admonition note">

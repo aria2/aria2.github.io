@@ -4052,7 +4052,7 @@ no mesmo diretório</p>
 </div>
 <div class="section" id="download-so-arquivos-selecionados-usando-index">
 <h4>Download só arquivos selecionados usando index<a class="headerlink" href="#download-so-arquivos-selecionados-usando-index" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span>1-4,8 arquivo.metalink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 arquivo.metalink
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4062,7 +4062,7 @@ no mesmo diretório</p>
 </div>
 <div class="section" id="download-um-arquivo-usando-metalink-local-com-preferencia-do-usuario">
 <h4>Download um arquivo usando Metalink local com preferência do usuário<a class="headerlink" href="#download-um-arquivo-usando-metalink-local-com-preferencia-do-usuario" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --metalink-location<span class="o">=</span>pt,us --metalink-version<span class="o">=</span>1.1 --metalink-language<span class="o">=</span>pt-BR arquivo.metalink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --metalink-location<span class="o">=</span>pt,us --metalink-version<span class="o">=</span><span class="m">1</span>.1 --metalink-language<span class="o">=</span>pt-BR arquivo.metalink
 </pre></div>
 </div>
 </div>
@@ -4119,7 +4119,7 @@ que tem significado de parâmetro. Utilizar apóstrofo(<code class="docutils lit
 </div>
 <div class="section" id="download-arquivos-selecionados-usando-index-chamado-download-seletivo">
 <h4>Download arquivos selecionados usando index(chamado &quot;download seletivo&quot;)<a class="headerlink" href="#download-arquivos-selecionados-usando-index-chamado-download-seletivo" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span>1-4,8 arquivo.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 arquivo.torrent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4150,7 +4150,7 @@ Por exemplo, a saída exibirá algo como:</p>
 </div>
 <div class="section" id="modificar-porta-escuta-para-peer-de-entrada">
 <h4>Modificar porta escuta para peer de entrada<a class="headerlink" href="#modificar-porta-escuta-para-peer-de-entrada" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --listen-port<span class="o">=</span>7000-7001,8000 arquivo.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --listen-port<span class="o">=</span><span class="m">7000</span>-7001,8000 arquivo.torrent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4161,7 +4161,7 @@ de encaminhamento, isto deve ser explicitado manualmente por você.</p>
 </div>
 <div class="section" id="especificar-condicao-para-para-o-programa-torrent-apos-termino-do-download">
 <h4>Especificar condição para para o programa torrent após término do download<a class="headerlink" href="#especificar-condicao-para-para-o-programa-torrent-apos-termino-do-download" title="Link permanente para este título">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --seed-time<span class="o">=</span><span class="m">120</span> --seed-ratio<span class="o">=</span>1.0 arquivo.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --seed-time<span class="o">=</span><span class="m">120</span> --seed-ratio<span class="o">=</span><span class="m">1</span>.0 arquivo.torrent
 </pre></div>
 </div>
 <div class="admonition note">

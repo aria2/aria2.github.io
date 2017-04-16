@@ -4499,7 +4499,7 @@ directory.</p>
 </div>
 <div class="section" id="download-only-selected-files">
 <h4>Download only selected files<a class="headerlink" href="#download-only-selected-files" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span>1-4,8 file.metalink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 file.metalink
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4509,7 +4509,7 @@ directory.</p>
 </div>
 <div class="section" id="download-a-file-using-a-local-metalink-file-with-user-preference">
 <h4>Download a file using a local metalink file with user preference<a class="headerlink" href="#download-a-file-using-a-local-metalink-file-with-user-preference" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --metalink-location<span class="o">=</span>jp,us --metalink-version<span class="o">=</span>1.1 --metalink-language<span class="o">=</span>en-US file.metalink
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --metalink-location<span class="o">=</span>jp,us --metalink-version<span class="o">=</span><span class="m">1</span>.1 --metalink-language<span class="o">=</span>en-US file.metalink
 </pre></div>
 </div>
 </div>
@@ -4567,7 +4567,7 @@ the command-line.</p>
 </div>
 <div class="section" id="only-download-specific-files-usually-called-selected-download">
 <h4>Only download specific files (usually called &quot;selected download&quot;)<a class="headerlink" href="#only-download-specific-files-usually-called-selected-download" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span>1-4,8 file.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 file.torrent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4586,14 +4586,14 @@ the command-line.</p>
 <p>To specify the output file name for BitTorrent downloads, you need to know
 the index of file in the torrent (see <a class="reference internal" href="#cmdoption-S"><code class="xref std std-option docutils literal"><span class="pre">--show-files</span></code></a>). For
 example, the output looks like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">idx</span><span class="o">|</span><span class="n">path</span><span class="o">/</span><span class="n">length</span>
-<span class="o">===+======================</span>
-  <span class="mi">1</span><span class="o">|</span><span class="n">dist</span><span class="o">/</span><span class="n">base</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">18.</span><span class="n">iso</span>
-   <span class="o">|</span><span class="mf">99.9</span><span class="n">MiB</span>
-<span class="o">---+----------------------</span>
-  <span class="mi">2</span><span class="o">|</span><span class="n">dist</span><span class="o">/</span><span class="n">driver</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">18.</span><span class="n">iso</span>
-   <span class="o">|</span><span class="mf">169.0</span><span class="n">MiB</span>
-<span class="o">---+----------------------</span>
+<div class="highlight-text"><div class="highlight"><pre><span></span>idx|path/length
+===+======================
+  1|dist/base-2.6.18.iso
+   |99.9MiB
+---+----------------------
+  2|dist/driver-2.6.18.iso
+   |169.0MiB
+---+----------------------
 </pre></div>
 </div>
 <p>To save 'dist/base-2.6.18.iso' in '/tmp/mydir/base.iso' and
@@ -4605,7 +4605,7 @@ command:</p>
 </div>
 <div class="section" id="change-the-listening-ports-for-incoming-peer-connections">
 <h4>Change the listening ports for incoming peer connections<a class="headerlink" href="#change-the-listening-ports-for-incoming-peer-connections" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --listen-port<span class="o">=</span>7000-7001,8000 file.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --listen-port<span class="o">=</span><span class="m">7000</span>-7001,8000 file.torrent
 </pre></div>
 </div>
 <div class="admonition note">
@@ -4616,7 +4616,7 @@ up to you to do so manually.</p>
 </div>
 <div class="section" id="specify-conditions-to-stop-seeding-after-torrent-downloads-finish">
 <h4>Specify conditions to stop seeding after torrent downloads finish<a class="headerlink" href="#specify-conditions-to-stop-seeding-after-torrent-downloads-finish" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --seed-time<span class="o">=</span><span class="m">120</span> --seed-ratio<span class="o">=</span>1.0 file.torrent
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --seed-time<span class="o">=</span><span class="m">120</span> --seed-ratio<span class="o">=</span><span class="m">1</span>.0 file.torrent
 </pre></div>
 </div>
 <div class="admonition note">
