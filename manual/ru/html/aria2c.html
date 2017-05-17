@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.31.0</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.32.0</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Алфавитный указатель"
               href="genindex.html"/>
         <link rel="search" title="Поиск" href="search.html"/>
-    <link rel="top" title="Документация aria2 1.31.0" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.32.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                1.31.0
+                1.32.0
               </div>
             
           
@@ -317,6 +317,23 @@ stdin (стандартный поток ввода).
 элемента очереди.
 Смотрите также параметр <a class="reference internal" href="#cmdoption-s"><code class="xref std std-option docutils literal"><span class="pre">--split</span></code></a>.
 По умолчанию: <code class="docutils literal"><span class="pre">5</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p><a class="reference internal" href="#cmdoption--max-concurrent-downloads"><code class="xref std std-option docutils literal"><span class="pre">--max-concurrent-downloads</span></code></a> ограничивает количество
+элементов, которые загружаются одновременно.
+<a class="reference internal" href="#cmdoption-s"><code class="xref std std-option docutils literal"><span class="pre">--split</span></code></a> и <a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a> влияет
+на количество соединений внутри каждого элемента.
+Допустим у вас есть такой входной файл (см. параметр <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">--input-file</span></code></a>):</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>http://example.com/foo
+http://example.com/bar
+</pre></div>
+</div>
+<p class="last">Здесь 2 загружаемых элемента. aria2 может загрузить эти элементы
+одновременно, если значение, заданное в <a class="reference internal" href="#cmdoption--max-concurrent-downloads"><code class="xref std std-option docutils literal"><span class="pre">--max-concurrent-downloads</span></code></a>,
+больше или равно 2. В каждом загружаемом элементе, вы можете задать
+количество соединений, используя <a class="reference internal" href="#cmdoption-s"><code class="xref std std-option docutils literal"><span class="pre">--split</span></code></a>
+и/или <a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>.</p>
+</div>
 </dd></dl>
 
 <dl class="option">
@@ -3222,7 +3239,7 @@ URI для каждого файла, будут добавлены имя и п
 <dt id="aria2.unpauseAll">
 <code class="descclassname">aria2.</code><code class="descname">unpauseAll</code><span class="sig-paren">(</span><span class="optional">[</span><em>secret</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#aria2.unpauseAll" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Этот метод эквивалентен по вызову <a class="reference internal" href="#aria2.unpause" title="aria2.unpause"><code class="xref py py-func docutils literal"><span class="pre">aria2.unpause()</span></code></a>, для каждой
-активной/ожидающей закачки. Этот метод возвращает <code class="docutils literal"><span class="pre">OK</span></code>.</p>
+приостановленной загрузки. Этот метод возвращает <code class="docutils literal"><span class="pre">OK</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -4689,14 +4706,14 @@ URI, если они указывают на тот же самый файл.</p
 <p>Для указания выходного имени файла в BitTorrent-загрузках, вам нужно узнать
 индекс файла в торренте (см.:option:<cite>--show-files &lt;-S&gt;</cite>). Например, вывод
 выглядит следующим образом:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">idx</span><span class="o">|</span><span class="n">path</span><span class="o">/</span><span class="n">length</span>
-<span class="o">===+======================</span>
-  <span class="mi">1</span><span class="o">|</span><span class="n">dist</span><span class="o">/</span><span class="n">base</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">18.</span><span class="n">iso</span>
-   <span class="o">|</span><span class="mf">99.9</span><span class="n">MiB</span>
-<span class="o">---+----------------------</span>
-  <span class="mi">2</span><span class="o">|</span><span class="n">dist</span><span class="o">/</span><span class="n">driver</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mf">18.</span><span class="n">iso</span>
-   <span class="o">|</span><span class="mf">169.0</span><span class="n">MiB</span>
-<span class="o">---+----------------------</span>
+<div class="highlight-text"><div class="highlight"><pre><span></span>idx|path/length
+===+======================
+  1|dist/base-2.6.18.iso
+   |99.9MiB
+---+----------------------
+  2|dist/driver-2.6.18.iso
+   |169.0MiB
+---+----------------------
 </pre></div>
 </div>
 <p>Сохраняет 'dist/base-2.6.18.iso' в '/tmp/mydir/base.iso' и
@@ -5003,7 +5020,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.31.0',
+            VERSION:'1.32.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; aria2 1.31.0 documentation</title>
+  <title>aria2c(1) &mdash; aria2 1.32.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="aria2 1.31.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.32.0 documentation" href="index.html"/>
         <link rel="next" title="aria2 - The ultra fast download utility" href="README.html"/>
         <link rel="prev" title="Aria2 Manual" href="index.html"/> 
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.31.0
+                1.32.0
               </div>
             
           
@@ -316,6 +316,22 @@ no log is written to disk at all.</p>
 <dd><p>Set the maximum number of parallel downloads for every queue item.
 See also the <a class="reference internal" href="#cmdoption-s"><code class="xref std std-option docutils literal"><span class="pre">--split</span></code></a> option.
 Default: <code class="docutils literal"><span class="pre">5</span></code></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><a class="reference internal" href="#cmdoption--max-concurrent-downloads"><code class="xref std std-option docutils literal"><span class="pre">--max-concurrent-downloads</span></code></a> limits the number of items
+which are downloaded concurrently.  <a class="reference internal" href="#cmdoption-s"><code class="xref std std-option docutils literal"><span class="pre">--split</span></code></a> and
+<a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a> affect the number of connections
+inside each item.  Imagine that you have an input file (see
+<a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal"><span class="pre">--input-file</span></code></a> option) like this:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>http://example.com/foo
+http://example.com/bar
+</pre></div>
+</div>
+<p class="last">Here is 2 download items.  aria2 can download these items
+concurrently if the value more than or equal 2 is given to
+<a class="reference internal" href="#cmdoption--max-concurrent-downloads"><code class="xref std std-option docutils literal"><span class="pre">--max-concurrent-downloads</span></code></a>.  In each download item, you
+can configure the number of connections using <a class="reference internal" href="#cmdoption-s"><code class="xref std std-option docutils literal"><span class="pre">--split</span></code></a> and/or <a class="reference internal" href="#cmdoption-k"><code class="xref std std-option docutils literal"><span class="pre">--min-split-size</span></code></a>, etc.</p>
+</div>
 </dd></dl>
 
 <dl class="option">
@@ -3111,7 +3127,7 @@ This method returns the GID of the unpaused download.</p>
 <dl class="function">
 <dt id="aria2.unpauseAll">
 <code class="descclassname">aria2.</code><code class="descname">unpauseAll</code><span class="sig-paren">(</span><span class="optional">[</span><em>secret</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#aria2.unpauseAll" title="Permalink to this definition">¶</a></dt>
-<dd><p>This method is equal to calling <a class="reference internal" href="#aria2.unpause" title="aria2.unpause"><code class="xref py py-func docutils literal"><span class="pre">aria2.unpause()</span></code></a> for every active/waiting
+<dd><p>This method is equal to calling <a class="reference internal" href="#aria2.unpause" title="aria2.unpause"><code class="xref py py-func docutils literal"><span class="pre">aria2.unpause()</span></code></a> for every paused
 download. This methods returns <code class="docutils literal"><span class="pre">OK</span></code>.</p>
 </dd></dl>
 
@@ -4884,7 +4900,7 @@ files in the program, then also delete it here.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.31.0',
+            VERSION:'1.32.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
