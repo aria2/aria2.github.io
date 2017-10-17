@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>libaria2: C++ library interface to aria2 &mdash; aria2 1.32.0 documentation</title>
+  <title>libaria2: C++ library interface to aria2 &mdash; aria2 1.33.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="aria2 1.32.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.33.0 documentation" href="index.html"/>
         <link rel="next" title="Technical Notes" href="technical-notes.html"/>
         <link rel="prev" title="aria2 - The ultra fast download utility" href="README.html"/> 
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.32.0
+                1.33.0
               </div>
             
           
@@ -131,7 +131,7 @@
     <li class="wy-breadcrumbs-aside">
       
         
-          <a href="_sources/libaria2.txt" rel="nofollow"> View page source</a>
+          <a href="_sources/libaria2.rst.txt" rel="nofollow"> View page source</a>
         
       
     </li>
@@ -166,7 +166,7 @@ them in parallel. The usage is:</p>
 </div>
 <p>The source code uses C++11 features, so C++11 enabled compiler is
 required. GCC 4.7 works well here.</p>
-<p>OK, let's look into the source code. First, include aria2.h header
+<p>OK, let’s look into the source code. First, include aria2.h header
 file:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;aria2/aria2.h&gt;</span><span class="cp"></span>
 </pre></div>
@@ -224,20 +224,20 @@ information:</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">userData</span></code> object is specified by
-<code class="xref cpp cpp-member docutils literal"><span class="pre">SessionConfig::userData</span></code>. In this example, we don't specify
+<code class="xref cpp cpp-member docutils literal"><span class="pre">SessionConfig::userData</span></code>. In this example, we don’t specify
 it, so it is <code class="docutils literal"><span class="pre">nullptr</span></code>.</p>
 <p>The first argument to <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a> is <code class="docutils literal"><span class="pre">aria2::KeyVals()</span></code>.
 This type is used in API to specify vector of key/value pairs, mostly
 representing aria2 options. For example, specify an option
 <code class="docutils literal"><span class="pre">file-allocation</span></code> to <code class="docutils literal"><span class="pre">none</span></code>:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="n">aria2</span><span class="o">::</span><span class="n">KeyVals</span> <span class="n">options</span><span class="p">;</span>
-<span class="n">options</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">aria2</span><span class="o">::</span><span class="n">KeyVals</span><span class="p">(</span><span class="s">&quot;file-allocation&quot;</span><span class="p">,</span> <span class="s">&quot;none&quot;</span><span class="p">));</span>
+<span class="n">options</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">(</span><span class="s">&quot;file-allocation&quot;</span><span class="p">,</span> <span class="s">&quot;none&quot;</span><span class="p">));</span>
 </pre></div>
 </div>
 <p>The first argument of <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a> is analogous to the
 command-line argument to aria2c program. In the example program, we
 provide no options, so just pass empty vector.</p>
-<p>After the creation of session object, let's add downloads given in the
+<p>After the creation of session object, let’s add downloads given in the
 command-line:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Add download item to session</span>
 <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -259,7 +259,7 @@ so pass the empty vector as options. The second argument of
 <code class="docutils literal"><span class="pre">NULL</span></code>, the function assigns the GID of the new download to it.  In
 this example code, we have no interest for it, so just pass
 <code class="docutils literal"><span class="pre">nullptr</span></code>.</p>
-<p>We have set up everything at this stage. So let's start download.  To
+<p>We have set up everything at this stage. So let’s start download.  To
 perform the download, call <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> repeatedly until it returns
 the value other than <code class="docutils literal"><span class="pre">1</span></code>:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(;;)</span> <span class="p">{</span>
@@ -311,10 +311,10 @@ progress of the download in every no less than 500 millisecond:</p>
 </div>
 <p>We first call <a class="reference internal" href="#_CPPv213getGlobalStatP7Session" title="getGlobalStat"><code class="xref cpp cpp-func docutils literal"><span class="pre">getGlobalStat()</span></code></a> function to get global
 statistics of the downloads. Then, call <a class="reference internal" href="#_CPPv217getActiveDownloadP7Session" title="getActiveDownload"><code class="xref cpp cpp-func docutils literal"><span class="pre">getActiveDownload()</span></code></a>
-function to get the vector of active download's GID. For each GID, we
+function to get the vector of active download’s GID. For each GID, we
 retrieve <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> object using
 <a class="reference internal" href="#_CPPv217getDownloadHandleP7Session5A2Gid" title="getDownloadHandle"><code class="xref cpp cpp-func docutils literal"><span class="pre">getDownloadHandle()</span></code></a> function and get detailed information.
-Please don't forget to delete <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> after the use
+Please don’t forget to delete <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> after the use
 and before the next call of <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a>.  Keep in mind that the life
 time of <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> object is before the next call of
 <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> function.</p>
@@ -349,7 +349,7 @@ with libaria2, use linker flag <code class="docutils literal"><span class="pre">
 <h2>Enums<a class="headerlink" href="#enums" title="Permalink to this headline">¶</a></h2>
 <dl class="type">
 <dt id="_CPPv213DownloadEvent">
-<span id="DownloadEvent"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">DownloadEvent</code><a class="headerlink" href="#_CPPv213DownloadEvent" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadEvent"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">DownloadEvent</code><a class="headerlink" href="#_CPPv213DownloadEvent" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Download event constants</p>
 <dl class="macro">
 <dt id="c.EVENT_ON_DOWNLOAD_START">
@@ -393,7 +393,7 @@ continue to perform seeding.</p>
 
 <dl class="type">
 <dt id="_CPPv28RUN_MODE">
-<span id="RUN_MODE"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">RUN_MODE</code><a class="headerlink" href="#_CPPv28RUN_MODE" title="Permalink to this definition">¶</a></dt>
+<span id="RUN_MODE"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">RUN_MODE</code><a class="headerlink" href="#_CPPv28RUN_MODE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Execution mode for <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a></p>
 <dl class="macro">
 <dt id="c.RUN_DEFAULT">
@@ -411,7 +411,7 @@ continue to perform seeding.</p>
 
 <dl class="type">
 <dt id="_CPPv210OffsetMode">
-<span id="OffsetMode"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">OffsetMode</code><a class="headerlink" href="#_CPPv210OffsetMode" title="Permalink to this definition">¶</a></dt>
+<span id="OffsetMode"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">OffsetMode</code><a class="headerlink" href="#_CPPv210OffsetMode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constants how to re-position a download.</p>
 <dl class="macro">
 <dt id="c.OFFSET_MODE_SET">
@@ -438,7 +438,7 @@ queue.</p>
 
 <dl class="type">
 <dt id="_CPPv29UriStatus">
-<span id="UriStatus"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">UriStatus</code><a class="headerlink" href="#_CPPv29UriStatus" title="Permalink to this definition">¶</a></dt>
+<span id="UriStatus"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">UriStatus</code><a class="headerlink" href="#_CPPv29UriStatus" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The status of URI.</p>
 <dl class="macro">
 <dt id="c.URI_USED">
@@ -456,7 +456,7 @@ queue.</p>
 
 <dl class="type">
 <dt id="_CPPv210BtFileMode">
-<span id="BtFileMode"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">BtFileMode</code><a class="headerlink" href="#_CPPv210BtFileMode" title="Permalink to this definition">¶</a></dt>
+<span id="BtFileMode"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">BtFileMode</code><a class="headerlink" href="#_CPPv210BtFileMode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>BitTorrent file mode</p>
 <dl class="macro">
 <dt id="c.BT_FILE_MODE_NONE">
@@ -481,7 +481,7 @@ available.</p>
 
 <dl class="type">
 <dt id="_CPPv214DownloadStatus">
-<span id="DownloadStatus"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">DownloadStatus</code><a class="headerlink" href="#_CPPv214DownloadStatus" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadStatus"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">DownloadStatus</code><a class="headerlink" href="#_CPPv214DownloadStatus" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The status of download item.</p>
 <dl class="macro">
 <dt id="c.DOWNLOAD_ACTIVE">
@@ -516,7 +516,7 @@ available.</p>
 <dl class="macro">
 <dt id="c.DOWNLOAD_REMOVED">
 <code class="descname">DOWNLOAD_REMOVED</code><a class="headerlink" href="#c.DOWNLOAD_REMOVED" title="Permalink to this definition">¶</a></dt>
-<dd><p>Indicating removed by user's discretion.</p>
+<dd><p>Indicating removed by user’s discretion.</p>
 </dd></dl>
 
 </dd></dl>
@@ -526,20 +526,20 @@ available.</p>
 <h2>Types (classes, structs, unions and typedefs)<a class="headerlink" href="#types-classes-structs-unions-and-typedefs" title="Permalink to this headline">¶</a></h2>
 <dl class="type">
 <dt id="_CPPv27Session">
-<span id="Session"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">Session</code><a class="headerlink" href="#_CPPv27Session" title="Permalink to this definition">¶</a></dt>
+<span id="Session"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">Session</code><a class="headerlink" href="#_CPPv27Session" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This object identifies aria2 session. To create session, use
 <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a> function.</p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv25A2Gid">
-<span id="A2Gid"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">A2Gid</code><a class="headerlink" href="#_CPPv25A2Gid" title="Permalink to this definition">¶</a></dt>
+<span id="A2Gid"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">A2Gid</code><a class="headerlink" href="#_CPPv25A2Gid" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The type of GID, persistent identifier of each download.</p>
 </dd></dl>
 
 <dl class="type">
 <dt id="_CPPv27KeyVals">
-<span id="KeyVals"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">KeyVals</code><a class="headerlink" href="#_CPPv27KeyVals" title="Permalink to this definition">¶</a></dt>
+<span id="KeyVals"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">KeyVals</code><a class="headerlink" href="#_CPPv27KeyVals" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The type of Key/Value pairs.</p>
 </dd></dl>
 
@@ -557,17 +557,17 @@ of this callback should return 0 for compatibility.</p>
 
 <dl class="type">
 <dt id="_CPPv213SessionConfig">
-<span id="SessionConfig"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">SessionConfig</code><a class="headerlink" href="#_CPPv213SessionConfig" title="Permalink to this definition">¶</a></dt>
+<span id="SessionConfig"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">SessionConfig</code><a class="headerlink" href="#_CPPv213SessionConfig" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The configuration for the session.</p>
 <dl class="function">
 <dt id="_CPPv2N13SessionConfig13SessionConfig13SessionConfigEv">
-<span id="SessionConfig::SessionConfig::SessionConfig"></span><code class="descclassname">SessionConfig::</code><code class="descname">SessionConfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig13SessionConfigEv" title="Permalink to this definition">¶</a></dt>
+<span id="SessionConfig::SessionConfig::SessionConfig"></span><code class="descclassname">SessionConfig::</code><code class="descname">SessionConfig</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig13SessionConfigEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The constructor fills default values for all members.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N13SessionConfig13SessionConfig11keepRunningE">
-<span id="SessionConfig::SessionConfig::keepRunning__b"></span>bool <code class="descclassname">SessionConfig::</code><code class="descname">keepRunning</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig11keepRunningE" title="Permalink to this definition">¶</a></dt>
+<span id="SessionConfig::SessionConfig::keepRunning__b"></span>bool <code class="descclassname">SessionConfig::</code><code class="descname">keepRunning</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig11keepRunningE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>If the <em>keepRunning</em> member is true, <code class="docutils literal"><span class="pre">run(session,</span> <span class="pre">RUN_ONCE)</span></code>
 will return 1 even if there are no download to perform. The
 behavior is very similar to RPC server, except that this option
@@ -577,7 +577,7 @@ does not enable RPC functionality. To stop aria2, use
 
 <dl class="member">
 <dt id="_CPPv2N13SessionConfig13SessionConfig16useSignalHandlerE">
-<span id="SessionConfig::SessionConfig::useSignalHandler__b"></span>bool <code class="descclassname">SessionConfig::</code><code class="descname">useSignalHandler</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig16useSignalHandlerE" title="Permalink to this definition">¶</a></dt>
+<span id="SessionConfig::SessionConfig::useSignalHandler__b"></span>bool <code class="descclassname">SessionConfig::</code><code class="descname">useSignalHandler</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig16useSignalHandlerE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>If the <em>useSignalHandler</em> is true, the library setups following
 signal handlers in <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a>. These signal handlers
 are removed in <a class="reference internal" href="#_CPPv212sessionFinalP7Session" title="sessionFinal"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionFinal()</span></code></a>. The default value is
@@ -598,7 +598,7 @@ file and no session serialization.</p>
 
 <dl class="member">
 <dt id="_CPPv2N13SessionConfig13SessionConfig21downloadEventCallbackE">
-<span id="SessionConfig::SessionConfig::downloadEventCallback__DownloadEventCallback"></span>DownloadEventCallback <code class="descclassname">SessionConfig::</code><code class="descname">downloadEventCallback</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig21downloadEventCallbackE" title="Permalink to this definition">¶</a></dt>
+<span id="SessionConfig::SessionConfig::downloadEventCallback__DownloadEventCallback"></span>DownloadEventCallback <code class="descclassname">SessionConfig::</code><code class="descname">downloadEventCallback</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig21downloadEventCallbackE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Specify the callback function which will be invoked when download
 event occurred. See <a class="reference internal" href="#_CPPv213DownloadEvent" title="DownloadEvent"><code class="xref cpp cpp-type docutils literal"><span class="pre">DownloadEvent</span></code></a> about the download
 event. The default value is <code class="docutils literal"><span class="pre">NULL</span></code>.</p>
@@ -606,7 +606,7 @@ event. The default value is <code class="docutils literal"><span class="pre">NUL
 
 <dl class="member">
 <dt id="_CPPv2N13SessionConfig13SessionConfig8userDataE">
-<span id="SessionConfig::SessionConfig::userData__voidP"></span>void *<code class="descclassname">SessionConfig::</code><code class="descname">userData</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig8userDataE" title="Permalink to this definition">¶</a></dt>
+<span id="SessionConfig::SessionConfig::userData__voidP"></span>void *<code class="descclassname">SessionConfig::</code><code class="descname">userData</code><a class="headerlink" href="#_CPPv2N13SessionConfig13SessionConfig8userDataE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Pointer to user defined data. libaria2 treats this as opaque
 pointer and will not free it. The default value is <code class="docutils literal"><span class="pre">NULL</span></code>.</p>
 </dd></dl>
@@ -615,35 +615,35 @@ pointer and will not free it. The default value is <code class="docutils literal
 
 <dl class="type">
 <dt id="_CPPv210GlobalStat">
-<span id="GlobalStat"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">GlobalStat</code><a class="headerlink" href="#_CPPv210GlobalStat" title="Permalink to this definition">¶</a></dt>
+<span id="GlobalStat"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">GlobalStat</code><a class="headerlink" href="#_CPPv210GlobalStat" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Global statistics of current aria2 session.</p>
 <dl class="member">
 <dt id="_CPPv2N10GlobalStat10GlobalStat13downloadSpeedE">
-<span id="GlobalStat::GlobalStat::downloadSpeed__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">downloadSpeed</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat13downloadSpeedE" title="Permalink to this definition">¶</a></dt>
+<span id="GlobalStat::GlobalStat::downloadSpeed__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">downloadSpeed</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat13downloadSpeedE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Overall download speed (byte/sec).</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N10GlobalStat10GlobalStat11uploadSpeedE">
-<span id="GlobalStat::GlobalStat::uploadSpeed__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">uploadSpeed</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat11uploadSpeedE" title="Permalink to this definition">¶</a></dt>
+<span id="GlobalStat::GlobalStat::uploadSpeed__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">uploadSpeed</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat11uploadSpeedE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Overall upload speed(byte/sec).</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N10GlobalStat10GlobalStat9numActiveE">
-<span id="GlobalStat::GlobalStat::numActive__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">numActive</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat9numActiveE" title="Permalink to this definition">¶</a></dt>
+<span id="GlobalStat::GlobalStat::numActive__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">numActive</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat9numActiveE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of active downloads.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N10GlobalStat10GlobalStat10numWaitingE">
-<span id="GlobalStat::GlobalStat::numWaiting__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">numWaiting</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat10numWaitingE" title="Permalink to this definition">¶</a></dt>
+<span id="GlobalStat::GlobalStat::numWaiting__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">numWaiting</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat10numWaitingE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of waiting downloads.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N10GlobalStat10GlobalStat10numStoppedE">
-<span id="GlobalStat::GlobalStat::numStopped__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">numStopped</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat10numStoppedE" title="Permalink to this definition">¶</a></dt>
+<span id="GlobalStat::GlobalStat::numStopped__i"></span>int <code class="descclassname">GlobalStat::</code><code class="descname">numStopped</code><a class="headerlink" href="#_CPPv2N10GlobalStat10GlobalStat10numStoppedE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of stopped downloads.</p>
 </dd></dl>
 
@@ -651,17 +651,17 @@ pointer and will not free it. The default value is <code class="docutils literal
 
 <dl class="type">
 <dt id="_CPPv27UriData">
-<span id="UriData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">UriData</code><a class="headerlink" href="#_CPPv27UriData" title="Permalink to this definition">¶</a></dt>
+<span id="UriData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">UriData</code><a class="headerlink" href="#_CPPv27UriData" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This object contains URI and its status.</p>
 <dl class="member">
 <dt id="_CPPv2N7UriData7UriData3uriE">
-<span id="UriData::UriData::uri__ss"></span>std::string <code class="descclassname">UriData::</code><code class="descname">uri</code><a class="headerlink" href="#_CPPv2N7UriData7UriData3uriE" title="Permalink to this definition">¶</a></dt>
+<span id="UriData::UriData::uri__ss"></span>std::string <code class="descclassname">UriData::</code><code class="descname">uri</code><a class="headerlink" href="#_CPPv2N7UriData7UriData3uriE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>URI</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N7UriData7UriData6statusE">
-<span id="UriData::UriData::status__UriStatus"></span><a class="reference internal" href="#_CPPv29UriStatus" title="UriStatus">UriStatus</a> <code class="descclassname">UriData::</code><code class="descname">status</code><a class="headerlink" href="#_CPPv2N7UriData7UriData6statusE" title="Permalink to this definition">¶</a></dt>
+<span id="UriData::UriData::status__UriStatus"></span><a class="reference internal" href="#_CPPv29UriStatus" title="UriStatus">UriStatus</a> <code class="descclassname">UriData::</code><code class="descname">status</code><a class="headerlink" href="#_CPPv2N7UriData7UriData6statusE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The status of URI</p>
 </dd></dl>
 
@@ -669,11 +669,11 @@ pointer and will not free it. The default value is <code class="docutils literal
 
 <dl class="type">
 <dt id="_CPPv28FileData">
-<span id="FileData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">FileData</code><a class="headerlink" href="#_CPPv28FileData" title="Permalink to this definition">¶</a></dt>
+<span id="FileData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">FileData</code><a class="headerlink" href="#_CPPv28FileData" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This object contains information of file to download.</p>
 <dl class="member">
 <dt id="_CPPv2N8FileData8FileData5indexE">
-<span id="FileData::FileData::index__i"></span>int <code class="descclassname">FileData::</code><code class="descname">index</code><a class="headerlink" href="#_CPPv2N8FileData8FileData5indexE" title="Permalink to this definition">¶</a></dt>
+<span id="FileData::FileData::index__i"></span>int <code class="descclassname">FileData::</code><code class="descname">index</code><a class="headerlink" href="#_CPPv2N8FileData8FileData5indexE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>1-based index of the file in the download. This is the same order
 with the files in multi-file torrent. This index is used to get
 this object using <code class="xref cpp cpp-func docutils literal"><span class="pre">DownloadHandle::getFile()</span></code> function.</p>
@@ -681,20 +681,20 @@ this object using <code class="xref cpp cpp-func docutils literal"><span class="
 
 <dl class="member">
 <dt id="_CPPv2N8FileData8FileData4pathE">
-<span id="FileData::FileData::path__ss"></span>std::string <code class="descclassname">FileData::</code><code class="descname">path</code><a class="headerlink" href="#_CPPv2N8FileData8FileData4pathE" title="Permalink to this definition">¶</a></dt>
+<span id="FileData::FileData::path__ss"></span>std::string <code class="descclassname">FileData::</code><code class="descname">path</code><a class="headerlink" href="#_CPPv2N8FileData8FileData4pathE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The local file path to this file when downloaded.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N8FileData8FileData6lengthE">
-<span id="FileData::FileData::length__int64_t"></span>int64_t <code class="descclassname">FileData::</code><code class="descname">length</code><a class="headerlink" href="#_CPPv2N8FileData8FileData6lengthE" title="Permalink to this definition">¶</a></dt>
+<span id="FileData::FileData::length__int64_t"></span>int64_t <code class="descclassname">FileData::</code><code class="descname">length</code><a class="headerlink" href="#_CPPv2N8FileData8FileData6lengthE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The file size in bytes. This is not the current size of the local
 file.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N8FileData8FileData15completedLengthE">
-<span id="FileData::FileData::completedLength__int64_t"></span>int64_t <code class="descclassname">FileData::</code><code class="descname">completedLength</code><a class="headerlink" href="#_CPPv2N8FileData8FileData15completedLengthE" title="Permalink to this definition">¶</a></dt>
+<span id="FileData::FileData::completedLength__int64_t"></span>int64_t <code class="descclassname">FileData::</code><code class="descname">completedLength</code><a class="headerlink" href="#_CPPv2N8FileData8FileData15completedLengthE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The completed length of this file in bytes. Please note that it
 is possible that sum of <em>completedLength</em> is less than the return
 value of <code class="xref cpp cpp-func docutils literal"><span class="pre">DownloadHandle::getCompletedLength()</span></code>
@@ -706,7 +706,7 @@ of partially completed piece.</p>
 
 <dl class="member">
 <dt id="_CPPv2N8FileData8FileData8selectedE">
-<span id="FileData::FileData::selected__b"></span>bool <code class="descclassname">FileData::</code><code class="descname">selected</code><a class="headerlink" href="#_CPPv2N8FileData8FileData8selectedE" title="Permalink to this definition">¶</a></dt>
+<span id="FileData::FileData::selected__b"></span>bool <code class="descclassname">FileData::</code><code class="descname">selected</code><a class="headerlink" href="#_CPPv2N8FileData8FileData8selectedE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>true if this file is selected by <code class="docutils literal"><span class="pre">select-file</span></code> option. If
 <code class="docutils literal"><span class="pre">select-file</span></code> is not specified or this is single torrent or no
 torrent download, this value is always true.</p>
@@ -714,7 +714,7 @@ torrent download, this value is always true.</p>
 
 <dl class="member">
 <dt id="_CPPv2N8FileData8FileData4urisE">
-<span id="FileData::FileData::uris__std::vector:UriData:"></span>std::vector&lt;<a class="reference internal" href="#_CPPv27UriData" title="UriData">UriData</a>&gt; <code class="descclassname">FileData::</code><code class="descname">uris</code><a class="headerlink" href="#_CPPv2N8FileData8FileData4urisE" title="Permalink to this definition">¶</a></dt>
+<span id="FileData::FileData::uris__std::vector:UriData:"></span>std::vector&lt;<a class="reference internal" href="#_CPPv27UriData" title="UriData">UriData</a>&gt; <code class="descclassname">FileData::</code><code class="descname">uris</code><a class="headerlink" href="#_CPPv2N8FileData8FileData4urisE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the list of URI for this file.</p>
 </dd></dl>
 
@@ -722,39 +722,39 @@ torrent download, this value is always true.</p>
 
 <dl class="type">
 <dt id="_CPPv214BtMetaInfoData">
-<span id="BtMetaInfoData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">BtMetaInfoData</code><a class="headerlink" href="#_CPPv214BtMetaInfoData" title="Permalink to this definition">¶</a></dt>
-<dd><p>BitTorrent metainfo data retrieved from &quot;.torrent&quot; file.</p>
+<span id="BtMetaInfoData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">BtMetaInfoData</code><a class="headerlink" href="#_CPPv214BtMetaInfoData" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>BitTorrent metainfo data retrieved from “.torrent” file.</p>
 <dl class="member">
 <dt id="_CPPv2N14BtMetaInfoData14BtMetaInfoData12announceListE">
-<span id="BtMetaInfoData::BtMetaInfoData::announceList__std::vector:std::vector:ss::"></span>std::vector&lt;std::vector&lt;std::string&gt;&gt; <code class="descclassname">BtMetaInfoData::</code><code class="descname">announceList</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData12announceListE" title="Permalink to this definition">¶</a></dt>
-<dd><p>List of lists of announce URI. If &quot;.torrent&quot; file contains
+<span id="BtMetaInfoData::BtMetaInfoData::announceList__std::vector:std::vector:ss::"></span>std::vector&lt;std::vector&lt;std::string&gt;&gt; <code class="descclassname">BtMetaInfoData::</code><code class="descname">announceList</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData12announceListE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>List of lists of announce URI. If “.torrent” file contains
 <code class="docutils literal"><span class="pre">announce</span></code> and no <code class="docutils literal"><span class="pre">announce-list</span></code>, <code class="docutils literal"><span class="pre">announce</span></code> is converted
 to <code class="docutils literal"><span class="pre">announce-list</span></code> format.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N14BtMetaInfoData14BtMetaInfoData7commentE">
-<span id="BtMetaInfoData::BtMetaInfoData::comment__ss"></span>std::string <code class="descclassname">BtMetaInfoData::</code><code class="descname">comment</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData7commentE" title="Permalink to this definition">¶</a></dt>
+<span id="BtMetaInfoData::BtMetaInfoData::comment__ss"></span>std::string <code class="descclassname">BtMetaInfoData::</code><code class="descname">comment</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData7commentE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal"><span class="pre">comment</span></code> for the torrent. <code class="docutils literal"><span class="pre">comment.utf-8</span></code> is used if
 available.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N14BtMetaInfoData14BtMetaInfoData12creationDateE">
-<span id="BtMetaInfoData::BtMetaInfoData::creationDate__time_t"></span>time_t <code class="descclassname">BtMetaInfoData::</code><code class="descname">creationDate</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData12creationDateE" title="Permalink to this definition">¶</a></dt>
+<span id="BtMetaInfoData::BtMetaInfoData::creationDate__time_t"></span>time_t <code class="descclassname">BtMetaInfoData::</code><code class="descname">creationDate</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData12creationDateE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The creation time of the torrent. The value is an integer since
 the Epoch, measured in seconds.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N14BtMetaInfoData14BtMetaInfoData4modeE">
-<span id="BtMetaInfoData::BtMetaInfoData::mode__BtFileMode"></span><a class="reference internal" href="#_CPPv210BtFileMode" title="BtFileMode">BtFileMode</a> <code class="descclassname">BtMetaInfoData::</code><code class="descname">mode</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData4modeE" title="Permalink to this definition">¶</a></dt>
+<span id="BtMetaInfoData::BtMetaInfoData::mode__BtFileMode"></span><a class="reference internal" href="#_CPPv210BtFileMode" title="BtFileMode">BtFileMode</a> <code class="descclassname">BtMetaInfoData::</code><code class="descname">mode</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData4modeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>File mode of the torrent.</p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv2N14BtMetaInfoData14BtMetaInfoData4nameE">
-<span id="BtMetaInfoData::BtMetaInfoData::name__ss"></span>std::string <code class="descclassname">BtMetaInfoData::</code><code class="descname">name</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData4nameE" title="Permalink to this definition">¶</a></dt>
+<span id="BtMetaInfoData::BtMetaInfoData::name__ss"></span>std::string <code class="descclassname">BtMetaInfoData::</code><code class="descname">name</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData4nameE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal"><span class="pre">name</span></code> in <code class="docutils literal"><span class="pre">info</span></code> dictionary. <code class="docutils literal"><span class="pre">name.utf-8</span></code> is used if
 available.</p>
 </dd></dl>
@@ -763,35 +763,35 @@ available.</p>
 
 <dl class="class">
 <dt id="_CPPv214DownloadHandle">
-<span id="DownloadHandle"></span><em class="property">class </em><code class="descclassname"></code><code class="descname">DownloadHandle</code><a class="headerlink" href="#_CPPv214DownloadHandle" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle"></span><em class="property">class </em><code class="descclassname"></code><code class="descname">DownloadHandle</code><a class="headerlink" href="#_CPPv214DownloadHandle" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The interface to get information of download item.</p>
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle9getStatusEv">
-<span id="DownloadHandle::DownloadHandle::getStatus"></span><a class="reference internal" href="#_CPPv214DownloadStatus" title="DownloadStatus">DownloadStatus</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle9getStatusEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getStatus"></span><a class="reference internal" href="#_CPPv214DownloadStatus" title="DownloadStatus">DownloadStatus</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getStatus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle9getStatusEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns status of this download.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle14getTotalLengthEv">
-<span id="DownloadHandle::DownloadHandle::getTotalLength"></span>int64_t <code class="descclassname">DownloadHandle::</code><code class="descname">getTotalLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getTotalLengthEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getTotalLength"></span>int64_t <code class="descclassname">DownloadHandle::</code><code class="descname">getTotalLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getTotalLengthEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the total length of this download in bytes.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle18getCompletedLengthEv">
-<span id="DownloadHandle::DownloadHandle::getCompletedLength"></span>int64_t <code class="descclassname">DownloadHandle::</code><code class="descname">getCompletedLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle18getCompletedLengthEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getCompletedLength"></span>int64_t <code class="descclassname">DownloadHandle::</code><code class="descname">getCompletedLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle18getCompletedLengthEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the completed length of this download in bytes.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle15getUploadLengthEv">
-<span id="DownloadHandle::DownloadHandle::getUploadLength"></span>int64_t <code class="descclassname">DownloadHandle::</code><code class="descname">getUploadLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle15getUploadLengthEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getUploadLength"></span>int64_t <code class="descclassname">DownloadHandle::</code><code class="descname">getUploadLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle15getUploadLengthEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the uploaded length of this download in bytes.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle11getBitfieldEv">
-<span id="DownloadHandle::DownloadHandle::getBitfield"></span>std::string <code class="descclassname">DownloadHandle::</code><code class="descname">getBitfield</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle11getBitfieldEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getBitfield"></span>std::string <code class="descclassname">DownloadHandle::</code><code class="descname">getBitfield</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle11getBitfieldEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the download progress in byte-string. The highest bit
 corresponds to piece index 0. The set bits indicate the piece is
 available and unset bits indicate the piece is missing. The spare
@@ -801,44 +801,44 @@ yet, returns empty string.</p>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle16getDownloadSpeedEv">
-<span id="DownloadHandle::DownloadHandle::getDownloadSpeed"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getDownloadSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle16getDownloadSpeedEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getDownloadSpeed"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getDownloadSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle16getDownloadSpeedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns download speed of this download measured in bytes/sec.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle14getUploadSpeedEv">
-<span id="DownloadHandle::DownloadHandle::getUploadSpeed"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getUploadSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getUploadSpeedEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getUploadSpeed"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getUploadSpeed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getUploadSpeedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns upload speed of this download measured in bytes/sec.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle11getInfoHashEv">
-<span id="DownloadHandle::DownloadHandle::getInfoHash"></span><em class="property">const</em> std::string &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getInfoHash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle11getInfoHashEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getInfoHash"></span><em class="property">const</em> std::string &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getInfoHash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle11getInfoHashEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns 20 bytes InfoHash if BitTorrent transfer is
 involved. Otherwise the empty string is returned.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle14getPieceLengthEv">
-<span id="DownloadHandle::DownloadHandle::getPieceLength"></span>size_t <code class="descclassname">DownloadHandle::</code><code class="descname">getPieceLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getPieceLengthEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getPieceLength"></span>size_t <code class="descclassname">DownloadHandle::</code><code class="descname">getPieceLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getPieceLengthEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns piece length in bytes.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle12getNumPiecesEv">
-<span id="DownloadHandle::DownloadHandle::getNumPieces"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getNumPieces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getNumPiecesEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getNumPieces"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getNumPieces</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getNumPiecesEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of pieces.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle14getConnectionsEv">
-<span id="DownloadHandle::DownloadHandle::getConnections"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getConnections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getConnectionsEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getConnections"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getConnections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle14getConnectionsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of peers/servers the client has connected to.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle12getErrorCodeEv">
-<span id="DownloadHandle::DownloadHandle::getErrorCode"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getErrorCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getErrorCodeEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getErrorCode"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getErrorCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getErrorCodeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the last error code occurred in this download. The error
 codes are defined in <a class="reference internal" href="aria2c.html#exit-status"><span class="std std-ref">EXIT STATUS</span></a> section of
 <em class="manpage">aria2c(1)</em>. This value has its meaning only for
@@ -847,18 +847,18 @@ stopped/completed downloads.</p>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle13getFollowedByEv">
-<span id="DownloadHandle::DownloadHandle::getFollowedBy"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a>&gt; &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getFollowedBy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle13getFollowedByEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getFollowedBy"></span><em class="property">const</em> std::vector&lt;<a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a>&gt; &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getFollowedBy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle13getFollowedByEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns array of GIDs which are generated by the consequence of
 this download. For example, when aria2 downloaded Metalink file,
 it generates downloads described in it (see
-<a class="reference internal" href="aria2c.html#cmdoption--follow-metalink"><code class="xref std std-option docutils literal"><span class="pre">--follow-metalink</span></code></a> option). This value is useful to
+<a class="reference internal" href="aria2c.html#cmdoption-follow-metalink"><code class="xref std std-option docutils literal"><span class="pre">--follow-metalink</span></code></a> option). This value is useful to
 track these auto generated downloads. If there is no such
 downloads, this function returns empty array.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle12getFollowingEv">
-<span id="DownloadHandle::DownloadHandle::getFollowing"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getFollowing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getFollowingEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getFollowing"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getFollowing</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getFollowingEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the GID of the download which generated this download.
 This is a reverse link of
 <a class="reference internal" href="#_CPPv2N14DownloadHandle14DownloadHandle13getFollowedByEv" title="DownloadHandle::DownloadHandle::getFollowedBy"><code class="xref cpp cpp-func docutils literal"><span class="pre">DownloadHandle::getFollowedBy()</span></code></a>.</p>
@@ -866,36 +866,36 @@ This is a reverse link of
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle12getBelongsToEv">
-<span id="DownloadHandle::DownloadHandle::getBelongsTo"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getBelongsTo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getBelongsToEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getBelongsTo"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getBelongsTo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getBelongsToEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the GID of a parent download. Some downloads are a part
 of another download. For example, if a file in Metalink has
-BitTorrent resource, the download of &quot;.torrent&quot; is a part of that
+BitTorrent resource, the download of “.torrent” is a part of that
 file. If this download has no parent, the invalid GID is returned
 (<code class="docutils literal"><span class="pre">isNull(gid)</span></code> is true).</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle6getDirEv">
-<span id="DownloadHandle::DownloadHandle::getDir"></span><em class="property">const</em> std::string &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getDir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle6getDirEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getDir"></span><em class="property">const</em> std::string &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getDir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle6getDirEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the directory to save files.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle8getFilesEv">
-<span id="DownloadHandle::DownloadHandle::getFiles"></span>std::vector&lt;<a class="reference internal" href="#_CPPv28FileData" title="FileData">FileData</a>&gt; <code class="descclassname">DownloadHandle::</code><code class="descname">getFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle8getFilesEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getFiles"></span>std::vector&lt;<a class="reference internal" href="#_CPPv28FileData" title="FileData">FileData</a>&gt; <code class="descclassname">DownloadHandle::</code><code class="descname">getFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle8getFilesEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the array of files this download contains.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle11getNumFilesEv">
-<span id="DownloadHandle::DownloadHandle::getNumFiles"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getNumFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle11getNumFilesEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getNumFiles"></span>int <code class="descclassname">DownloadHandle::</code><code class="descname">getNumFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle11getNumFilesEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of files. The return value is equivalent to
 <code class="docutils literal"><span class="pre">DownloadHandle::getFiles().size()</span></code>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle7getFileEi">
-<span id="DownloadHandle::DownloadHandle::getFile__i"></span><a class="reference internal" href="#_CPPv28FileData" title="FileData">FileData</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getFile</code><span class="sig-paren">(</span>int <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle7getFileEi" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getFile__i"></span><a class="reference internal" href="#_CPPv28FileData" title="FileData">FileData</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getFile</code><span class="sig-paren">(</span>int <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle7getFileEi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the FileData of the file at the specified <em>index</em>. Please
 note that the index is 1-based. It is undefined when the <em>index</em>
 is out-of-bound.</p>
@@ -903,8 +903,8 @@ is out-of-bound.</p>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle13getBtMetaInfoEv">
-<span id="DownloadHandle::DownloadHandle::getBtMetaInfo"></span><a class="reference internal" href="#_CPPv214BtMetaInfoData" title="BtMetaInfoData">BtMetaInfoData</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getBtMetaInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle13getBtMetaInfoEv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the information retrieved from &quot;.torrent&quot; file. This
+<span id="DownloadHandle::DownloadHandle::getBtMetaInfo"></span><a class="reference internal" href="#_CPPv214BtMetaInfoData" title="BtMetaInfoData">BtMetaInfoData</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getBtMetaInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle13getBtMetaInfoEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the information retrieved from “.torrent” file. This
 function is only meaningful only when BitTorrent transfer is
 involved in the download and the download is not
 stopped/completed.</p>
@@ -912,7 +912,7 @@ stopped/completed.</p>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle9getOptionERKNSt6stringE">
-<span id="DownloadHandle::DownloadHandle::getOption__ssCR"></span><em class="property">const</em> std::string &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getOption</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle9getOptionERKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getOption__ssCR"></span><em class="property">const</em> std::string &amp;<code class="descclassname">DownloadHandle::</code><code class="descname">getOption</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle9getOptionERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the option value denoted by the <em>name</em>.  If the option
 denoted by the <em>name</em> is not available, returns empty string.</p>
 <p>Calling this function for the download which is not in
@@ -922,7 +922,7 @@ denoted by the <em>name</em> is not available, returns empty string.</p>
 
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle10getOptionsEv">
-<span id="DownloadHandle::DownloadHandle::getOptions"></span><a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getOptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle10getOptionsEv" title="Permalink to this definition">¶</a></dt>
+<span id="DownloadHandle::DownloadHandle::getOptions"></span><a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getOptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle10getOptionsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns options for this download. Note that this function does
 not return options which have no default value and have not been
 set by <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a>, configuration files or API
@@ -936,7 +936,7 @@ functions.</p>
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="_CPPv211libraryInitv">
-<span id="libraryInit"></span>int <code class="descclassname"></code><code class="descname">libraryInit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211libraryInitv" title="Permalink to this definition">¶</a></dt>
+<span id="libraryInit"></span>int <code class="descclassname"></code><code class="descname">libraryInit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211libraryInitv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initializes the global data. It also initializes underlying
 libraries libaria2 depends on. This function returns 0 if it
 succeeds, or negative error code.</p>
@@ -946,7 +946,7 @@ functions.</p>
 
 <dl class="function">
 <dt id="_CPPv213libraryDeinitv">
-<span id="libraryDeinit"></span>int <code class="descclassname"></code><code class="descname">libraryDeinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213libraryDeinitv" title="Permalink to this definition">¶</a></dt>
+<span id="libraryDeinit"></span>int <code class="descclassname"></code><code class="descname">libraryDeinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213libraryDeinitv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Releases the global data. This function returns 0 if it succeeds,
 or negative error code.</p>
 <p>Call this function only once at the end of the application.</p>
@@ -954,7 +954,7 @@ or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv210sessionNewRK7KeyValsRK13SessionConfig">
-<span id="sessionNew__KeyValsCR.SessionConfigCR"></span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<code class="descclassname"></code><code class="descname">sessionNew</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv213SessionConfig" title="SessionConfig">SessionConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="Permalink to this definition">¶</a></dt>
+<span id="sessionNew__KeyValsCR.SessionConfigCR"></span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<code class="descclassname"></code><code class="descname">sessionNew</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv213SessionConfig" title="SessionConfig">SessionConfig</a> &amp;<em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates new Session object using the <em>options</em> as additional
 parameters. The <em>options</em> is treated as if they are specified in
 command-line to <em class="manpage">aria2c(1)</em>. This function returns the
@@ -965,7 +965,7 @@ process.</p>
 
 <dl class="function">
 <dt id="_CPPv212sessionFinalP7Session">
-<span id="sessionFinal__SessionP"></span>int <code class="descclassname"></code><code class="descname">sessionFinal</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212sessionFinalP7Session" title="Permalink to this definition">¶</a></dt>
+<span id="sessionFinal__SessionP"></span>int <code class="descclassname"></code><code class="descname">sessionFinal</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212sessionFinalP7Session" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Performs post-download action, including saving sessions etc and
 destroys the <em>session</em> object, releasing the allocated resources
 for it. This function returns the last error code and it is the
@@ -974,7 +974,7 @@ equivalent to the <a class="reference internal" href="aria2c.html#exit-status"><
 
 <dl class="function">
 <dt id="_CPPv23runP7Session8RUN_MODE">
-<span id="run__SessionP.RUN_MODE"></span>int <code class="descclassname"></code><code class="descname">run</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv28RUN_MODE" title="RUN_MODE">RUN_MODE</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv23runP7Session8RUN_MODE" title="Permalink to this definition">¶</a></dt>
+<span id="run__SessionP.RUN_MODE"></span>int <code class="descclassname"></code><code class="descname">run</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv28RUN_MODE" title="RUN_MODE">RUN_MODE</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv23runP7Session8RUN_MODE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Performs event polling and actions for them. If the <em>mode</em> is
 <a class="reference internal" href="#c.RUN_DEFAULT" title="RUN_DEFAULT"><code class="xref c c-macro docutils literal"><span class="pre">RUN_DEFAULT</span></code></a>, this function returns when no downloads are
 left to be processed. In this case, this function returns 0.</p>
@@ -990,25 +990,25 @@ downloads.</p>
 
 <dl class="function">
 <dt id="_CPPv28gidToHex5A2Gid">
-<span id="gidToHex__A2Gid"></span>std::string <code class="descclassname"></code><code class="descname">gidToHex</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv28gidToHex5A2Gid" title="Permalink to this definition">¶</a></dt>
+<span id="gidToHex__A2Gid"></span>std::string <code class="descclassname"></code><code class="descname">gidToHex</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv28gidToHex5A2Gid" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns textual representation of the <em>gid</em>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv28hexToGidRKNSt6stringE">
-<span id="hexToGid__ssCR"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname"></code><code class="descname">hexToGid</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>hex</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv28hexToGidRKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<span id="hexToGid__ssCR"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname"></code><code class="descname">hexToGid</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>hex</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv28hexToGidRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns GID converted from the textual representation <em>hex</em>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv26isNull5A2Gid">
-<span id="isNull__A2Gid"></span>bool <code class="descclassname"></code><code class="descname">isNull</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv26isNull5A2Gid" title="Permalink to this definition">¶</a></dt>
+<span id="isNull__A2Gid"></span>bool <code class="descclassname"></code><code class="descname">isNull</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv26isNull5A2Gid" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns true if the <em>gid</em> is invalid.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv26addUriP7SessionP5A2GidRKNSt6vectorINSt6stringEEERK7KeyValsi">
-<span id="addUri__SessionP.A2GidP.std::vector:ss:CR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addUri</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>uris</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv26addUriP7SessionP5A2GidRKNSt6vectorINSt6stringEEERK7KeyValsi" title="Permalink to this definition">¶</a></dt>
+<span id="addUri__SessionP.A2GidP.std::vector:ss:CR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addUri</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>uris</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv26addUriP7SessionP5A2GidRKNSt6vectorINSt6stringEEERK7KeyValsi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds new HTTP(S)/FTP/BitTorrent Magnet URI.  On successful return,
 if the <em>gid</em> is not <code class="docutils literal"><span class="pre">NULL</span></code>, the GID of added download will be
 assigned to the <em>*gid</em>.  The <em>uris</em> includes URI to be downloaded.
@@ -1027,7 +1027,7 @@ returns 0 if it succeeds, or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv211addMetalinkP7SessionPNSt6vectorI5A2GidEERKNSt6stringERK7KeyValsi">
-<span id="addMetalink__SessionP.std::vector:A2Gid:P.ssCR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addMetalink</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, std::vector&lt;<a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a>&gt; *<em>gids</em>, <em class="property">const</em> std::string &amp;<em>metalinkFile</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211addMetalinkP7SessionPNSt6vectorI5A2GidEERKNSt6stringERK7KeyValsi" title="Permalink to this definition">¶</a></dt>
+<span id="addMetalink__SessionP.std::vector:A2Gid:P.ssCR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addMetalink</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, std::vector&lt;<a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a>&gt; *<em>gids</em>, <em class="property">const</em> std::string &amp;<em>metalinkFile</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv211addMetalinkP7SessionPNSt6vectorI5A2GidEERKNSt6stringERK7KeyValsi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds Metalink download. The path to Metalink file is specified by
 the <em>metalinkFile</em>.  On successful return, if the <em>gids</em> is not
 <code class="docutils literal"><span class="pre">NULL</span></code>, the GIDs of added downloads are appended to the
@@ -1042,10 +1042,10 @@ returns 0 if it succeeds, or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERKNSt6vectorINSt6stringEEERK7KeyValsi">
-<span id="addTorrent__SessionP.A2GidP.ssCR.std::vector:ss:CR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addTorrent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::string &amp;<em>torrentFile</em>, <em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>webSeedUris</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERKNSt6vectorINSt6stringEEERK7KeyValsi" title="Permalink to this definition">¶</a></dt>
+<span id="addTorrent__SessionP.A2GidP.ssCR.std::vector:ss:CR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addTorrent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::string &amp;<em>torrentFile</em>, <em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>webSeedUris</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERKNSt6vectorINSt6stringEEERK7KeyValsi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds BitTorrent download. On successful return, if the <em>gid</em> is not
 <code class="docutils literal"><span class="pre">NULL</span></code>, the GID of added download will be assigned to the
-<em>*gid</em>. The path to &quot;.torrent&quot; file is specified by the
+<em>*gid</em>. The path to “.torrent” file is specified by the
 <em>torrentFile</em>. BitTorrent Magnet URI cannot be used with this
 function. Use <a class="reference internal" href="#_CPPv26addUriP7SessionP5A2GidRKNSt6vectorINSt6stringEEERK7KeyValsi" title="addUri"><code class="xref cpp cpp-func docutils literal"><span class="pre">addUri()</span></code></a> instead. The <em>webSeedUris</em> contains
 URIs used for Web-seeding. For single file torrents, URI can be a
@@ -1063,20 +1063,20 @@ the end of the queue.</p>
 
 <dl class="function">
 <dt id="_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERK7KeyValsi">
-<span id="addTorrent__SessionP.A2GidP.ssCR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addTorrent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::string &amp;<em>torrentFile</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERK7KeyValsi" title="Permalink to this definition">¶</a></dt>
+<span id="addTorrent__SessionP.A2GidP.ssCR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addTorrent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::string &amp;<em>torrentFile</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERK7KeyValsi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Same as <a class="reference internal" href="#_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERKNSt6vectorINSt6stringEEERK7KeyValsi" title="addTorrent"><code class="xref cpp cpp-func docutils literal"><span class="pre">addTorrent()</span></code></a> with an empty vector as the
 <em>webSeedUris</em>.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv217getActiveDownloadP7Session">
-<span id="getActiveDownload__SessionP"></span>std::vector&lt;<a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a>&gt; <code class="descclassname"></code><code class="descname">getActiveDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217getActiveDownloadP7Session" title="Permalink to this definition">¶</a></dt>
+<span id="getActiveDownload__SessionP"></span>std::vector&lt;<a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a>&gt; <code class="descclassname"></code><code class="descname">getActiveDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217getActiveDownloadP7Session" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the array of active download GID.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv214removeDownloadP7Session5A2Gidb">
-<span id="removeDownload__SessionP.A2Gid.b"></span>int <code class="descclassname"></code><code class="descname">removeDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, bool <em>force</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214removeDownloadP7Session5A2Gidb" title="Permalink to this definition">¶</a></dt>
+<span id="removeDownload__SessionP.A2Gid.b"></span>int <code class="descclassname"></code><code class="descname">removeDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, bool <em>force</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214removeDownloadP7Session5A2Gidb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Removes the download denoted by the <em>gid</em>. If the specified
 download is in progress, it is stopped at first. The status of
 removed download becomes <a class="reference internal" href="#c.DOWNLOAD_REMOVED" title="DOWNLOAD_REMOVED"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_REMOVED</span></code></a>. If the
@@ -1087,7 +1087,7 @@ returns 0 if it succeeds, or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv213pauseDownloadP7Session5A2Gidb">
-<span id="pauseDownload__SessionP.A2Gid.b"></span>int <code class="descclassname"></code><code class="descname">pauseDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, bool <em>force</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213pauseDownloadP7Session5A2Gidb" title="Permalink to this definition">¶</a></dt>
+<span id="pauseDownload__SessionP.A2Gid.b"></span>int <code class="descclassname"></code><code class="descname">pauseDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, bool <em>force</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213pauseDownloadP7Session5A2Gidb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Pauses the download denoted by the <em>gid</em>. The status of paused
 download becomes <a class="reference internal" href="#c.DOWNLOAD_PAUSED" title="DOWNLOAD_PAUSED"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_PAUSED</span></code></a>. If the download is
 active, the download is placed on the first position of waiting
@@ -1105,7 +1105,7 @@ behavior is undefined.</p>
 
 <dl class="function">
 <dt id="_CPPv215unpauseDownloadP7Session5A2Gid">
-<span id="unpauseDownload__SessionP.A2Gid"></span>int <code class="descclassname"></code><code class="descname">unpauseDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215unpauseDownloadP7Session5A2Gid" title="Permalink to this definition">¶</a></dt>
+<span id="unpauseDownload__SessionP.A2Gid"></span>int <code class="descclassname"></code><code class="descname">unpauseDownload</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215unpauseDownloadP7Session5A2Gid" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Changes the status of the download denoted by the <em>gid</em> from
 <a class="reference internal" href="#c.DOWNLOAD_PAUSED" title="DOWNLOAD_PAUSED"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_PAUSED</span></code></a> to <a class="reference internal" href="#c.DOWNLOAD_WAITING" title="DOWNLOAD_WAITING"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_WAITING</span></code></a>. This
 makes the download eligible to restart. This function returns 0 if
@@ -1114,28 +1114,28 @@ it succeeds, or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv212changeOptionP7Session5A2GidRK7KeyVals">
-<span id="changeOption__SessionP.A2Gid.KeyValsCR"></span>int <code class="descclassname"></code><code class="descname">changeOption</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212changeOptionP7Session5A2GidRK7KeyVals" title="Permalink to this definition">¶</a></dt>
+<span id="changeOption__SessionP.A2Gid.KeyValsCR"></span>int <code class="descclassname"></code><code class="descname">changeOption</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv212changeOptionP7Session5A2GidRK7KeyVals" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Apply options in the <em>options</em> to the download denoted by the <em>gid</em>
 dynamically. The following options can be changed for downloads in
 <a class="reference internal" href="#c.DOWNLOAD_ACTIVE" title="DOWNLOAD_ACTIVE"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_ACTIVE</span></code></a> status:</p>
 <ul class="simple">
-<li><a class="reference internal" href="aria2c.html#cmdoption--bt-max-peers"><code class="xref std std-option docutils literal"><span class="pre">bt-max-peers</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--bt-request-peer-speed-limit"><code class="xref std std-option docutils literal"><span class="pre">bt-request-peer-speed-limit</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--bt-remove-unselected-file"><code class="xref std std-option docutils literal"><span class="pre">bt-remove-unselected-file</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--force-save"><code class="xref std std-option docutils literal"><span class="pre">force-save</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--max-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-download-limit</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption-u"><code class="xref std std-option docutils literal"><span class="pre">max-upload-limit</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-bt-max-peers"><code class="xref std std-option docutils literal"><span class="pre">bt-max-peers</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-bt-request-peer-speed-limit"><code class="xref std std-option docutils literal"><span class="pre">bt-request-peer-speed-limit</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-bt-remove-unselected-file"><code class="xref std std-option docutils literal"><span class="pre">bt-remove-unselected-file</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-force-save"><code class="xref std std-option docutils literal"><span class="pre">force-save</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-max-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-download-limit</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-max-upload-limit"><code class="xref std std-option docutils literal"><span class="pre">max-upload-limit</span></code></a></li>
 </ul>
 <p>For downloads in <a class="reference internal" href="#c.DOWNLOAD_WAITING" title="DOWNLOAD_WAITING"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_WAITING</span></code></a> or
 <a class="reference internal" href="#c.DOWNLOAD_PAUSED" title="DOWNLOAD_PAUSED"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_PAUSED</span></code></a> status, in addition to the above
 options, options listed in <a class="reference internal" href="aria2c.html#input-file"><span class="std std-ref">Input File</span></a> subsection are available,
 except for following options:
-<a class="reference internal" href="aria2c.html#cmdoption--dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a>,
-<a class="reference internal" href="aria2c.html#cmdoption--metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a>,
-<a class="reference internal" href="aria2c.html#cmdoption-P"><code class="xref std std-option docutils literal"><span class="pre">parameterized-uri</span></code></a>,
-<a class="reference internal" href="aria2c.html#cmdoption--pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a>,
-<a class="reference internal" href="aria2c.html#cmdoption--piece-length"><code class="xref std std-option docutils literal"><span class="pre">piece-length</span></code></a> and
-<a class="reference internal" href="aria2c.html#cmdoption--rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">rpc-save-upload-metadata</span></code></a> option.</p>
+<a class="reference internal" href="aria2c.html#cmdoption-dry-run"><code class="xref std std-option docutils literal"><span class="pre">dry-run</span></code></a>,
+<a class="reference internal" href="aria2c.html#cmdoption-metalink-base-uri"><code class="xref std std-option docutils literal"><span class="pre">metalink-base-uri</span></code></a>,
+<a class="reference internal" href="aria2c.html#cmdoption-parameterized-uri"><code class="xref std std-option docutils literal"><span class="pre">parameterized-uri</span></code></a>,
+<a class="reference internal" href="aria2c.html#cmdoption-pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a>,
+<a class="reference internal" href="aria2c.html#cmdoption-piece-length"><code class="xref std std-option docutils literal"><span class="pre">piece-length</span></code></a> and
+<a class="reference internal" href="aria2c.html#cmdoption-rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">rpc-save-upload-metadata</span></code></a> option.</p>
 <p>The options which are not applicable or unknown, they are just
 ignored.</p>
 <p>This function returns 0 if it succeeds, or negative error code.</p>
@@ -1143,14 +1143,14 @@ ignored.</p>
 
 <dl class="function">
 <dt id="_CPPv215getGlobalOptionP7SessionRKNSt6stringE">
-<span id="getGlobalOption__SessionP.ssCR"></span><em class="property">const</em> std::string &amp;<code class="descclassname"></code><code class="descname">getGlobalOption</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215getGlobalOptionP7SessionRKNSt6stringE" title="Permalink to this definition">¶</a></dt>
+<span id="getGlobalOption__SessionP.ssCR"></span><em class="property">const</em> std::string &amp;<code class="descclassname"></code><code class="descname">getGlobalOption</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv215getGlobalOptionP7SessionRKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns global option denoted by the <em>name</em>. If such option is not
 available, returns empty string.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv216getGlobalOptionsP7Session">
-<span id="getGlobalOptions__SessionP"></span><a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> <code class="descclassname"></code><code class="descname">getGlobalOptions</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216getGlobalOptionsP7Session" title="Permalink to this definition">¶</a></dt>
+<span id="getGlobalOptions__SessionP"></span><a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> <code class="descclassname"></code><code class="descname">getGlobalOptions</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv216getGlobalOptionsP7Session" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns global options. Note that this function does not return
 options which have no default value and have not been set by
 <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a>, configuration files or API functions.</p>
@@ -1158,28 +1158,28 @@ options which have no default value and have not been set by
 
 <dl class="function">
 <dt id="_CPPv218changeGlobalOptionP7SessionRK7KeyVals">
-<span id="changeGlobalOption__SessionP.KeyValsCR"></span>int <code class="descclassname"></code><code class="descname">changeGlobalOption</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218changeGlobalOptionP7SessionRK7KeyVals" title="Permalink to this definition">¶</a></dt>
+<span id="changeGlobalOption__SessionP.KeyValsCR"></span>int <code class="descclassname"></code><code class="descname">changeGlobalOption</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv218changeGlobalOptionP7SessionRK7KeyVals" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Apply global options in the <em>options</em> dynamically.  The following
 options are available:</p>
 <ul class="simple">
-<li><a class="reference internal" href="aria2c.html#cmdoption--download-result"><code class="xref std std-option docutils literal"><span class="pre">download-result</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-download-result"><code class="xref std std-option docutils literal"><span class="pre">download-result</span></code></a></li>
 <li><a class="reference internal" href="aria2c.html#cmdoption-l"><code class="xref std std-option docutils literal"><span class="pre">log</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--log-level"><code class="xref std std-option docutils literal"><span class="pre">log-level</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-log-level"><code class="xref std std-option docutils literal"><span class="pre">log-level</span></code></a></li>
 <li><a class="reference internal" href="aria2c.html#cmdoption-j"><code class="xref std std-option docutils literal"><span class="pre">max-concurrent-downloads</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--max-download-result"><code class="xref std std-option docutils literal"><span class="pre">max-download-result</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--max-overall-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-overall-download-limit</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--max-overall-upload-limit"><code class="xref std std-option docutils literal"><span class="pre">max-overall-upload-limit</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--save-cookies"><code class="xref std std-option docutils literal"><span class="pre">save-cookies</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--save-session"><code class="xref std std-option docutils literal"><span class="pre">save-session</span></code></a></li>
-<li><a class="reference internal" href="aria2c.html#cmdoption--server-stat-of"><code class="xref std std-option docutils literal"><span class="pre">server-stat-of</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-max-download-result"><code class="xref std std-option docutils literal"><span class="pre">max-download-result</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-max-overall-download-limit"><code class="xref std std-option docutils literal"><span class="pre">max-overall-download-limit</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-max-overall-upload-limit"><code class="xref std std-option docutils literal"><span class="pre">max-overall-upload-limit</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-save-cookies"><code class="xref std std-option docutils literal"><span class="pre">save-cookies</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-save-session"><code class="xref std std-option docutils literal"><span class="pre">save-session</span></code></a></li>
+<li><a class="reference internal" href="aria2c.html#cmdoption-server-stat-of"><code class="xref std std-option docutils literal"><span class="pre">server-stat-of</span></code></a></li>
 </ul>
 <p>In addition to them, options listed in <a class="reference internal" href="aria2c.html#input-file"><span class="std std-ref">Input File</span></a> subsection
 are available, except for following options:
-<a class="reference internal" href="aria2c.html#cmdoption--checksum"><code class="xref std std-option docutils literal"><span class="pre">checksum</span></code></a>,
-<a class="reference internal" href="aria2c.html#cmdoption-O"><code class="xref std std-option docutils literal"><span class="pre">index-out</span></code></a>,
+<a class="reference internal" href="aria2c.html#cmdoption-checksum"><code class="xref std std-option docutils literal"><span class="pre">checksum</span></code></a>,
+<a class="reference internal" href="aria2c.html#cmdoption-index-out"><code class="xref std std-option docutils literal"><span class="pre">index-out</span></code></a>,
 <a class="reference internal" href="aria2c.html#cmdoption-o"><code class="xref std std-option docutils literal"><span class="pre">out</span></code></a>,
-<a class="reference internal" href="aria2c.html#cmdoption--pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a> and
-<a class="reference internal" href="aria2c.html#cmdoption--select-file"><code class="xref std std-option docutils literal"><span class="pre">select-file</span></code></a>.</p>
+<a class="reference internal" href="aria2c.html#cmdoption-pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a> and
+<a class="reference internal" href="aria2c.html#cmdoption-select-file"><code class="xref std std-option docutils literal"><span class="pre">select-file</span></code></a>.</p>
 <p>The options which are not applicable or unknown, they are just
 ignored.</p>
 <p>This function returns 0 if it succeeds, or negative error code.</p>
@@ -1187,14 +1187,14 @@ ignored.</p>
 
 <dl class="function">
 <dt id="_CPPv213getGlobalStatP7Session">
-<span id="getGlobalStat__SessionP"></span><a class="reference internal" href="#_CPPv210GlobalStat" title="GlobalStat">GlobalStat</a> <code class="descclassname"></code><code class="descname">getGlobalStat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213getGlobalStatP7Session" title="Permalink to this definition">¶</a></dt>
+<span id="getGlobalStat__SessionP"></span><a class="reference internal" href="#_CPPv210GlobalStat" title="GlobalStat">GlobalStat</a> <code class="descclassname"></code><code class="descname">getGlobalStat</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv213getGlobalStatP7Session" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns global statistics such as overall download and upload
 speed.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="_CPPv214changePositionP7Session5A2Gidi10OffsetMode">
-<span id="changePosition__SessionP.A2Gid.i.OffsetMode"></span>int <code class="descclassname"></code><code class="descname">changePosition</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, int <em>pos</em>, <a class="reference internal" href="#_CPPv210OffsetMode" title="OffsetMode">OffsetMode</a> <em>how</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214changePositionP7Session5A2Gidi10OffsetMode" title="Permalink to this definition">¶</a></dt>
+<span id="changePosition__SessionP.A2Gid.i.OffsetMode"></span>int <code class="descclassname"></code><code class="descname">changePosition</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em>, int <em>pos</em>, <a class="reference internal" href="#_CPPv210OffsetMode" title="OffsetMode">OffsetMode</a> <em>how</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv214changePositionP7Session5A2Gidi10OffsetMode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Changes the position of the download denoted by the <em>gid</em>. if it is
 in <a class="reference internal" href="#c.DOWNLOAD_WAITING" title="DOWNLOAD_WAITING"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_WAITING</span></code></a> or <a class="reference internal" href="#c.DOWNLOAD_PAUSED" title="DOWNLOAD_PAUSED"><code class="xref c c-macro docutils literal"><span class="pre">DOWNLOAD_PAUSED</span></code></a> state.
 If the <em>how</em> is <a class="reference internal" href="#c.OFFSET_MODE_SET" title="OFFSET_MODE_SET"><code class="xref c c-macro docutils literal"><span class="pre">OFFSET_MODE_SET</span></code></a>, it moves the download
@@ -1217,7 +1217,7 @@ download, or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv28shutdownP7Sessionb">
-<span id="shutdown__SessionP.b"></span>int <code class="descclassname"></code><code class="descname">shutdown</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, bool <em>force</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv28shutdownP7Sessionb" title="Permalink to this definition">¶</a></dt>
+<span id="shutdown__SessionP.b"></span>int <code class="descclassname"></code><code class="descname">shutdown</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, bool <em>force</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv28shutdownP7Sessionb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Schedules shutdown. If the <em>force</em> is true, shutdown will take
 place without any action which takes time such as contacting
 BitTorrent tracker. After this call, the application must keep
@@ -1227,10 +1227,10 @@ returns 0 if it succeeds, or negative error code.</p>
 
 <dl class="function">
 <dt id="_CPPv217getDownloadHandleP7Session5A2Gid">
-<span id="getDownloadHandle__SessionP.A2Gid"></span><a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle">DownloadHandle</a> *<code class="descclassname"></code><code class="descname">getDownloadHandle</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217getDownloadHandleP7Session5A2Gid" title="Permalink to this definition">¶</a></dt>
+<span id="getDownloadHandle__SessionP.A2Gid"></span><a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle">DownloadHandle</a> *<code class="descclassname"></code><code class="descname">getDownloadHandle</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217getDownloadHandleP7Session5A2Gid" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns handle for the download denoted by the <em>gid</em>. The caller
 can retrieve various information of the download via returned
-handle's member functions. The lifetime of the returned handle is
+handle’s member functions. The lifetime of the returned handle is
 before the next call of <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> or
 <a class="reference internal" href="#_CPPv212sessionFinalP7Session" title="sessionFinal"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionFinal()</span></code></a>. The caller must call
 <a class="reference internal" href="#_CPPv220deleteDownloadHandleP14DownloadHandle" title="deleteDownloadHandle"><code class="xref cpp cpp-func docutils literal"><span class="pre">deleteDownloadHandle()</span></code></a> before that. This function returns
@@ -1241,7 +1241,7 @@ to delete handle object.</p>
 
 <dl class="function">
 <dt id="_CPPv220deleteDownloadHandleP14DownloadHandle">
-<span id="deleteDownloadHandle__DownloadHandleP"></span>void <code class="descclassname"></code><code class="descname">deleteDownloadHandle</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle">DownloadHandle</a> *<em>dh</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220deleteDownloadHandleP14DownloadHandle" title="Permalink to this definition">¶</a></dt>
+<span id="deleteDownloadHandle__DownloadHandleP"></span>void <code class="descclassname"></code><code class="descname">deleteDownloadHandle</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle">DownloadHandle</a> *<em>dh</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv220deleteDownloadHandleP14DownloadHandle" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Deallocates the <em>dh</em>. Calling this function with <code class="docutils literal"><span class="pre">NULL</span></code> is safe.</p>
 </dd></dl>
 
@@ -1288,7 +1288,7 @@ to delete handle object.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.32.0',
+            VERSION:'1.33.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
