@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; documentação aria2 1.33.1</title>
+  <title>aria2c(1) &mdash; documentação aria2 1.34.0</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Índice"
               href="genindex.html"/>
         <link rel="search" title="Buscar" href="search.html"/>
-    <link rel="top" title="documentação aria2 1.33.1" href="index.html"/>
+    <link rel="top" title="documentação aria2 1.34.0" href="index.html"/>
         <link rel="next" title="aria2 - Utilitário para Download Super Ultra Rápido" href="README.html"/>
         <link rel="prev" title="Manual Aria2" href="index.html"/> 
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.33.1
+                1.34.0
               </div>
             
           
@@ -164,7 +164,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#download-usando-uri-bittorrent-magnet">Download usando URI BitTorrent Magnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#download-2-torrents">Download 2 torrents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#download-um-arquivo-usando-torrent-e-servidor-http-ftp">Download um arquivo usando torrent e servidor HTTP/FTP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#download-arquivos-selecionados-usando-index-chamado-download-seletivo">Download arquivos selecionados usando index(chamado “download seletivo”)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#download-arquivos-selecionados-usando-index-chamado-download-seletivo">Download arquivos selecionados usando index(chamado &quot;download seletivo&quot;)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#especificar-arquivo-saida">Especificar arquivo saída</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#modificar-porta-escuta-para-peer-de-entrada">Modificar porta escuta para peer de entrada</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#especificar-condicao-para-para-o-programa-torrent-apos-termino-do-download">Especificar condição para para o programa torrent após término do download</a></li>
@@ -254,7 +254,7 @@
 <span id="aria2c"></span><h1>aria2c(1)<a class="headerlink" href="#aria2c-1" title="Link permanente para este título">¶</a></h1>
 <div class="section" id="sinopse">
 <h2>SINOPSE<a class="headerlink" href="#sinopse" title="Link permanente para este título">¶</a></h2>
-<p><strong>aria2c</strong> [&lt;OPÇÕES&gt;] [&lt;URI&gt;|&lt;MAGNET&gt;|&lt;ARQUIVO_TORRENT&gt;|&lt;ARQUIVO_METALINK&gt;] …</p>
+<p><strong>aria2c</strong> [&lt;OPÇÕES&gt;] [&lt;URI&gt;|&lt;MAGNET&gt;|&lt;ARQUIVO_TORRENT&gt;|&lt;ARQUIVO_METALINK&gt;] ...</p>
 </div>
 <div class="section" id="descricao">
 <span id="index-0"></span><h2>DESCRIÇÃO<a class="headerlink" href="#descricao" title="Link permanente para este título">¶</a></h2>
@@ -303,7 +303,7 @@ Ver também opção <a class="reference internal" href="#cmdoption-deferred-inpu
 <dt id="cmdoption-l">
 <code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--log</code><code class="descclassname">=&lt;LOG&gt;</code><a class="headerlink" href="#cmdoption-l" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>O nome do arquivo de log. Se <code class="docutils literal"><span class="pre">-</span></code> for especificado (entrada padrão), log é
-gravado em stdout (saída padrão). Se uma string vazia(“”) é especificada, log
+gravado em stdout (saída padrão). Se uma string vazia(&quot;&quot;) é especificada, log
 não será gravado em arquivo.</p>
 </dd></dl>
 
@@ -362,7 +362,7 @@ Padrão: <code class="docutils literal"><span class="pre">#basic</span></code></
 <dt id="cmdoption-all-proxy">
 <code class="descname">--all-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-all-proxy" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Usar este servidor proxy para todos protocolos.  Para limpar proxy
-previamente definido, use “”.  Esta configuração pode ser sobreposta através
+previamente definido, use &quot;&quot;.  Esta configuração pode ser sobreposta através
 da especificação de um servidor proxy para um determinado protocolo usando
 opções <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a>, <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> e <a class="reference internal" href="#cmdoption-ftp-proxy"><code class="xref std std-option docutils literal"><span class="pre">--ftp-proxy</span></code></a>.
 Isto afeta todas as URIs.
@@ -372,7 +372,7 @@ Ver também seção <a class="reference internal" href="#variaveis-de-ambiente">
 <p class="first admonition-title">Nota</p>
 <p>Se usuário e senha são embutidos na URI do proxy eles também podem ser
 especificados através das opções
-<em>–{http,https,ftp,all}-proxy-{usuário,senha}</em>,
+<em>--{http,https,ftp,all}-proxy-{usuário,senha}</em>,
 aqueles que aparecerem por último assumem a precedência.
 Por exemplo, quando temos:
 <code class="docutils literal"><span class="pre">http-proxy-user=meunome</span></code>, <code class="docutils literal"><span class="pre">http-proxy-passwd=minhasenha</span></code>
@@ -454,7 +454,7 @@ Padrão: <code class="docutils literal"><span class="pre">1</span></code></p>
 <dl class="option">
 <dt id="cmdoption-max-file-not-found">
 <code class="descname">--max-file-not-found</code><code class="descclassname">=&lt;NÚMERO&gt;</code><a class="headerlink" href="#cmdoption-max-file-not-found" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>Se aria2 recebe çódigo de retorno “arquivo não encontrado” de um servidor
+<dd><p>Se aria2 recebe çódigo de retorno &quot;arquivo não encontrado&quot; de um servidor
 remoto de HTTP / FTP um NÚMERO de vezes sem obter nenhum byte, então o
 download é forçado a falhar.
 Especificar <code class="docutils literal"><span class="pre">0</span></code> para desabilitar esta opção. Esta opção só é válida
@@ -496,7 +496,7 @@ Padrão: Suporte a netrc é habilitado por padrão.</p>
 Portanto se a opção <a class="reference internal" href="#cmdoption-n"><code class="xref std std-option docutils literal"><span class="pre">--no-netrc</span></code></a> é <code class="docutils literal"><span class="pre">true</span></code> no início, não haverá
 netrc disponível durante toda a sessão, mesmo que seja utilizada a opção
 <a class="reference internal" href="#aria2.changeGlobalOption" title="aria2.changeGlobalOption"><code class="xref py py-func docutils literal"><span class="pre">aria2.changeGlobalOption()</span></code></a> para executar a opção :option:
-<cite>–no-netrc=false &lt;-n&gt;</cite>.
+<cite>--no-netrc=false &lt;-n&gt;</cite>.
 .</p>
 </div>
 </dd></dl>
@@ -661,7 +661,7 @@ profile of servers mentioned in <a class="reference internal" href="#cmdoption-s
 the best mirrors for the first and reserved connections.  For
 supplementary ones, it returns mirrors which has not been tested
 yet, and if each of them has already been tested, returns mirrors
-which has to be tested again. Otherwise, it doesn’t select anymore
+which has to be tested again. Otherwise, it doesn't select anymore
 mirrors. Like <code class="docutils literal"><span class="pre">feedback</span></code>, it uses a performance profile of servers.
 Padrão: <code class="docutils literal"><span class="pre">feedback</span></code></p>
 </dd></dl>
@@ -750,7 +750,7 @@ desejada usando a opção <a class="reference internal" href="#cmdoption-header"
 <dt id="cmdoption-http-proxy">
 <code class="descname">--http-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-http-proxy" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Usar este servidor proxy para HTTP.  Para limpar o proxy anteriormente
-definido use “”.  Ver também opção <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>.  Isto afeta todas
+definido use &quot;&quot;.  Ver também opção <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>.  Isto afeta todas
 URIs.  O formato de PROXY é <code class="docutils literal"><span class="pre">[http://][USUÁRIO:SENHA&#64;]SERVIDOR[:PORTA]</span></code></p>
 </dd></dl>
 
@@ -770,7 +770,7 @@ URIs.  O formato de PROXY é <code class="docutils literal"><span class="pre">[h
 <dt id="cmdoption-https-proxy">
 <code class="descname">--https-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-https-proxy" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Usar este servidor proxy para HTTPS. Para limpar o proxy anteriormente,
-use “”.  Ver também opção <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>.  Isto afeta todas URIs.  O
+use &quot;&quot;.  Ver também opção <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>.  Isto afeta todas URIs.  O
 formato de PROXY é <code class="docutils literal"><span class="pre">[https://][USUÁRIO:SENHA&#64;]SERVIDOR[:PORTA]</span></code></p>
 </dd></dl>
 
@@ -899,7 +899,7 @@ Padrão: <code class="docutils literal"><span class="pre">true</span></code></p>
 <dt id="cmdoption-ftp-proxy">
 <code class="descname">--ftp-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-ftp-proxy" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Usar este servidor proxy para FTP.  Para limpar definição proxy previamente
-definido, use “”.  Ver também opção <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>.
+definido, use &quot;&quot;.  Ver também opção <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>.
 Isto afeta todas URIs.  O formato do PROXY é
 <code class="docutils literal"><span class="pre">[http://][USUÁRIO:SENHA&#64;]SERVIDOR[:PORTA]</span></code></p>
 </dd></dl>
@@ -942,7 +942,7 @@ Múltiplos indíces podem ser especificados usando-se <code class="docutils lite
 <code class="docutils literal"><span class="pre">3,6</span></code>.  Também pode ser usado <code class="docutils literal"><span class="pre">-</span></code> para especificar intervalos:
 <code class="docutils literal"><span class="pre">1-5</span></code>.  Ambos podem ser usados juntos <code class="docutils literal"><span class="pre">,</span></code> e <code class="docutils literal"><span class="pre">-</span></code> exemplo:
 <code class="docutils literal"><span class="pre">1-5,8,9</span></code>.  Quando usados com a opção -M, o índice pode variar dependendo
-das opções da query. Ver opções (<em>–metalink-*</em>).</p>
+das opções da query. Ver opções (<em>--metalink-*</em>).</p>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
 <p class="last">Em torrent de múltiplos arquivos, os arquivos adjacentes especificados
@@ -956,8 +956,8 @@ apropriado(s).</p>
 <dl class="option">
 <dt id="cmdoption-show-files">
 <code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--show-files</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-show-files" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>Imprimir a lista de arquivos do “.torrent”, “.meta4” e “.metalink” e termina.
-No caso de arquivo “.torrent”, informações adicionais são impressas.
+<dd><p>Imprimir a lista de arquivos do &quot;.torrent&quot;, &quot;.meta4&quot; e &quot;.metalink&quot; e termina.
+No caso de arquivo &quot;.torrent&quot;, informações adicionais são impressas.
 (infohash, tamanho pedaço, etc).</p>
 </dd></dl>
 
@@ -978,10 +978,10 @@ Padrão: <code class="docutils literal"><span class="pre">false</span></code></p
 <code class="descname">--bt-exclude-tracker</code><code class="descclassname">=&lt;URI&gt;[,...]</code><a class="headerlink" href="#cmdoption-bt-exclude-tracker" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Lista separada por vírgulas, de trackers de URI BitTorrent que devem ser
 removidas.  Pode ser usado o valor especial <code class="docutils literal"><span class="pre">*</span></code> para especificar todas
-URIs; isso irá excluir todas URIs de “announce”.  Quando especificar <code class="docutils literal"><span class="pre">*</span></code>
+URIs; isso irá excluir todas URIs de &quot;announce&quot;.  Quando especificar <code class="docutils literal"><span class="pre">*</span></code>
 em uma linha de comando do shell, lembre-se de forçar o escape or delimite
 com aspas, apóstrofo ou em linux com crase caracter <cite>.
-Ver também opção :option: `–bt-tracker</cite>.</p>
+Ver também opção :option: `--bt-tracker</cite>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -996,7 +996,7 @@ IP.  ENDEREÇO-IP deve ser um endereço IP numérico.</p>
 <dt id="cmdoption-bt-hash-check-seed">
 <code class="descname">--bt-hash-check-seed</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-bt-hash-check-seed" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Se <code class="docutils literal"><span class="pre">true</span></code> é informado, após o check do hash usando a opção :option:
-<cite>–check-integrity &lt;-V&gt;</cite> e o arquivo esta completo, continue o arquivo seed.
+<cite>--check-integrity &lt;-V&gt;</cite> e o arquivo esta completo, continue o arquivo seed.
 Se desejar verificar o arquivo e efetuar o download somente quando ele estiver
 imcompleto ou danificado, defina esta opção para <code class="docutils literal"><span class="pre">false</span></code>.  Esta opção
 só tem efeito para download de BitTorrent.
@@ -1024,7 +1024,7 @@ Padrão: <code class="docutils literal"><span class="pre">100</span></code></p>
 <dt id="cmdoption-bt-max-peers">
 <code class="descname">--bt-max-peers</code><code class="descclassname">=&lt;NÚMERO&gt;</code><a class="headerlink" href="#cmdoption-bt-max-peers" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Especificar o número máximo de peers para cada torrent.  <code class="docutils literal"><span class="pre">0</span></code> significa
-ilimitado.  Ver também a opção :option: <cite>–bt-request-peer-speed-limit</cite>.
+ilimitado.  Ver também a opção :option: <cite>--bt-request-peer-speed-limit</cite>.
 Padrão: <code class="docutils literal"><span class="pre">55</span></code></p>
 </dd></dl>
 
@@ -1033,7 +1033,7 @@ Padrão: <code class="docutils literal"><span class="pre">55</span></code></p>
 <code class="descname">--bt-metadata-only</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-bt-metadata-only" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Download somente os metadados. O(s) arquivo(s) descrito(s) no(s) metadado(s)
 não será(ão) baixado(s). Esta opção só tem efeito para URI BitTorrent Magnet.
-Ver também a opção :option: <cite>–bt-save-metadata</cite>.
+Ver também a opção :option: <cite>--bt-save-metadata</cite>.
 Padrão: <code class="docutils literal"><span class="pre">false</span></code></p>
 </dd></dl>
 
@@ -1095,12 +1095,12 @@ Padrão: <code class="docutils literal"><span class="pre">50K</span></code></p>
 <dl class="option">
 <dt id="cmdoption-bt-save-metadata">
 <code class="descname">--bt-save-metadata</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-bt-save-metadata" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>Salvar metadados como arquivo “.torrent” file. Esta opção tem efeito somente
+<dd><p>Salvar metadados como arquivo &quot;.torrent&quot; file. Esta opção tem efeito somente
 se URI usada é de BitTorrent Magnet.  O nome do arquivo é codificado em hash
-em hexadecimal com sufixo de “.torrent”. O diretório onde será salvo o
+em hexadecimal com sufixo de &quot;.torrent&quot;. O diretório onde será salvo o
 o metadado, é o mesmo onde aponta o download do arquivo. Se o arquivo já
 existe, o metadado não será salvo. Ver tambémn a opção :option:
-<cite>–bt-metadata-only</cite>.
+<cite>--bt-metadata-only</cite>.
 Padrão: <code class="docutils literal"><span class="pre">false</span></code></p>
 </dd></dl>
 
@@ -1228,7 +1228,7 @@ Padrão: <code class="docutils literal"><span class="pre">true</span></code></p>
 torrent, aria2 não usa DHT para aquele download mesmo que <code class="docutils literal"><span class="pre">true</span></code> foi
 informado. Usar opção <a class="reference internal" href="#cmdoption-dht-listen-port"><code class="xref std std-option docutils literal"><span class="pre">--dht-listen-port</span></code></a> para especificar número(s)
 de porta(s) para ser(em) ouvida(s). Ver também opção :option:`
-–dht-listen-addr6`
+--dht-listen-addr6`
 Padrão: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
@@ -1335,8 +1335,8 @@ após o download ter sido completado.</p>
 <dl class="option">
 <dt id="cmdoption-torrent-file">
 <code class="descname">-T</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--torrent-file</code><code class="descclassname">=&lt;TORRENT_FILE&gt;</code><a class="headerlink" href="#cmdoption-torrent-file" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>O caminho para o arquivo “.torrent”.  Não é obrigatório usar esta opção pois
-pode ser especificado arquivo “.torrent” sem a opção
+<dd><p>O caminho para o arquivo &quot;.torrent&quot;.  Não é obrigatório usar esta opção pois
+pode ser especificado arquivo &quot;.torrent&quot; sem a opção
 <a class="reference internal" href="#cmdoption-torrent-file"><code class="xref std std-option docutils literal"><span class="pre">--torrent-file</span></code></a>.</p>
 </dd></dl>
 
@@ -1367,9 +1367,9 @@ URI points to a directory, URI must end with <code class="docutils literal"><spa
 <dl class="option">
 <dt id="cmdoption-metalink-file">
 <code class="descname">-M</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--metalink-file</code><code class="descclassname">=&lt;METALINK_FILE&gt;</code><a class="headerlink" href="#cmdoption-metalink-file" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>The file path to “.meta4” and “.metalink” file. Reads input from stdin when
+<dd><p>The file path to &quot;.meta4&quot; and &quot;.metalink&quot; file. Reads input from stdin when
 <code class="docutils literal"><span class="pre">-</span></code> is specified.  You are not required to use this option because you can
-specify “.metalink” files without <a class="reference internal" href="#cmdoption-metalink-file"><code class="xref std std-option docutils literal"><span class="pre">--metalink-file</span></code></a>.</p>
+specify &quot;.metalink&quot; files without <a class="reference internal" href="#cmdoption-metalink-file"><code class="xref std std-option docutils literal"><span class="pre">--metalink-file</span></code></a>.</p>
 </dd></dl>
 
 <dl class="option">
@@ -1455,7 +1455,7 @@ auto-assinado através do utilitário <code class="docutils literal"><span class
 usando o assistente e tomando nota da identificação SHA-1 do
 certificado gerado.
 Para executar o aria2c com a opção <a class="reference internal" href="#cmdoption-rpc-secure"><code class="xref std std-option docutils literal"><span class="pre">--rpc-secure</span></code></a> usar
-<cite>–rpc-certificate=&lt;SHA-1&gt;</cite> e apenas omitir a opção
+<cite>--rpc-certificate=&lt;SHA-1&gt;</cite> e apenas omitir a opção
 <a class="reference internal" href="#cmdoption-rpc-private-key"><code class="xref std std-option docutils literal"><span class="pre">--rpc-private-key</span></code></a></p>
 </dd></dl>
 
@@ -1500,7 +1500,7 @@ enable encryption. See also <a class="reference internal" href="#cmdoption-rpc-c
 <dd><p>Save the uploaded torrent or metalink metadata in the directory
 specified by <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a> option. The filename consists of SHA-1
 hash hex string of metadata plus extension. For torrent, the
-extension is ‘.torrent’. For metalink, it is ‘.meta4’.  If false is
+extension is '.torrent'. For metalink, it is '.meta4'.  If false is
 given to this option, the downloads added by
 <a class="reference internal" href="#aria2.addTorrent" title="aria2.addTorrent"><code class="xref py py-func docutils literal"><span class="pre">aria2.addTorrent()</span></code></a> or <a class="reference internal" href="#aria2.addMetalink" title="aria2.addMetalink"><code class="xref py py-func docutils literal"><span class="pre">aria2.addMetalink()</span></code></a> will not be
 saved by <a class="reference internal" href="#cmdoption-save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a> option. Default: <code class="docutils literal"><span class="pre">false</span></code></p>
@@ -1659,7 +1659,7 @@ grows to at most SIZE bytes. The cache storage is created for aria2
 instance and shared by all downloads. The one advantage of the disk
 cache is reduce the disk I/O because the data are written in larger
 unit and it is reordered by the offset of the file.  If hash
-checking is involved and the data are cached in memory, we don’t
+checking is involved and the data are cached in memory, we don't
 need to read them from the disk.  SIZE can include <code class="docutils literal"><span class="pre">K</span></code> or <code class="docutils literal"><span class="pre">M</span></code>
 (1K = 1024, 1M = 1024K). Default: <code class="docutils literal"><span class="pre">16M</span></code></p>
 </dd></dl>
@@ -1708,17 +1708,17 @@ Solaris. The default value may vary depending on the system you use.</p>
 <dt id="cmdoption-file-allocation">
 <code class="descname">--file-allocation</code><code class="descclassname">=&lt;METHOD&gt;</code><a class="headerlink" href="#cmdoption-file-allocation" title="Link permanente para esta definição">¶</a></dt>
 <dd><p>Specify file allocation method.
-<code class="docutils literal"><span class="pre">none</span></code> doesn’t pre-allocate file space. <code class="docutils literal"><span class="pre">prealloc</span></code> pre-allocates file space
+<code class="docutils literal"><span class="pre">none</span></code> doesn't pre-allocate file space. <code class="docutils literal"><span class="pre">prealloc</span></code> pre-allocates file space
 before download begins. This may take some time depending on the size of the
 file.
 If you are using newer file systems such as ext4
 (with extents support), btrfs, xfs or NTFS(MinGW build only), <code class="docutils literal"><span class="pre">falloc</span></code> is
 your best choice. It allocates large(few GiB)
-files almost instantly. Don’t use <code class="docutils literal"><span class="pre">falloc</span></code> with
+files almost instantly. Don't use <code class="docutils literal"><span class="pre">falloc</span></code> with
 legacy file systems such as ext3 and FAT32 because it takes
 almost same time as <code class="docutils literal"><span class="pre">prealloc</span></code> and it blocks aria2
 entirely until allocation finishes. <code class="docutils literal"><span class="pre">falloc</span></code> may
-not be available if your system doesn’t have
+not be available if your system doesn't have
 <em class="manpage">posix_fallocate(3)</em> function.
 <code class="docutils literal"><span class="pre">trunc</span></code> uses <em class="manpage">ftruncate(2)</em> system call or
 platform-specific counterpart to truncate a file to a specified
@@ -1775,7 +1775,7 @@ Possible Values: interface, IP address, hostname</p>
 <p class="first admonition-title">Nota</p>
 <p class="last">If an interface has multiple addresses, it is highly recommended to
 specify IP address explicitly. See also <a class="reference internal" href="#cmdoption-disable-ipv6"><code class="xref std std-option docutils literal"><span class="pre">--disable-ipv6</span></code></a>.  If your
-system doesn’t have <em class="manpage">getifaddrs(3)</em>, this option doesn’t accept interface
+system doesn't have <em class="manpage">getifaddrs(3)</em>, this option doesn't accept interface
 name.</p>
 </div>
 </dd></dl>
@@ -2138,7 +2138,7 @@ retorno ou saída com base no último erro encontrado.</p>
 <dt>3</dt>
 <dd>Recurso não encontrado.</dd>
 <dt>4</dt>
-<dd>Se aria2 tentou um número especificado de vezes e obteve “recurso não encontrado”.
+<dd>Se aria2 tentou um número especificado de vezes e obteve &quot;recurso não encontrado&quot;.
 Ver opção <a class="reference internal" href="#cmdoption-max-file-not-found"><code class="xref std std-option docutils literal"><span class="pre">--max-file-not-found</span></code></a>.</dd>
 <dt>5</dt>
 <dd>Se download interrompido porque a velocidade de download é muito baixa.
@@ -2186,9 +2186,9 @@ Ver opção <a class="reference internal" href="#cmdoption-allow-piece-length-ch
 <dt>24</dt>
 <dd>Se autorização HTTP falhou.</dd>
 <dt>25</dt>
-<dd>Se aria2 não pode passar arquivo bencoded file (normalmente arq.  “.torrent”).</dd>
+<dd>Se aria2 não pode passar arquivo bencoded file (normalmente arq.  &quot;.torrent&quot;).</dd>
 <dt>26</dt>
-<dd>Se arquivo “.torrent” estava corrompido ou inexistem informações que aria2
+<dd>Se arquivo &quot;.torrent&quot; estava corrompido ou inexistem informações que aria2
 necessita.</dd>
 <dt>27</dt>
 <dd>Se URI Magnet URI está errada.</dd>
@@ -2303,8 +2303,8 @@ arquivo que está sendo baixado e possui o sufixo <code class="docutils literal"
 Por exemplo,se está baixando arquivo.zip, então o arquivo de controle
 será arquivo.zip.aria2.  (Existe apenas uma exceção para essa convenção
 que é quando você está baixando um multi torrent, o arquivo de controle
-estará no “diretório topo” do torrent com o sufixo <code class="docutils literal"><span class="pre">.aria2</span></code>.  O nome do
-“diretório topo” é o valor da chave “name” no diretório “info” do arquivo
+estará no &quot;diretório topo&quot; do torrent com o sufixo <code class="docutils literal"><span class="pre">.aria2</span></code>.  O nome do
+&quot;diretório topo&quot; é o valor da chave &quot;name&quot; no diretório &quot;info&quot; do arquivo
 torrent).</p>
 <p>Normalmente um arquivo controle é apagado quando o download se completa.  Se
 aria2 detecta que o download não pode ser retomado (por exemplo, quando faz
@@ -2592,10 +2592,10 @@ waiting downloads:</p>
 <dl class="function">
 <dt id="aria2.addTorrent">
 <code class="descclassname">aria2.</code><code class="descname">addTorrent</code><span class="sig-paren">(</span><em>torrent</em><span class="optional">[</span>, <em>uris</em><span class="optional">[</span>, <em>options</em><span class="optional">[</span>, <em>position</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#aria2.addTorrent" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>This method adds BitTorrent download by uploading “.torrent” file.
+<dd><p>This method adds BitTorrent download by uploading &quot;.torrent&quot; file.
 If you want to add BitTorrent Magnet URI, use <a class="reference internal" href="#aria2.addUri" title="aria2.addUri"><code class="xref py py-func docutils literal"><span class="pre">aria2.addUri()</span></code></a>
 method instead.  <em>torrent</em> is of type base64 which contains
-Base64-encoded “.torrent” file.  <em>uris</em> is of type array and its
+Base64-encoded &quot;.torrent&quot; file.  <em>uris</em> is of type array and its
 element is URI which is of type string. <em>uris</em> is used for
 Web-seeding.  For single file torrents, URI can be a complete URI
 pointing to the resource or if URI ends with /, name in torrent file
@@ -2609,7 +2609,7 @@ as an integer starting from 0, the new download is inserted at
 the end of the queue.  This method returns GID of registered
 download. If <a class="reference internal" href="#cmdoption-rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">--rpc-save-upload-metadata</span></code></a> is <code class="docutils literal"><span class="pre">true</span></code>, the
 uploaded data is saved as a file named hex string of SHA-1 hash of
-data plus “.torrent” in the directory specified by <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a> option.  The example of filename is
+data plus &quot;.torrent&quot; in the directory specified by <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a> option.  The example of filename is
 <code class="docutils literal"><span class="pre">0a3893293e27ac0490424c06de4d09242215f0a6.torrent</span></code>.  If same file
 already exists, it is overwritten.  If the file cannot be saved
 successfully or <a class="reference internal" href="#cmdoption-rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">--rpc-save-upload-metadata</span></code></a> is <code class="docutils literal"><span class="pre">false</span></code>,
@@ -2638,9 +2638,9 @@ the downloads added by this method are not saved by
 <dl class="function">
 <dt id="aria2.addMetalink">
 <code class="descclassname">aria2.</code><code class="descname">addMetalink</code><span class="sig-paren">(</span><em>metalink</em><span class="optional">[</span>, <em>options</em><span class="optional">[</span>, <em>position</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#aria2.addMetalink" title="Link permanente para esta definição">¶</a></dt>
-<dd><p>This method adds Metalink download by uploading “.metalink” file.
+<dd><p>This method adds Metalink download by uploading &quot;.metalink&quot; file.
 <em>metalink</em> is of type base64 which contains Base64-encoded
-“.metalink” file.  <em>options</em> is of type struct and its members are a
+&quot;.metalink&quot; file.  <em>options</em> is of type struct and its members are a
 pair of option name and value. See <a class="reference internal" href="#rpc-options"><span class="std std-ref">Opções</span></a> below for more
 details.  If <em>position</em> is given as an integer starting from 0, the
 new download is inserted at <em>position</em> in the waiting queue. If
@@ -2649,7 +2649,7 @@ queue, it is appended at the end of the queue.  This method returns
 array of GID of registered download.  If
 <a class="reference internal" href="#cmdoption-rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">--rpc-save-upload-metadata</span></code></a> is <code class="docutils literal"><span class="pre">true</span></code>, the uploaded data
 is saved as a file named hex string of SHA-1 hash of data plus
-“.metalink” in the directory specified by <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a>
+&quot;.metalink&quot; in the directory specified by <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a>
 option.  The example of filename is
 <code class="docutils literal"><span class="pre">0a3893293e27ac0490424c06de4d09242215f0a6.metalink</span></code>.  If same file
 already exists, it is overwritten.  If the file cannot be saved
@@ -2772,7 +2772,7 @@ specified, the response contains only keys in <em>keys</em> array. If <em>keys</
 is empty or not specified, the response contains all keys.  This is
 useful when you just want specific keys and avoid unnecessary
 transfers. For example, <code class="docutils literal"><span class="pre">aria2.tellStatus(&quot;2089b05ecca3d829&quot;,</span> <span class="pre">[&quot;gid&quot;,</span> <span class="pre">&quot;status&quot;])</span></code>
-returns <em>gid</em> and ‘status’ key.  The response is of type struct and it
+returns <em>gid</em> and 'status' key.  The response is of type struct and it
 contains following keys. The value type is string.</p>
 <dl class="docutils">
 <dt><code class="docutils literal"><span class="pre">gid</span></code></dt>
@@ -2823,7 +2823,7 @@ be included in the response.</dd>
 <dt><code class="docutils literal"><span class="pre">belongsTo</span></code></dt>
 <dd>GID of a parent download. Some downloads are a part of another
 download.  For example, if a file in Metalink has BitTorrent
-resource, the download of “.torrent” is a part of that file.  If this
+resource, the download of &quot;.torrent&quot; is a part of that file.  If this
 download has no parent, this key will not be included in the
 response.</dd>
 <dt><code class="docutils literal"><span class="pre">dir</span></code></dt>
@@ -2837,7 +2837,7 @@ used in <a class="reference internal" href="#aria2.getFiles" title="aria2.getFil
 file. BitTorrent only. It contains following keys.</p>
 <dl class="last docutils">
 <dt><code class="docutils literal"><span class="pre">announceList</span></code></dt>
-<dd>List of lists of announce URI. If “.torrent” file contains announce
+<dd>List of lists of announce URI. If &quot;.torrent&quot; file contains announce
 and no announce-list, announce is converted to announce-list
 format.</dd>
 <dt><code class="docutils literal"><span class="pre">comment</span></code></dt>
@@ -2955,7 +2955,7 @@ type struct and it contains following keys. The value type is string.</p>
 <dt><code class="docutils literal"><span class="pre">uri</span></code></dt>
 <dd>URI</dd>
 <dt><code class="docutils literal"><span class="pre">status</span></code></dt>
-<dd>‘used’ if the URI is already used. ‘waiting’ if the URI is waiting
+<dd>'used' if the URI is already used. 'waiting' if the URI is waiting
 in the queue.</dd>
 </dl>
 <p><strong>JSON-RPC EXEMPLO M110</strong></p>
@@ -3216,7 +3216,7 @@ range of [<em>offset</em>, <em>offset</em> + <em>num</em>).</p>
 download in the waiting queue and <em>offset</em> == -2 points the download
 before the last download, and so on. The downloads in the response are
 in reversed order.</p>
-<p>For example, imagine that three downloads “A”,”B” and “C” are waiting
+<p>For example, imagine that three downloads &quot;A&quot;,&quot;B&quot; and &quot;C&quot; are waiting
 in this order. <code class="docutils literal"><span class="pre">aria2.tellWaiting(0,</span> <span class="pre">1)</span></code> returns
 <code class="docutils literal"><span class="pre">[&quot;A&quot;]</span></code>. <code class="docutils literal"><span class="pre">aria2.tellWaiting(1,</span> <span class="pre">2)</span></code> returns <code class="docutils literal"><span class="pre">[&quot;B&quot;,</span> <span class="pre">&quot;C&quot;]</span></code>.
 <code class="docutils literal"><span class="pre">aria2.tellWaiting(-1,</span> <span class="pre">2)</span></code> returns <code class="docutils literal"><span class="pre">[&quot;C&quot;,</span> <span class="pre">&quot;B&quot;]</span></code>.</p>
@@ -3449,7 +3449,7 @@ are available, except for following options:
 <a class="reference internal" href="#cmdoption-pause"><code class="xref std std-option docutils literal"><span class="pre">pause</span></code></a> and
 <a class="reference internal" href="#cmdoption-select-file"><code class="xref std std-option docutils literal"><span class="pre">select-file</span></code></a>.</p>
 <p>Using <a class="reference internal" href="#cmdoption-l"><code class="xref std std-option docutils literal"><span class="pre">log</span></code></a> option, you can dynamically start logging or
-change log file. To stop logging, give empty string(“”) as a parameter
+change log file. To stop logging, give empty string(&quot;&quot;) as a parameter
 value. Note that log file is always opened in append mode. This method
 returns <code class="docutils literal"><span class="pre">OK</span></code> for success.</p>
 </dd></dl>
@@ -4082,7 +4082,7 @@ no mesmo diretório</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
-<p class="last">–max-upload-limit especifica taxa máxima de transmissão (upload).</p>
+<p class="last">--max-upload-limit especifica taxa máxima de transmissão (upload).</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Nota</p>
@@ -4118,7 +4118,7 @@ que tem significado de parâmetro. Utilizar apóstrofo(<code class="docutils lit
 </div>
 </div>
 <div class="section" id="download-arquivos-selecionados-usando-index-chamado-download-seletivo">
-<h4>Download arquivos selecionados usando index(chamado “download seletivo”)<a class="headerlink" href="#download-arquivos-selecionados-usando-index-chamado-download-seletivo" title="Link permanente para este título">¶</a></h4>
+<h4>Download arquivos selecionados usando index(chamado &quot;download seletivo&quot;)<a class="headerlink" href="#download-arquivos-selecionados-usando-index-chamado-download-seletivo" title="Link permanente para este título">¶</a></h4>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 arquivo.torrent
 </pre></div>
 </div>
@@ -4142,8 +4142,8 @@ Por exemplo, a saída exibirá algo como:</p>
 <span class="o">---+----------------------</span>
 </pre></div>
 </div>
-<p>Para salvar ‘dist/base-2.6.18.iso’ em ‘/tmp/meudir/base.iso’ e
-‘dist/driver-2.6.18.iso’ em ‘/tmp/dir/driver.iso’, use o seguinte comando:</p>
+<p>Para salvar 'dist/base-2.6.18.iso' em '/tmp/meudir/base.iso' e
+'dist/driver-2.6.18.iso' em '/tmp/dir/driver.iso', use o seguinte comando:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --dir<span class="o">=</span>/tmp --index-out<span class="o">=</span><span class="nv">1</span><span class="o">=</span>meudir/base.iso --index-out<span class="o">=</span><span class="nv">2</span><span class="o">=</span>dir/driver.iso arquivo.torrent
 </pre></div>
 </div>
@@ -4399,7 +4399,7 @@ favor refira-se a versão em inglês resultante do comando man aria2c</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.33.1',
+            VERSION:'1.34.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

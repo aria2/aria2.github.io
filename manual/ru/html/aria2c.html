@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2c(1) &mdash; Документация aria2 1.33.1</title>
+  <title>aria2c(1) &mdash; Документация aria2 1.34.0</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Алфавитный указатель"
               href="genindex.html"/>
         <link rel="search" title="Поиск" href="search.html"/>
-    <link rel="top" title="Документация aria2 1.33.1" href="index.html"/>
+    <link rel="top" title="Документация aria2 1.34.0" href="index.html"/>
         <link rel="prev" title="Руководство по Aria2" href="index.html"/> 
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                1.33.1
+                1.34.0
               </div>
             
           
@@ -168,7 +168,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#bittorrent-magnet-uri">Загрузка, используя BitTorrent Magnet URI</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id44">Загрузка 2-х торрентов</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id45">Параллельная загрузка файла посредством торрента и HTTP/FTP-сервера</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id46">Загрузка только определённых файлов (обычно называют «выборочная загрузка»)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id46">Загрузка только определённых файлов (обычно называют &quot;выборочная загрузка&quot;)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id47">Загрузка torrent-файла, без загрузки торрента</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id48">Указание имени выходного файла</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id49">Изменение прослушиваемого порта для входящих соединений пиров</a></li>
@@ -256,7 +256,7 @@
 <h1>aria2c(1)<a class="headerlink" href="#aria2c-1" title="Ссылка на этот заголовок">¶</a></h1>
 <div class="section" id="id1">
 <h2>ОБЗОР<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h2>
-<p><strong>aria2c</strong> [&lt;ПАРАМЕТРЫ&gt;] [&lt;URI&gt;|&lt;MAGNET-ССЫЛКА&gt;|&lt;TORRENT-ФАЙЛ&gt;|&lt;METALINK-ФАЙЛ&gt;] …</p>
+<p><strong>aria2c</strong> [&lt;ПАРАМЕТРЫ&gt;] [&lt;URI&gt;|&lt;MAGNET-ССЫЛКА&gt;|&lt;TORRENT-ФАЙЛ&gt;|&lt;METALINK-ФАЙЛ&gt;] ...</p>
 </div>
 <div class="section" id="id2">
 <h2>ОПИСАНИЕ<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
@@ -306,7 +306,7 @@ stdin (стандартный поток ввода).
 <code class="descname">-l</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--log</code><code class="descclassname">=&lt;LOG&gt;</code><a class="headerlink" href="#cmdoption-l" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Имя файла для журнала событий. Если указан <code class="docutils literal"><span class="pre">-</span></code>, то журнал событий будет
 записан в stdout (стандартный поток вывода). Если указана пустая
-строка («») или параметр пропущен, то журнал событий вообще не будет записан
+строка (&quot;&quot;) или параметр пропущен, то журнал событий вообще не будет записан
 на диск.</p>
 </dd></dl>
 
@@ -383,7 +383,7 @@ http://example.com/bar
 <dt id="cmdoption-all-proxy">
 <code class="descname">--all-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-all-proxy" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Использовать указанный прокси-сервер для всех протоколов. Для отмены
-ранее определенного адреса используйте «».  Вы также можете отменить эту
+ранее определенного адреса используйте &quot;&quot;.  Вы также можете отменить эту
 настройку и указать прокси-сервер для отдельного протокола, используя
 параметры <a class="reference internal" href="#cmdoption-http-proxy"><code class="xref std std-option docutils literal"><span class="pre">--http-proxy</span></code></a>,
 <a class="reference internal" href="#cmdoption-https-proxy"><code class="xref std std-option docutils literal"><span class="pre">--https-proxy</span></code></a> и <a class="reference internal" href="#cmdoption-ftp-proxy"><code class="xref std std-option docutils literal"><span class="pre">--ftp-proxy</span></code></a>. Влияет на все загрузки.
@@ -392,7 +392,7 @@ http://example.com/bar
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p>Если пользователь и пароль вставлены в URI-прокси и они также указаны в
-параметрах <em>–{http,https,ftp,all}-proxy-{user,passwd}</em>, то те, которые
+параметрах <em>--{http,https,ftp,all}-proxy-{user,passwd}</em>, то те, которые
 указаны позже переопределят предыдущие параметры.
 Например, если вы указали <code class="docutils literal"><span class="pre">http-proxy-user=&quot;myname&quot;</span></code>,
 <code class="docutils literal"><span class="pre">http-proxy-passwd=&quot;mypass&quot;</span></code> в aria2.conf и указали
@@ -474,7 +474,7 @@ BitTorrent-загрузки.
 <dl class="option">
 <dt id="cmdoption-max-file-not-found">
 <code class="descname">--max-file-not-found</code><code class="descclassname">=&lt;NUM&gt;</code><a class="headerlink" href="#cmdoption-max-file-not-found" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Если aria2 получает статус «file not found» (файл не найден) с
+<dd><p>Если aria2 получает статус &quot;file not found&quot; (файл не найден) с
 удаленных HTTP/FTP-серверов NUM раз без получения, хотя бы одного байта,
 тогда принудительно отказывается от загрузки. Укажите <code class="docutils literal"><span class="pre">0</span></code>, чтобы
 отключить этот параметр. Этот параметр действенен только, когда
@@ -712,10 +712,11 @@ aria2 может разбить файл на части в 2-ух диапаз�
 <dl class="option">
 <dt id="cmdoption-ca-certificate">
 <code class="descname">--ca-certificate</code><code class="descclassname">=&lt;FILE&gt;</code><a class="headerlink" href="#cmdoption-ca-certificate" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Использовать сертификат авторизации в FILE для проверки узлов.
-Сертификат должен быть в PEM-формате и содержать многоразовые
-CA-сертификаты. Используйте параметр
-<a class="reference internal" href="#cmdoption-check-certificate"><code class="xref std std-option docutils literal"><span class="pre">--check-certificate</span></code></a>, чтобы разрешить проверку.</p>
+<dd><p>Использовать для проверки узлов FILE с сертификатами
+удостоверяющих центров. FILE должен быть в PEM-формате и может содержать
+несколько CA-сертификатов.
+Используйте параметр <a class="reference internal" href="#cmdoption-check-certificate"><code class="xref std std-option docutils literal"><span class="pre">--check-certificate</span></code></a>, чтобы включить
+проверку.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">Если вы при сборке используете OpenSSL или последнею версию GnuTLS,
@@ -750,7 +751,7 @@ CA-сертификатов, то aria2 автоматически загруз�
 <p class="last"><em>AppleTLS</em> пользователи должны использовать утилиту KeyChain Access для
 импорта сертификата клиента и получения соответствующего SHA-1 отпечатка
 этого сертификата из окна Information.
-Для запуска aria2c используйте <cite>–certificate=&lt;SHA-1&gt;</cite>.
+Для запуска aria2c используйте <cite>--certificate=&lt;SHA-1&gt;</cite>.
 Альтернативные PKCS12-файлы также поддерживаются. PEM-файлы, однако,
 не поддерживаются.</p>
 </div>
@@ -759,8 +760,8 @@ CA-сертификатов, то aria2 автоматически загруз�
 <dl class="option">
 <dt id="cmdoption-check-certificate">
 <code class="descname">--check-certificate</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-check-certificate" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Проверять каждый из используемых сертификатов, которые
-указаны в параметре <a class="reference internal" href="#cmdoption-ca-certificate"><code class="xref std std-option docutils literal"><span class="pre">--ca-certificate</span></code></a>.
+<dd><p>Проверять узел, используя сертификаты, которые указаны в параметре
+<a class="reference internal" href="#cmdoption-ca-certificate"><code class="xref std std-option docutils literal"><span class="pre">--ca-certificate</span></code></a>.
 По умолчанию: <code class="docutils literal"><span class="pre">true</span></code></p>
 </dd></dl>
 
@@ -770,7 +771,7 @@ CA-сертификатов, то aria2 автоматически загруз�
 <dd><p>Посылать <code class="docutils literal"><span class="pre">Accept:</span> <span class="pre">deflate,</span> <span class="pre">gzip</span></code> в запросе-заголовке и добавлять в ответ,
 если удаленный сервер ответит <code class="docutils literal"><span class="pre">Content-Encoding:</span> <span class="pre">gzip</span></code> или
 <code class="docutils literal"><span class="pre">Content-Encoding:</span> <span class="pre">deflate</span></code>.
-По умолчанию: „false</p>
+По умолчанию: 'false</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">Некоторые серверы отвечают <code class="docutils literal"><span class="pre">Content-Encoding:</span> <span class="pre">gzip</span></code> для файлов, которые сами
@@ -816,7 +817,7 @@ CA-сертификатов, то aria2 автоматически загруз�
 <dt id="cmdoption-http-proxy">
 <code class="descname">--http-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-http-proxy" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Использовать указанный прокси-сервер для HTTP. Для отмены
-ранее определенного адреса используйте «».
+ранее определенного адреса используйте &quot;&quot;.
 Смотрите также параметр <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>. Влияет на все
 HTTP-загрузки.
 Формат PROXY - <code class="docutils literal"><span class="pre">[http://][ПОЛЬЗОВАТЕЛЬ:ПАРОЛЬ&#64;]ХОСТ[:ПОРТ]</span></code>.</p>
@@ -838,7 +839,7 @@ HTTP-загрузки.
 <dt id="cmdoption-https-proxy">
 <code class="descname">--https-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-https-proxy" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Использовать указанный прокси-сервер для HTTPS. Для отмены
-ранее определенного адреса используйте «».
+ранее определенного адреса используйте &quot;&quot;.
 Смотрите также параметр <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>. Влияет на все
 HTTPS-загрузки.
 Формат PROXY - <code class="docutils literal"><span class="pre">[http://][ПОЛЬЗОВАТЕЛЬ:ПАРОЛЬ&#64;]ХОСТ[:ПОРТ]</span></code>.</p>
@@ -975,7 +976,7 @@ Chromium/Google Chrome не поддерживаются.</p>
 <dt id="cmdoption-ftp-proxy">
 <code class="descname">--ftp-proxy</code><code class="descclassname">=&lt;PROXY&gt;</code><a class="headerlink" href="#cmdoption-ftp-proxy" title="Ссылка на это определение">¶</a></dt>
 <dd><p>Использовать указанный прокси-сервер для FTP. Для отмены
-ранее определенного адреса используйте «».
+ранее определенного адреса используйте &quot;&quot;.
 Смотрите также параметр <a class="reference internal" href="#cmdoption-all-proxy"><code class="xref std std-option docutils literal"><span class="pre">--all-proxy</span></code></a>. Влияет на все FTP-загрузки.
 Формат PROXY - <code class="docutils literal"><span class="pre">[http://][ПОЛЬЗОВАТЕЛЬ:ПАРОЛЬ&#64;]ХОСТ[:ПОРТ]</span></code></p>
 </dd></dl>
@@ -1035,7 +1036,7 @@ DIGEST - шестнадцатеричное значение хэша.
 Вы можете также использовать <code class="docutils literal"><span class="pre">-</span></code>, чтобы указать диапазон: <code class="docutils literal"><span class="pre">1-5</span></code>.
 <code class="docutils literal"><span class="pre">,</span></code> и <code class="docutils literal"><span class="pre">-</span></code> могут быть использованы вместе: <code class="docutils literal"><span class="pre">1-5,8,9</span></code>.
 Когда используется с параметром -M, индекс может сильно зависеть
-от запроса (смотрите параметры <em>–metalink-*</em>).</p>
+от запроса (смотрите параметры <em>--metalink-*</em>).</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">В многофайловом торренте, смежные файлы, указанные в этом параметре также
@@ -1048,7 +1049,7 @@ DIGEST - шестнадцатеричное значение хэша.
 <dl class="option">
 <dt id="cmdoption-show-files">
 <code class="descname">-S</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--show-files</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-show-files" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Вывести список файлов из «.torrent», «.meta4» или «.metalink» и
+<dd><p>Вывести список файлов из &quot;.torrent&quot;, &quot;.meta4&quot; или &quot;.metalink&quot; и
 завершить работу. Для файла .torrent будет выведена более детальная
 информация (информация по хэшу, размер блока и др.).</p>
 </dd></dl>
@@ -1240,10 +1241,10 @@ aria2 временно увеличивает количество узлов, �
 <dl class="option">
 <dt id="cmdoption-bt-save-metadata">
 <code class="descname">--bt-save-metadata</code><code class="descclassname"> [true|false]</code><a class="headerlink" href="#cmdoption-bt-save-metadata" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Сохранить метаданные как файл «.torrent». Этот параметр
+<dd><p>Сохранить метаданные как файл &quot;.torrent&quot;. Этот параметр
 эффективен только если используется BitTorrent Magnet-ссылка.
 Имя файла шестнадцатеричное представление хэша с расширением
-«.torrent». Файл сохранится в каталог, в тот же самый, куда
+&quot;.torrent&quot;. Файл сохранится в каталог, в тот же самый, куда
 сохранится загружаемый файл. Если тот же самый файл уже
 существует, метаданные не сохранятся. Смотрите также параметр
 <a class="reference internal" href="#cmdoption-bt-metadata-only"><code class="xref std std-option docutils literal"><span class="pre">--bt-metadata-only</span></code></a>.
@@ -1504,8 +1505,8 @@ bitorrent-рукопожатия (extended handshake).</p>
 <dl class="option">
 <dt id="cmdoption-torrent-file">
 <code class="descname">-T</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--torrent-file</code><code class="descclassname">=&lt;TORRENT_FILE&gt;</code><a class="headerlink" href="#cmdoption-torrent-file" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Путь к файлу «.torrent». Вы не обязаны использовать этот параметр, т.к.
-файл «.torrent» можно указать без <a class="reference internal" href="#cmdoption-torrent-file"><code class="xref std std-option docutils literal"><span class="pre">--torrent-file</span></code></a>.</p>
+<dd><p>Путь к файлу &quot;.torrent&quot;. Вы не обязаны использовать этот параметр, т.к.
+файл &quot;.torrent&quot; можно указать без <a class="reference internal" href="#cmdoption-torrent-file"><code class="xref std std-option docutils literal"><span class="pre">--torrent-file</span></code></a>.</p>
 </dd></dl>
 
 </div>
@@ -1537,7 +1538,7 @@ metalink:url и metalink:metaurl в metalink-файле, сохраненном 
 <dl class="option">
 <dt id="cmdoption-metalink-file">
 <code class="descname">-M</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--metalink-file</code><code class="descclassname">=&lt;METALINK_FILE&gt;</code><a class="headerlink" href="#cmdoption-metalink-file" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Путь к файлу «.meta4» и «.metalink». Читает ввод из <code class="docutils literal"><span class="pre">stdin</span></code>, если в качестве
+<dd><p>Путь к файлу &quot;.meta4&quot; и &quot;.metalink&quot;. Читает ввод из <code class="docutils literal"><span class="pre">stdin</span></code>, если в качестве
 имени файла указано <code class="docutils literal"><span class="pre">-</span></code>. Вы не обязаны использовать этот параметр,
 т.к. файлы .metalink можно указать без <a class="reference internal" href="#cmdoption-metalink-file"><code class="xref std std-option docutils literal"><span class="pre">--metalink-file</span></code></a>.</p>
 </dd></dl>
@@ -1646,7 +1647,7 @@ metalink:url и metalink:metaurl в metalink-файле, сохраненном 
 используя мастер, и получить соответствующий SHA-1 отпечаток нового
 сертификата из окна Information.
 Для запуска aria2c с <a class="reference internal" href="#cmdoption-rpc-secure"><code class="xref std std-option docutils literal"><span class="pre">--rpc-secure</span></code></a> используйте
-<cite>–rpc-certificate=&lt;SHA-1&gt;</cite>.
+<cite>--rpc-certificate=&lt;SHA-1&gt;</cite>.
 Альтернативные PKCS12-файлы также поддерживаются. PEM-файлы, однако,
 не поддерживаются.</p>
 </div>
@@ -1705,7 +1706,7 @@ metalink:url и metalink:metaurl в metalink-файле, сохраненном 
 <dd><p>Сохранить загруженные метаданные torrent или metalink в каталоге,
 заданном параметром <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a>. Имя файла содержит
 шестнадцатеричную строку SHA-1-хэша метаданных плюс расширение.
-Для torrent расширение „.torrent“. Для metalink - это „.meta4“.
+Для torrent расширение '.torrent'. Для metalink - это '.meta4'.
 Если параметр задан как false, то загрузки, добавленные с помощью
 <a class="reference internal" href="#aria2.addTorrent" title="aria2.addTorrent"><code class="xref py py-func docutils literal"><span class="pre">aria2.addTorrent()</span></code></a> или <a class="reference internal" href="#aria2.addMetalink" title="aria2.addMetalink"><code class="xref py py-func docutils literal"><span class="pre">aria2.addMetalink()</span></code></a>, не будут
 сохраняться при помощи параметра <a class="reference internal" href="#cmdoption-save-session"><code class="xref std std-option docutils literal"><span class="pre">--save-session</span></code></a>.
@@ -2491,7 +2492,7 @@ HTTP(S)/FTP/SFTP-сервер одновременно, пока данные и
 для каждого файла.</p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
-<p class="last">Удостоверьтесь, что URI заключен в одинарные(„) или двойные(<code class="docutils literal"><span class="pre">&quot;</span></code>) кавычки, если
+<p class="last">Удостоверьтесь, что URI заключен в одинарные(') или двойные(<code class="docutils literal"><span class="pre">&quot;</span></code>) кавычки, если
 есть символ <code class="docutils literal"><span class="pre">&amp;</span></code> или любые символы, которые имеют особое значение в командной
 оболочке.</p>
 </div>
@@ -2551,7 +2552,7 @@ Content-Disposition.</p>
 <dt>3</dt>
 <dd>Если ресурс не был найден.</dd>
 <dt>4</dt>
-<dd>Если aria2 получила определенное число ошибок «ресурс не найден».
+<dd>Если aria2 получила определенное число ошибок &quot;ресурс не найден&quot;.
 Смотрите параметр <a class="reference internal" href="#cmdoption-max-file-not-found"><code class="xref std std-option docutils literal"><span class="pre">--max-file-not-found</span></code></a>.</dd>
 <dt>5</dt>
 <dd>Если загрузка прервана, поскольку скорость загрузки была слишком медленной.
@@ -2602,9 +2603,9 @@ Content-Disposition.</p>
 <dt>24</dt>
 <dd>Если HTTP-авторизация не удалась.</dd>
 <dt>25</dt>
-<dd>Если aria2 не смогла проанализировать закодированный файл (обычно файл «.torrent»).</dd>
+<dd>Если aria2 не смогла проанализировать закодированный файл (обычно файл &quot;.torrent&quot;).</dd>
 <dt>26</dt>
-<dd>Если файл «.torrent» был испорчен или потеряна информация, которая необходима
+<dd>Если файл &quot;.torrent&quot; был испорчен или потеряна информация, которая необходима
 aria2.</dd>
 <dt>27</dt>
 <dd>Если Magnet-ссылка была плохой.</dd>
@@ -2764,9 +2765,9 @@ aria2c.</p>
 файл, и имеет имя, как у загружаемого файла с добавлением
 <code class="docutils literal"><span class="pre">.aria2</span></code>. Например, если file.zip загружаемый файл, тогда контрольный файл
 будет file.zip.aria2. (Существует исключение для этого именования. При
-загрузке торрента с множеством файлов, контрольный файл будет в «корневом
-каталоге» с именем торрента и добавлением <code class="docutils literal"><span class="pre">.aria2</span></code>. Имя «корневого
-каталога» - значение ключа «name» в «info» внутри torrent-файла.)</p>
+загрузке торрента с множеством файлов, контрольный файл будет в &quot;корневом
+каталоге&quot; с именем торрента и добавлением <code class="docutils literal"><span class="pre">.aria2</span></code>. Имя &quot;корневого
+каталога&quot; - значение ключа &quot;name&quot; в &quot;info&quot; внутри torrent-файла.)</p>
 <p>Обычно контрольный файл удаляется после завершения загрузки. Если aria2
 решает, что загрузка не может быть возобновлена (например, когда загружается
 файл с HTTP-сервера, который не поддерживает возобновление), контрольный
@@ -2785,7 +2786,7 @@ aria2c.</p>
 на них влияют параметры <a class="reference internal" href="#cmdoption-z"><code class="xref std std-option docutils literal"><span class="pre">--force-sequential</span></code></a> и
 <a class="reference internal" href="#cmdoption-parameterized-uri"><code class="xref std std-option docutils literal"><span class="pre">--parameterized-uri</span></code></a>.</p>
 <p>Так как aria2 непосредственно читает URI из входного файла, то они не должны
-быть указаны с одинарными(„) или двойными(«) кавычками.</p>
+быть указаны с одинарными(') или двойными(&quot;) кавычками.</p>
 <p>Строка, которая начинается с <code class="docutils literal"><span class="pre">#</span></code> обрабатывается как комментарий и
 пропускается.</p>
 <p>Кроме того, следующие параметры могут быть определены после каждой строки с
@@ -3018,7 +3019,7 @@ RPC-методе является строка и начинается с <code 
 <p>Например, если секретный маркер RPC-авторизации - <code class="docutils literal"><span class="pre">$$secret$$</span></code>, то вызов
 RPC-метода <cite>aria2.addUri</cite> будет выглядеть следующим образом:</p>
 <blockquote>
-<div>aria2.addUri(«token:$$secret$$», [«<a class="reference external" href="http://example.org/file">http://example.org/file</a>»])</div></blockquote>
+<div>aria2.addUri(&quot;token:$$secret$$&quot;, [&quot;<a class="reference external" href="http://example.org/file">http://example.org/file</a>&quot;])</div></blockquote>
 <p>RPC-метод <cite>system.multicall</cite> обрабатывается особым образом. Поскольку
 спецификация XML-RPC позволяет использовать только один массив в качестве
 параметра для этого метода, мы не указываем маркер в вызове. Вместо этого
@@ -3109,7 +3110,7 @@ URI для каждого файла, будут добавлены имя и п
 Этот метод возвращает GID зарегистрированной загрузки.
 Если <a class="reference internal" href="#cmdoption-rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">--rpc-save-upload-metadata</span></code></a> задан как <code class="docutils literal"><span class="pre">true</span></code>,
 загруженные данные сохраняются в файл с именем шестнадцатеричной
-строки SHA-1-хэша этих данных плюс «.torrent», в каталог указанный в
+строки SHA-1-хэша этих данных плюс &quot;.torrent&quot;, в каталог указанный в
 параметре <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a>. Например, имя файла может быть
 <code class="docutils literal"><span class="pre">0a3893293e27ac0490424c06de4d09242215f0a6.torrent</span></code>. Если файл с таким же именем
 существует, то он будет перезаписан! Если файл не может быть успешно сохранен или
@@ -3150,7 +3151,7 @@ URI для каждого файла, будут добавлены имя и п
 Этот метод возвращает GID зарегистрированной загрузки.
 Если <a class="reference internal" href="#cmdoption-rpc-save-upload-metadata"><code class="xref std std-option docutils literal"><span class="pre">--rpc-save-upload-metadata</span></code></a> задан как <code class="docutils literal"><span class="pre">true</span></code>,
 загруженные данные сохраняются в файл с именем шестнадцатеричной
-строки SHA-1-хэша этих данных плюс «.metalink», в каталог указанный в
+строки SHA-1-хэша этих данных плюс &quot;.metalink&quot;, в каталог указанный в
 параметре <a class="reference internal" href="#cmdoption-d"><code class="xref std std-option docutils literal"><span class="pre">--dir</span></code></a>. Например, имя файла может быть
 <code class="docutils literal"><span class="pre">0a3893293e27ac0490424c06de4d09242215f0a6.metalink</span></code>. Если файл с таким же именем
 существует, то он будет перезаписан! Если файл не может быть успешно сохранен или
@@ -3252,7 +3253,7 @@ URI для каждого файла, будут добавлены имя и п
 <dl class="function">
 <dt id="aria2.unpause">
 <code class="descclassname">aria2.</code><code class="descname">unpause</code><span class="sig-paren">(</span><span class="optional">[</span><em>secret</em>, <span class="optional">]</span><em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#aria2.unpause" title="Ссылка на это определение">¶</a></dt>
-<dd><p>Этот метод изменяет статус загрузки, которая обозначена „gid“ (строка), с
+<dd><p>Этот метод изменяет статус загрузки, которая обозначена 'gid' (строка), с
 <code class="docutils literal"><span class="pre">paused</span></code> на <code class="docutils literal"><span class="pre">waiting</span></code>, что позволяет перезапускать загрузку.
 Этот метод возвращает GID загрузки, снятой с паузы.</p>
 </dd></dl>
@@ -3333,7 +3334,7 @@ URI для каждого файла, будут добавлены имя и п
 <dt><code class="docutils literal"><span class="pre">belongsTo</span></code></dt>
 <dd>GID родительской загрузки. Некоторые загрузки являются частью другой
 загрузки. Например, если файл в Metalink содержит BitTorrent ресурсы,
-загрузки «.torrent» файлов будут частями этого родителя. Если эта
+загрузки &quot;.torrent&quot; файлов будут частями этого родителя. Если эта
 загрузка не имеет родителя, то ключ не будет включён в ответ.</dd>
 <dt><code class="docutils literal"><span class="pre">dir</span></code></dt>
 <dd>Каталог для сохранения файлов.</dd>
@@ -3468,7 +3469,7 @@ URI для каждого файла, будут добавлены имя и п
 <dt><code class="docutils literal"><span class="pre">uri</span></code></dt>
 <dd>URI</dd>
 <dt><code class="docutils literal"><span class="pre">status</span></code></dt>
-<dd>„used“, если URI используется. „waiting“, если URI все ещё ожидает в очереди.</dd>
+<dd>'used', если URI используется. 'waiting', если URI все ещё ожидает в очереди.</dd>
 </dl>
 <p><strong>Пример JSON-RPC</strong></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">json</span>
@@ -3724,7 +3725,7 @@ URI для каждого файла, будут добавлены имя и п
 последнею загрузку, которая ожидает в очереди, а <em>offset</em> == -2 указывает на
 загрузку перед последней, и так далее. Тогда загрузки в ответе находятся в
 обратном порядке.</p>
-<p>Например, допустим, что есть три загрузки «A»,»B» и «C», в этом порядке,
+<p>Например, допустим, что есть три загрузки &quot;A&quot;,&quot;B&quot; и &quot;C&quot;, в этом порядке,
 которые ожидают. <code class="docutils literal"><span class="pre">aria2.tellWaiting(0,</span> <span class="pre">1)</span></code> возвратит <code class="docutils literal"><span class="pre">[&quot;A&quot;]</span></code>.
 <code class="docutils literal"><span class="pre">aria2.tellWaiting(1,</span> <span class="pre">2)</span></code> возвратит <code class="docutils literal"><span class="pre">[&quot;B&quot;,</span> <span class="pre">&quot;C&quot;]</span></code>.
 <code class="docutils literal"><span class="pre">aria2.tellWaiting(-1,</span> <span class="pre">2)</span></code> возвратит <code class="docutils literal"><span class="pre">[&quot;C&quot;,</span> <span class="pre">&quot;B&quot;]</span></code>.</p>
@@ -3961,7 +3962,7 @@ URI. <em>position</em> начинается с 0. Когда <em>position</em> �
 <a class="reference internal" href="#cmdoption-select-file"><code class="xref std std-option docutils literal"><span class="pre">select-file</span></code></a>.</p>
 <p>C параметром <a class="reference internal" href="#cmdoption-l"><code class="xref std std-option docutils literal"><span class="pre">log</span></code></a>, вы можете динамически
 начинать вести журнал событий или изменять файл журнала событий. Чтобы
-остановить ведение журнала событий, укажите пустую строку («») в качестве
+остановить ведение журнала событий, укажите пустую строку (&quot;&quot;) в качестве
 значения параметра. Обратите внимание, что файл журнала событий всегда
 открыт в режиме добавления. Этот метод возвращает <code class="docutils literal"><span class="pre">OK</span></code>, в случае успеха.</p>
 </dd></dl>
@@ -4672,7 +4673,7 @@ URI, если они указывают на тот же самый файл.</p
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
-<p class="last">–max-upload-limit определяет максимальную скорость отдачи.</p>
+<p class="last">--max-upload-limit определяет максимальную скорость отдачи.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
@@ -4702,13 +4703,9 @@ URI, если они указывают на тот же самый файл.</p
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c -Ttest.torrent <span class="s2">&quot;http://host1/file&quot;</span> <span class="s2">&quot;ftp://host2/file&quot;</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Примечание</p>
-<p class="last">Загрузка многофайлового торрента одновременно с использованием HTTP/FTP не поддерживается.</p>
-</div>
 </div>
 <div class="section" id="id46">
-<h4>Загрузка только определённых файлов (обычно называют «выборочная загрузка»)<a class="headerlink" href="#id46" title="Ссылка на этот заголовок">¶</a></h4>
+<h4>Загрузка только определённых файлов (обычно называют &quot;выборочная загрузка&quot;)<a class="headerlink" href="#id46" title="Ссылка на этот заголовок">¶</a></h4>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --select-file<span class="o">=</span><span class="m">1</span>-4,8 file.torrent
 </pre></div>
 </div>
@@ -4726,7 +4723,7 @@ URI, если они указывают на тот же самый файл.</p
 <div class="section" id="id48">
 <h4>Указание имени выходного файла<a class="headerlink" href="#id48" title="Ссылка на этот заголовок">¶</a></h4>
 <p>Для указания выходного имени файла в BitTorrent-загрузках, вам нужно узнать
-индекс файла в торренте (см.:option:<cite>–show-files &lt;-S&gt;</cite>). Например, вывод
+индекс файла в торренте (см.:option:<cite>--show-files &lt;-S&gt;</cite>). Например, вывод
 выглядит следующим образом:</p>
 <div class="highlight-text"><div class="highlight"><pre><span></span>idx|path/length
 ===+======================
@@ -4738,8 +4735,8 @@ URI, если они указывают на тот же самый файл.</p
 ---+----------------------
 </pre></div>
 </div>
-<p>Сохраняет „dist/base-2.6.18.iso“ в „/tmp/mydir/base.iso“ и
-„dist/driver-2.6.18.iso“ в „/tmp/dir/driver.iso“, при использовании
+<p>Сохраняет 'dist/base-2.6.18.iso' в '/tmp/mydir/base.iso' и
+'dist/driver-2.6.18.iso' в '/tmp/dir/driver.iso', при использовании
 следующей команды:</p>
 <div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> aria2c --dir<span class="o">=</span>/tmp --index-out<span class="o">=</span><span class="nv">1</span><span class="o">=</span>mydir/base.iso --index-out<span class="o">=</span><span class="nv">2</span><span class="o">=</span>dir/driver.iso file.torrent
 </pre></div>
@@ -5042,7 +5039,7 @@ General Public License во всех отношениях для всего ис
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.33.1',
+            VERSION:'1.34.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

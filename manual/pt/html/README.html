@@ -12,7 +12,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; documentação aria2 1.33.1</title>
+  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; documentação aria2 1.34.0</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Índice"
               href="genindex.html"/>
         <link rel="search" title="Buscar" href="search.html"/>
-    <link rel="top" title="documentação aria2 1.33.1" href="index.html"/>
+    <link rel="top" title="documentação aria2 1.34.0" href="index.html"/>
         <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
 
   
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                1.33.1
+                1.34.0
               </div>
             
           
@@ -194,7 +194,7 @@ como por exemplo: GNU Linux, OS X, Windows, Android entre outros. Ao mesmo
 tempo pode executar download de HTTP, HTTPS, FTP e BitTorrent enquanto estes
 dados podem ser disponibilizados (uploaded) ao mesmo tempo para o BitTorrent ou
 para você ir assistindo um filme enquanto o download prossegue.  Através da
-verificação (checksum) de partes dos dados dos Metalink’s, aria2
+verificação (checksum) de partes dos dados dos Metalink's, aria2
 automaticamente valida partes (chunks) do BitTorrent.</p>
 <p>A página do projeto está em <a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a>.</p>
 <p>Veja <a class="reference external" href="https://aria2.github.io/manual/pt/html/">aria2 Manual Online</a>
@@ -407,7 +407,7 @@ foi adequadamente configurada para localizar o certificado CA
 armazenado, aria2 carrega automaticamente estes certificados no início.
 Se este não ocorrer, recomenda-se fornecer o caminho para o arquivo que
 contém o certificado. Por Exemplo, no Debian o caminho para o arquivo CA
-é “/etc/ssl/certs/ca-certificates.crt” (no pacote ca-certificates).
+é &quot;/etc/ssl/certs/ca-certificates.crt&quot; (no pacote ca-certificates).
 Isto varia de acordo com sua distribuição Linux. Pode ser informada a opção
 <code class="docutils literal"><span class="pre">--with-ca-bundle</span></code> para configurar o script usado pelo make:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
@@ -417,14 +417,14 @@ $ make
 <p>Sem a opção <code class="docutils literal"><span class="pre">--with-ca-bundle</span></code>, haverá um erro ao acessar servidores
 HTTPS pois o certificado não pode ser verificado sem possuir um pacote CA
 (entidade certificadora). Nesse caso, pode ser especificado um arquivo de
-certificado usando opção aria2’s <code class="docutils literal"><span class="pre">--ca-certificate</span></code>.  Caso não haja um
+certificado usando opção aria2's <code class="docutils literal"><span class="pre">--ca-certificate</span></code>.  Caso não haja um
 certificado instalado, então o último recurso é desabilitar a validação
 do certificado usando a opção <code class="docutils literal"><span class="pre">--check-certificate=false</span></code>.</p>
 <p>Por padrão, arquivo chamado (bash_completion) <code class="docutils literal"><span class="pre">aria2c</span></code> é instalado no
 diretório <code class="docutils literal"><span class="pre">$prefix/share/doc/aria2/bash_completion</span></code>.  Para mudar o
 diretório de instalação do arquivo utilize a opção
 <code class="docutils literal"><span class="pre">--with-bashcompletiondir</span></code>.</p>
-<p>O executavel é ‘aria2c’ no diretório src.</p>
+<p>O executavel é 'aria2c' no diretório src.</p>
 <p>aria2 usa CppUnit para (test unit) automatizado. Para executar o
 test unit emita o comando:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>$ make check
@@ -492,7 +492,7 @@ compilar uma zlib nova.</p>
 <p><code class="docutils literal"><span class="pre">android-config</span></code> assume os seguintes pontos:</p>
 <ul class="simple">
 <li>Android NDK está instalado no local definido pela variável de ambiente
-<code class="docutils literal"><span class="pre">$ANDROID_HOME</span></code>.  Consultar seção “3/ Chamando o compilador (jeito fácil):”
+<code class="docutils literal"><span class="pre">$ANDROID_HOME</span></code>.  Consultar seção &quot;3/ Chamando o compilador (jeito fácil):&quot;
 no Android NDK
 <code class="docutils literal"><span class="pre">docs/STANDALONE-TOOLCHAIN.html</span></code> para instalar (toolchain) personalizada.</li>
 <li>Bibliotecas dependentes devem estar instaladas em
@@ -513,7 +513,7 @@ BitTorrent e Metalink.</p>
 <h2>Instalando aria2 no Android<a class="headerlink" href="#instalando-aria2-no-android" title="Link permanente para este título">¶</a></h2>
 <p>aria2 não é uma aplicação Android Java. aria2 é uma aplicação escrita
 em C++ nativo e opera em modo linha de comando.  Não é necessário ter
-acesso ao usuário ‘root’ para usar aria2.  Como já dito, aria2 é um
+acesso ao usuário 'root' para usar aria2.  Como já dito, aria2 é um
 programa de linha de comando e por isso é necessário um emulador
 de terminal, portanto antes instale um emulador de Terminal Android a
 partir do Android Market (ou compile a partir da fonte e instale). Veja
@@ -624,11 +624,11 @@ e nas traduções em:
 <p>O nome do arquivo que será baixado é determinado da seguinte maneira:</p>
 <dl class="docutils">
 <dt>modo arquivo simples</dt>
-<dd>O a chave “name” está presento no arquivo .torrent, o nome do
-arquivo será o valor da chave “name”. De outra maneira o nome
+<dd>O a chave &quot;name&quot; está presento no arquivo .torrent, o nome do
+arquivo será o valor da chave &quot;name&quot;. De outra maneira o nome
 do arquivo será baseado no arquivo .torrent mais o sufixo
-“.file”. Exemplo: arquivo .torrent é “brasil.torrrent”, então
-o nome do arquivo baixado será: “brasil.torrent.file”.  O
+&quot;.file&quot;. Exemplo: arquivo .torrent é &quot;brasil.torrrent&quot;, então
+o nome do arquivo baixado será: &quot;brasil.torrent.file&quot;.  O
 diretório onde será armazenado o arquivo pode ser especificado
 através da opção -d.</dd>
 <dt>modo arquivos múltiplos</dt>
@@ -693,7 +693,7 @@ durante o download. Esse comportamente pode ser desligado através
 de opção da linha de comando.</p>
 <p>Se uma assinatura (certificado) é incluida em um arquivo Metalink,
 aria2 salva a assinatura como um arquivo após a conclusão do download.
-O nome do arquivo terá o sufixo “.sig”. Caso já exista não será salvo.</p>
+O nome do arquivo terá o sufixo &quot;.sig&quot;. Caso já exista não será salvo.</p>
 <p>Em torrent de múltiplos arquivos Metalink4, podem aparecer no elemento
 metalink:metaurl.  Uma vez que aria2 não faz download de 2 Torrents
 iguais ao mesmo tempo, aria2 agrupa arquivos em elementos metalink:file
@@ -741,7 +741,7 @@ definida na RFC 6455. O protocolo suportado refere-se a versão 13.</p>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc959">RFC 959 FILE TRANSFER PROTOCOL (FTP)</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc1738">RFC 1738 Uniform Resource Locators (URL)</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc2428">RFC 2428 FTP Extensions for IPv6 and NATs</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol – HTTP/1.1</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc3659">RFC 3659 Extensions to FTP</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc3986">RFC 3986 Uniform Resource Identifier (URI): Generic Syntax</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc4038">RFC 4038 Application Aspects of IPv6 Transition</a></li>
@@ -807,7 +807,7 @@ favor refira-se a versão em inglês resultante do comando <code class="docutils
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.33.1',
+            VERSION:'1.34.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

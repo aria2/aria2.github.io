@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>libaria2: C++ library interface to aria2 &mdash; aria2 1.33.1 documentation</title>
+  <title>libaria2: C++ library interface to aria2 &mdash; aria2 1.34.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="aria2 1.33.1 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.34.0 documentation" href="index.html"/>
         <link rel="next" title="Technical Notes" href="technical-notes.html"/>
         <link rel="prev" title="aria2 - The ultra fast download utility" href="README.html"/> 
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.33.1
+                1.34.0
               </div>
             
           
@@ -166,7 +166,7 @@ them in parallel. The usage is:</p>
 </div>
 <p>The source code uses C++11 features, so C++11 enabled compiler is
 required. GCC 4.7 works well here.</p>
-<p>OK, let’s look into the source code. First, include aria2.h header
+<p>OK, let's look into the source code. First, include aria2.h header
 file:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;aria2/aria2.h&gt;</span><span class="cp"></span>
 </pre></div>
@@ -224,7 +224,7 @@ information:</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal"><span class="pre">userData</span></code> object is specified by
-<code class="xref cpp cpp-member docutils literal"><span class="pre">SessionConfig::userData</span></code>. In this example, we don’t specify
+<code class="xref cpp cpp-member docutils literal"><span class="pre">SessionConfig::userData</span></code>. In this example, we don't specify
 it, so it is <code class="docutils literal"><span class="pre">nullptr</span></code>.</p>
 <p>The first argument to <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a> is <code class="docutils literal"><span class="pre">aria2::KeyVals()</span></code>.
 This type is used in API to specify vector of key/value pairs, mostly
@@ -237,7 +237,7 @@ representing aria2 options. For example, specify an option
 <p>The first argument of <a class="reference internal" href="#_CPPv210sessionNewRK7KeyValsRK13SessionConfig" title="sessionNew"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionNew()</span></code></a> is analogous to the
 command-line argument to aria2c program. In the example program, we
 provide no options, so just pass empty vector.</p>
-<p>After the creation of session object, let’s add downloads given in the
+<p>After the creation of session object, let's add downloads given in the
 command-line:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="c1">// Add download item to session</span>
 <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
@@ -259,7 +259,7 @@ so pass the empty vector as options. The second argument of
 <code class="docutils literal"><span class="pre">NULL</span></code>, the function assigns the GID of the new download to it.  In
 this example code, we have no interest for it, so just pass
 <code class="docutils literal"><span class="pre">nullptr</span></code>.</p>
-<p>We have set up everything at this stage. So let’s start download.  To
+<p>We have set up everything at this stage. So let's start download.  To
 perform the download, call <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> repeatedly until it returns
 the value other than <code class="docutils literal"><span class="pre">1</span></code>:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(;;)</span> <span class="p">{</span>
@@ -311,10 +311,10 @@ progress of the download in every no less than 500 millisecond:</p>
 </div>
 <p>We first call <a class="reference internal" href="#_CPPv213getGlobalStatP7Session" title="getGlobalStat"><code class="xref cpp cpp-func docutils literal"><span class="pre">getGlobalStat()</span></code></a> function to get global
 statistics of the downloads. Then, call <a class="reference internal" href="#_CPPv217getActiveDownloadP7Session" title="getActiveDownload"><code class="xref cpp cpp-func docutils literal"><span class="pre">getActiveDownload()</span></code></a>
-function to get the vector of active download’s GID. For each GID, we
+function to get the vector of active download's GID. For each GID, we
 retrieve <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> object using
 <a class="reference internal" href="#_CPPv217getDownloadHandleP7Session5A2Gid" title="getDownloadHandle"><code class="xref cpp cpp-func docutils literal"><span class="pre">getDownloadHandle()</span></code></a> function and get detailed information.
-Please don’t forget to delete <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> after the use
+Please don't forget to delete <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> after the use
 and before the next call of <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a>.  Keep in mind that the life
 time of <a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle"><code class="xref cpp cpp-class docutils literal"><span class="pre">DownloadHandle</span></code></a> object is before the next call of
 <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> function.</p>
@@ -516,7 +516,7 @@ available.</p>
 <dl class="macro">
 <dt id="c.DOWNLOAD_REMOVED">
 <code class="descname">DOWNLOAD_REMOVED</code><a class="headerlink" href="#c.DOWNLOAD_REMOVED" title="Permalink to this definition">¶</a></dt>
-<dd><p>Indicating removed by user’s discretion.</p>
+<dd><p>Indicating removed by user's discretion.</p>
 </dd></dl>
 
 </dd></dl>
@@ -723,11 +723,11 @@ torrent download, this value is always true.</p>
 <dl class="type">
 <dt id="_CPPv214BtMetaInfoData">
 <span id="BtMetaInfoData"></span><em class="property">type </em><code class="descclassname"></code><code class="descname">BtMetaInfoData</code><a class="headerlink" href="#_CPPv214BtMetaInfoData" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>BitTorrent metainfo data retrieved from “.torrent” file.</p>
+<dd><p>BitTorrent metainfo data retrieved from &quot;.torrent&quot; file.</p>
 <dl class="member">
 <dt id="_CPPv2N14BtMetaInfoData14BtMetaInfoData12announceListE">
 <span id="BtMetaInfoData::BtMetaInfoData::announceList__std::vector:std::vector:ss::"></span>std::vector&lt;std::vector&lt;std::string&gt;&gt; <code class="descclassname">BtMetaInfoData::</code><code class="descname">announceList</code><a class="headerlink" href="#_CPPv2N14BtMetaInfoData14BtMetaInfoData12announceListE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>List of lists of announce URI. If “.torrent” file contains
+<dd><p>List of lists of announce URI. If &quot;.torrent&quot; file contains
 <code class="docutils literal"><span class="pre">announce</span></code> and no <code class="docutils literal"><span class="pre">announce-list</span></code>, <code class="docutils literal"><span class="pre">announce</span></code> is converted
 to <code class="docutils literal"><span class="pre">announce-list</span></code> format.</p>
 </dd></dl>
@@ -869,7 +869,7 @@ This is a reverse link of
 <span id="DownloadHandle::DownloadHandle::getBelongsTo"></span><a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getBelongsTo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle12getBelongsToEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the GID of a parent download. Some downloads are a part
 of another download. For example, if a file in Metalink has
-BitTorrent resource, the download of “.torrent” is a part of that
+BitTorrent resource, the download of &quot;.torrent&quot; is a part of that
 file. If this download has no parent, the invalid GID is returned
 (<code class="docutils literal"><span class="pre">isNull(gid)</span></code> is true).</p>
 </dd></dl>
@@ -904,7 +904,7 @@ is out-of-bound.</p>
 <dl class="function">
 <dt id="_CPPv2N14DownloadHandle14DownloadHandle13getBtMetaInfoEv">
 <span id="DownloadHandle::DownloadHandle::getBtMetaInfo"></span><a class="reference internal" href="#_CPPv214BtMetaInfoData" title="BtMetaInfoData">BtMetaInfoData</a> <code class="descclassname">DownloadHandle::</code><code class="descname">getBtMetaInfo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv2N14DownloadHandle14DownloadHandle13getBtMetaInfoEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns the information retrieved from “.torrent” file. This
+<dd><p>Returns the information retrieved from &quot;.torrent&quot; file. This
 function is only meaningful only when BitTorrent transfer is
 involved in the download and the download is not
 stopped/completed.</p>
@@ -1045,7 +1045,7 @@ returns 0 if it succeeds, or negative error code.</p>
 <span id="addTorrent__SessionP.A2GidP.ssCR.std::vector:ss:CR.KeyValsCR.i"></span>int <code class="descclassname"></code><code class="descname">addTorrent</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> *<em>gid</em>, <em class="property">const</em> std::string &amp;<em>torrentFile</em>, <em class="property">const</em> std::vector&lt;std::string&gt; &amp;<em>webSeedUris</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv27KeyVals" title="KeyVals">KeyVals</a> &amp;<em>options</em>, int <em>position</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv210addTorrentP7SessionP5A2GidRKNSt6stringERKNSt6vectorINSt6stringEEERK7KeyValsi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds BitTorrent download. On successful return, if the <em>gid</em> is not
 <code class="docutils literal"><span class="pre">NULL</span></code>, the GID of added download will be assigned to the
-<em>*gid</em>. The path to “.torrent” file is specified by the
+<em>*gid</em>. The path to &quot;.torrent&quot; file is specified by the
 <em>torrentFile</em>. BitTorrent Magnet URI cannot be used with this
 function. Use <a class="reference internal" href="#_CPPv26addUriP7SessionP5A2GidRKNSt6vectorINSt6stringEEERK7KeyValsi" title="addUri"><code class="xref cpp cpp-func docutils literal"><span class="pre">addUri()</span></code></a> instead. The <em>webSeedUris</em> contains
 URIs used for Web-seeding. For single file torrents, URI can be a
@@ -1230,7 +1230,7 @@ returns 0 if it succeeds, or negative error code.</p>
 <span id="getDownloadHandle__SessionP.A2Gid"></span><a class="reference internal" href="#_CPPv214DownloadHandle" title="DownloadHandle">DownloadHandle</a> *<code class="descclassname"></code><code class="descname">getDownloadHandle</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv27Session" title="Session">Session</a> *<em>session</em>, <a class="reference internal" href="#_CPPv25A2Gid" title="A2Gid">A2Gid</a> <em>gid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv217getDownloadHandleP7Session5A2Gid" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns handle for the download denoted by the <em>gid</em>. The caller
 can retrieve various information of the download via returned
-handle’s member functions. The lifetime of the returned handle is
+handle's member functions. The lifetime of the returned handle is
 before the next call of <a class="reference internal" href="#_CPPv23runP7Session8RUN_MODE" title="run"><code class="xref cpp cpp-func docutils literal"><span class="pre">run()</span></code></a> or
 <a class="reference internal" href="#_CPPv212sessionFinalP7Session" title="sessionFinal"><code class="xref cpp cpp-func docutils literal"><span class="pre">sessionFinal()</span></code></a>. The caller must call
 <a class="reference internal" href="#_CPPv220deleteDownloadHandleP14DownloadHandle" title="deleteDownloadHandle"><code class="xref cpp cpp-func docutils literal"><span class="pre">deleteDownloadHandle()</span></code></a> before that. This function returns
@@ -1288,7 +1288,7 @@ to delete handle object.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.33.1',
+            VERSION:'1.34.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
