@@ -174,7 +174,7 @@ file from multiple sources/protocols and tries to utilize your maximum
 download bandwidth. It supports downloading a file from
 HTTP(S)/FTP/SFTP and BitTorrent at the same time, while the data
 downloaded from HTTP(S)/FTP/SFTP is uploaded to the BitTorrent
-swarm. Using Metalink's chunk checksums, aria2 automatically validates
+swarm. Using Metalink’s chunk checksums, aria2 automatically validates
 chunks of data while downloading a file like BitTorrent.</p>
 <p>The project page is located at <a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a>.</p>
 <p>See <a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Online Manual</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
@@ -195,8 +195,8 @@ how to use aria2.</p>
 <li>HTTP Proxy support</li>
 <li>HTTP BASIC authentication support</li>
 <li>HTTP Proxy authentication support</li>
-<li>Well-known environment variables for proxy: <code class="docutils literal"><span class="pre">http_proxy</span></code>,
-<code class="docutils literal"><span class="pre">https_proxy</span></code>, <code class="docutils literal"><span class="pre">ftp_proxy</span></code>, <code class="docutils literal"><span class="pre">all_proxy</span></code> and <code class="docutils literal"><span class="pre">no_proxy</span></code></li>
+<li>Well-known environment variables for proxy: <code class="docutils literal notranslate"><span class="pre">http_proxy</span></code>,
+<code class="docutils literal notranslate"><span class="pre">https_proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">ftp_proxy</span></code>, <code class="docutils literal notranslate"><span class="pre">all_proxy</span></code> and <code class="docutils literal notranslate"><span class="pre">no_proxy</span></code></li>
 <li>HTTP gzip, deflate content encoding support</li>
 <li>Verify peer using given trusted CA certificate in HTTPS</li>
 <li>Client certificate authentication in HTTPS</li>
@@ -248,7 +248,7 @@ security issues.</p>
 <p>We maintain the source code at Github:
 <a class="reference external" href="https://github.com/aria2/aria2">https://github.com/aria2/aria2</a></p>
 <p>To get the latest source code, run following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/aria2/aria2.git
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/aria2/aria2.git
 </pre></div>
 </div>
 <p>This will create aria2 directory in your current directory and source
@@ -304,36 +304,36 @@ or OpenSSL or Windows (see note)</td>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">libxml2 has precedence over Expat if both libraries are installed.
-If you prefer Expat, run configure with <code class="docutils literal"><span class="pre">--without-libxml2</span></code>.</p>
+If you prefer Expat, run configure with <code class="docutils literal notranslate"><span class="pre">--without-libxml2</span></code>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>On Apple OSX the OS-level SSL/TLS support will be preferred. Hence
-neither GnuTLS nor OpenSSL are required on that platform. If you'd
+neither GnuTLS nor OpenSSL are required on that platform. If you’d
 like to disable this behavior, run configure with
-<code class="docutils literal"><span class="pre">--without-appletls</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">--without-appletls</span></code>.</p>
 <p>GnuTLS has precedence over OpenSSL if both libraries are installed.
-If you prefer OpenSSL, run configure with <code class="docutils literal"><span class="pre">--without-gnutls</span></code>
-<code class="docutils literal"><span class="pre">--with-openssl</span></code>.</p>
+If you prefer OpenSSL, run configure with <code class="docutils literal notranslate"><span class="pre">--without-gnutls</span></code>
+<code class="docutils literal notranslate"><span class="pre">--with-openssl</span></code>.</p>
 <p class="last">On Windows there is SSL implementation available that is based on
 the native Windows SSL capabilities (Schannel) and it will be
 preferred.  Hence neither GnuTLS nor OpenSSL are required on that
-platform.  If you'd like to disable this behavior, run configure
-with <code class="docutils literal"><span class="pre">--without-wintls</span></code>.</p>
+platform.  If you’d like to disable this behavior, run configure
+with <code class="docutils literal notranslate"><span class="pre">--without-wintls</span></code>.</p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>On Apple OSX the OS-level checksum support will be preferred,
-unless aria2 is configured with <code class="docutils literal"><span class="pre">--without-appletls</span></code>.</p>
+unless aria2 is configured with <code class="docutils literal notranslate"><span class="pre">--without-appletls</span></code>.</p>
 <p>libnettle has precedence over libgcrypt if both libraries are
 installed.  If you prefer libgcrypt, run configure with
-<code class="docutils literal"><span class="pre">--without-libnettle</span> <span class="pre">--with-libgcrypt</span></code>. If OpenSSL is selected over
+<code class="docutils literal notranslate"><span class="pre">--without-libnettle</span> <span class="pre">--with-libgcrypt</span></code>. If OpenSSL is selected over
 GnuTLS, neither libnettle nor libgcrypt will be used.</p>
 <p>If none of the optional dependencies are installed, an internal
 implementation that only supports md5 and sha1 will be used.</p>
 <p class="last">On Windows there is SSL implementation available that is based on
 the native Windows capabilities and it will be preferred, unless
-aria2 is configured with <code class="docutils literal"><span class="pre">--without-wintls</span></code>.</p>
+aria2 is configured with <code class="docutils literal notranslate"><span class="pre">--without-wintls</span></code>.</p>
 </div>
 <p>A user can have one of the following configurations for SSL and crypto
 libraries:</p>
@@ -345,7 +345,7 @@ libraries:</p>
 <li>Windows TLS (Windows only)</li>
 </ul>
 <p>You can disable BitTorrent and Metalink support by providing
-<code class="docutils literal"><span class="pre">--disable-bittorrent</span></code> and <code class="docutils literal"><span class="pre">--disable-metalink</span></code> to the configure
+<code class="docutils literal notranslate"><span class="pre">--disable-bittorrent</span></code> and <code class="docutils literal notranslate"><span class="pre">--disable-metalink</span></code> to the configure
 script respectively.</p>
 <p>In order to enable async DNS support, you need c-ares.</p>
 <ul class="simple">
@@ -357,8 +357,8 @@ script respectively.</p>
 <p>aria2 is primarily written in C++. Initially it was written based on
 C++98/C++03 standard features. We are now migrating aria2 to C++11
 standard. The current source code requires C++11 aware compiler. For
-well-known compilers, such as g++ and clang, the <code class="docutils literal"><span class="pre">-std=c++11</span></code> or
-<code class="docutils literal"><span class="pre">-std=c++0x</span></code> flag must be supported.</p>
+well-known compilers, such as g++ and clang, the <code class="docutils literal notranslate"><span class="pre">-std=c++11</span></code> or
+<code class="docutils literal notranslate"><span class="pre">-std=c++0x</span></code> flag must be supported.</p>
 <p>In order to build aria2 from the source package, you need following
 development packages (package name may vary depending on the
 distribution you use):</p>
@@ -402,23 +402,23 @@ following packages to get autoconf macros:</p>
 </ul>
 <p>And run following command to generate configure script and other files
 necessary to build the program:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ autoreconf -i
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ autoreconf -i
 </pre></div>
 </div>
 <p>Also you need <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> to build man page.</p>
 <p>If you are building aria2 for Mac OS X, take a look at
-the make-release-os.mk GNU Make makefile.</p>
+the makerelease-osx.mk GNU Make makefile.</p>
 <p>The quickest way to build aria2 is first run configure script:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./configure
 </pre></div>
 </div>
-<p>To build statically linked aria2, use <code class="docutils literal"><span class="pre">ARIA2_STATIC=yes</span></code>
+<p>To build statically linked aria2, use <code class="docutils literal notranslate"><span class="pre">ARIA2_STATIC=yes</span></code>
 command-line option:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure ARIA2_STATIC=yes
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./configure ARIA2_STATIC=yes
 </pre></div>
 </div>
-<p>After configuration is done, run <code class="docutils literal"><span class="pre">make</span></code> to compile the program:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ make
+<p>After configuration is done, run <code class="docutils literal notranslate"><span class="pre">make</span></code> to compile the program:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="#cross-compiling-windows-binary">Cross-compiling Windows binary</a> to create a Windows binary.
@@ -428,35 +428,35 @@ features as possible except for experimental features not enabled by
 default.</p>
 <p>Since 1.1.0, aria2 checks the certificate of HTTPS servers by default.
 If you build with OpenSSL or the recent version of GnuTLS which has
-<code class="docutils literal"><span class="pre">gnutls_certificate_set_x509_system_trust()</span></code> function and the
+<code class="docutils literal notranslate"><span class="pre">gnutls_certificate_set_x509_system_trust()</span></code> function and the
 library is properly configured to locate the system-wide CA
 certificates store, aria2 will automatically load those certificates
 at the startup. If it is not the case, I recommend to supply the path
 to the CA bundle file. For example, in Debian the path to CA bundle
-file is '/etc/ssl/certs/ca-certificates.crt' (in ca-certificates
+file is ‘/etc/ssl/certs/ca-certificates.crt’ (in ca-certificates
 package). This may vary depending on your distribution. You can give
-it to configure script using <code class="docutils literal"><span class="pre">--with-ca-bundle</span> <span class="pre">option</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
+it to configure script using <code class="docutils literal notranslate"><span class="pre">--with-ca-bundle</span> <span class="pre">option</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
 $ make
 </pre></div>
 </div>
-<p>Without <code class="docutils literal"><span class="pre">--with-ca-bundle</span></code> option, you will encounter the error when
+<p>Without <code class="docutils literal notranslate"><span class="pre">--with-ca-bundle</span></code> option, you will encounter the error when
 accessing HTTPS servers because the certificate cannot be verified
 without CA bundle. In such case, you can specify the CA bundle file
-using aria2's <code class="docutils literal"><span class="pre">--ca-certificate</span></code> option.  If you don't have CA bundle
+using aria2’s <code class="docutils literal notranslate"><span class="pre">--ca-certificate</span></code> option.  If you don’t have CA bundle
 file installed, then the last resort is disable the certificate
-validation using <code class="docutils literal"><span class="pre">--check-certificate=false</span></code>.</p>
+validation using <code class="docutils literal notranslate"><span class="pre">--check-certificate=false</span></code>.</p>
 <p>Using the native OSX (AppleTLS) and/or Windows (WinTLS) implementation
 will automatically use the system certificate store, so
-<code class="docutils literal"><span class="pre">--with-ca-bundle</span></code> is not necessary and will be ignored when using
+<code class="docutils literal notranslate"><span class="pre">--with-ca-bundle</span></code> is not necessary and will be ignored when using
 these implementations.</p>
-<p>By default, the bash_completion file named <code class="docutils literal"><span class="pre">aria2c</span></code> is installed to
-the directory <code class="docutils literal"><span class="pre">$prefix/share/doc/aria2/bash_completion</span></code>.  To change
-the install directory of the file, use <code class="docutils literal"><span class="pre">--with-bashcompletiondir</span></code>
+<p>By default, the bash_completion file named <code class="docutils literal notranslate"><span class="pre">aria2c</span></code> is installed to
+the directory <code class="docutils literal notranslate"><span class="pre">$prefix/share/doc/aria2/bash_completion</span></code>.  To change
+the install directory of the file, use <code class="docutils literal notranslate"><span class="pre">--with-bashcompletiondir</span></code>
 option.</p>
-<p>After a <code class="docutils literal"><span class="pre">make</span></code> the executable is located at <code class="docutils literal"><span class="pre">src/aria2c</span></code>.</p>
+<p>After a <code class="docutils literal notranslate"><span class="pre">make</span></code> the executable is located at <code class="docutils literal notranslate"><span class="pre">src/aria2c</span></code>.</p>
 <p>aria2 uses CppUnit for automated unit testing. To run the unit test:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ make check
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make check
 </pre></div>
 </div>
 </div>
@@ -470,12 +470,12 @@ aria2.</p>
 Dockerfile.mingw how to build binary.  If you cannot use Dockerfile,
 then continue to read following paragraphs.</p>
 <p>Basically, after compiling and installing depended libraries, you can
-do cross-compile just passing appropriate <code class="docutils literal"><span class="pre">--host</span></code> option and
-specifying <code class="docutils literal"><span class="pre">CPPFLAGS</span></code>, <code class="docutils literal"><span class="pre">LDFLAGS</span></code> and <code class="docutils literal"><span class="pre">PKG_CONFIG_LIBDIR</span></code>
+do cross-compile just passing appropriate <code class="docutils literal notranslate"><span class="pre">--host</span></code> option and
+specifying <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</span></code>, <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code> and <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>
 variables to configure. For convenience and lowering our own
 development cost, we provide easier way to configure the build
 settings.</p>
-<p><code class="docutils literal"><span class="pre">mingw-config</span></code> script is a configure script wrapper for mingw-w64.
+<p><code class="docutils literal notranslate"><span class="pre">mingw-config</span></code> script is a configure script wrapper for mingw-w64.
 We use it to create official Windows build.  This script assumes
 following libraries have been built for cross-compile:</p>
 <ul class="simple">
@@ -488,23 +488,23 @@ following libraries have been built for cross-compile:</p>
 </ul>
 <p>Some environment variables can be adjusted to change build settings:</p>
 <dl class="docutils">
-<dt><code class="docutils literal"><span class="pre">HOST</span></code></dt>
-<dd>cross-compile to build programs to run on <code class="docutils literal"><span class="pre">HOST</span></code>. It defaults to
-<code class="docutils literal"><span class="pre">i686-w64-mingw32</span></code>. To build 64bit binary, specify
-<code class="docutils literal"><span class="pre">x86_64-w64-mingw32</span></code>.</dd>
-<dt><code class="docutils literal"><span class="pre">PREFIX</span></code></dt>
+<dt><code class="docutils literal notranslate"><span class="pre">HOST</span></code></dt>
+<dd>cross-compile to build programs to run on <code class="docutils literal notranslate"><span class="pre">HOST</span></code>. It defaults to
+<code class="docutils literal notranslate"><span class="pre">i686-w64-mingw32</span></code>. To build 64bit binary, specify
+<code class="docutils literal notranslate"><span class="pre">x86_64-w64-mingw32</span></code>.</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PREFIX</span></code></dt>
 <dd>Prefix to the directory where dependent libraries are installed.  It
-defaults to <code class="docutils literal"><span class="pre">/usr/local/$HOST</span></code>. <code class="docutils literal"><span class="pre">-I$PREFIX/include</span></code> will be
-added to <code class="docutils literal"><span class="pre">CPPFLAGS</span></code>. <code class="docutils literal"><span class="pre">-L$PREFIX/lib</span></code> will be added to
-<code class="docutils literal"><span class="pre">LDFLAGS</span></code>. <code class="docutils literal"><span class="pre">$PREFIX/lib/pkgconfig</span></code> will be set to
-<code class="docutils literal"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</dd>
+defaults to <code class="docutils literal notranslate"><span class="pre">/usr/local/$HOST</span></code>. <code class="docutils literal notranslate"><span class="pre">-I$PREFIX/include</span></code> will be
+added to <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</span></code>. <code class="docutils literal notranslate"><span class="pre">-L$PREFIX/lib</span></code> will be added to
+<code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code>. <code class="docutils literal notranslate"><span class="pre">$PREFIX/lib/pkgconfig</span></code> will be set to
+<code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</dd>
 </dl>
 <p>For example, to build 64bit binary do this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
 </pre></div>
 </div>
-<p>If you want libaria2 dll with <code class="docutils literal"><span class="pre">--enable-libaria2</span></code>, then don't use
-<code class="docutils literal"><span class="pre">ARIA2_STATIC=yes</span></code> and prepare the DLL version of external
+<p>If you want libaria2 dll with <code class="docutils literal notranslate"><span class="pre">--enable-libaria2</span></code>, then don’t use
+<code class="docutils literal notranslate"><span class="pre">ARIA2_STATIC=yes</span></code> and prepare the DLL version of external
 libraries.</p>
 </div>
 <div class="section" id="cross-compiling-android-binary">
@@ -513,7 +513,7 @@ libraries.</p>
 NDK cross-compiler on Debian Linux.</p>
 <p>At the time of this writing, android-ndk-r14b should compile aria2
 without errors.</p>
-<p><code class="docutils literal"><span class="pre">android-config</span></code> script is a configure script wrapper for Android
+<p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> script is a configure script wrapper for Android
 build.  We use it to create official Android build.  This script
 assumes the following libraries have been built for cross-compile:</p>
 <ul class="simple">
@@ -526,36 +526,36 @@ assumes the following libraries have been built for cross-compile:</p>
 <p>When building the above libraries, make sure that disable shared
 library and enable only static library. We are going to link those
 libraries statically.</p>
-<p>We use zlib which comes with Android NDK, so we don't have to build it
+<p>We use zlib which comes with Android NDK, so we don’t have to build it
 by ourselves.</p>
-<p><code class="docutils literal"><span class="pre">android-config</span></code> assumes the existence of <code class="docutils literal"><span class="pre">$ANDROID_HOME</span></code>
+<p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> assumes the existence of <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code>
 environment variable which must fulfill the following conditions:</p>
 <ul>
 <li><p class="first">Android NDK toolchain is installed under
-<code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>.  Refer to <a class="reference external" href="https://developer.android.com/ndk/guides/standalone_toolchain.html">Standalone Toolchain</a>
+<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/toolchain</span></code>.  Refer to <a class="reference external" href="https://developer.android.com/ndk/guides/standalone_toolchain.html">Standalone Toolchain</a>
 for more details, but it is a bit out of date.</p>
-<p>To install toolchain under <code class="docutils literal"><span class="pre">$ANDROID_HOME/toolchain</span></code>, do this:</p>
-<div class="highlight-text"><div class="highlight"><pre><span></span>$NDK/build/tools/make_standalone_toolchain.py \
+<p>To install toolchain under <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/toolchain</span></code>, do this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$NDK/build/tools/make_standalone_toolchain.py \
    --arch arm --api 16 --stl=gnustl \
    --install-dir $ANDROID_HOME/toolchain
 </pre></div>
 </div>
 </li>
 <li><p class="first">The dependent libraries must be installed under
-<code class="docutils literal"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</p>
 </li>
 </ul>
-<p>Before running <code class="docutils literal"><span class="pre">android-config</span></code> and <code class="docutils literal"><span class="pre">android-make</span></code>,
-<code class="docutils literal"><span class="pre">$ANDROID_HOME</span></code> environment variable must be set to point to the
+<p>Before running <code class="docutils literal notranslate"><span class="pre">android-config</span></code> and <code class="docutils literal notranslate"><span class="pre">android-make</span></code>,
+<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code> environment variable must be set to point to the
 correct path.</p>
-<p>After <code class="docutils literal"><span class="pre">android-config</span></code>, run <code class="docutils literal"><span class="pre">android-make</span></code> to compile sources.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">android-config</span></code>, run <code class="docutils literal notranslate"><span class="pre">android-make</span></code> to compile sources.</p>
 </div>
 <div class="section" id="building-documentation">
 <h2>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> is used to build the
-documentation. aria2 man pages will be build when you run <code class="docutils literal"><span class="pre">make</span></code> if
+documentation. aria2 man pages will be build when you run <code class="docutils literal notranslate"><span class="pre">make</span></code> if
 they are not up-to-date.  You can also build HTML version of aria2 man
-page by <code class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></code>. The HTML version manual is also available at
+page by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>. The HTML version manual is also available at
 <a class="reference external" href="https://aria2.github.io/manual/en/html/">online</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian
 translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
 translation</a>).</p>
@@ -567,10 +567,10 @@ translation</a>).</p>
 <p>The file name of the downloaded file is determined as follows:</p>
 <dl class="docutils">
 <dt>single-file mode</dt>
-<dd>If &quot;name&quot; key is present in .torrent file, file name is the value
-of &quot;name&quot; key. Otherwise, file name is the base name of .torrent
-file appended by &quot;.file&quot;. For example, .torrent file is
-&quot;test.torrent&quot;, then file name is &quot;test.torrent.file&quot;.  The
+<dd>If “name” key is present in .torrent file, file name is the value
+of “name” key. Otherwise, file name is the base name of .torrent
+file appended by “.file”. For example, .torrent file is
+“test.torrent”, then file name is “test.torrent.file”.  The
 directory to store the downloaded file can be specified by -d
 option.</dd>
 <dt>multi-file mode</dt>
@@ -582,36 +582,36 @@ downloaded files can be specified by -d option.</dd>
 needed. By default, aria2 opens at most 100 files mentioned in
 .torrent file, and directly writes to and reads from these files.
 The number of files to open simultaneously can be controlled by
-<code class="docutils literal"><span class="pre">--bt-max-open-files</span></code> option.</p>
+<code class="docutils literal notranslate"><span class="pre">--bt-max-open-files</span></code> option.</p>
 </div>
 <div class="section" id="dht">
 <h3>DHT<a class="headerlink" href="#dht" title="Permalink to this headline">¶</a></h3>
 <p>aria2 supports mainline compatible DHT. By default, the routing table
-for IPv4 DHT is saved to <code class="docutils literal"><span class="pre">$XDG_CACHE_HOME/aria2/dht.dat</span></code> and the
+for IPv4 DHT is saved to <code class="docutils literal notranslate"><span class="pre">$XDG_CACHE_HOME/aria2/dht.dat</span></code> and the
 routing table for IPv6 DHT is saved to
-<code class="docutils literal"><span class="pre">$XDG_CACHE_HOME/aria2/dht6.dat</span></code> unless files exist at
-<code class="docutils literal"><span class="pre">$HOME/.aria2/dht.dat</span></code> or <code class="docutils literal"><span class="pre">$HOME/.aria2/dht6.dat</span></code>. aria2 uses same
+<code class="docutils literal notranslate"><span class="pre">$XDG_CACHE_HOME/aria2/dht6.dat</span></code> unless files exist at
+<code class="docutils literal notranslate"><span class="pre">$HOME/.aria2/dht.dat</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOME/.aria2/dht6.dat</span></code>. aria2 uses same
 port number to listen on for both IPv4 and IPv6 DHT.</p>
 </div>
 <div class="section" id="udp-tracker">
 <h3>UDP tracker<a class="headerlink" href="#udp-tracker" title="Permalink to this headline">¶</a></h3>
 <p>UDP tracker support is enabled when IPv4 DHT is enabled.  The port
-number of UDP tracker is shared with DHT. Use <code class="docutils literal"><span class="pre">--dht-listen-port</span></code>
+number of UDP tracker is shared with DHT. Use <code class="docutils literal notranslate"><span class="pre">--dht-listen-port</span></code>
 option to change the port number.</p>
 </div>
 <div class="section" id="other-things-should-be-noted">
 <h3>Other things should be noted<a class="headerlink" href="#other-things-should-be-noted" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">-o</span></code> option is used to change the file name of .torrent file itself,
+<li><code class="docutils literal notranslate"><span class="pre">-o</span></code> option is used to change the file name of .torrent file itself,
 not a file name of a file in .torrent file. For this purpose, use
-<code class="docutils literal"><span class="pre">--index-out</span></code> option instead.</li>
+<code class="docutils literal notranslate"><span class="pre">--index-out</span></code> option instead.</li>
 <li>The port numbers that aria2 uses by default are 6881-6999 for TCP
 and UDP.</li>
-<li>aria2 doesn't configure port-forwarding automatically. Please
+<li>aria2 doesn’t configure port-forwarding automatically. Please
 configure your router or firewall manually.</li>
 <li>The maximum number of peers is 55. This limit may be exceeded when
 download rate is low. This download rate can be adjusted using
-<code class="docutils literal"><span class="pre">--bt-request-peer-speed-limit</span></code> option.</li>
+<code class="docutils literal notranslate"><span class="pre">--bt-request-peer-speed-limit</span></code> option.</li>
 <li>As of release 0.10.0, aria2 stops sending request message after
 selective download completes.</li>
 </ul>
@@ -625,7 +625,7 @@ Metalink version 3.0 documents are supported.</p>
 <p>For checksum verification, md5, sha-1, sha-224, sha-256, sha-384 and
 sha-512 are supported. If multiple hash algorithms are provided, aria2
 uses stronger one. If whole file checksum verification fails, aria2
-doesn't retry the download and just exits with non-zero return code.</p>
+doesn’t retry the download and just exits with non-zero return code.</p>
 <p>The supported user preferences are version, language, location,
 protocol and os.</p>
 <p>If chunk checksums are provided in Metalink file, aria2 automatically
@@ -633,7 +633,7 @@ validates chunks of data during download. This behavior can be turned
 off by a command-line option.</p>
 <p>If signature is included in a Metalink file, aria2 saves it as a file
 after the completion of the download.  The file name is download
-file name + &quot;.sig&quot;. If same file already exists, the signature file is
+file name + “.sig”. If same file already exists, the signature file is
 not saved.</p>
 <p>In Metalink4, multi-file torrent could appear in metalink:metaurl
 element.  Since aria2 cannot download 2 same torrents at the same
@@ -645,7 +645,7 @@ piece with selected file are also created.</p>
 <p>If relative URI is specified in metalink:url or metalink:metaurl
 element, aria2 uses the URI of Metalink file as base URI to resolve
 the relative URI. If relative URI is found in Metalink file which is
-read from local disk, aria2 uses the value of <code class="docutils literal"><span class="pre">--metalink-base-uri</span></code>
+read from local disk, aria2 uses the value of <code class="docutils literal notranslate"><span class="pre">--metalink-base-uri</span></code>
 option as base URI. If this option is not specified, the relative URI
 will be ignored.</p>
 </div>
@@ -656,7 +656,7 @@ understands Digest header fields and check whether it matches the
 digest value from other sources. If it differs, drop connection.
 aria2 also uses this digest value to perform checksum verification
 after download finished. aria2 recognizes geo value. To tell aria2
-which location you prefer, you can use <code class="docutils literal"><span class="pre">--metalink-location</span></code> option.</p>
+which location you prefer, you can use <code class="docutils literal notranslate"><span class="pre">--metalink-location</span></code> option.</p>
 </div>
 <div class="section" id="netrc">
 <h2>netrc<a class="headerlink" href="#netrc" title="Permalink to this headline">¶</a></h2>
@@ -673,9 +673,9 @@ defined in RFC 6455. The supported protocol version is 13.</p>
 <h2>libaria2<a class="headerlink" href="#libaria2" title="Permalink to this headline">¶</a></h2>
 <p>The libaria2 is a C++ library which offers aria2 functionality to the
 client code. Currently, libaria2 is not built by default. To enable
-libaria2, use <code class="docutils literal"><span class="pre">--enable-libaria2</span></code> configure option.  By default,
+libaria2, use <code class="docutils literal notranslate"><span class="pre">--enable-libaria2</span></code> configure option.  By default,
 only the shared library is built. To build static library, use
-<code class="docutils literal"><span class="pre">--enable-static</span></code> configure option as well. See libaria2
+<code class="docutils literal notranslate"><span class="pre">--enable-static</span></code> configure option as well. See libaria2
 documentation to know how to use API.</p>
 </div>
 <div class="section" id="references">
@@ -686,7 +686,7 @@ documentation to know how to use API.</p>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc959">RFC 959 FILE TRANSFER PROTOCOL (FTP)</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc1738">RFC 1738 Uniform Resource Locators (URL)</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc2428">RFC 2428 FTP Extensions for IPv6 and NATs</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol – HTTP/1.1</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc3659">RFC 3659 Extensions to FTP</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc3986">RFC 3986 Uniform Resource Identifier (URI): Generic Syntax</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc4038">RFC 4038 Application Aspects of IPv6 Transition</a></li>
