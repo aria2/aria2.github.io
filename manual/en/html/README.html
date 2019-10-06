@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>aria2 - The ultra fast download utility &mdash; aria2 1.34.0 documentation</title>
+  <title>aria2 - The ultra fast download utility &mdash; aria2 1.35.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="aria2 1.34.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.35.0 documentation" href="index.html"/>
         <link rel="next" title="libaria2: C++ library interface to aria2" href="libaria2.html"/>
         <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
 
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                1.34.0
+                1.35.0
               </div>
             
           
@@ -174,7 +174,7 @@ file from multiple sources/protocols and tries to utilize your maximum
 download bandwidth. It supports downloading a file from
 HTTP(S)/FTP/SFTP and BitTorrent at the same time, while the data
 downloaded from HTTP(S)/FTP/SFTP is uploaded to the BitTorrent
-swarm. Using Metalink’s chunk checksums, aria2 automatically validates
+swarm. Using Metalink's chunk checksums, aria2 automatically validates
 chunks of data while downloading a file like BitTorrent.</p>
 <p>The project page is located at <a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a>.</p>
 <p>See <a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Online Manual</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
@@ -309,7 +309,7 @@ If you prefer Expat, run configure with <code class="docutils literal notranslat
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>On Apple OSX the OS-level SSL/TLS support will be preferred. Hence
-neither GnuTLS nor OpenSSL are required on that platform. If you’d
+neither GnuTLS nor OpenSSL are required on that platform. If you'd
 like to disable this behavior, run configure with
 <code class="docutils literal notranslate"><span class="pre">--without-appletls</span></code>.</p>
 <p>GnuTLS has precedence over OpenSSL if both libraries are installed.
@@ -318,7 +318,7 @@ If you prefer OpenSSL, run configure with <code class="docutils literal notransl
 <p class="last">On Windows there is SSL implementation available that is based on
 the native Windows SSL capabilities (Schannel) and it will be
 preferred.  Hence neither GnuTLS nor OpenSSL are required on that
-platform.  If you’d like to disable this behavior, run configure
+platform.  If you'd like to disable this behavior, run configure
 with <code class="docutils literal notranslate"><span class="pre">--without-wintls</span></code>.</p>
 </div>
 <div class="admonition note">
@@ -433,7 +433,7 @@ library is properly configured to locate the system-wide CA
 certificates store, aria2 will automatically load those certificates
 at the startup. If it is not the case, I recommend to supply the path
 to the CA bundle file. For example, in Debian the path to CA bundle
-file is ‘/etc/ssl/certs/ca-certificates.crt’ (in ca-certificates
+file is '/etc/ssl/certs/ca-certificates.crt' (in ca-certificates
 package). This may vary depending on your distribution. You can give
 it to configure script using <code class="docutils literal notranslate"><span class="pre">--with-ca-bundle</span> <span class="pre">option</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./configure --with-ca-bundle=&#39;/etc/ssl/certs/ca-certificates.crt&#39;
@@ -443,7 +443,7 @@ $ make
 <p>Without <code class="docutils literal notranslate"><span class="pre">--with-ca-bundle</span></code> option, you will encounter the error when
 accessing HTTPS servers because the certificate cannot be verified
 without CA bundle. In such case, you can specify the CA bundle file
-using aria2’s <code class="docutils literal notranslate"><span class="pre">--ca-certificate</span></code> option.  If you don’t have CA bundle
+using aria2's <code class="docutils literal notranslate"><span class="pre">--ca-certificate</span></code> option.  If you don't have CA bundle
 file installed, then the last resort is disable the certificate
 validation using <code class="docutils literal notranslate"><span class="pre">--check-certificate=false</span></code>.</p>
 <p>Using the native OSX (AppleTLS) and/or Windows (WinTLS) implementation
@@ -503,7 +503,7 @@ added to <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
 </pre></div>
 </div>
-<p>If you want libaria2 dll with <code class="docutils literal notranslate"><span class="pre">--enable-libaria2</span></code>, then don’t use
+<p>If you want libaria2 dll with <code class="docutils literal notranslate"><span class="pre">--enable-libaria2</span></code>, then don't use
 <code class="docutils literal notranslate"><span class="pre">ARIA2_STATIC=yes</span></code> and prepare the DLL version of external
 libraries.</p>
 </div>
@@ -511,7 +511,7 @@ libraries.</p>
 <h2>Cross-compiling Android binary<a class="headerlink" href="#cross-compiling-android-binary" title="Permalink to this headline">¶</a></h2>
 <p>In this section, we describe how to build Android binary using Android
 NDK cross-compiler on Debian Linux.</p>
-<p>At the time of this writing, android-ndk-r14b should compile aria2
+<p>At the time of this writing, Android NDK r20 should compile aria2
 without errors.</p>
 <p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> script is a configure script wrapper for Android
 build.  We use it to create official Android build.  This script
@@ -526,29 +526,14 @@ assumes the following libraries have been built for cross-compile:</p>
 <p>When building the above libraries, make sure that disable shared
 library and enable only static library. We are going to link those
 libraries statically.</p>
-<p>We use zlib which comes with Android NDK, so we don’t have to build it
-by ourselves.</p>
-<p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> assumes the existence of <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code>
-environment variable which must fulfill the following conditions:</p>
-<ul>
-<li><p class="first">Android NDK toolchain is installed under
-<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/toolchain</span></code>.  Refer to <a class="reference external" href="https://developer.android.com/ndk/guides/standalone_toolchain.html">Standalone Toolchain</a>
-for more details, but it is a bit out of date.</p>
-<p>To install toolchain under <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/toolchain</span></code>, do this:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$NDK/build/tools/make_standalone_toolchain.py \
-   --arch arm --api 16 --stl=gnustl \
-   --install-dir $ANDROID_HOME/toolchain
-</pre></div>
-</div>
-</li>
-<li><p class="first">The dependent libraries must be installed under
+<p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> assumes that <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code> and <code class="docutils literal notranslate"><span class="pre">$NDK</span></code>
+environment variables are defined.</p>
+<p>We currently use Android NDK r20.  <code class="docutils literal notranslate"><span class="pre">$NDK</span></code> should point to the
+directory to Anroid NDK.  The build tools will be found under
+<code class="docutils literal notranslate"><span class="pre">$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/</span></code>.</p>
+<p>All the dependent libraries must be installed under
 <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</p>
-</li>
-</ul>
-<p>Before running <code class="docutils literal notranslate"><span class="pre">android-config</span></code> and <code class="docutils literal notranslate"><span class="pre">android-make</span></code>,
-<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code> environment variable must be set to point to the
-correct path.</p>
-<p>After <code class="docutils literal notranslate"><span class="pre">android-config</span></code>, run <code class="docutils literal notranslate"><span class="pre">android-make</span></code> to compile sources.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">android-config</span></code>, run <code class="docutils literal notranslate"><span class="pre">make</span></code> to compile sources.</p>
 </div>
 <div class="section" id="building-documentation">
 <h2>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">¶</a></h2>
@@ -567,10 +552,10 @@ translation</a>).</p>
 <p>The file name of the downloaded file is determined as follows:</p>
 <dl class="docutils">
 <dt>single-file mode</dt>
-<dd>If “name” key is present in .torrent file, file name is the value
-of “name” key. Otherwise, file name is the base name of .torrent
-file appended by “.file”. For example, .torrent file is
-“test.torrent”, then file name is “test.torrent.file”.  The
+<dd>If &quot;name&quot; key is present in .torrent file, file name is the value
+of &quot;name&quot; key. Otherwise, file name is the base name of .torrent
+file appended by &quot;.file&quot;. For example, .torrent file is
+&quot;test.torrent&quot;, then file name is &quot;test.torrent.file&quot;.  The
 directory to store the downloaded file can be specified by -d
 option.</dd>
 <dt>multi-file mode</dt>
@@ -607,7 +592,7 @@ not a file name of a file in .torrent file. For this purpose, use
 <code class="docutils literal notranslate"><span class="pre">--index-out</span></code> option instead.</li>
 <li>The port numbers that aria2 uses by default are 6881-6999 for TCP
 and UDP.</li>
-<li>aria2 doesn’t configure port-forwarding automatically. Please
+<li>aria2 doesn't configure port-forwarding automatically. Please
 configure your router or firewall manually.</li>
 <li>The maximum number of peers is 55. This limit may be exceeded when
 download rate is low. This download rate can be adjusted using
@@ -625,7 +610,7 @@ Metalink version 3.0 documents are supported.</p>
 <p>For checksum verification, md5, sha-1, sha-224, sha-256, sha-384 and
 sha-512 are supported. If multiple hash algorithms are provided, aria2
 uses stronger one. If whole file checksum verification fails, aria2
-doesn’t retry the download and just exits with non-zero return code.</p>
+doesn't retry the download and just exits with non-zero return code.</p>
 <p>The supported user preferences are version, language, location,
 protocol and os.</p>
 <p>If chunk checksums are provided in Metalink file, aria2 automatically
@@ -633,7 +618,7 @@ validates chunks of data during download. This behavior can be turned
 off by a command-line option.</p>
 <p>If signature is included in a Metalink file, aria2 saves it as a file
 after the completion of the download.  The file name is download
-file name + “.sig”. If same file already exists, the signature file is
+file name + &quot;.sig&quot;. If same file already exists, the signature file is
 not saved.</p>
 <p>In Metalink4, multi-file torrent could appear in metalink:metaurl
 element.  Since aria2 cannot download 2 same torrents at the same
@@ -686,7 +671,7 @@ documentation to know how to use API.</p>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc959">RFC 959 FILE TRANSFER PROTOCOL (FTP)</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc1738">RFC 1738 Uniform Resource Locators (URL)</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc2428">RFC 2428 FTP Extensions for IPv6 and NATs</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol – HTTP/1.1</a></li>
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc3659">RFC 3659 Extensions to FTP</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc3986">RFC 3986 Uniform Resource Identifier (URI): Generic Syntax</a></li>
 <li><a class="reference external" href="http://tools.ietf.org/html/rfc4038">RFC 4038 Application Aspects of IPv6 Transition</a></li>
@@ -754,7 +739,7 @@ and <a class="reference external" href="http://www.rasterbar.com/products/libtor
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.34.0',
+            VERSION:'1.35.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
@@ -763,6 +748,7 @@ and <a class="reference external" href="http://www.rasterbar.com/products/libtor
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
 
   
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Technical Notes &mdash; aria2 1.34.0 documentation</title>
+  <title>Technical Notes &mdash; aria2 1.35.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="aria2 1.34.0 documentation" href="index.html"/>
+    <link rel="top" title="aria2 1.35.0 documentation" href="index.html"/>
         <link rel="prev" title="libaria2: C++ library interface to aria2" href="libaria2.html"/> 
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                1.34.0
+                1.35.0
               </div>
             
           
@@ -182,11 +182,11 @@ be disappear in the future version.</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">EXT</span></code> (EXTENSION): 4 bytes</dt>
 <dd>If LSB is 1(i.e. <code class="docutils literal notranslate"><span class="pre">EXT[3]&amp;1</span> <span class="pre">==</span> <span class="pre">1</span></code>), aria2 checks whether the saved
 InfoHash and current downloading one are the same. If they are not
-the same, an exception is thrown. This is called “infoHashCheck”
+the same, an exception is thrown. This is called &quot;infoHashCheck&quot;
 extension.</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">INFO</span> <span class="pre">HASH</span> <span class="pre">LENGTH</span></code>: 4 bytes</dt>
 <dd>The length of InfoHash that is located after this field. If
-“infoHashCheck” extension is enabled, if this value is 0, then an
+&quot;infoHashCheck&quot; extension is enabled, if this value is 0, then an
 exception is thrown. For http/ftp downloads, this value should be
 0.</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">INFO</span> <span class="pre">HASH</span></code>: <code class="docutils literal notranslate"><span class="pre">(INFO</span> <span class="pre">HASH</span> <span class="pre">LENGTH)</span></code> bytes</dt>
@@ -203,7 +203,7 @@ exception is thrown. For http/ftp downloads, this value should be
 <dd>This is the bitfield which represents current download progress.</dd>
 <dt><code class="docutils literal notranslate"><span class="pre">NUM</span> <span class="pre">IN-FLIGHT</span> <span class="pre">PIECE</span></code>: 4 bytes</dt>
 <dd>The number of in-flight pieces. These piece is not marked
-‘downloaded’ in the bitfield, but it has at least one downloaded
+'downloaded' in the bitfield, but it has at least one downloaded
 chunk.</dd>
 </dl>
 <p>The following 4 fields are repeated in <code class="docutils literal notranslate"><span class="pre">(NUM</span> <span class="pre">IN-FLIGHT</span> <span class="pre">PIECE)</span></code>
@@ -320,7 +320,7 @@ IPv6 DHT, it must be 18.</dd>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.34.0',
+            VERSION:'1.35.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
@@ -329,6 +329,7 @@ IPv6 DHT, it must be 18.</dd>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
 
   
 
