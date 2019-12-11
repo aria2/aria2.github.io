@@ -3517,7 +3517,7 @@ For information on the *secret* parameter, see :ref:`rpc_auth`.
 .. function:: aria2.forceShutdown([secret])
 
   This method shuts down :func:`aria2`. This method behaves like
-  :func:'aria2.shutdown` without performing any actions which take time,
+  :func:`aria2.shutdown` without performing any actions which take time,
   such as contacting BitTorrent trackers to unregister downloads first.
   This method returns ``OK``.
 
