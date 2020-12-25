@@ -7,10 +7,10 @@
   <meta charset="utf-8">
   <title>aria2</title>
   <meta name="author" content="Tatsuhiro Tsujikawa">
-
+  <!-- Japanese translation improved by grj1234 -->
   
-  <meta name="description" content="aria2 は 軽量で 複数サーバーから分割ダウンロードが可能なコマンドライン ダウンロード ユーティリティ. HTTP/HTTPS, FTP, SFTP, BitTorrent, Metalink に対応.
-aria2 は JSON-RPC と XML-RPC インターフェースを搭載. &hellip;">
+  <meta name="description" content="aria2 は 軽量で 複数サーバーから分割ダウンロードが可能なコマンドライン ダウンロード ユーティリティです。 HTTP/HTTPS, FTP, SFTP, BitTorrent, Metalink に対応しています。
+また、aria2 は JSON-RPC と XML-RPC インターフェースを搭載しています。 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -39,7 +39,7 @@ aria2 は JSON-RPC と XML-RPC インターフェースを搭載. &hellip;">
   <header role="banner"><hgroup>
   <h1><a href="/">aria2</a></h1>
   
-    <h2>The next generation download utility.</h2>
+    <h2>次世代のダウンロード ユーティリティ</h2>
   
 </hgroup>
 
@@ -71,41 +71,41 @@ aria2 は JSON-RPC と XML-RPC インターフェースを搭載. &hellip;">
       <div>
 <article role="article">
   
-  <p>aria2 は <strong>軽量で</strong> 複数サーバーから分割ダウンロードが可能なコマンドライン <strong>ダウンロード</strong> ユーティリティ. <strong>HTTP/HTTPS</strong>, <strong>FTP</strong>, <strong>SFTP</strong>, <strong>BitTorrent</strong>, <strong>Metalink</strong> に対応.
-aria2 は <strong>JSON-RPC</strong> と <strong>XML-RPC</strong> インターフェースを搭載.
-aria2 をリモートコントロールできる.</p>
+  <p>aria2 は <strong>軽量で</strong> 複数サーバーから分割ダウンロードが可能なコマンドライン <strong>ダウンロード</strong> ユーティリティです。<strong>HTTP/HTTPS</strong>, <strong>FTP</strong>, <strong>SFTP</strong>, <strong>BitTorrent</strong>, <strong>Metalink</strong> に対応しています。
+また、aria2 は <strong>JSON-RPC</strong> と <strong>XML-RPC</strong> インターフェースを搭載していますので、
+aria2 をリモートコントロールすることができます。</p>
 
 <h2>ダウンロード</h2>
 
-<p><a href="https://github.com/aria2/aria2/releases/tag/release-1.35.0">version 1.35.0</a> をダウンロードしよう.
-ソースコード, OS X バイナリ, Windows バイナリおよび Android バイナリがダウンロードできる.</p>
+<p><a href="https://github.com/aria2/aria2/releases/tag/release-1.35.0">version 1.35.0</a> をダウンロード。
+ソースコード, OS X バイナリ, Windows バイナリおよび Android バイナリがダウンロードできます。</p>
 
-<p>1.19.0 以前のリリースは<a href="http://sourceforge.net/projects/aria2/files/stable/">ここ</a>.</p>
+<p>1.19.0 以前のリリースは<a href="http://sourceforge.net/projects/aria2/files/stable/">こちら</a>.</p>
 
 <h2>フィーチャー</h2>
 
 <ul>
 <li><p><strong>分割ダウンロード</strong>.
-aria2 は複数のサーバー / プロトコルからファイルをダウンロードできる. 回線速度を有効に使った高速ダウンロードを実現.</p></li>
+aria2 は複数のサーバー / プロトコルからファイルをダウンロードできます。 回線速度を有効に使った高速なダウンロードを実現します。</p></li>
 <li><p><strong>軽量</strong>.
-aria2 はメモリや CPU 資源を大きく要求しない. ディスクキャッシュがオフの時, HTTP/FTP ダウンロードでのメモリ使用は通常 4MiB, BitTorrent ダウンロードで 9MiB. CPU 使用率は, BitTorrent ダウンロードで 2.8MiB/sec で 6% 前後.</p></li>
+aria2 はメモリや CPU 資源を大きく要求しません。ディスクキャッシュがオフの時、HTTP/FTP ダウンロードでのメモリ使用は通常 4MiB、BitTorrent ダウンロードで 9MiBとなります。また、CPU 使用率は 2.8MiB/sec のBitTorrentダウンロードで 6% 前後となります。</p></li>
 <li><p><strong>BitTorrent</strong>.
-必要な機能がすべてそろった BitTorrent プロトコルを実装: DHT, PEX, Encryption, Magnet URI, Web-Seeding, ファイル選択ダウンロード, Local Peer Discovery, UDP トラッカー.</p></li>
+必要な機能がすべてそろった BitTorrent プロトコルが実装されています。例えば、DHT, PEX, Encryption, Magnet URI, Web-Seeding, ファイル選択ダウンロード, ローカルピア検出, UDP トラッカー などが実装されています。</p></li>
 <li><p><strong>Metalink サポート</strong>.
 aria2 は
 <a href="http://tools.ietf.org/html/rfc5854">The Metalink Download Description Format</a>
 (aka Metalink v4),
 Metalink version 3 および
 <a href="http://tools.ietf.org/html/rfc6249">Metalink/HTTP</a>.
-をサポート. Metalink は ファイル検証, HTTP/FTP/SFTP/BitTorrent から同時ダウンロード, 言語, 場所, OS, etc を指定するコンフィグレーション の機能を提供する.</p></li>
+をサポートしています。Metalink は ファイル検証, HTTP/FTP/SFTP/BitTorrent からの同時ダウンロード, および 言語, 場所, OS などを指定する機能を提供します。</p></li>
 <li><p><strong>リモートコントロール</strong>.
-aria2 は RPC インターフェースをサポートしていて, aria2 プロセスをコントロールすることができる. サポートしているインターフェースは, JSON-RPC (over HTTP and WebSocket) と XML-RPC.</p></li>
+aria2 は RPC インターフェースに対応しており、aria2 プロセスをコントロールすることができます。JSON-RPC (over HTTP and WebSocket) と XML-RPC の2つのインターフェースに対応しています。</p></li>
 </ul>
 
 
 <h2>使い方</h2>
 
-<p>コマンドラインだからといって物怖じすることはない. aria2 を使うのはわりと簡単.</p>
+<p>コマンドラインだからといって物怖じすることはありません。aria2 を使うのはわりと簡単です。</p>
 
 <p>WEB からダウンロード:</p>
 
@@ -152,18 +152,18 @@ aria2 は RPC インターフェースをサポートしていて, aria2 プロ�
 <h2>関連プロジェクト</h2>
 
 <ul>
-<li><a href="https://github.com/tatsuhiro-t/apt-metalink"><strong>apt-metalink</strong></a>: Faster package downloads for Debian/Ubuntu</li>
-<li><a href="http://xyne.archlinux.ca/projects/powerpill/"><strong>powerpill</strong></a>: Pacman wrapper for parallel and segmented downloads.</li>
-<li><a href="http://xyne.archlinux.ca/projects/python3-aria2jsonrpc/"><strong>python3-aria2jsonrpc</strong></a>: A wrapper class around Aria2&rsquo;s JSON RPC interface.</li>
-<li><a href="https://github.com/sonnyp/aria2.js"><strong>aria2.js</strong></a>: JavaScript (browsers and Node.js) library and cli for aria2 RPC</li>
+<li><a href="https://github.com/tatsuhiro-t/apt-metalink"><strong>apt-metalink</strong></a>: Debian/Ubuntu 向けに、より高速なパッケージのダウンロードを提供。</li>
+<li><a href="http://xyne.archlinux.ca/projects/powerpill/"><strong>powerpill</strong></a>: 同時, 並列ダウンロードのための Pacman ラッパー。</li>
+<li><a href="http://xyne.archlinux.ca/projects/python3-aria2jsonrpc/"><strong>python3-aria2jsonrpc</strong></a>: Aria2のJSON RPC インターフェースのラッパークラス。</li>
+<li><a href="https://github.com/sonnyp/aria2.js"><strong>aria2.js</strong></a>: aria2 RPCのためのJavaScript (ブラウザ及びNode.js) ライブラリとCLI。</li>
 </ul>
 
 
 <h2>UI フロントエンド</h2>
 
 <ul>
-<li><a href="https://github.com/ziahamza/webui-aria2"><strong>webui-aria2</strong></a>: Web browser interface for aria2 (2012 GSOC project)</li>
-<li><a href="http://uget.visuex.com/"><strong>uGet</strong></a>: the Linux Download Manager</li>
+<li><a href="https://github.com/ziahamza/webui-aria2"><strong>webui-aria2</strong></a>: aria2c 用のWebブラウザ インターフェース (2012 GSOC project)</li>
+<li><a href="http://uget.visuex.com/"><strong>uGet</strong></a>: Linux向けのダウンロード マネージャ</li>
 </ul>
 
 
