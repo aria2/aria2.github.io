@@ -1,78 +1,38 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="pt-BR" >
 <head>
-  <meta charset="utf-8">
-  <meta content="Manual Aria2 em português" lang="pt" name="description" />
+  <meta charset="utf-8" /><meta content="Manual Aria2 em português" lang="pt" name="description" xml:lang="pt" />
 <meta content="programa para download gratuito, download android, download bittorrent, download linha de comando, download de músicas, download de ftp, download http, download https, mac OS/X, windows, linux, manual download aria2, torrent, download stream, como compilar programa no android, como executar download no android" name="keywords" />
 <meta content="tatsuhiro.t_at_gmail_dot_com english version" name="author" />
 <meta content="gsavix&#64;gmail.com tradução para português do brasil" name="author" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; documentação aria2 1.35.0</title>
-  
-
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Índice"
-              href="genindex.html"/>
-        <link rel="search" title="Buscar" href="search.html"/>
-    <link rel="top" title="documentação aria2 1.35.0" href="index.html"/>
-        <link rel="prev" title="aria2c(1)" href="aria2c.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aria2 - Utilitário para Download Super Ultra Rápido &mdash; documentação aria2 1.36.0</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="prev" title="aria2c(1)" href="aria2c.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
+        <div class="wy-side-nav-search" >
             <a href="index.html" class="icon icon-home"> aria2
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                1.35.0
+                1.36.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -80,15 +40,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <ul class="current">
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aria2c.html">aria2c(1)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">aria2 - Utilitário para Download Super Ultra Rápido</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#renuncia">Renúncia</a></li>
@@ -123,62 +76,43 @@
 <li class="toctree-l1"><a class="reference internal" href="#referencias">Referências</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">aria2</a>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aria2</a>
       </nav>
 
-
-      
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
- 
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>aria2 - Utilitário para Download Super Ultra Rápido</li>
-    <li class="wy-breadcrumbs-aside">
-      
-        
-          <a href="_sources/README.rst.txt" rel="nofollow"> View page source</a>
-        
-      
-    </li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>aria2 - Utilitário para Download Super Ultra Rápido</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
   </ul>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <span class="target" id="readme"></span><div class="section" id="aria2-utilitario-para-download-super-ultra-rapido">
 <h1>aria2 - Utilitário para Download Super Ultra Rápido<a class="headerlink" href="#aria2-utilitario-para-download-super-ultra-rapido" title="Link permanente para este título">¶</a></h1>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Tatsuhiro Tsujikawa</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Email:</th><td class="field-body">tatsuhiro.t_at_gmail_dot_com</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">translator:</th><td class="field-body">pt_BR Portuguese, tradutor: <a class="reference external" href="mailto:gsavix&#37;&#52;&#48;gmail&#46;com">gsavix<span>&#64;</span>gmail<span>&#46;</span>com</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Author</dt>
+<dd class="field-odd"><p>Tatsuhiro Tsujikawa</p>
+</dd>
+<dt class="field-even">Email</dt>
+<dd class="field-even"><p>tatsuhiro.t_at_gmail_dot_com</p>
+</dd>
+<dt class="field-odd">translator</dt>
+<dd class="field-odd"><p>pt_BR Portuguese, tradutor: <a class="reference external" href="mailto:gsavix&#37;&#52;&#48;gmail&#46;com">gsavix<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+</dd>
+</dl>
 <span class="target" id="index-0"></span><div class="section" id="renuncia">
 <span id="index-1"></span><h2>Renúncia<a class="headerlink" href="#renuncia" title="Link permanente para este título">¶</a></h2>
 <p>Este programa não vem com garantias. O uso deste programa é por sua
@@ -204,48 +138,48 @@ para aprender como a usar aria2.</p>
 <h2>Funcionalidades<a class="headerlink" href="#funcionalidades" title="Link permanente para este título">¶</a></h2>
 <p>Lista de Configurações:</p>
 <ul class="simple">
-<li>Interface de linha de comando</li>
-<li>Download arquivos protocolos HTTP, HTTPS, FTP, BitTorrent</li>
-<li>Download Segmentado</li>
-<li>Metalink versão 4 (RFC 5854) suporte (HTTP, FTP, BitTorrent)</li>
-<li>Metalink versão 3 suporte (HTTP, FTP, BitTorrent)</li>
-<li>Metalink (RFC 6249) suporte (HTTP)</li>
-<li>Implementação HTTP/1.1</li>
-<li>Suporte Proxy HTTP Proxy</li>
-<li>Suporte autenticação HTTP BASIC</li>
-<li>Suporte autenticação HTTP Proxy</li>
-<li>Váriavéis de ambiente (conjunto abrangente) para proxy: http_proxy, https_proxy,
-ftp_proxy, all_proxy e no_proxy</li>
-<li>HTTP com gzip, suporte a codificação de conteúdo (deflate)</li>
-<li>Verificação de peer usando Certificados Acreditados informado em HTTPS</li>
-<li>Processamento de autenticação Cliente usando Certificado Acreditado HTTPS</li>
-<li>Suporte a transferência (Chunked) codificada</li>
-<li>Carga de Cookies a partir de arquivos formato Firefox 3, Chromium/Google Chrome
-e Mozilla / Firefox / IcedWeasel / (1.x/2.x) / Netscape.</li>
-<li>Salvar Cookies em arquivo formato Mozilla 3, Firefox (1.x/2.x), Chromium,
-Netscape.</li>
-<li>Suporte a Cabeçalho HTTP modificado ou personalizado</li>
-<li>Suporte a Conexões Persistentes</li>
-<li>FTP através de Proxy HTTP</li>
-<li>Controle de velocidade Download e Upload (utilização da Banda Rede)</li>
-<li>Extensões BitTorrent: Conexão rápida, DHT, PEX, MSE/PSE, Multi-Tracker</li>
-<li>BitTorrent <a class="reference external" href="http://getright.com/seedtorrent.html">WEB-Seeding</a>. aria2
+<li><p>Interface de linha de comando</p></li>
+<li><p>Download arquivos protocolos HTTP, HTTPS, FTP, BitTorrent</p></li>
+<li><p>Download Segmentado</p></li>
+<li><p>Metalink versão 4 (RFC 5854) suporte (HTTP, FTP, BitTorrent)</p></li>
+<li><p>Metalink versão 3 suporte (HTTP, FTP, BitTorrent)</p></li>
+<li><p>Metalink (RFC 6249) suporte (HTTP)</p></li>
+<li><p>Implementação HTTP/1.1</p></li>
+<li><p>Suporte Proxy HTTP Proxy</p></li>
+<li><p>Suporte autenticação HTTP BASIC</p></li>
+<li><p>Suporte autenticação HTTP Proxy</p></li>
+<li><p>Váriavéis de ambiente (conjunto abrangente) para proxy: http_proxy, https_proxy,
+ftp_proxy, all_proxy e no_proxy</p></li>
+<li><p>HTTP com gzip, suporte a codificação de conteúdo (deflate)</p></li>
+<li><p>Verificação de peer usando Certificados Acreditados informado em HTTPS</p></li>
+<li><p>Processamento de autenticação Cliente usando Certificado Acreditado HTTPS</p></li>
+<li><p>Suporte a transferência (Chunked) codificada</p></li>
+<li><p>Carga de Cookies a partir de arquivos formato Firefox 3, Chromium/Google Chrome
+e Mozilla / Firefox / IcedWeasel / (1.x/2.x) / Netscape.</p></li>
+<li><p>Salvar Cookies em arquivo formato Mozilla 3, Firefox (1.x/2.x), Chromium,
+Netscape.</p></li>
+<li><p>Suporte a Cabeçalho HTTP modificado ou personalizado</p></li>
+<li><p>Suporte a Conexões Persistentes</p></li>
+<li><p>FTP através de Proxy HTTP</p></li>
+<li><p>Controle de velocidade Download e Upload (utilização da Banda Rede)</p></li>
+<li><p>Extensões BitTorrent: Conexão rápida, DHT, PEX, MSE/PSE, Multi-Tracker</p></li>
+<li><p>BitTorrent <a class="reference external" href="http://getright.com/seedtorrent.html">WEB-Seeding</a>. aria2
 faz requisições de mais de uma parte de um (chunk) para reduzir sobreposições
-de requisições. Também permite requisições pipeline com tamanho especificado</li>
-<li>BitTorrent Local Peer Discovery</li>
-<li>Atualização ou Modificação (Rename) de estrutura de diretórios de downloads
-BitTorrent já finalizados</li>
-<li>Interface JSON-RPC (sobre HTTP e WebSocket) / XML-RPC</li>
-<li>Execução em modo daemon</li>
-<li>Download Seletivosem múltiplos arquivos torrent/Metalink</li>
-<li>Validação e checksum de parte (Chunk) em Metalink</li>
-<li>Desabilidar download segmentado em Metalink</li>
-<li>Suporte a Netrc</li>
-<li>Suporte a arquivo de Configuração</li>
-<li>Download de URIs a partir de arquivo texto ou entrada padrão com especificação
-opcional de arquivo de saída</li>
-<li>Suporte a URI parametrizadas (intervalos, etc)</li>
-<li>Suporte a IPv6</li>
+de requisições. Também permite requisições pipeline com tamanho especificado</p></li>
+<li><p>BitTorrent Local Peer Discovery</p></li>
+<li><p>Atualização ou Modificação (Rename) de estrutura de diretórios de downloads
+BitTorrent já finalizados</p></li>
+<li><p>Interface JSON-RPC (sobre HTTP e WebSocket) / XML-RPC</p></li>
+<li><p>Execução em modo daemon</p></li>
+<li><p>Download Seletivosem múltiplos arquivos torrent/Metalink</p></li>
+<li><p>Validação e checksum de parte (Chunk) em Metalink</p></li>
+<li><p>Desabilidar download segmentado em Metalink</p></li>
+<li><p>Suporte a Netrc</p></li>
+<li><p>Suporte a arquivo de Configuração</p></li>
+<li><p>Download de URIs a partir de arquivo texto ou entrada padrão com especificação
+opcional de arquivo de saída</p></li>
+<li><p>Suporte a URI parametrizadas (intervalos, etc)</p></li>
+<li><p>Suporte a IPv6</p></li>
 </ul>
 </div>
 <div class="section" id="como-obter-o-codigo-fonte">
@@ -260,78 +194,78 @@ opcional de arquivo de saída</li>
 </div>
 <div class="section" id="dependencias">
 <h2>Dependências<a class="headerlink" href="#dependencias" title="Link permanente para este título">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="38%" />
-<col width="63%" />
+<col style="width: 38%" />
+<col style="width: 63%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">funcionalidade</th>
-<th class="head">dependência</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>funcionalidade</p></th>
+<th class="head"><p>dependência</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>HTTPS</td>
-<td>GnuTLS ou OpenSSL</td>
+<tbody>
+<tr class="row-even"><td><p>HTTPS</p></td>
+<td><p>GnuTLS ou OpenSSL</p></td>
 </tr>
-<tr class="row-odd"><td>BitTorrent</td>
-<td>libnettle+libgmp ou libgcrypt ou OpenSSL</td>
+<tr class="row-odd"><td><p>BitTorrent</p></td>
+<td><p>libnettle+libgmp ou libgcrypt ou OpenSSL</p></td>
 </tr>
-<tr class="row-even"><td>Metalink</td>
-<td>libxml2 ou Expat.</td>
+<tr class="row-even"><td><p>Metalink</p></td>
+<td><p>libxml2 ou Expat.</p></td>
 </tr>
-<tr class="row-odd"><td>Checksum</td>
-<td>libnettle ou libgcrypt ou OpenSSL</td>
+<tr class="row-odd"><td><p>Checksum</p></td>
+<td><p>libnettle ou libgcrypt ou OpenSSL</p></td>
 </tr>
-<tr class="row-even"><td>gzip, deflate em HTTP</td>
-<td>zlib</td>
+<tr class="row-even"><td><p>gzip, deflate em HTTP</p></td>
+<td><p>zlib</p></td>
 </tr>
-<tr class="row-odd"><td>Async DNS</td>
-<td>C-Ares</td>
+<tr class="row-odd"><td><p>Async DNS</p></td>
+<td><p>C-Ares</p></td>
 </tr>
-<tr class="row-even"><td>Firefox3/Chromium cookie</td>
-<td>libsqlite3</td>
+<tr class="row-even"><td><p>Firefox3/Chromium cookie</p></td>
+<td><p>libsqlite3</p></td>
 </tr>
-<tr class="row-odd"><td>XML-RPC</td>
-<td>libxml2 ou Expat.</td>
+<tr class="row-odd"><td><p>XML-RPC</p></td>
+<td><p>libxml2 ou Expat.</p></td>
 </tr>
-<tr class="row-even"><td>JSON-RPC sobre WebSocket</td>
-<td>libnettle ou libgcrypt ou OpenSSL</td>
+<tr class="row-even"><td><p>JSON-RPC sobre WebSocket</p></td>
+<td><p>libnettle ou libgcrypt ou OpenSSL</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">libxml2 tem precedência sobre Expat se ambas bibliotecas instaladas.
+<p class="admonition-title">Nota</p>
+<p>libxml2 tem precedência sobre Expat se ambas bibliotecas instaladas.
 Caso prefira Expat, execute o configure com <code class="docutils literal notranslate"><span class="pre">--without-libxml2</span></code>.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">GnuTLS tem precedência sobre OpenSSL se ambas bibliotecas estiverem
+<p class="admonition-title">Nota</p>
+<p>GnuTLS tem precedência sobre OpenSSL se ambas bibliotecas estiverem
 instaladas. Caso prefira OpenSSL, execute configure com
 <code class="docutils literal notranslate"><span class="pre">--without-gnutls</span></code> <code class="docutils literal notranslate"><span class="pre">--with-openssl</span></code>.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Nota</p>
-<p class="last">libnettle tem precedência sobre libgcrypt se ambas bibliotecas instaladas.
+<p class="admonition-title">Nota</p>
+<p>libnettle tem precedência sobre libgcrypt se ambas bibliotecas instaladas.
 Caso prefira libgcrypt, execute configure com
 <code class="docutils literal notranslate"><span class="pre">--without-libnettle</span> <span class="pre">--with-libgcrypt</span></code>. Se OpenSSL é selecionada em
 detrimento de GnuTLS, nem libnettle nem libgcrypt poderão ser usadas.</p>
 </div>
 <p>São necessárias as seguintes configurações de bibliotecas SSl e crypto:</p>
 <ul class="simple">
-<li>libgcrypt</li>
-<li>libnettle</li>
-<li>OpenSSL</li>
-<li>GnuTLS + libgcrypt</li>
-<li>GnuTLS + libnettle</li>
+<li><p>libgcrypt</p></li>
+<li><p>libnettle</p></li>
+<li><p>OpenSSL</p></li>
+<li><p>GnuTLS + libgcrypt</p></li>
+<li><p>GnuTLS + libnettle</p></li>
 </ul>
 <p>BitTorrent e Metalink podem ser desabilitados fornecendo-se as opções
 <code class="docutils literal notranslate"><span class="pre">--disable-bittorrent</span></code> e <code class="docutils literal notranslate"><span class="pre">--disable-metalink</span></code> ao executar o script
 ./configure.</p>
 <p>Para habilitar DNS assíncrono é necessário c-ares.</p>
 <ul class="simple">
-<li>projeto c-ares: <a class="reference external" href="http://daniel.haxx.se/projects/c-ares/">http://daniel.haxx.se/projects/c-ares/</a></li>
+<li><p>projeto c-ares: <a class="reference external" href="http://daniel.haxx.se/projects/c-ares/">http://daniel.haxx.se/projects/c-ares/</a></p></li>
 </ul>
 </div>
 <div class="section" id="como-fazer-o-build">
@@ -339,34 +273,34 @@ detrimento de GnuTLS, nem libnettle nem libgcrypt poderão ser usadas.</p>
 <p>Para fazer o build do aria2 a partir dos fontes, instalar antes
 pacotes de desenvolvimento ( o nome pode variar nas distribuições):</p>
 <ul class="simple">
-<li>libgnutls-dev    (Requerido para suporte HTTPS, BitTorrent, Checksum)</li>
-<li>nettle-dev       (Requerido para suporte BitTorrent, Checksum)</li>
-<li>libgmp-dev       (Requerido para suporte BitTorrent)</li>
-<li>libc-ares-dev    (Requerido para suporte DNS async DNS )</li>
-<li>libxml2-dev      (Requerido para suporte Metalink)</li>
-<li>zlib1g-dev       (Requerido para suporte em HTTP decodificação gzip e deflate)</li>
-<li>libsqlite3-dev   (Requerido para suporte cookie Firefox3 / Chromium)</li>
+<li><p>libgnutls-dev    (Requerido para suporte HTTPS, BitTorrent, Checksum)</p></li>
+<li><p>nettle-dev       (Requerido para suporte BitTorrent, Checksum)</p></li>
+<li><p>libgmp-dev       (Requerido para suporte BitTorrent)</p></li>
+<li><p>libc-ares-dev    (Requerido para suporte DNS async DNS )</p></li>
+<li><p>libxml2-dev      (Requerido para suporte Metalink)</p></li>
+<li><p>zlib1g-dev       (Requerido para suporte em HTTP decodificação gzip e deflate)</p></li>
+<li><p>libsqlite3-dev   (Requerido para suporte cookie Firefox3 / Chromium)</p></li>
 </ul>
 <p>Você pode usar libgcrypt-dev ao invés de nettle-dev e libgmp-dev:</p>
 <ul class="simple">
-<li>libgpg-error-dev (Requerido para suporte BitTorrent, Checksum)</li>
-<li>libgcrypt-dev    (Requerido para suporte BitTorrent, Checksum)</li>
+<li><p>libgpg-error-dev (Requerido para suporte BitTorrent, Checksum)</p></li>
+<li><p>libgcrypt-dev    (Requerido para suporte BitTorrent, Checksum)</p></li>
 </ul>
 <p>Pode ser usado libssl-dev ao invés de
 libgnutls-dev, nettle-dev, libgmp-dev, libgpg-error-dev e libgcrypt-dev:</p>
 <ul class="simple">
-<li>libssl-dev       (Requerido para suporte Checksum de HTTPS, BitTorrent )</li>
+<li><p>libssl-dev       (Requerido para suporte Checksum de HTTPS, BitTorrent )</p></li>
 </ul>
 <p>Pode ser usado libexpat1-dev ao invés de libxml2-dev:</p>
 <ul class="simple">
-<li>libexpat1-dev    (Requerido for Metalink suporte)</li>
+<li><p>libexpat1-dev    (Requerido for Metalink suporte)</p></li>
 </ul>
 <p>Pode ser necessário usar pkg-config para detectar as bibliotecas
 acima mencionadas.</p>
 <p>Para a distribuição Fedora são necessários os seguintes pacotes:</p>
 <ul class="simple">
-<li>gcc, gcc-c++, kernel-devel, libgcrypt-devel, libgcrypt-devel,
-libxml2-devel, openssl-devel</li>
+<li><p>gcc, gcc-c++, kernel-devel, libgcrypt-devel, libgcrypt-devel,
+libxml2-devel, openssl-devel</p></li>
 </ul>
 <p>Se foi feito o download do código fonte a partir de um repositório git,
 deverá ser executado o seguinte comando para criar o script de
@@ -447,25 +381,25 @@ Sua utilização é para gerar uma compilação oficial para Windows.  Esse
 script assume que as seguintes bibliotecas tenham sido compiladas
 e/ou instaladas para a compilação cross:</p>
 <ul class="simple">
-<li>c-ares</li>
-<li>openssl</li>
-<li>expat</li>
-<li>sqlite3</li>
-<li>zlib</li>
-<li>cppunit</li>
+<li><p>c-ares</p></li>
+<li><p>openssl</p></li>
+<li><p>expat</p></li>
+<li><p>sqlite3</p></li>
+<li><p>zlib</p></li>
+<li><p>cppunit</p></li>
 </ul>
 <p>Algumas variáveis de ambiente precisam ser ajustadas para compilar:</p>
-<dl class="docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">HOST</span></code></dt>
-<dd>compilação-cross para compilar programas que serão executados em
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">HOST</span></code></dt><dd><p>compilação-cross para compilar programas que serão executados em
 um computador <code class="docutils literal notranslate"><span class="pre">HOST</span></code>. Padrão para <code class="docutils literal notranslate"><span class="pre">i686-w64-mingw32</span></code>.
-Para compilar binário para 64bits, especificar <code class="docutils literal notranslate"><span class="pre">x86_64-w64-mingw32</span></code>.</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">PREFIX</span></code></dt>
-<dd>Prefixo do diretório onde as bibliotecas dependentes estão instaladas.
+Para compilar binário para 64bits, especificar <code class="docutils literal notranslate"><span class="pre">x86_64-w64-mingw32</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">PREFIX</span></code></dt><dd><p>Prefixo do diretório onde as bibliotecas dependentes estão instaladas.
 Padrão para <code class="docutils literal notranslate"><span class="pre">/usr/local/$HOST</span></code>. <code class="docutils literal notranslate"><span class="pre">-I$PREFIX/include</span></code> será adicionado
 às opções <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</span></code>. <code class="docutils literal notranslate"><span class="pre">-L$PREFIX/lib</span></code> será adicionado em
 <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code>. <code class="docutils literal notranslate"><span class="pre">$PREFIX/lib/pkgconfig</span></code> será configurado para
-<code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</dd>
+<code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</p>
+</dd>
 </dl>
 <p>Por exemplo, para construir um binário para 64bits utilize:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
@@ -480,9 +414,9 @@ NDD no Linux Debian.</p>
 assume que as seguintes bibliotecas também foram construídas para
 compilador-cross:</p>
 <ul class="simple">
-<li>c-ares</li>
-<li>openssl</li>
-<li>expat</li>
+<li><p>c-ares</p></li>
+<li><p>openssl</p></li>
+<li><p>expat</p></li>
 </ul>
 <p>Quando compilando as bibliotecas, certifique-se que o compartilhamento (share)
 esteja desabilitado e confirme que somente biblioteca estática está habilitado.
@@ -491,12 +425,12 @@ A compilação será feita somente com bibliotecas estáticas.</p>
 compilar uma zlib nova.</p>
 <p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> assume os seguintes pontos:</p>
 <ul class="simple">
-<li>Android NDK está instalado no local definido pela variável de ambiente
+<li><p>Android NDK está instalado no local definido pela variável de ambiente
 <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code>.  Consultar seção &quot;3/ Chamando o compilador (jeito fácil):&quot;
 no Android NDK
-<code class="docutils literal notranslate"><span class="pre">docs/STANDALONE-TOOLCHAIN.html</span></code> para instalar (toolchain) personalizada.</li>
-<li>Bibliotecas dependentes devem estar instaladas em
-<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</li>
+<code class="docutils literal notranslate"><span class="pre">docs/STANDALONE-TOOLCHAIN.html</span></code> para instalar (toolchain) personalizada.</p></li>
+<li><p>Bibliotecas dependentes devem estar instaladas em
+<code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</p></li>
 </ul>
 <p>Antes executar <code class="docutils literal notranslate"><span class="pre">android-config</span></code> e <code class="docutils literal notranslate"><span class="pre">android-make</span></code>, a variável de ambiente
 <code class="docutils literal notranslate"><span class="pre">$ANDOIRD_HOME</span></code> deve apontar para o caminho correto.</p>
@@ -519,30 +453,22 @@ de terminal, portanto antes instale um emulador de Terminal Android a
 partir do Android Market (ou compile a partir da fonte e instale). Veja
 <a class="reference external" href="https://github.com/jackpal/Android-Terminal-Emulator/">Github jackpal</a>.</p>
 <ol class="arabic">
-<li><p class="first">Copiar o executável do aria2c para <code class="docutils literal notranslate"><span class="pre">/mnt/sdcard</span></code> do seu dispositivo.</p>
-</li>
-<li><p class="first">Executar Emulador Terminal Android.</p>
-</li>
-<li><p class="first">Criar diretório <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">/data/data/jackpal.androidterm/aria2</span></code></p>
-</li>
-<li><p class="first">Anexar aplicação
-<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/mnt/sdcard/aria2c</span> <span class="pre">&gt;</span> <span class="pre">/data/data/jackpal.androidterm/aria2/aria2c</span></code></p>
-</li>
-<li><p class="first">Habilitar modo execução
-<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">744</span> <span class="pre">/data/data/jackpal.androidterm/aria2/aria2c</span></code></p>
-</li>
-<li><p class="first">Adicionar o seguintes comandos ao Emulador de Terminal Android
+<li><p>Copiar o executável do aria2c para <code class="docutils literal notranslate"><span class="pre">/mnt/sdcard</span></code> do seu dispositivo.</p></li>
+<li><p>Executar Emulador Terminal Android.</p></li>
+<li><p>Criar diretório <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">/data/data/jackpal.androidterm/aria2</span></code></p></li>
+<li><p>Anexar aplicação
+<code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">/mnt/sdcard/aria2c</span> <span class="pre">&gt;</span> <span class="pre">/data/data/jackpal.androidterm/aria2/aria2c</span></code></p></li>
+<li><p>Habilitar modo execução
+<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">744</span> <span class="pre">/data/data/jackpal.androidterm/aria2/aria2c</span></code></p></li>
+<li><p>Adicionar o seguintes comandos ao Emulador de Terminal Android
 Terminal Emulator:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export HOME=/data/data/jackpal.androidterm/aria2; cd $HOME
 </pre></div>
 </div>
 </li>
-<li><p class="first">Sair do Emulador de Terminal Android.</p>
-</li>
-<li><p class="first">Executar novamente o Emulador de Terminal Android.</p>
-</li>
-<li><p class="first">Execute aria2c chamando o comando <code class="docutils literal notranslate"><span class="pre">./aria2c</span> <span class="pre">-v</span></code></p>
-</li>
+<li><p>Sair do Emulador de Terminal Android.</p></li>
+<li><p>Executar novamente o Emulador de Terminal Android.</p></li>
+<li><p>Execute aria2c chamando o comando <code class="docutils literal notranslate"><span class="pre">./aria2c</span> <span class="pre">-v</span></code></p></li>
 </ol>
 </div>
 <div class="section" id="como-usar-comandos-do-aria2-no-android">
@@ -558,9 +484,9 @@ Terminal Emulator:</p>
 <p>As seguintes bibliotecas foram ligadas estaticamente.</p>
 <blockquote>
 <div><ul class="simple">
-<li>openssl 1.0.1e</li>
-<li>expat 2.1.0</li>
-<li>c-ares 1.9.1</li>
+<li><p>openssl 1.0.1e</p></li>
+<li><p>expat 2.1.0</p></li>
+<li><p>c-ares 1.9.1</p></li>
 </ul>
 </div></blockquote>
 <p>Como o Android não possuem <code class="docutils literal notranslate"><span class="pre">/etc/resolv.conf</span></code>, c-ares (resolvedor
@@ -587,9 +513,9 @@ Exemplo: (<code class="docutils literal notranslate"><span class="pre">chmod</sp
 <div class="section" id="problemas-conhecidos-com-o-aria2c-no-android">
 <h2>Problemas Conhecidos com o aria2c no Android<a class="headerlink" href="#problemas-conhecidos-com-o-aria2c-no-android" title="Link permanente para este título">¶</a></h2>
 <ul class="simple">
-<li>Como Android não tem <code class="docutils literal notranslate"><span class="pre">/dev/stdout</span></code>, <code class="docutils literal notranslate"><span class="pre">-l-</span></code> não funciona.</li>
-<li>Em alguns casos o Emulador de Terminal Android, para de atualizar a console.
-É como se o aria2c congelasse, mas o aria2c continua executando normalmente.</li>
+<li><p>Como Android não tem <code class="docutils literal notranslate"><span class="pre">/dev/stdout</span></code>, <code class="docutils literal notranslate"><span class="pre">-l-</span></code> não funciona.</p></li>
+<li><p>Em alguns casos o Emulador de Terminal Android, para de atualizar a console.
+É como se o aria2c congelasse, mas o aria2c continua executando normalmente.</p></li>
 </ul>
 </div>
 </div>
@@ -622,17 +548,16 @@ e nas traduções em:
 <div class="section" id="sobre-nome-de-arquivos">
 <h2>Sobre Nome de arquivos<a class="headerlink" href="#sobre-nome-de-arquivos" title="Link permanente para este título">¶</a></h2>
 <p>O nome do arquivo que será baixado é determinado da seguinte maneira:</p>
-<dl class="docutils">
-<dt>modo arquivo simples</dt>
-<dd>O a chave &quot;name&quot; está presento no arquivo .torrent, o nome do
+<dl class="simple">
+<dt>modo arquivo simples</dt><dd><p>O a chave &quot;name&quot; está presento no arquivo .torrent, o nome do
 arquivo será o valor da chave &quot;name&quot;. De outra maneira o nome
 do arquivo será baseado no arquivo .torrent mais o sufixo
 &quot;.file&quot;. Exemplo: arquivo .torrent é &quot;brasil.torrrent&quot;, então
 o nome do arquivo baixado será: &quot;brasil.torrent.file&quot;.  O
 diretório onde será armazenado o arquivo pode ser especificado
-através da opção -d.</dd>
-<dt>modo arquivos múltiplos</dt>
-<dd>A estrutura completa diretório/arquivo mencionada no arquivo .torrent será
+através da opção -d.</p>
+</dd>
+<dt>modo arquivos múltiplos</dt><dd><p>A estrutura completa diretório/arquivo mencionada no arquivo .torrent será
 creada. O diretório base que conterá toda estrutura de diretórios e
 arquivos baixados, pode ser especificado através da opção -d.
 Antes do download iniciar a estrutura completa dos diretórios necessários
@@ -640,7 +565,8 @@ ao download será criada. Por padrão aria2 abre no mínimo 100 arquivos
 mencionados no arquivo .torrent e diretamente executa gravação e leitura
 desses arquivos. O número máximo de arquivos para serem abertos
 simultaneamente pode ser controlado através da opção
-:option:<code class="docutils literal notranslate"><span class="pre">--bt-max-open-files</span></code>.</dd>
+:option:<code class="docutils literal notranslate"><span class="pre">--bt-max-open-files</span></code>.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="dht">
@@ -660,18 +586,18 @@ da porta do rastreador UDP é compartilhado com DHT. Usar opção
 <div class="section" id="outras-informacoes-importantes">
 <h2>Outras informações importantes<a class="headerlink" href="#outras-informacoes-importantes" title="Link permanente para este título">¶</a></h2>
 <ul class="simple">
-<li>Se a opção -o é usada para mudar o nome do arquivo de saida
+<li><p>Se a opção -o é usada para mudar o nome do arquivo de saida
 .torrent não o nome do arquivo dentro do arquivo .torrent.
-Para esta finalidade utilizar opção :option:<code class="docutils literal notranslate"><span class="pre">--index-out</span></code>.</li>
-<li>Os números de portas padrões que o aria2 utiliza para TCP e UDP
-estão no intervalo de 6881 até 6999 (6881-6999).</li>
-<li>aria2 não configura automaticamente port-forwarding.
-Por favor configurar manualmente seu roteador ou firewall.</li>
-<li>O número máximo de é 55. Este limite pode ser excedido quando
+Para esta finalidade utilizar opção :option:<code class="docutils literal notranslate"><span class="pre">--index-out</span></code>.</p></li>
+<li><p>Os números de portas padrões que o aria2 utiliza para TCP e UDP
+estão no intervalo de 6881 até 6999 (6881-6999).</p></li>
+<li><p>aria2 não configura automaticamente port-forwarding.
+Por favor configurar manualmente seu roteador ou firewall.</p></li>
+<li><p>O número máximo de é 55. Este limite pode ser excedido quando
 a taxa de download é muito baixa. Esta taxa de download pode ser
-ajustada com a opção :option:<code class="docutils literal notranslate"><span class="pre">--bt-request-peer-speed-limit</span></code>.</li>
-<li>Desde a versão 0.10.0, aria2 parou de enviar mensagem de
-requisição após o download seletivo completar-se.</li>
+ajustada com a opção :option:<code class="docutils literal notranslate"><span class="pre">--bt-request-peer-speed-limit</span></code>.</p></li>
+<li><p>Desde a versão 0.10.0, aria2 parou de enviar mensagem de
+requisição após o download seletivo completar-se.</p></li>
 </ul>
 </div>
 </div>
@@ -734,33 +660,33 @@ definida na RFC 6455. O protocolo suportado refere-se a versão 13.</p>
 <div class="section" id="referencias">
 <h1>Referências<a class="headerlink" href="#referencias" title="Link permanente para este título">¶</a></h1>
 <ul class="simple">
-<li><a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Manual Inglês</a> original inglês</li>
-<li><a class="reference external" href="https://aria2.github.io/manual/ru/html/">aria2 Manual Russo</a> versão russo</li>
-<li><a class="reference external" href="https://aria2.github.io/manual/pt/html/">aria2 Manual Português</a> versão português</li>
-<li><a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc959">RFC 959 FILE TRANSFER PROTOCOL (FTP)</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc1738">RFC 1738 Uniform Resource Locators (URL)</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc2428">RFC 2428 FTP Extensions for IPv6 and NATs</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc3659">RFC 3659 Extensions to FTP</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc3986">RFC 3986 Uniform Resource Identifier (URI): Generic Syntax</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc4038">RFC 4038 Application Aspects of IPv6 Transition</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc5854">RFC 5854 The Metalink Download Description Format</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc6249">RFC 6249 Metalink/HTTP: Mirrors and Hashes</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc6265">RFC 6265 HTTP State Management Mechanism</a></li>
-<li><a class="reference external" href="http://tools.ietf.org/html/rfc6455">RFC 6455 The WebSocket Protocol</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0003.html">The BitTorrent Protocol Specification</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0005.html">BitTorrent: DHT Protocol</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0006.html">BitTorrent: Fast Extension</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0007.html">BitTorrent: IPv6 Tracker Extension</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0009.html">BitTorrent: Extension for Peers to Send Metadata Files</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0010.html">BitTorrent: Extension Protocol</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0012.html">BitTorrent: Multitracker Metadata Extension</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0019.html">BitTorrent: WebSeed - HTTP/FTP Seeding (GetRight style)</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0027.html">BitTorrent: Private Torrents</a></li>
-<li><a class="reference external" href="http://www.bittorrent.org/beps/bep_0032.html">BitTorrent: BitTorrent DHT Extensions for IPv6</a></li>
-<li><a class="reference external" href="http://wiki.vuze.com/w/Message_Stream_Encryption">BitTorrent: Message Stream Encryption</a></li>
-<li><a class="reference external" href="http://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia: A Peer-to-peer Information System Based on the  XOR Metric</a></li>
+<li><p><a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Manual Inglês</a> original inglês</p></li>
+<li><p><a class="reference external" href="https://aria2.github.io/manual/ru/html/">aria2 Manual Russo</a> versão russo</p></li>
+<li><p><a class="reference external" href="https://aria2.github.io/manual/pt/html/">aria2 Manual Português</a> versão português</p></li>
+<li><p><a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc959">RFC 959 FILE TRANSFER PROTOCOL (FTP)</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc1738">RFC 1738 Uniform Resource Locators (URL)</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc2428">RFC 2428 FTP Extensions for IPv6 and NATs</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc2616">RFC 2616 Hypertext Transfer Protocol -- HTTP/1.1</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc3659">RFC 3659 Extensions to FTP</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc3986">RFC 3986 Uniform Resource Identifier (URI): Generic Syntax</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc4038">RFC 4038 Application Aspects of IPv6 Transition</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc5854">RFC 5854 The Metalink Download Description Format</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc6249">RFC 6249 Metalink/HTTP: Mirrors and Hashes</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc6265">RFC 6265 HTTP State Management Mechanism</a></p></li>
+<li><p><a class="reference external" href="http://tools.ietf.org/html/rfc6455">RFC 6455 The WebSocket Protocol</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0003.html">The BitTorrent Protocol Specification</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0005.html">BitTorrent: DHT Protocol</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0006.html">BitTorrent: Fast Extension</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0007.html">BitTorrent: IPv6 Tracker Extension</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0009.html">BitTorrent: Extension for Peers to Send Metadata Files</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0010.html">BitTorrent: Extension Protocol</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0012.html">BitTorrent: Multitracker Metadata Extension</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0019.html">BitTorrent: WebSeed - HTTP/FTP Seeding (GetRight style)</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0027.html">BitTorrent: Private Torrents</a></p></li>
+<li><p><a class="reference external" href="http://www.bittorrent.org/beps/bep_0032.html">BitTorrent: BitTorrent DHT Extensions for IPv6</a></p></li>
+<li><p><a class="reference external" href="http://wiki.vuze.com/w/Message_Stream_Encryption">BitTorrent: Message Stream Encryption</a></p></li>
+<li><p><a class="reference external" href="http://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia: A Peer-to-peer Information System Based on the  XOR Metric</a></p></li>
 </ul>
 <p>versão revisada  em 30.março.2013    por <a class="reference external" href="mailto:gsavix&#37;&#52;&#48;gmail&#46;com">gsavix<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 <p>Anotação sobre divergência entre Manual e o aria2:</p>
@@ -772,68 +698,31 @@ favor refira-se a versão em inglês resultante do comando <code class="docutils
 
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="aria2c.html" class="btn btn-neutral" title="aria2c(1)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="aria2c.html" class="btn btn-neutral float-left" title="aria2c(1)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-
-    </p>
+    <p></p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.35.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/language_data.js"></script>
-      <script type="text/javascript" src="_static/translations.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
