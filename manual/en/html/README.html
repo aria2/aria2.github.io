@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aria2 - The ultra fast download utility &mdash; aria2 1.36.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>aria2 - The ultra fast download utility &mdash; aria2 1.37.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -24,14 +31,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aria2
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aria2
           </a>
               <div class="version">
-                1.36.0
+                1.37.0
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -82,8 +93,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>aria2 - The ultra fast download utility</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">aria2 - The ultra fast download utility</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/README.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -93,15 +104,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="aria2-the-ultra-fast-download-utility">
-<h1>aria2 - The ultra fast download utility<a class="headerlink" href="#aria2-the-ultra-fast-download-utility" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="disclaimer">
-<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+  <section id="aria2-the-ultra-fast-download-utility">
+<h1>aria2 - The ultra fast download utility<a class="headerlink" href="#aria2-the-ultra-fast-download-utility" title="Permalink to this heading">¶</a></h1>
+<section id="disclaimer">
+<h2>Disclaimer<a class="headerlink" href="#disclaimer" title="Permalink to this heading">¶</a></h2>
 <p>This program comes with no warranty.
 You must use this program at your own risk.</p>
-</div>
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>aria2 is a utility for downloading files. The supported protocols are
 HTTP(S), FTP, SFTP, BitTorrent, and Metalink. aria2 can download a
 file from multiple sources/protocols and tries to utilize your maximum
@@ -111,12 +122,12 @@ downloaded from HTTP(S)/FTP/SFTP is uploaded to the BitTorrent
 swarm. Using Metalink's chunk checksums, aria2 automatically validates
 chunks of data while downloading a file like BitTorrent.</p>
 <p>The project page is located at <a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a>.</p>
-<p>See <a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Online Manual</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
+<p>See the <a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Online Manual</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
 translation</a>) to learn
 how to use aria2.</p>
-</div>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this heading">¶</a></h2>
 <p>Here is a list of features:</p>
 <ul class="simple">
 <li><p>Command-line interface</p></li>
@@ -135,7 +146,7 @@ how to use aria2.</p>
 <li><p>Verify peer using given trusted CA certificate in HTTPS</p></li>
 <li><p>Client certificate authentication in HTTPS</p></li>
 <li><p>Chunked transfer encoding support</p></li>
-<li><p>Load Cookies from file using the Firefox3 format, Chromium/Google Chrome
+<li><p>Load Cookies from the file using the Firefox3 format, Chromium/Google Chrome
 and the Mozilla/Firefox
 (1.x/2.x)/Netscape format.</p></li>
 <li><p>Save Cookies in the Mozilla/Firefox (1.x/2.x)/Netscape format.</p></li>
@@ -146,7 +157,7 @@ and the Mozilla/Firefox
 <li><p>BitTorrent extensions: Fast extension, DHT, PEX, MSE/PSE,
 Multi-Tracker, UDP tracker</p></li>
 <li><p>BitTorrent <a class="reference external" href="http://getright.com/seedtorrent.html">WEB-Seeding</a>.
-aria2 requests chunks more than piece size to reduce the request
+aria2 requests chunk more than piece size to reduce the request
 overhead. It also supports pipelined requests with piece size.</p></li>
 <li><p>BitTorrent Local Peer Discovery</p></li>
 <li><p>Rename/change the directory structure of BitTorrent downloads
@@ -164,37 +175,33 @@ directory and output file name can be specified optionally</p></li>
 <li><p>IPv6 support with Happy Eyeballs</p></li>
 <li><p>Disk cache to reduce disk activity</p></li>
 </ul>
-</div>
-<div class="section" id="versioning-and-release-schedule">
-<h2>Versioning and release schedule<a class="headerlink" href="#versioning-and-release-schedule" title="Permalink to this headline">¶</a></h2>
-<p>We use 3 numbers for aria2 version: MAJOR.MINOR.PATCH.  We will ship
-MINOR update on 15th of every month.  We may skip a release if we have
-no changes since the last release.  The feature and documentation
-freeze happens 10 days before the release day (5th day of the month)
+</section>
+<section id="versioning-and-release-schedule">
+<h2>Versioning and release schedule<a class="headerlink" href="#versioning-and-release-schedule" title="Permalink to this heading">¶</a></h2>
+<p>We use 3 numbers for the aria2 version: MAJOR.MINOR.PATCH.  We will ship
+MINOR updates on the 15th of every month.  We may skip a release if we have
+had no changes since the last release.  The feature and documentation
+freeze happens 10 days before the release day (the 5th day of the month)
 for translation teams.  We will raise an issue about the upcoming
 release around that day.</p>
 <p>We may release PATCH releases between regular releases if we have
 security issues.</p>
-<p>MAJOR version will stay at 1 for the time being.</p>
-</div>
-<div class="section" id="how-to-get-source-code">
-<h2>How to get source code<a class="headerlink" href="#how-to-get-source-code" title="Permalink to this headline">¶</a></h2>
+<p>The MAJOR version will stay at 1 for the time being.</p>
+</section>
+<section id="how-to-get-source-code">
+<h2>How to get source code<a class="headerlink" href="#how-to-get-source-code" title="Permalink to this heading">¶</a></h2>
 <p>We maintain the source code at Github:
 <a class="reference external" href="https://github.com/aria2/aria2">https://github.com/aria2/aria2</a></p>
-<p>To get the latest source code, run following command:</p>
+<p>To get the latest source code, run the following command:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/aria2/aria2.git
 </pre></div>
 </div>
-<p>This will create aria2 directory in your current directory and source
+<p>This will create an aria2 directory in your current directory and source
 files are stored there.</p>
-</div>
-<div class="section" id="dependency">
-<h2>Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dependency">
+<h2>Dependency<a class="headerlink" href="#dependency" title="Permalink to this heading">¶</a></h2>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>features</p></th>
 <th class="head"><p>dependency</p></th>
@@ -242,22 +249,22 @@ If you prefer Expat, run configure with <code class="docutils literal notranslat
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Apple OSX the OS-level SSL/TLS support will be preferred. Hence
-neither GnuTLS nor OpenSSL are required on that platform. If you'd
+<p>On Apple OSX, OS-level SSL/TLS support will be preferred. Hence
+neither GnuTLS nor OpenSSL is required on that platform. If you'd
 like to disable this behavior, run configure with
 <code class="docutils literal notranslate"><span class="pre">--without-appletls</span></code>.</p>
 <p>GnuTLS has precedence over OpenSSL if both libraries are installed.
 If you prefer OpenSSL, run configure with <code class="docutils literal notranslate"><span class="pre">--without-gnutls</span></code>
 <code class="docutils literal notranslate"><span class="pre">--with-openssl</span></code>.</p>
-<p>On Windows there is SSL implementation available that is based on
+<p>On Windows, there is SSL implementation available that is based on
 the native Windows SSL capabilities (Schannel) and it will be
-preferred.  Hence neither GnuTLS nor OpenSSL are required on that
+preferred.  Hence neither GnuTLS nor OpenSSL is required on that
 platform.  If you'd like to disable this behavior, run configure
 with <code class="docutils literal notranslate"><span class="pre">--without-wintls</span></code>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>On Apple OSX the OS-level checksum support will be preferred,
+<p>On Apple OSX, the OS-level checksum support will be preferred,
 unless aria2 is configured with <code class="docutils literal notranslate"><span class="pre">--without-appletls</span></code>.</p>
 <p>libnettle has precedence over libgcrypt if both libraries are
 installed.  If you prefer libgcrypt, run configure with
@@ -265,7 +272,7 @@ installed.  If you prefer libgcrypt, run configure with
 GnuTLS, neither libnettle nor libgcrypt will be used.</p>
 <p>If none of the optional dependencies are installed, an internal
 implementation that only supports md5 and sha1 will be used.</p>
-<p>On Windows there is SSL implementation available that is based on
+<p>On Windows, there is SSL implementation available that is based on
 the native Windows capabilities and it will be preferred, unless
 aria2 is configured with <code class="docutils literal notranslate"><span class="pre">--without-wintls</span></code>.</p>
 </div>
@@ -281,19 +288,19 @@ libraries:</p>
 <p>You can disable BitTorrent and Metalink support by providing
 <code class="docutils literal notranslate"><span class="pre">--disable-bittorrent</span></code> and <code class="docutils literal notranslate"><span class="pre">--disable-metalink</span></code> to the configure
 script respectively.</p>
-<p>In order to enable async DNS support, you need c-ares.</p>
+<p>To enable async DNS support, you need c-ares.</p>
 <ul class="simple">
 <li><p>c-ares: <a class="reference external" href="http://c-ares.haxx.se/">http://c-ares.haxx.se/</a></p></li>
 </ul>
-</div>
-<div class="section" id="how-to-build">
-<h2>How to build<a class="headerlink" href="#how-to-build" title="Permalink to this headline">¶</a></h2>
-<p>aria2 is primarily written in C++. Initially it was written based on
-C++98/C++03 standard features. We are now migrating aria2 to C++11
-standard. The current source code requires C++11 aware compiler. For
+</section>
+<section id="how-to-build">
+<h2>How to build<a class="headerlink" href="#how-to-build" title="Permalink to this heading">¶</a></h2>
+<p>aria2 is primarily written in C++. Initially, it was written based on
+C++98/C++03 standard features. We are now migrating aria2 to the C++11
+standard. The current source code requires a C++11 aware compiler. For
 well-known compilers, such as g++ and clang, the <code class="docutils literal notranslate"><span class="pre">-std=c++11</span></code> or
 <code class="docutils literal notranslate"><span class="pre">-std=c++0x</span></code> flag must be supported.</p>
-<p>In order to build aria2 from the source package, you need following
+<p>To build aria2 from the source package, you need the following
 development packages (package name may vary depending on the
 distribution you use):</p>
 <ul class="simple">
@@ -323,8 +330,8 @@ libgnutls-dev, nettle-dev, libgmp-dev, libgpg-error-dev and libgcrypt-dev:</p>
 </ul>
 <p>On Fedora you need the following packages: gcc, gcc-c++, kernel-devel,
 libgcrypt-devel, libxml2-devel, openssl-devel, gettext-devel, cppunit</p>
-<p>If you downloaded source code from git repository, you have to install
-following packages to get autoconf macros:</p>
+<p>If you downloaded source code from a git repository, you have to install
+the following packages to get autoconf macros:</p>
 <ul class="simple">
 <li><p>libxml2-dev</p></li>
 <li><p>libcppunit-dev</p></li>
@@ -334,15 +341,15 @@ following packages to get autoconf macros:</p>
 <li><p>autopoint</p></li>
 <li><p>libtool</p></li>
 </ul>
-<p>And run following command to generate configure script and other files
+<p>And run the following command to generate configure script and other files
 necessary to build the program:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ autoreconf -i
 </pre></div>
 </div>
-<p>Also you need <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> to build man page.</p>
+<p>Also, you need <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> to build the man page.</p>
 <p>If you are building aria2 for Mac OS X, take a look at
 the makerelease-osx.mk GNU Make makefile.</p>
-<p>The quickest way to build aria2 is first run configure script:</p>
+<p>The quickest way to build aria2 is first to run configure script:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./configure
 </pre></div>
 </div>
@@ -365,7 +372,7 @@ If you build with OpenSSL or the recent version of GnuTLS which has
 <code class="docutils literal notranslate"><span class="pre">gnutls_certificate_set_x509_system_trust()</span></code> function and the
 library is properly configured to locate the system-wide CA
 certificates store, aria2 will automatically load those certificates
-at the startup. If it is not the case, I recommend to supply the path
+at the startup. If it is not the case, I recommend supplying the path
 to the CA bundle file. For example, in Debian the path to CA bundle
 file is '/etc/ssl/certs/ca-certificates.crt' (in ca-certificates
 package). This may vary depending on your distribution. You can give
@@ -376,9 +383,9 @@ $ make
 </div>
 <p>Without <code class="docutils literal notranslate"><span class="pre">--with-ca-bundle</span></code> option, you will encounter the error when
 accessing HTTPS servers because the certificate cannot be verified
-without CA bundle. In such case, you can specify the CA bundle file
-using aria2's <code class="docutils literal notranslate"><span class="pre">--ca-certificate</span></code> option.  If you don't have CA bundle
-file installed, then the last resort is disable the certificate
+without the CA bundle. In such a case, you can specify the CA bundle file
+using aria2's <code class="docutils literal notranslate"><span class="pre">--ca-certificate</span></code> option.  If you don't have the CA bundle
+file installed, then the last resort is to disable the certificate
 validation using <code class="docutils literal notranslate"><span class="pre">--check-certificate=false</span></code>.</p>
 <p>Using the native OSX (AppleTLS) and/or Windows (WinTLS) implementation
 will automatically use the system certificate store, so
@@ -388,30 +395,30 @@ these implementations.</p>
 the directory <code class="docutils literal notranslate"><span class="pre">$prefix/share/doc/aria2/bash_completion</span></code>.  To change
 the install directory of the file, use <code class="docutils literal notranslate"><span class="pre">--with-bashcompletiondir</span></code>
 option.</p>
-<p>After a <code class="docutils literal notranslate"><span class="pre">make</span></code> the executable is located at <code class="docutils literal notranslate"><span class="pre">src/aria2c</span></code>.</p>
+<p>After a <code class="docutils literal notranslate"><span class="pre">make</span></code>, the executable is located at <code class="docutils literal notranslate"><span class="pre">src/aria2c</span></code>.</p>
 <p>aria2 uses CppUnit for automated unit testing. To run the unit test:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make check
 </pre></div>
 </div>
-</div>
-<div class="section" id="cross-compiling-windows-binary">
-<h2>Cross-compiling Windows binary<a class="headerlink" href="#cross-compiling-windows-binary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cross-compiling-windows-binary">
+<h2>Cross-compiling Windows binary<a class="headerlink" href="#cross-compiling-windows-binary" title="Permalink to this heading">¶</a></h2>
 <p>In this section, we describe how to build a Windows binary using a
 mingw-w64 (<a class="reference external" href="http://mingw-w64.org/doku.php">http://mingw-w64.org/doku.php</a>) cross-compiler on Debian
 Linux. The MinGW (<a class="reference external" href="http://www.mingw.org/">http://www.mingw.org/</a>) may not be able to build
 aria2.</p>
-<p>The easiest way to build Windows binary is use Dockerfile.mingw.  See
-Dockerfile.mingw how to build binary.  If you cannot use Dockerfile,
-then continue to read following paragraphs.</p>
+<p>The easiest way to build Windows binary is using Dockerfile.mingw.  See
+Dockerfile.mingw how to build a binary.  If you cannot use Dockerfile,
+then continue to read the following paragraphs.</p>
 <p>Basically, after compiling and installing depended libraries, you can
 do cross-compile just passing appropriate <code class="docutils literal notranslate"><span class="pre">--host</span></code> option and
-specifying <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</span></code>, <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code> and <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>
-variables to configure. For convenience and lowering our own
-development cost, we provide easier way to configure the build
+specifying <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</span></code>, <code class="docutils literal notranslate"><span class="pre">LDFLAGS</span></code>, and <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>
+variables to configure. For convenience and to lower our own
+development cost, we provide an easier way to configure the build
 settings.</p>
 <p><code class="docutils literal notranslate"><span class="pre">mingw-config</span></code> script is a configure script wrapper for mingw-w64.
 We use it to create official Windows build.  This script assumes
-following libraries have been built for cross-compile:</p>
+the following libraries have been built for cross-compile:</p>
 <ul class="simple">
 <li><p>c-ares</p></li>
 <li><p>expat</p></li>
@@ -423,7 +430,7 @@ following libraries have been built for cross-compile:</p>
 <p>Some environment variables can be adjusted to change build settings:</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">HOST</span></code></dt><dd><p>cross-compile to build programs to run on <code class="docutils literal notranslate"><span class="pre">HOST</span></code>. It defaults to
-<code class="docutils literal notranslate"><span class="pre">i686-w64-mingw32</span></code>. To build 64bit binary, specify
+<code class="docutils literal notranslate"><span class="pre">i686-w64-mingw32</span></code>. To build a 64bit binary, specify
 <code class="docutils literal notranslate"><span class="pre">x86_64-w64-mingw32</span></code>.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">PREFIX</span></code></dt><dd><p>Prefix to the directory where dependent libraries are installed.  It
@@ -433,22 +440,22 @@ added to <code class="docutils literal notranslate"><span class="pre">CPPFLAGS</
 <code class="docutils literal notranslate"><span class="pre">PKG_CONFIG_LIBDIR</span></code>.</p>
 </dd>
 </dl>
-<p>For example, to build 64bit binary do this:</p>
+<p>For example, to build a 64bit binary do this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ HOST=x86_64-w64-mingw32 ./mingw-config
 </pre></div>
 </div>
 <p>If you want libaria2 dll with <code class="docutils literal notranslate"><span class="pre">--enable-libaria2</span></code>, then don't use
 <code class="docutils literal notranslate"><span class="pre">ARIA2_STATIC=yes</span></code> and prepare the DLL version of external
 libraries.</p>
-</div>
-<div class="section" id="cross-compiling-android-binary">
-<h2>Cross-compiling Android binary<a class="headerlink" href="#cross-compiling-android-binary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cross-compiling-android-binary">
+<h2>Cross-compiling Android binary<a class="headerlink" href="#cross-compiling-android-binary" title="Permalink to this heading">¶</a></h2>
 <p>In this section, we describe how to build Android binary using Android
 NDK cross-compiler on Debian Linux.</p>
 <p>At the time of this writing, Android NDK r21e should compile aria2
 without errors.</p>
 <p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> script is a configure script wrapper for Android
-build.  We use it to create official Android build.  This script
+build.  We use it to create an official Android build.  This script
 assumes the following libraries have been built for cross-compile:</p>
 <ul class="simple">
 <li><p>c-ares</p></li>
@@ -463,30 +470,30 @@ libraries statically.</p>
 <p><code class="docutils literal notranslate"><span class="pre">android-config</span></code> assumes that <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME</span></code> and <code class="docutils literal notranslate"><span class="pre">$NDK</span></code>
 environment variables are defined.</p>
 <p>We currently use Android NDK r21e.  <code class="docutils literal notranslate"><span class="pre">$NDK</span></code> should point to the
-directory to Anroid NDK.  The build tools will be found under
+directory to Android NDK.  The build tools will be found under
 <code class="docutils literal notranslate"><span class="pre">$NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/</span></code>.</p>
 <p>All the dependent libraries must be installed under
 <code class="docutils literal notranslate"><span class="pre">$ANDROID_HOME/usr/local</span></code>.</p>
 <p>After <code class="docutils literal notranslate"><span class="pre">android-config</span></code>, run <code class="docutils literal notranslate"><span class="pre">make</span></code> to compile sources.</p>
-</div>
-<div class="section" id="building-documentation">
-<h2>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> is used to build the
+</section>
+<section id="building-documentation">
+<h2>Building documentation<a class="headerlink" href="#building-documentation" title="Permalink to this heading">¶</a></h2>
+<p><a class="reference external" href="http://sphinx-doc.org/">Sphinx</a> is used to building the
 documentation. aria2 man pages will be build when you run <code class="docutils literal notranslate"><span class="pre">make</span></code> if
-they are not up-to-date.  You can also build HTML version of aria2 man
-page by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>. The HTML version manual is also available at
+they are not up-to-date.  You can also build an HTML version of the aria2
+man page by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>. The HTML version manual is also available
 <a class="reference external" href="https://aria2.github.io/manual/en/html/">online</a> (<a class="reference external" href="https://aria2.github.io/manual/ru/html/">Russian
 translation</a>, <a class="reference external" href="https://aria2.github.io/manual/pt/html/">Portuguese
 translation</a>).</p>
-</div>
-<div class="section" id="bittorrent">
-<h2>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="about-file-names">
-<h3>About file names<a class="headerlink" href="#about-file-names" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bittorrent">
+<h2>BitTorrent<a class="headerlink" href="#bittorrent" title="Permalink to this heading">¶</a></h2>
+<section id="about-file-names">
+<h3>About file names<a class="headerlink" href="#about-file-names" title="Permalink to this heading">¶</a></h3>
 <p>The file name of the downloaded file is determined as follows:</p>
 <dl class="simple">
-<dt>single-file mode</dt><dd><p>If &quot;name&quot; key is present in .torrent file, file name is the value
-of &quot;name&quot; key. Otherwise, file name is the base name of .torrent
+<dt>single-file mode</dt><dd><p>If &quot;name&quot; key is present in .torrent file, the file name is the value
+of &quot;name&quot; key. Otherwise, the file name is the base name of .torrent
 file appended by &quot;.file&quot;. For example, .torrent file is
 &quot;test.torrent&quot;, then file name is &quot;test.torrent.file&quot;.  The
 directory to store the downloaded file can be specified by -d
@@ -502,24 +509,24 @@ needed. By default, aria2 opens at most 100 files mentioned in
 .torrent file, and directly writes to and reads from these files.
 The number of files to open simultaneously can be controlled by
 <code class="docutils literal notranslate"><span class="pre">--bt-max-open-files</span></code> option.</p>
-</div>
-<div class="section" id="dht">
-<h3>DHT<a class="headerlink" href="#dht" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="dht">
+<h3>DHT<a class="headerlink" href="#dht" title="Permalink to this heading">¶</a></h3>
 <p>aria2 supports mainline compatible DHT. By default, the routing table
 for IPv4 DHT is saved to <code class="docutils literal notranslate"><span class="pre">$XDG_CACHE_HOME/aria2/dht.dat</span></code> and the
 routing table for IPv6 DHT is saved to
 <code class="docutils literal notranslate"><span class="pre">$XDG_CACHE_HOME/aria2/dht6.dat</span></code> unless files exist at
-<code class="docutils literal notranslate"><span class="pre">$HOME/.aria2/dht.dat</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOME/.aria2/dht6.dat</span></code>. aria2 uses same
-port number to listen on for both IPv4 and IPv6 DHT.</p>
-</div>
-<div class="section" id="udp-tracker">
-<h3>UDP tracker<a class="headerlink" href="#udp-tracker" title="Permalink to this headline">¶</a></h3>
+<code class="docutils literal notranslate"><span class="pre">$HOME/.aria2/dht.dat</span></code> or <code class="docutils literal notranslate"><span class="pre">$HOME/.aria2/dht6.dat</span></code>. aria2 uses the
+same port number to listen on for both IPv4 and IPv6 DHT.</p>
+</section>
+<section id="udp-tracker">
+<h3>UDP tracker<a class="headerlink" href="#udp-tracker" title="Permalink to this heading">¶</a></h3>
 <p>UDP tracker support is enabled when IPv4 DHT is enabled.  The port
-number of UDP tracker is shared with DHT. Use <code class="docutils literal notranslate"><span class="pre">--dht-listen-port</span></code>
+number of the UDP tracker is shared with DHT. Use <code class="docutils literal notranslate"><span class="pre">--dht-listen-port</span></code>
 option to change the port number.</p>
-</div>
-<div class="section" id="other-things-should-be-noted">
-<h3>Other things should be noted<a class="headerlink" href="#other-things-should-be-noted" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other-things-should-be-noted">
+<h3>Other things should be noted<a class="headerlink" href="#other-things-should-be-noted" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-o</span></code> option is used to change the file name of .torrent file itself,
 not a file name of a file in .torrent file. For this purpose, use
@@ -529,76 +536,76 @@ and UDP.</p></li>
 <li><p>aria2 doesn't configure port-forwarding automatically. Please
 configure your router or firewall manually.</p></li>
 <li><p>The maximum number of peers is 55. This limit may be exceeded when
-download rate is low. This download rate can be adjusted using
+the download rate is low. This download rate can be adjusted using
 <code class="docutils literal notranslate"><span class="pre">--bt-request-peer-speed-limit</span></code> option.</p></li>
-<li><p>As of release 0.10.0, aria2 stops sending request message after
+<li><p>As of release 0.10.0, aria2 stops sending request messages after
 selective download completes.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="metalink">
-<h2>Metalink<a class="headerlink" href="#metalink" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="metalink">
+<h2>Metalink<a class="headerlink" href="#metalink" title="Permalink to this heading">¶</a></h2>
 <p>The current implementation supports HTTP(S)/FTP/SFTP/BitTorrent.  The
 other P2P protocols are ignored. Both Metalink4 (RFC 5854) and
 Metalink version 3.0 documents are supported.</p>
-<p>For checksum verification, md5, sha-1, sha-224, sha-256, sha-384 and
+<p>For checksum verification, md5, sha-1, sha-224, sha-256, sha-384, and
 sha-512 are supported. If multiple hash algorithms are provided, aria2
-uses stronger one. If whole file checksum verification fails, aria2
-doesn't retry the download and just exits with non-zero return code.</p>
+uses a stronger one. If whole file checksum verification fails, aria2
+doesn't retry the download and just exits with a non-zero return code.</p>
 <p>The supported user preferences are version, language, location,
-protocol and os.</p>
-<p>If chunk checksums are provided in Metalink file, aria2 automatically
+protocol, and os.</p>
+<p>If chunk checksums are provided in the Metalink file, aria2 automatically
 validates chunks of data during download. This behavior can be turned
 off by a command-line option.</p>
-<p>If signature is included in a Metalink file, aria2 saves it as a file
+<p>If a signature is included in a Metalink file, aria2 saves it as a file
 after the completion of the download.  The file name is download
-file name + &quot;.sig&quot;. If same file already exists, the signature file is
+file name + &quot;.sig&quot;. If the same file already exists, the signature file is
 not saved.</p>
-<p>In Metalink4, multi-file torrent could appear in metalink:metaurl
+<p>In Metalink4, a multi-file torrent could appear in metalink:metaurl
 element.  Since aria2 cannot download 2 same torrents at the same
-time, aria2 groups files in metalink:file element which has same
-BitTorrent metaurl and downloads them from a single BitTorrent swarm.
-This is basically multi-file torrent download with file selection, so
-the adjacent files which is not in Metalink document but shares same
-piece with selected file are also created.</p>
+time, aria2 groups files in metalink:file element which has the same
+BitTorrent metaurl, and downloads them from a single BitTorrent swarm.
+This is a basically multi-file torrent download with file selection, so
+the adjacent files which are not in Metalink document but share the same
+piece with the selected file are also created.</p>
 <p>If relative URI is specified in metalink:url or metalink:metaurl
 element, aria2 uses the URI of Metalink file as base URI to resolve
-the relative URI. If relative URI is found in Metalink file which is
-read from local disk, aria2 uses the value of <code class="docutils literal notranslate"><span class="pre">--metalink-base-uri</span></code>
+the relative URI. If relative URI is found in the Metalink file which is
+read from the local disk, aria2 uses the value of <code class="docutils literal notranslate"><span class="pre">--metalink-base-uri</span></code>
 option as base URI. If this option is not specified, the relative URI
 will be ignored.</p>
-</div>
-<div class="section" id="metalink-http">
-<h2>Metalink/HTTP<a class="headerlink" href="#metalink-http" title="Permalink to this headline">¶</a></h2>
-<p>The current implementation only uses rel=duplicate links only.  aria2
+</section>
+<section id="metalink-http">
+<h2>Metalink/HTTP<a class="headerlink" href="#metalink-http" title="Permalink to this heading">¶</a></h2>
+<p>The current implementation only uses rel=duplicate links.  aria2
 understands Digest header fields and check whether it matches the
-digest value from other sources. If it differs, drop connection.
+digest value from other sources. If it differs, drop the connection.
 aria2 also uses this digest value to perform checksum verification
-after download finished. aria2 recognizes geo value. To tell aria2
+after the download is finished. aria2 recognizes geo value. To tell aria2
 which location you prefer, you can use <code class="docutils literal notranslate"><span class="pre">--metalink-location</span></code> option.</p>
-</div>
-<div class="section" id="netrc">
-<h2>netrc<a class="headerlink" href="#netrc" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="netrc">
+<h2>netrc<a class="headerlink" href="#netrc" title="Permalink to this heading">¶</a></h2>
 <p>netrc support is enabled by default for HTTP(S)/FTP/SFTP.  To disable
 netrc support, specify -n command-line option.  Your .netrc file
 should have correct permissions(600).</p>
-</div>
-<div class="section" id="websocket">
-<h2>WebSocket<a class="headerlink" href="#websocket" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="websocket">
+<h2>WebSocket<a class="headerlink" href="#websocket" title="Permalink to this heading">¶</a></h2>
 <p>The WebSocket server embedded in aria2 implements the specification
 defined in RFC 6455. The supported protocol version is 13.</p>
-</div>
-<div class="section" id="libaria2">
-<h2>libaria2<a class="headerlink" href="#libaria2" title="Permalink to this headline">¶</a></h2>
-<p>The libaria2 is a C++ library which offers aria2 functionality to the
+</section>
+<section id="libaria2">
+<h2>libaria2<a class="headerlink" href="#libaria2" title="Permalink to this heading">¶</a></h2>
+<p>The libaria2 is a C++ library that offers aria2 functionality to the
 client code. Currently, libaria2 is not built by default. To enable
 libaria2, use <code class="docutils literal notranslate"><span class="pre">--enable-libaria2</span></code> configure option.  By default,
-only the shared library is built. To build static library, use
+only the shared library is built. To build a static library, use
 <code class="docutils literal notranslate"><span class="pre">--enable-static</span></code> configure option as well. See libaria2
 documentation to know how to use API.</p>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://aria2.github.io/manual/en/html/">aria2 Online Manual</a></p></li>
 <li><p><a class="reference external" href="https://aria2.github.io/">https://aria2.github.io/</a></p></li>
@@ -630,8 +637,8 @@ and <a class="reference external" href="http://www.rasterbar.com/products/libtor
 <li><p><a class="reference external" href="http://wiki.vuze.com/w/Message_Stream_Encryption">BitTorrent: Message Stream Encryption</a></p></li>
 <li><p><a class="reference external" href="https://pdos.csail.mit.edu/~petar/papers/maymounkov-kademlia-lncs.pdf">Kademlia: A Peer-to-peer Information System Based on the  XOR Metric</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
